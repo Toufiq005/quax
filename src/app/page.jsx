@@ -103,7 +103,7 @@ function AboutCompany() {
           >
             Built For You, By People Who Care
           </h1>
-          <h2>''Recognizing the need is the primary condition for design''</h2>
+          <h2>Recognizing the need is the primary condition for design</h2>
           <p data-aos="fade-up" data-aos-duration="1500">
             Pick a template, customize the content and design elements, and
             launch! Or, design your next fabulous email on your own with our
@@ -121,7 +121,7 @@ function AboutCompany() {
       </div>
       <div className="form mt-10" data-aos="fade-up" data-aos-duration="1000">
         <h1>
-          Get Started <span className="text-red">- It's free</span>
+          Get Started <span className="text-red">- Its free</span>
         </h1>
         <div className="flex items-center justify-center">
           <Image width={36} height={36} src="/assets/home/arrow-icon.svg" alt="arrow" />
@@ -266,7 +266,7 @@ function Experience() {
         <h2 className="max-sm:text-center">Spice it up with a wide video</h2>
         <p className="text-center">
           This UI Kit uses attractive colors and modern typography to make you
-          look good, no matter what business you're in.
+          look good, no matter what business youre in.
         </p>
         <div className="flex items-center justify-evenly w-full mt-10 pb-24 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
@@ -300,7 +300,7 @@ function WhatNext() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center">
       <div className="what-next ">
-        <h1>What's Next?</h1>
+        <h1>Whats Next?</h1>
         <p>Are you interested in our services? We will arrange a phone call.</p>
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
           <div
@@ -324,7 +324,7 @@ function WhatNext() {
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
             <Image width={40} height={37} src="/assets/home/talk.svg" alt="icon" />
-            <h2>Let's Talk!</h2>
+            <h2>Lets Talk!</h2>
             <h3>
               We will then call you or meet to talk about your business goals
               and priorities.
