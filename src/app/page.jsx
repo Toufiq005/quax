@@ -1,4 +1,5 @@
 import "./home.css";
+import Image from "next/image";
 import Decoration from "@/components/Decoration/Decoration";
 import ServiceSection from "@/components/Sections/ServiceSection/ServiceSection";
 import PricingSection from "@/components/Sections/PricingSection/PricingSection";
@@ -52,7 +53,7 @@ function Header() {
           data-aos="fade-left"
           data-aos-duration="1500"
         >
-          <img src="/assets/home/hero-image.webp" alt="heroImg" />
+          <Image width={470} height={580} src="/assets/home/hero-image.webp" alt="heroImg" />
         </div>
       </div>
 
@@ -67,13 +68,17 @@ function AboutCompany() {
       <div className="flex items-center justify-center w-full pt-28 max-lg:flex-col">
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 mr-11 max-lg:mr-0">
           <div>
-            <img
+            <Image
+            width={500}
+            height={400}
               data-aos="fade-right"
               data-aos-duration="300"
               src="/assets/home/about-image.webp"
               alt="img"
             />
-            <img
+            <Image
+            width={410}
+            height={222}
               data-aos="fade-up"
               data-aos-duration="2000"
               src="/assets/home/about-vector.svg"
@@ -81,7 +86,9 @@ function AboutCompany() {
               className="-mt-40 -ml-40  max-lg:ml-0"
             />
           </div>
-          <img
+          <Image
+          width={31}
+          height={85}
             src="/assets/home/about-decoration.svg"
             alt="decoration"
             className="mt-9 max-sm:hidden max-lg:-ml-12"
@@ -117,7 +124,7 @@ function AboutCompany() {
           Get Started <span className="text-red">- It's free</span>
         </h1>
         <div className="flex items-center justify-center">
-          <img src="/assets/home/arrow-icon.svg" alt="arrow" />
+          <Image width={36} height={36} src="/assets/home/arrow-icon.svg" alt="arrow" />
           <h2>Start Your 14-Days Free Trial</h2>
         </div>
         <form className="pb-28">
@@ -161,22 +168,30 @@ function Experience() {
     <section className="section-three ">
       <div className="flex items-center justify-center pt-36 mb-96 max-xl:flex-col max-sm:mb-40">
         <div className="mr-10 left-content max-xl:mx-0 max-xl:mb-7">
-          <img
+          <Image
+            width={180}
+            height={60}
             src="/assets/home/exp-profit-card.svg"
             alt="img"
             className="card-one"
           />
-          <img
+          <Image
+            width={144}
+            height={44}
             src="/assets/home/exp-ratting-card.svg"
             alt="img"
             className="card-two"
           />
-          <img
+          <Image
+          width={270}
+          height={480}
             src="/assets/home/exp-image-one.webp"
             alt="img"
             className="exp-img-one"
           />
-          <img
+          <Image
+          width={270}
+          height={480}
             src="/assets/home/exp-image-two.webp"
             alt="img"
             className="exp-img-two"
@@ -227,7 +242,9 @@ function Experience() {
       <div className="bg-very-light-gray section-three-video flex flex-col items-center justify-center">
         <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-full">
           <div className="exp-video cursor-pointer">
-            <img
+            <Image
+            width={970}
+            height={500}
               src="/assets/home/exp-video-effect.svg"
               alt="video"
               className="exp-video-effect"
@@ -291,7 +308,7 @@ function WhatNext() {
             data-aos-duration="500"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <img src="/assets/home/message.svg" alt="icon" />
+            <Image width={40} height={37} src="/assets/home/message.svg" alt="icon" />
             <h2>Leave a Message</h2>
             <h3>
               Send us the address of your website and your contact number We
@@ -306,7 +323,7 @@ function WhatNext() {
             data-aos-duration="1000"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <img src="/assets/home/talk.svg" alt="icon" />
+            <Image width={40} height={37} src="/assets/home/talk.svg" alt="icon" />
             <h2>Let's Talk!</h2>
             <h3>
               We will then call you or meet to talk about your business goals
@@ -321,7 +338,7 @@ function WhatNext() {
             data-aos-duration="1500"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <img src="/assets/home/plan.svg" alt="icon" />
+            <Image width={38} height={38} src="/assets/home/plan.svg" alt="icon" />
             <h2>Leave a Message</h2>
             <h3>
               Send us the address of your website and your contact number We
@@ -356,7 +373,7 @@ function Blog() {
               data-aos-duration="1000"
               className="post hover:scale-105 duration-500 flex flex-col items-center justify-center"
             >
-              <img src={items.img} alt="img" className="postImg" />
+              <Image width={370} height={250} src={items.img} alt="img" className="postImg" />
               <div className="flex items-center justify-center post-info">
                 <h2 className="text-black/40 font-medium pr-5 flex items-center">
                   <span>

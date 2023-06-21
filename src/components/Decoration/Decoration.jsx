@@ -30,16 +30,16 @@ export default function Decoration() {
     return () => clearInterval(intervalId);
   }, [parentSize]);
 
-  window.addEventListener("scroll", function () {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var parallaxElements = document.querySelectorAll(".parallax-element");
-    for (var i = 0; i < parallaxElements.length; i++) {
-      var parallaxElement = parallaxElements[i];
-      var speed = parallaxElement.getAttribute("data-speed");
-      parallaxElement.style.transform =
-        "translateY(" + scrollTop * speed + "px)";
-    }
-  });
+  // window.addEventListener("scroll", function () {
+  //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //   var parallaxElements = document.querySelectorAll(".parallax-element");
+  //   for (var i = 0; i < parallaxElements.length; i++) {
+  //     var parallaxElement = parallaxElements[i];
+  //     var speed = parallaxElement.getAttribute("data-speed");
+  //     parallaxElement.style.transform =
+  //       "translateY(" + scrollTop * speed + "px)";
+  //   }
+  // });
   return (
     <div className=" absolute top-0">
       <div

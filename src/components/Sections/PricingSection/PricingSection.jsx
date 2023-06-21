@@ -1,4 +1,5 @@
 import "./PricingSection.css";
+import Image from "next/image";
 
 export default function PricingSection() {
   return (
@@ -27,19 +28,19 @@ export default function PricingSection() {
           <div className="flex flex-col justify-center mt-10">
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Lorem ipsum dolor sit ametv
             </p>
             <p className="flex ml-10 my-7">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Unlimited Employees
             </p>
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               24/7 Live Chat Support
             </p>
@@ -63,19 +64,19 @@ export default function PricingSection() {
           <div className="flex flex-col justify-center mt-10">
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Lorem ipsum dolor sit ametv
             </p>
             <p className="flex ml-10 my-7">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Unlimited Employees
             </p>
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               24/7 Live Chat Support
             </p>
@@ -99,19 +100,19 @@ export default function PricingSection() {
           <div className="flex flex-col justify-center mt-10">
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Lorem ipsum dolor sit ametv
             </p>
             <p className="flex ml-10 my-7">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               Unlimited Employees
             </p>
             <p className="flex ml-10">
               <span className="mx-3">
-                <img src="/assets/cheak-mark.svg" alt="icon" />
+                <Image width={25} height={25} src="/assets/cheak-mark.svg" alt="icon" />
               </span>
               24/7 Live Chat Support
             </p>

@@ -1,5 +1,6 @@
 "use client";
 import "./Testimonial.css";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import data from "../../data/testimonial";
@@ -28,7 +29,7 @@ function Carousel() {
               <p className="m-10">{item.comment}</p>
             </div>
             <div className="testimonial-card-author flex items-center justify-center mt-6 ml-4">
-              <img src={item.profile} alt="user-icon" />
+              <Image width={60} height={60} src={item.profile} alt="user-icon" />
               <div className="ml-5">
                 <h3 className="mb-1">{item.name}</h3>
                 <p>{item.role}</p>

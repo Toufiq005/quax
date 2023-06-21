@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 // import { useState } from "react";
 import "./Footer.css";
 import Link from "next/link";
@@ -41,7 +42,9 @@ export default function Footer() {
     <footer className="w-full flex flex-col items-center justify-center ">
       <div className="flex items-start justify-between w-full mt-24 footer-div">
         <div className="max-md:flex flex-col items-center justify-center max-md:text-center">
-          <img
+          <Image
+          width={155}
+          height={50}
             data-aos="fade-right"
             data-aos-duration="1000"
             src="/assets/logo-dark.svg"
@@ -59,19 +62,19 @@ export default function Footer() {
               href="/"
               className="flex w-11 h-11  bg-white rounded-lg items-center justify-center"
             >
-              <img src="/assets/icon-facebook.svg" alt="icon" />
+              <Image width={10} height={20} src="/assets/icon-facebook.svg" alt="icon" />
             </a>
             <a
               href="/"
               className="flex w-11 h-11 mx-3 bg-header rounded-lg items-center justify-center"
             >
-              <img src="/assets/icon-twitter.svg" alt="icon" />
+              <Image width={20} height={16} src="/assets/icon-twitter.svg" alt="icon" />
             </a>
             <a
               href="/"
               className="flex w-11 h-11 bg-white rounded-lg items-center justify-center"
             >
-              <img src="/assets/icon-vimeo.svg" alt="icon" />
+              <Image width={17} height={15} src="/assets/icon-vimeo.svg" alt="icon" />
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import "./ServiceSection.css";
 import data from "../../../data/services";
+import Image from "next/image"
 
 export default function ServiceSection() {
   return (
@@ -20,7 +21,7 @@ export default function ServiceSection() {
               data-aos-duration="2000"
               key={items.id}
             >
-              <img src={items.icon} alt="icon" className="hoverEffect" />
+              <Image src={items.icon} width={70} height={80} alt="icon" className="hoverEffect" />
               <h2>{items.title}</h2>
               <p>
                 {items.description}
