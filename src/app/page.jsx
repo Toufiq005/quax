@@ -369,6 +369,7 @@ function Blog() {
         {blogData.map((items) => {
           return (
             <div
+              key={items.id}
               data-aos="fade-up"
               data-aos-duration="1000"
               className="post hover:scale-105 duration-500 flex flex-col items-center justify-center"

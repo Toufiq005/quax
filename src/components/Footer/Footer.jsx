@@ -83,7 +83,7 @@ export default function Footer() {
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {quickLink.map((item) => {
               return (
-                <li className="my-2">
+                <li key={item.key} className="my-2">
                   <Link
                     key={item.key}
                     href={item.href}
@@ -106,7 +106,7 @@ export default function Footer() {
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {importantLink.map((item) => {
               return (
-                <li className="my-2">
+                <li key={item.key} className="my-2">
                   <Link
                     key={item.key}
                     href={item.href}
@@ -129,7 +129,7 @@ export default function Footer() {
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {supportLink.map((item) => {
               return (
-                <li className="my-2">
+                <li key={item.key} className="my-2">
                   <Link
                     key={item.key}
                     href={item.href}
