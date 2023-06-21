@@ -7,7 +7,7 @@ import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faMultiply } from "@fortawesome/free-solid-svg-icons";
-import 'next/navigation'
+import "next/navigation"
 
 export default function Navbar(props) {
   const [navbarColor, setNavbarColor] = useState(false);
@@ -494,7 +494,7 @@ export default function Navbar(props) {
             <DarkMode />
           </div>
           <a href="/contact" className="nav-contact-link">
-            LET'S TALK
+            LETS TALK
           </a>
           <button
             onClick={() => {
@@ -800,7 +800,7 @@ export default function Navbar(props) {
             </li>
             <li className="mt-5">
               <a href="/contact" className="mobile-nav-contact-link">
-                LET'S TALK
+                LETS TALK
               </a>
             </li>
             <li className="mt-5">
