@@ -1,0 +1,54 @@
+/* Our Services */
+
+.section-two {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  background-image: url("/assets/sections/services/service-section-bg.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.section-two h3 {
+  color: var(--text-header);
+  text-align: center;
+  padding-top: 90px;
+}
+.section-two h1 {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+.services {
+  margin: 15px;
+  width: 370px;
+  height: 250px;
+  background: var(--background);
+}
+.services img {
+  padding: 30px 0 0 20px;
+}
+.services h2 {
+  margin: 10px 0 12px 20px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--text-base);
+}
+.services p {
+  margin: 0 20px;
+  color: var(--text-light);
+}
+.service-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+@media (max-width: 400px) {
+  .services {
+    width: 80%;
+    margin: 15px 0 15px 0;
+  }
+}

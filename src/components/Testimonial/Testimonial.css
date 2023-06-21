@@ -1,0 +1,27 @@
+.testimonial h1 {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+.testimonial h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--text-header);
+}
+
+.testimonial p {
+  color: var(--text-light);
+}
+
+.testimonial-card-content {
+  width: 370px;
+  height: 228px;
+  background: #ffffff;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  border-top: 10px solid var(--text-header);
+}

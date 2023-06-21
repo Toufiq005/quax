@@ -1,0 +1,79 @@
+/* pricing */
+
+.section-four {
+  background-color: var(--background);
+}
+.section-four h1 {
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+.section-four h2 {
+  margin-top: 120px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-header);
+}
+.section-four p {
+  text-align: center;
+  color: var(--text-light);
+}
+.price {
+  margin: 15px;
+  width: 370px;
+  min-height: 550px;
+  background: var(--price-background);
+  border-radius: 5px;
+}
+.price h1 {
+  margin: 32px 0 32px 0;
+  font-size: 25px;
+  color: var(--text-header);
+}
+.price h2 {
+  margin: 0;
+  padding: 40px 0 20px 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: var(--text-base);
+}
+.price p {
+  width: 310pxs;
+}
+.price a {
+  padding: 16px 110px 16px 110px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: 500ms;
+}
+.price a:hover {
+  background-color: var(--text-header);
+  color: white;
+}
+.price div {
+  width: 370px;
+  height: 195px;
+  background: #f2f2f2;
+}
+
+@media (max-width: 1200px) {
+  .section-four h1 {
+    width: 90%;
+  }
+  .price-div {
+    flex-direction: column;
+  }
+  .price {
+    margin: 15px 0 15px 0;
+    width: 90%;
+  }
+  .price div {
+    max-width: 90%;
+  }
+}

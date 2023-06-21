@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --text-base: #444444;
+  --text-light: #707070;
+  --text-header: #ff4f4f;
+  --background: #ffffff;
+  --background-light: #f0f0f0;
+  --dark-blue: #182957;
+  --light-blue: #2d4c9f;
+  --price-background: #ffe5e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme="dark"] {
+  --text-base: #e4dafb;
+  --text-light: #d2beffb2;
+  --text-header: #94a0c2;
+  --background: #090317;
+  --background-light: #110a24;
+  --price-background: #2d2c64;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Work Sans", sans-serif;
+}
+
+/* ===================Utils=================== */
+.bg-color {
+  background-color: var(--background);
+}
+.text-header {
+  color: var(--text-header);
+}
+.text-base {
+  color: var(--text-base);
+}
+.text-light-gray {
+  color: var(--text-light);
+}
+.bg-header {
+  background-color: var(--text-header);
+}
+.bg-very-light-gray {
+  background-color: var(--background-light);
+}
+.bg-dark-blue {
+  background-color: var(--dark-blue);
+}
+.h-25 {
+  height: 100px;
+}
+.wrapper {
+  max-width: 1170px;
+}
+
+/* ===================Effects=================== */
+
+.hoverEffect {
+  scale: 1;
+  transition: 500ms;
+}
+.hoverEffect:hover {
+  scale: 1.1;
 }

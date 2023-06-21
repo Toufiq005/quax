@@ -1,0 +1,30 @@
+.decoration-dots {
+  position: absolute;
+  transition: top 10s ease-in-out, left 10s ease-in-out;
+}
+.dots-one {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4fffdf;
+}
+.dots-two {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fbff4f;
+}
+.dots-three {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+}
+.dots-four {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid #e622f8;
+  border-radius: 50%;
+}
