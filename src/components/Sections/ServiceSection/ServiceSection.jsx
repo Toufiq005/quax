@@ -18,6 +18,7 @@ export default function ServiceSection() {
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-duration="2000"
+              key={items.id}
             >
               <img src={items.icon} alt="icon" className="hoverEffect" />
               <h2>{items.title}</h2>
