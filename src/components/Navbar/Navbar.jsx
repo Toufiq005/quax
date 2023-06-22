@@ -257,10 +257,10 @@ export default function Navbar(props) {
                   </li>
                   <li>
                     <a
-                      href="/services-two"
+                      href="/service-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Services Two
+                      Services details
                     </a>
                   </li>
                 </ul>
@@ -298,7 +298,7 @@ export default function Navbar(props) {
                       href="/team-members"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Pages One
+                      Team members
                     </a>
                   </li>
                   <li>
@@ -306,7 +306,23 @@ export default function Navbar(props) {
                       href="/team-members-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Pages Two
+                      Team members details
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/faq"
+                      className="text-black/80 pr-4 hover:text-red-600"
+                    >
+                      FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/case-study"
+                      className="text-black/80 pr-4 hover:text-red-600"
+                    >
+                      Case Study
                     </a>
                   </li>
                 </ul>
@@ -641,8 +657,8 @@ export default function Navbar(props) {
                   </a>
                 </li>
                 <li className={isServicesOption ? "block" : "hidden"}>
-                  <a href="/services-two" className="text-black/80 ml-5">
-                    Services Two
+                  <a href="/service-details" className="text-black/80 ml-5">
+                    Services details
                   </a>
                 </li>
               </ul>
@@ -668,7 +684,7 @@ export default function Navbar(props) {
               >
                 <li className={isPagesOption ? "block" : "hidden"}>
                   <a href="/team-members" className="text-black/80 ml-5">
-                    Pages One
+                    Team members
                   </a>
                 </li>
                 <li className={isPagesOption ? "block" : "hidden"}>
@@ -676,7 +692,23 @@ export default function Navbar(props) {
                     href="/team-members-details"
                     className="text-black/80 ml-5"
                   >
-                    Pages Two
+                    Team members details
+                  </a>
+                </li>
+                <li className={isPagesOption ? "block" : "hidden"}>
+                  <a
+                    href="/faq"
+                    className="text-black/80 ml-5"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li className={isPagesOption ? "block" : "hidden"}>
+                  <a
+                    href="/case-study"
+                    className="text-black/80 ml-5"
+                  >
+                    Case study
                   </a>
                 </li>
               </ul>
