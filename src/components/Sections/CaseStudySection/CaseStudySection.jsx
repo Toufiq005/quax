@@ -4,8 +4,10 @@ import "./CaseStudySection.css";
 import { useState } from "react";
 import Image from "next/image";
 
+require("dotenv").config();
+
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/case-study-data");
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/case-study-data");
 
   return res.json();
 }

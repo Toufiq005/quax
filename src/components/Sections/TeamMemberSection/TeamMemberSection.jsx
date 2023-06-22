@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from "react";
 
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/team-members')
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
  
   return res.json()
 }

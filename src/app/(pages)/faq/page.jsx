@@ -4,7 +4,7 @@ import ContactSection from "@/components/Sections/ContactSection/ContactSection"
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/faq");
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/faq");
   return res.json();
 }
 
