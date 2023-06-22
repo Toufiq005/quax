@@ -40,7 +40,7 @@ export default async function CaseStudySection() {
         <div className="case-study-container">
           {data.map((props) => {
             return (
-              <div id={props.id} className="relative mx-4">
+              <div key={props.id} className="relative mx-4">
                 <Image
                   width={370}
                   height={370}

@@ -24,7 +24,7 @@ export default async function page() {
           <div>
             {data.map((items) => {
               return (
-                <div className="blog-post">
+                <div key={items.id} className="blog-post">
                   <Image width={768} height={499} src={items.thumbnail} />
                   <div className="flex items-center justify-start">
                     <div className="flex items-center justify-start gap-4">

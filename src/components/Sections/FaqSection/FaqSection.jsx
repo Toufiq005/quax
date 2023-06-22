@@ -23,7 +23,7 @@ export default function FaqSection(props) {
             {props.data.map(({ id, qustion, answer }) => {
               return (
                 <div
-                  id={id}
+                  key={id}
                   className="faq-question flex flex-col items-center bg-white"
                 >
                   <button
