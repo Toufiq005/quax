@@ -1,7 +1,7 @@
 import React from "react";
 import "./contact.css";
-import ContactSection from "@/components/sections/ContactSection/ContactSection";
-import Banner from "@/components/sections/Banner/Banner";
+import ContactSection from "@/components/Sections/ContactSection/ContactSection";
+import Banner from "@/components/Sections/Banner/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
