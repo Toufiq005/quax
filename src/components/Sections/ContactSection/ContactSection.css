@@ -1,0 +1,75 @@
+.contact-section h1 {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+
+.contact-section p {
+  margin: 24px 0 70px 0;
+  width: 572px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.contact-section form {
+  width: 770px;
+  height: auto;
+}
+
+.contact-section input {
+  margin-bottom: 24px;
+  width: 370px;
+  padding: 0 20px 0 20px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.contact-section input::placeholder {
+  font-size: 15px;
+}
+
+.contact-section textarea {
+  padding: 20px;
+  width: 770px;
+  height: 200px;
+  resize: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.contact-section textarea::placeholder {
+  font-size: 15px;
+}
+
+.contact-section button {
+  background: var(--text-header);
+  border-radius: 5px;
+  width: 166px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-top: 80px;
+}
+
+@media (max-width: 1024px) {
+  .contact-section form {
+    width: 100%;
+  }
+  .contact-section textarea {
+    width: 90%;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section p {
+    width: 90%;
+  }
+  .contact-section input {
+    width: 90%;
+  }
+}

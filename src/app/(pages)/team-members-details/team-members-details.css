@@ -1,0 +1,78 @@
+.members-image {
+  width: 545px;
+  height: 545px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.members-image img {
+  border-radius: 0 0 20px 20px;
+}
+.members-info h1 {
+  color: var(--text-header);
+  font-size: 30px;
+  font-weight: 600;
+}
+.members-info h2 {
+  color: var(--text-base);
+  font-weight: 600;
+}
+.members-info h3 {
+  color: var(--text-light);
+  font-size: 18px;
+  font-weight: 500;
+}
+.members-info p {
+  color: var(--text-light);
+  margin: 20px 0;
+}
+.members-overview h1 {
+  color: var(--text-base);
+  font-size: 30px;
+  font-weight: 600;
+}
+.members-overview p {
+  margin: 10px 0;
+  color: var(--text-light);
+}
+.members-experience h1 {
+  color: var(--text-base);
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.members-experience h3 {
+  color: var(--text-header);
+  font-weight: 500;
+  margin-bottom: 17px;
+}
+.exp-bar {
+  width: 545px;
+  height: 10px;
+  background-color: rgba(255, 79, 79, 0.3);
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.exp-bar-wordpress {
+  width: 95%;
+  height: 10px;
+  background-color: var(--text-header);
+  border-radius: 10px;
+}
+.exp-bar-joomla {
+  width: 80%;
+  height: 10px;
+  background-color: var(--text-header);
+  border-radius: 10px;
+}
+.exp-bar-laravel {
+  width: 75%;
+  height: 10px;
+  background-color: var(--text-header);
+  border-radius: 10px;
+}
+.exp-bar-magento {
+  width: 90%;
+  height: 10px;
+  background-color: var(--text-header);
+  border-radius: 10px;
+}

@@ -1,13 +1,12 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import Image from "next/image";
-import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faMultiply } from "@fortawesome/free-solid-svg-icons";
-import "next/navigation"
+import "next/navigation";
 
 export default function Navbar(props) {
   const [navbarColor, setNavbarColor] = useState(false);
@@ -20,7 +19,6 @@ export default function Navbar(props) {
   const [isContactOption, setContactOption] = useState(false);
   const [timerId, setTimerId] = useState(null);
   const [isHomePage, setIsHomePage] = useState(true);
-
 
   function clearHoverOptions() {
     setHomeOption(false);
@@ -110,16 +108,11 @@ export default function Navbar(props) {
   return (
     <>
       <nav
-        className={
-          !navbarColor
-            ? "w-full h-25 flex items-center justify-center bg-dark-blue fixed z-50 "
-            : "w-full h-25 flex items-center justify-center bg-white fixed z-50 "
-        }
-        style={{ backgroundColor: isHomePage ? "bg-dark-blue" : "#fff" }}
+        className={"w-full h-25 flex items-center justify-center fixed z-50" + " " + (props.bgColor)}
       >
         <div className="navbar">
           <a href="/">
-            {isHomePage ? (
+            {props.homePage ? (
               <>
                 <Image
                   src="/assets/logo-white.svg"
@@ -129,16 +122,21 @@ export default function Navbar(props) {
                   className={navbarColor ? "hidden logo" : "block logo"}
                 />
                 <Image
-                src="/assets/logo-dark.svg"
-                width="155"
-                height="50"
-                  
+                  src="/assets/logo-dark.svg"
+                  width="155"
+                  height="50"
                   alt="Logo"
                   className={!navbarColor ? "hidden logo" : "block logo"}
                 />
               </>
             ) : (
-              <Image src="/assets/logo-white.svg" width="155" height="50" alt="Logo" className="logo" />
+              <Image
+                src="/assets/logo-dark.svg"
+                width="155"
+                height="50"
+                alt="Logo"
+                className="logo"
+              />
             )}
           </a>
           <ul className="flex items-center">
@@ -150,15 +148,7 @@ export default function Navbar(props) {
                 onMouseLeave={() => {
                   handleMouseLeave(1);
                 }}
-                className={
-                  navbarColor
-                    ? "text-black/80 flex items-center"
-                    : " text-white flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"flex items-center" + " " + (props.textColor)}
                 href="/"
               >
                 <p>HOME</p>
@@ -182,7 +172,12 @@ export default function Navbar(props) {
                         href="/"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image src="/assets/navbar/Homepage-1.webp" width="307" height="168" alt="img" />
+                        <Image
+                          src="/assets/navbar/Homepage-1.webp"
+                          width="307"
+                          height="168"
+                          alt="img"
+                        />
                         <p>Homepage One</p>
                       </a>
                     </li>
@@ -191,7 +186,12 @@ export default function Navbar(props) {
                         href="/"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image src="/assets/navbar/Homepage-2.webp" width="307" height="161" alt="img" />
+                        <Image
+                          src="/assets/navbar/Homepage-2.webp"
+                          width="307"
+                          height="161"
+                          alt="img"
+                        />
                         <p>Homepage Two</p>
                       </a>
                     </li>
@@ -200,7 +200,12 @@ export default function Navbar(props) {
                         href="/"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image src="/assets/navbar/Homepage-3.webp" width="307" height="160" alt="img" />
+                        <Image
+                          src="/assets/navbar/Homepage-3.webp"
+                          width="307"
+                          height="160"
+                          alt="img"
+                        />
                         <p>Homepage Three</p>
                       </a>
                     </li>
@@ -211,15 +216,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/about"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
               >
                 <p>ABOUT</p>
               </a>
@@ -233,15 +230,7 @@ export default function Navbar(props) {
                   handleMouseLeave(2);
                 }}
                 href="/service"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
               >
                 <p>SERVICES</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -286,15 +275,8 @@ export default function Navbar(props) {
                   handleMouseLeave(3);
                 }}
                 href="/team-members"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+          
               >
                 <p>PAGES</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -339,15 +321,7 @@ export default function Navbar(props) {
                   handleMouseLeave(4);
                 }}
                 href="/blog"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
               >
                 <p>BLOG</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -392,15 +366,7 @@ export default function Navbar(props) {
                   handleMouseLeave(5);
                 }}
                 href="/shop"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
               >
                 <p>SHOP</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -445,15 +411,7 @@ export default function Navbar(props) {
                   handleMouseLeave(6);
                 }}
                 href="/contact"
-                className={
-                  navbarColor
-                    ? "text-black/80 hover:text-red-500 flex items-center"
-                    : " text-white hover:text-red-500 flex items-center "
-                }
-                style={{
-                  color:
-                    isHomePage && !navbarColor ? "#fff" : "rgb(0 0 0 / 0.8)",
-                }}
+                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
               >
                 <p>CONTACT</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -512,18 +470,18 @@ export default function Navbar(props) {
                   className={!navbarColor ? "block w-5 h-5" : "hidden"}
                 />
                 <Image
-                src="/assets/navbar/menu-bars-red.svg"
-                width="14"
-                height="9"
+                  src="/assets/navbar/menu-bars-red.svg"
+                  width="14"
+                  height="9"
                   alt="menu"
                   className={!navbarColor ? "hidden" : "block w-5 h-5"}
                 />
               </>
             ) : (
               <Image
-              src="/assets/navbar/menu-bars-red.svg"
-              width="14"
-              height="9"
+                src="/assets/navbar/menu-bars-red.svg"
+                width="14"
+                height="9"
                 alt="menu"
                 className="w-5 h-5"
               />
@@ -540,7 +498,13 @@ export default function Navbar(props) {
         >
           <div className="h-25 bg-dark-blue w-full flex items-center justify-between">
             <a href="/" className="mx-3">
-              <Image src="/assets/navbar/logo-white.svg" width="155" height="50" alt="Logo" className=" logo" />
+              <Image
+                src="/assets/navbar/logo-white.svg"
+                width="155"
+                height="50"
+                alt="Logo"
+                className=" logo"
+              />
             </a>
             <button
               onClick={() => {
@@ -588,7 +552,11 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image src="/assets/navbar/Homepage-1.webp" fill alt="img" />
+                    <Image
+                      src="/assets/navbar/Homepage-1.webp"
+                      fill
+                      alt="img"
+                    />
                     <p>Homepage One</p>
                   </a>
                 </li>
@@ -607,7 +575,11 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image src="/assets/navbar/Homepage-2.webp" fill alt="img" />
+                    <Image
+                      src="/assets/navbar/Homepage-2.webp"
+                      fill
+                      alt="img"
+                    />
                     <p>Homepage Two</p>
                   </a>
                 </li>
@@ -626,7 +598,11 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image src="/assets/navbar/Homepage-3.webp" fill alt="img" />
+                    <Image
+                      src="/assets/navbar/Homepage-3.webp"
+                      fill
+                      alt="img"
+                    />
                     <p>Homepage Three</p>
                   </a>
                 </li>

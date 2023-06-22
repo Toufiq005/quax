@@ -1,0 +1,29 @@
+.services-details-content {
+  width: 50%;
+}
+.services-details-content h1 {
+  color: var(--text-base);
+  font-size: 32px;
+  font-weight: 500;
+}
+.services-details-content h2 {
+  color: var(--text-light);
+  margin: 8px 0;
+}
+.services-details-content p {
+  margin: 36px 0;
+  color: var(--text-light);
+  line-height: 26px;
+}
+.services-details-image {
+  width: 50%;
+  position: relative;
+  background-image: url(/assets/service-details/service-details-decoration-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.services-details-image-two {
+  position: relative;
+  top: -40px;
+  right: -250px;
+}

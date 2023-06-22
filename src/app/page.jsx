@@ -1,5 +1,6 @@
 import "./home.css";
 import Image from "next/image";
+import Navbar from "@/components/Navbar/Navbar";
 import Decoration from "@/components/Decoration/Decoration";
 import ServiceSection from "@/components/Sections/ServiceSection/ServiceSection";
 import PricingSection from "@/components/Sections/PricingSection/PricingSection";
@@ -9,6 +10,7 @@ import blogData from "../data/home-blogpost";
 export default function Home() {
   return (
     <>
+      <Navbar bgColor="bg-dark-blue" textColor="text-white" homePage={true}/>
       <Header />
       <AboutCompany />
       <ServiceSection />
@@ -376,16 +378,16 @@ function Blog() {
             >
               <Image width={370} height={250} src={items.img} alt="img" className="postImg" />
               <div className="flex items-center justify-center post-info">
-                <h2 className="text-black/40 font-medium pr-5 flex items-center">
+                <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
                   <span>
-                    {/* <img src={userIcon} alt="icon" className="w-3 h-3 mx-2" /> */}
+                    <Image  src='/assets/icon-user.svg' width={12} height={12} alt="icon" className="w-3 h-3 mx-2" />
                   </span>
                   By {items.author}
                 </h2>
-                {/* <img src={divider} alt="icon" className="pr-5" /> */}
+              
                 <h2 className="text-black/40 font-medium pr-5 flex items-center">
                   <span>
-                    {/* <img src={folderIcon} alt="icon" className="w-3 h-3 mx-2" /> */}
+                    <Image src="/assets/icon-folder.svg" width={14} height={10}  alt="icon" className="w-3 h-3 mx-2" />
                   </span>
                   {items.category}
                 </h2>

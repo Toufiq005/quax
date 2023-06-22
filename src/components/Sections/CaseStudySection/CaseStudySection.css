@@ -1,0 +1,100 @@
+.case-study h1 {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+
+.case-study h2 {
+  margin: 20px 0 8px 0;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: var(--text-base);
+}
+
+.case-study h3 {
+  padding-top: 120px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--text-header);
+}
+
+.case-study h4 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--text-base);
+  transition: color 200ms;
+}
+
+.case-study h4:hover {
+  color: var(--text-header);
+  transition: color 200ms;
+}
+
+.case-study p {
+  color: var(--text-light);
+}
+
+.case-study ul {
+  margin: 60px 0 40px 0;
+  width: 594px;
+  height: 19px;
+}
+
+.case-study li {
+  cursor: pointer;
+}
+
+.case-study-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin-bottom: 120px;
+}
+
+.case-study-type {
+  background: var(--text-header);
+  border-radius: 5px;
+  width: 118px;
+  min-height: 35px;
+  top: -420px;
+  left: 20px;
+}
+.case-study-type h5 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+@media (max-width: 1200px) {
+  .case-study-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 820px) {
+  .case-study-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .case-study ul {
+    width: 90%;
+  }
+  .case-study h4 {
+    font-size: 12px;
+  }
+  .case-study-type {
+    top: -428px;
+  }
+}
+@media (max-width: 420px) {
+  .case-study-type {
+    top: -410px;
+  }
+}

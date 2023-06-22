@@ -1,0 +1,37 @@
+.faq-section h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--text-header);
+}
+.faq-section h1 {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 53px;
+  text-align: center;
+  color: var(--text-base);
+}
+.faq-question {
+  width: 570px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+.faq-question h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+.faq-question p {
+  color: #707070;
+  margin: 0 30px;
+}
+.faq-question button {
+  width: 570px;
+  height: 83px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+}

@@ -1,0 +1,37 @@
+.banner {
+  width: 100%;
+  height: 350px;
+  background-image: url(/assets/banner-image.webp);
+  background-size: 100% 350px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  margin: 0 0 25px 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 70px;
+  text-align: center;
+  color: #ffffff;
+}
+.banner p {
+  width: 520px;
+  font-style: normal;
+  line-height: 19px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+@media (max-width: 640px) {
+  .banner p {
+    width: 90%;
+  }
+  .banner h1 {
+    padding-top: 60px;
+  }
+}
