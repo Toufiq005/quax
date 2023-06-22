@@ -9,7 +9,6 @@ import "font-awesome/css/font-awesome.min.css";
 // import ScrollTrigger from "react-scroll-trigger";
 import TeamMemberSection from "../../../components/Sections/TeamMemberSection/TeamMemberSection";
 
-
 export default function About() {
   return (
     <>
@@ -20,7 +19,7 @@ export default function About() {
       <AboutSection />
       <WhatWeDo />
       <WhyChoseUS />
-      <TeamMemberSection  bgColor="bg-very-light-gray" limit={4} />
+      <TeamMemberSection bgColor="bg-very-light-gray" limit={4} />
       <SubscribeSection />
     </>
   );
@@ -33,7 +32,7 @@ function AboutSection() {
         <div className="about-section-content max-lg:flex flex-col items-center justify-center">
           <h3 className="text-header font-medium">About Us</h3>
           <h1 className="font-semibold">Our Company Story</h1>
-          <h2>''Recognizing the need is the primary condition for design''</h2>
+          <h2>Recognizing the need is the primary condition for design</h2>
           <p className="text-light-gray">
             The European languages are members of the same family. Their
             separate existence is a myth. For science, music, sport, etc, Europe
@@ -45,8 +44,8 @@ function AboutSection() {
 
         <div className="about-section-image ">
           <Image
-          width={330}
-          height={330}
+            width={330}
+            height={330}
             data-aos="fade-up"
             data-aos-duration="1000"
             src="/assets/about/about-image-one.webp"
@@ -54,8 +53,8 @@ function AboutSection() {
             className="about-section-image-one scale-125"
           />
           <Image
-          width={300}
-          height={400}
+            width={300}
+            height={400}
             data-aos="fade-left"
             src="/assets/about/about-image-two.webp"
             alt="img"
@@ -68,7 +67,6 @@ function AboutSection() {
 }
 
 function WhatWeDo() {
-
   return (
     <section className="w-full min-h-screen flex items-center justify-center bg-very-light-gray">
       <div className="wrapper what-we-do flex items-center justify-center my-28 max-lg:w-full">
@@ -76,7 +74,12 @@ function WhatWeDo() {
           data-aos="fade-right"
           className="what-we-do-image bg-no-repeat flex justify-center mr-5 max-lg:mr-0 max-lg:mt-5"
         >
-          <Image width={500} height={500} src='/assets/about/what-we-do.webp' alt="img" />
+          <Image
+            width={500}
+            height={500}
+            src="/assets/about/what-we-do.webp"
+            alt="img"
+          />
         </div>
         <div className="what-we-do-content ml-5 max-lg:flex flex-col items-center justify-center max-lg:ml-0">
           <h3 className="max-lg:pt-10">What We Do</h3>
@@ -187,10 +190,14 @@ function WhyChoseUS() {
           data-aos="fade-left"
           className="why-chose-us-image ml-12 max-lg:ml-5 max-lg:m-5 overflow-hidden"
         >
-          <Image width={470} height={600} src="/assets/about/why-chose-us.webp" alt="" />
+          <Image
+            width={470}
+            height={600}
+            src="/assets/about/why-chose-us.webp"
+            alt=""
+          />
         </div>
       </div>
     </section>
   );
 }
-
