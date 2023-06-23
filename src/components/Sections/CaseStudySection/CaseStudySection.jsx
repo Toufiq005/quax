@@ -6,11 +6,11 @@ import Image from "next/image";
 
 require("dotenv").config();
 
-// async function getData() {
-//   const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/case-study-data");
+async function getData() {
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/case-study-data");
 
-//   return res.json();
-// }
+  return res.json();
+}
 
 export default async function CaseStudySection() {
 
@@ -40,7 +40,7 @@ export default async function CaseStudySection() {
           </li>
         </ul>
         <div className="case-study-container">
-          {/* {data.map((props) => {
+          {data.map((props) => {
             return (
               <div key={props.id} className="relative mx-4">
                 <Image
@@ -61,7 +61,7 @@ export default async function CaseStudySection() {
                 </div>
               </div>
             );
-          })} */}
+          })}
         </div>
       </div>
     </section>

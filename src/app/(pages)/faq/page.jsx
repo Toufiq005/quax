@@ -3,10 +3,10 @@ import FaqSection from "@/components/Sections/FaqSection/FaqSection";
 import ContactSection from "@/components/Sections/ContactSection/ContactSection";
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
 
-// async function getData() {
-//   const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/faq");
-//   return res.json();
-// }
+async function getData() {
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/faq");
+  return res.json();
+}
 
 export default async function page() {
   const data = await getData();
