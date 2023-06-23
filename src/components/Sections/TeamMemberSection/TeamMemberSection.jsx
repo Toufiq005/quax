@@ -6,7 +6,7 @@ import { useState } from "react";
 
 async function getData() {
   const res = await fetch("https://quax-psi.vercel.app/api/team-members")
- 
+
   return res.json()
 }
 
@@ -73,9 +73,9 @@ function Team(prop) {
       <div 
       data-aos="fade-up"
       className="team w-full h-auto mt-11 ">
-        {/* {prop.data.slice(0, (prop.limit)).map((profile) => (
+        {prop.data.slice(0, (prop.limit)).map((profile) => (
           <TeamProfile key={profile.id} {...profile} />
-        ))} */}
+        ))}
       </div>
     );
   }
