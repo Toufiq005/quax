@@ -1,12 +1,12 @@
 {
     "env": {
-      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://quax-git-main-toufiq005.vercel.app/api",
-      "NEXT_PUBLIC_SITE_URL": "https://quax-git-main-toufiq005.vercel.app"
+      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://quax-psi.vercel.app/api",
+      "NEXT_PUBLIC_SITE_URL": "https://quax-psi.vercel.app"
     },
     "build": {
       "env": {
-        "NEXT_PUBLIC_REST_API_ENDPOINT": "https://quax-git-main-toufiq005.vercel.app/api",
-        "NEXT_PUBLIC_SITE_URL": "https://quax-git-main-toufiq005.vercel.app"
+        "NEXT_PUBLIC_REST_API_ENDPOINT": "https://quax-psi.vercel.app/api",
+        "NEXT_PUBLIC_SITE_URL": "https://quax-psi.vercel.app"
       }
     }
   }
