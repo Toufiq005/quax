@@ -4,11 +4,11 @@ import './TeamMemberSection.css'
 import Image from 'next/image';
 import { useState } from "react";
 
-async function getData() {
-  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
+// async function getData() {
+//   const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
  
-  return res.json()
-}
+//   return res.json()
+// }
 
 export default async function TeamMemberSection(props) {
 
@@ -43,7 +43,7 @@ function TeamProfile({ name, img, role, socialLinks }) {
           <h2>{name}</h2>
           <h3>{role}</h3>
         </div>
-        {showLinks && (
+        {/* {showLinks && (
           <div 
           data-aos="fade-left"
           className="social-links block w-10">
@@ -63,7 +63,7 @@ function TeamProfile({ name, img, role, socialLinks }) {
             </div>
           </a>
         </div>
-        )}
+        )} */}
       </div>
     );
   }
@@ -73,9 +73,9 @@ function Team(prop) {
       <div 
       data-aos="fade-up"
       className="team w-full h-auto mt-11 ">
-        {prop.data.slice(0, (prop.limit)).map((profile) => (
+        {/* {prop.data.slice(0, (prop.limit)).map((profile) => (
           <TeamProfile key={profile.id} {...profile} />
-        ))}
+        ))} */}
       </div>
     );
   }

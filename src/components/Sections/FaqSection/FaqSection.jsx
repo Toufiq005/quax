@@ -20,7 +20,7 @@ export default function FaqSection(props) {
         <h1>Frequently Asked Questions</h1>
         <div className="flex items-center justify-center gap-28 mt-14">
           <div className="faq-seciton-content">
-            {props.data.map(({ id, qustion, answer }) => {
+            {/* {props.data.map(({ id, qustion, answer }) => {
               return (
                 <div
                   key={id}
@@ -62,7 +62,7 @@ export default function FaqSection(props) {
                   )}
                 </div>
               );
-            })}
+            })} */}
           </div>
           <div className="faq-seciton-image">
             <Image src="/assets/faq/faq-image.svg" width={520} height={585} />
