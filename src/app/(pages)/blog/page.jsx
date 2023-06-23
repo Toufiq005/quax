@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 async function getData() {
-  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/blog-post");
+  const res = await fetch("https://quax-psi.vercel.app/api/blog-post");
 
   return res.json();
 }

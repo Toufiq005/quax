@@ -1,13 +1,13 @@
 import "./about.css";
 import Image from "next/image";
-import Banner from "../../../components/Sections/Banner/Banner";
-import SubscribeSection from "../../../components/Sections/SubscribeSection/SubscribeSection";
+import Banner from "@/components/Sections/Banner/Banner";
+import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import "font-awesome/css/font-awesome.min.css";
 // import CountUp from "react-countup";
 // import ScrollTrigger from "react-scroll-trigger";
-import TeamMemberSection from "../../../components/Sections/TeamMemberSection/TeamMemberSection";
+import TeamMemberSection from "@/components/Sections/TeamMemberSection/TeamMemberSection";
 
 export default function About() {
   return (

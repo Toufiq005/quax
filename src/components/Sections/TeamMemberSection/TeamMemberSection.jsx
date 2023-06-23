@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from "react";
 
 async function getData() {
-  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
+  const res = await fetch("https://quax-psi.vercel.app/api/team-members")
  
   return res.json()
 }
