@@ -3,7 +3,7 @@
 import React from "react";
 import "./TeamMemberSection.css";
 import { useState, } from "react";
-import data from '@/pages/api/team-members.js';
+import data from '@/data/team-members.js';
 
 // async function getData() {
 //   const res = await fetch(
