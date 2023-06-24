@@ -13,7 +13,7 @@ require("dotenv").config();
 // }
 
 export default function TeamMemberSection(props) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const res = fetch(
