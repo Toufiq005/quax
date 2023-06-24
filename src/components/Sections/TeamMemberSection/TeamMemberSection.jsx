@@ -14,7 +14,7 @@ require("dotenv").config();
 
 export default function TeamMemberSection(props) {
   const [showLinks, setShowLinks] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
