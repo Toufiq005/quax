@@ -17,9 +17,7 @@ export default  function TeamMemberSection(props) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    getData().then((data) => {
-      setData(data)
-    })
+    setData(getData())
   })
 
   return (
