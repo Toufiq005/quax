@@ -13,14 +13,7 @@ require("dotenv").config();
 // }
 
 export default function TeamMemberSection(props) {
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const res = fetch(
-      process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
-    );
-    setData(res.json());
-  }, []);
 
   return (
     <section
@@ -38,7 +31,7 @@ export default function TeamMemberSection(props) {
             amet.
           </p>
         </div>
-        <Team data={data} limit={props.limit} />
+        <Team limit={props.limit} />
       </div>
     </section>
   );
@@ -101,9 +94,17 @@ function TeamProfile({ name, img, role, socialLinks }) {
   );
 }
 function Team(prop) {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const res = fetch(
+      process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
+    );
+    setData(res.json());
+  }, []);
   return (
     <div data-aos="fade-up" className="team w-full h-auto mt-11 ">
-      {prop.data.slice(0, prop.limit).map((profile) => (
+      {data ?? data.slice(0, prop.limit).map((profile) => (
         <TeamProfile key={profile.id} {...profile} />
       ))}
     </div>
