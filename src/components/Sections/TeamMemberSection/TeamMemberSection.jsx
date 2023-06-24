@@ -2,18 +2,19 @@
 
 import React from "react";
 import "./TeamMemberSection.css";
-import { useState, useEffect } from "react";
+import { useState, } from "react";
+import data from '@/pages/api/team-members.js';
 
-async function getData() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
-  );
-  return res.json();
-}
+// async function getData() {
+//   const res = await fetch(
+//     process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
+//   );
+//   return res.json();
+// }
 
 export default async function TeamMemberSection(props) {
 
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <section
