@@ -18,8 +18,8 @@ export default  function TeamMemberSection(props) {
 
   useEffect(() => {
     fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
-    .then(res => res.json())
-    .then(data => setData(data))
+    .then((res) => {res.json()})
+    .then((data) => {setData(data)})
   },[])
 
   return (
