@@ -14,12 +14,14 @@ require("dotenv").config();
 
 export default function TeamMemberSection(props) {
   const [showLinks, setShowLinks] = useState(false);
+  const [isDataLoaded, setDataLoaded] = useState(false);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
     .then(res => res.json())
     .then(data => setData(data))
+    .then(() => setDataLoaded(true))
   }, []);
 
   return (
@@ -39,8 +41,8 @@ export default function TeamMemberSection(props) {
           </p>
         </div>
         <div data-aos="fade-up" className="team w-full h-auto mt-11 ">
-          {
-            data.slice(0, props.limit).map((profile) => (
+          {isDataLoaded ?
+            (data.slice(0, props.limit).map((profile) => (
               <div
                 key={profile.id}
                 className="team-member-profile overflow-hidden"
@@ -92,8 +94,8 @@ export default function TeamMemberSection(props) {
                     </a>
                   </div>
                 )}
-              </div>
-            ))}
+              </div>)
+            )) : (<h1>loading</h1>)}
         </div>
       </div>
     </section>
