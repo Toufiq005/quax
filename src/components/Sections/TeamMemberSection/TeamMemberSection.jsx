@@ -1,27 +1,28 @@
 "use client";
 
-import React from 'react'
-import './TeamMemberSection.css'
+import React from "react";
+import "./TeamMemberSection.css";
 import { useState, useEffect } from "react";
 
+async function getData() {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
+  );
+  return res.json();
+}
 
-export default function TeamMemberSection(props) {
+export default async function TeamMemberSection(props) {
 
-  const [data, setData] = useState([]);
-  const [isDataLoaded, setDataLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
-    .then(res => res.json())
-    .then(data => {
-      setData(data)
-    }).then(() => {
-      setDataLoaded(true)
-    })
-  },[])
+  const data = await getData();
 
   return (
-    <section className={"w-full min-h-screen flex items-center justify-center" + " " + props.bgColor}>
+    <section
+      className={
+        "w-full min-h-screen flex items-center justify-center" +
+        " " +
+        props.bgColor
+      }
+    >
       <div className="wrapper team-member flex flex-col items-center justify-center my-28">
         <div>
           <h1>Our Marketing expertise</h1>
@@ -31,35 +32,27 @@ export default function TeamMemberSection(props) {
           </p>
         </div>
 
-       
-      {
-        !isDataLoaded ? (
-          <Team data={data} limit={props.limit} />
-        ) : (<h1>loading</h1>)
-      }
-       
+        <Team data={data} limit={props.limit} />
       </div>
     </section>
-  )
+  );
 }
 function TeamProfile({ name, img, position, socialLinks }) {
-    const [showLinks, setShowLinks] = useState(false);
-  
-    return (
-      <div
-        className="team-member-profile overflow-hidden"
-        onMouseEnter={() => setShowLinks(true)}
-        onMouseLeave={() => setShowLinks(false)}
-      >
-        <div>
-          <img src={img} alt="img" className="team-member-profile-img" />
-          <h2>{name}</h2>
-          <h3>{position}</h3>
-        </div>
-        {showLinks && (
-          <div 
-          data-aos="fade-left"
-          className="social-links block w-10">
+  const [showLinks, setShowLinks] = useState(false);
+
+  return (
+    <div
+      className="team-member-profile overflow-hidden"
+      onMouseEnter={() => setShowLinks(true)}
+      onMouseLeave={() => setShowLinks(false)}
+    >
+      <div>
+        <img src={img} alt="img" className="team-member-profile-img" />
+        <h2>{name}</h2>
+        <h3>{position}</h3>
+      </div>
+      {showLinks && (
+        <div data-aos="fade-left" className="social-links block w-10">
           <a href={socialLinks.facebook}>
             <div className="w-10 h-10 rounded bg-white flex items-center justify-center ">
               <img src="/assets/icon-facebook.svg" alt="icon" />
@@ -76,19 +69,16 @@ function TeamProfile({ name, img, position, socialLinks }) {
             </div>
           </a>
         </div>
-        )}
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
+}
 function Team(props) {
-    return (
-      <div 
-      data-aos="fade-up"
-      className="team w-full h-auto mt-11 ">
-        {props.data.slice(0, props.limit).map((profile) => (
-          <TeamProfile key={profile.name} {...profile} />
-        ))}
-      </div>
-    );
-  }
-  
+  return (
+    <div data-aos="fade-up" className="team w-full h-auto mt-11 ">
+      {props.data.slice(0, props.limit).map((profile) => (
+        <TeamProfile key={profile.name} {...profile} />
+      ))}
+    </div>
+  );
+}
