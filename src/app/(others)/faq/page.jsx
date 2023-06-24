@@ -3,8 +3,10 @@ import FaqSection from "@/components/Sections/FaqSection/FaqSection";
 import ContactSection from "@/components/Sections/ContactSection/ContactSection";
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
 
+require("dotenv").config();
+
 async function getData() {
-  const res = await fetch("https://quax-psi.vercel.app/api/faq");
+  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/faq");
   return res.json();
 }
 

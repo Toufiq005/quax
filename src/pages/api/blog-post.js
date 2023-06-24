@@ -19,7 +19,7 @@ const data = [
     thumbnail: "/assets/blog-post/blog-post-two.png",
     date: "October 25, 2021",
     title:
-      "TSeven Advices That You Must Listen Before Studying Business Strategy.",
+      "Seven Advices That You Must Listen Before Studying Business Strategy.",
     summary:
       "Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email on your own with our simple visual builder. Pick a template, customize the content and design elements.",
     href: "/",
