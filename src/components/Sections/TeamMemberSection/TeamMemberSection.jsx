@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export default function TeamMemberSection(props) {
 
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [isDataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
