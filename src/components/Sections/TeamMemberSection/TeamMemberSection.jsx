@@ -20,7 +20,7 @@ export default  function TeamMemberSection(props) {
     fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
     .then(res => res.json())
     .then(data => setData(data))
-  })
+  },[])
 
   return (
     <section className={"w-full min-h-screen flex items-center justify-center" + " " + (props.bgColor)}>
