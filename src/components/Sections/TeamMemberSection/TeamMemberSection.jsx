@@ -2,7 +2,7 @@
 
 import './TeamMemberSection.css'
 import Image from 'next/image';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 require("dotenv").config();
 
@@ -12,9 +12,15 @@ async function getData() {
   return res.json()
 }
 
-export default async function TeamMemberSection(props) {
+export default  function TeamMemberSection(props) {
+  
+  const [data, setData] = useState([])
 
-  const data = await getData()
+  useEffect(() => {
+    getData().then((data) => {
+      setData(data)
+    })
+  })
 
   return (
     <section className={"w-full min-h-screen flex items-center justify-center" + " " + (props.bgColor)}>
