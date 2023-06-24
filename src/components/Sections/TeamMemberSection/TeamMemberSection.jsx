@@ -6,18 +6,20 @@ import { useState, useEffect } from "react";
 
 require("dotenv").config();
 
-async function getData() {
-  const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
+// async function getData() {
+//   const res = await fetch((process.env.NEXT_PUBLIC_REST_API_ENDPOINT) + "/team-members")
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 export default  function TeamMemberSection(props) {
   
   const [data, setData] = useState([])
 
   useEffect(() => {
-    setData(getData())
+    fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
+    .then(res => res.json())
+    .then(data => setData(data))
   })
 
   return (
