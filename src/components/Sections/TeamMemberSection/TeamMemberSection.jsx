@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import './TeamMemberSection.css'
-import Image from 'next/image';
+import "./TeamMemberSection.css";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 require("dotenv").config();
@@ -12,18 +12,24 @@ require("dotenv").config();
 //   return res.json()
 // }
 
-export default  function TeamMemberSection(props) {
-  
-  const [data, setData] = useState([])
+export default function TeamMemberSection(props) {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members")
-    .then((res) => {res.json()})
-    .then((data) => {setData(data)})
-  },[])
+    const res = fetch(
+      process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
+    );
+    setData(res.json());
+  }, []);
 
   return (
-    <section className={"w-full min-h-screen flex items-center justify-center" + " " + (props.bgColor)}>
+    <section
+      className={
+        "w-full min-h-screen flex items-center justify-center" +
+        " " +
+        props.bgColor
+      }
+    >
       <div className="wrapper team-member flex flex-col items-center justify-center my-28">
         <div>
           <h1>Our Marketing expertise</h1>
@@ -32,59 +38,74 @@ export default  function TeamMemberSection(props) {
             amet.
           </p>
         </div>
-       <Team data={data} limit={props.limit} />
+        <Team data={data} limit={props.limit} />
       </div>
     </section>
-  )
+  );
 }
 function TeamProfile({ name, img, role, socialLinks }) {
-    const [showLinks, setShowLinks] = useState(false);
-  
-    return (
-      <div
-        className="team-member-profile overflow-hidden"
-        onMouseEnter={() => setShowLinks(true)}
-        onMouseLeave={() => setShowLinks(false)}
-      >
-        <div>
-          <Image width={270} height={270} src={img} alt="img" className="team-member-profile-img" />
-          <h2>{name}</h2>
-          <h3>{role}</h3>
-        </div>
-        {showLinks && (
-          <div 
-          data-aos="fade-left"
-          className="social-links block w-10">
+  const [showLinks, setShowLinks] = useState(false);
+
+  return (
+    <div
+      className="team-member-profile overflow-hidden"
+      onMouseEnter={() => setShowLinks(true)}
+      onMouseLeave={() => setShowLinks(false)}
+    >
+      <div>
+        <Image
+          width={270}
+          height={270}
+          src={img}
+          alt="img"
+          className="team-member-profile-img"
+        />
+        <h2>{name}</h2>
+        <h3>{role}</h3>
+      </div>
+      {showLinks && (
+        <div data-aos="fade-left" className="social-links block w-10">
           <a href={socialLinks.facebook}>
             <div className="w-10 h-10 rounded bg-white flex items-center justify-center ">
-              <Image width={9} height={16} src="/assets/sections/team-members/icon-facebook.svg" alt="icon" />
+              <Image
+                width={9}
+                height={16}
+                src="/assets/sections/team-members/icon-facebook.svg"
+                alt="icon"
+              />
             </div>
           </a>
           <a href={socialLinks.twitter}>
             <div className="w-10 h-10 rounded bg-header flex items-center justify-center ">
-              <Image width={16} height={13} src="/assets/sections/team-members/icon-twitter.svg" alt="icon" />
+              <Image
+                width={16}
+                height={13}
+                src="/assets/sections/team-members/icon-twitter.svg"
+                alt="icon"
+              />
             </div>
           </a>
           <a href={socialLinks.vimeo}>
             <div className="w-10 h-10 rounded bg-white flex items-center justify-center ">
-              <Image width={14} height={12} src="/assets/sections/team-members/icon-vimeo.svg" alt="icon" />
+              <Image
+                width={14}
+                height={12}
+                src="/assets/sections/team-members/icon-vimeo.svg"
+                alt="icon"
+              />
             </div>
           </a>
         </div>
-        )}
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
+}
 function Team(prop) {
-
-    return (
-      <div 
-      data-aos="fade-up"
-      className="team w-full h-auto mt-11 ">
-        {prop.data.slice(0, (prop.limit)).map((profile) => (
-          <TeamProfile key={profile.id} {...profile} />
-        ))}
-      </div>
-    );
-  }
-  
+  return (
+    <div data-aos="fade-up" className="team w-full h-auto mt-11 ">
+      {prop.data.slice(0, prop.limit).map((profile) => (
+        <TeamProfile key={profile.id} {...profile} />
+      ))}
+    </div>
+  );
+}
