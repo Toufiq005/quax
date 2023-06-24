@@ -39,7 +39,7 @@ export default function TeamMemberSection(props) {
           </p>
         </div>
         <div data-aos="fade-up" className="team w-full h-auto mt-11 ">
-          {data ??
+          {
             data.slice(0, props.limit).map((profile) => (
               <div
                 key={profile.id}
