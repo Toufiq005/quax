@@ -33,7 +33,7 @@ export default function TeamMemberSection(props) {
 
        
       {
-        isDataLoaded ? (
+        !isDataLoaded ? (
           <Team data={data} limit={props.limit} />
         ) : (<h1>loading</h1>)
       }
