@@ -2,6 +2,8 @@
 
 .section-four {
   background-color: var(--background);
+  width: 100%;
+  height: auto;
 }
 .section-four h1 {
   margin: 10px 0 10px 0;
@@ -12,7 +14,6 @@
   color: var(--text-base);
 }
 .section-four h2 {
-  margin-top: 120px;
   text-align: center;
   font-weight: 500;
   color: var(--text-header);

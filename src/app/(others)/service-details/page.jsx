@@ -13,9 +13,10 @@ export default function page() {
         title="Business Idea"
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
-      <section className="w-full min-h-screen flex items-center justify-center bg-color">
+      <section className="w-full h-auto flex items-center justify-center bg-color">
         <div className="wrapper h-auto flex items-center justify-center gap-20">
           <div className="services-details-content">
+            <h6 className='text-6xl text-red-500'>work in progress</h6>
             <h1>Increase Business Idea For your Business.</h1>
             <p>
               Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt

@@ -5,26 +5,18 @@ import "./TeamMemberSection.css";
 import { useState, } from "react";
 import data from '@/data/team-members.js';
 
-// async function getData() {
-//   const res = await fetch(
-//     process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/team-members"
-//   );
-//   return res.json();
-// }
 
 export default async function TeamMemberSection(props) {
-
-  // const data = await getData();
 
   return (
     <section
       className={
-        "w-full min-h-screen flex items-center justify-center" +
+        "w-full h-auto flex items-center justify-center" +
         " " +
         props.bgColor
       }
     >
-      <div className="wrapper team-member flex flex-col items-center justify-center my-28">
+      <div className="wrapper team-member flex flex-col items-center justify-center">
         <div>
           <h1>Our Marketing expertise</h1>
           <p>

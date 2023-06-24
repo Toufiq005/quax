@@ -3,8 +3,6 @@
 import "./FaqSection.css";
 import Image from "next/image";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function FaqSection(props) {
   const [selectedFaq, setSelectedFaq] = useState(1);
@@ -14,7 +12,7 @@ export default function FaqSection(props) {
   };
 
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-color">
+    <section className="w-full h-auto flex items-center justify-center bg-color">
       <div className="wrapper flex flex-col items-center justify-center faq-section">
         <h3>FAQ</h3>
         <h1>Frequently Asked Questions</h1>

@@ -1,4 +1,5 @@
 "use client";
+
 import "./Testimonial.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +8,8 @@ import data from "../../data/testimonial";
 
 export default function Testimonial() {
   return (
-    <section className="w-full min-h-screen bg-very-light-gray flex flex-col items-center justify-center">
-      <div className="wrapper testimonial ">
+    <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
+      <div className="wrapper testimonial py-32">
         <h3>Testimonial</h3>
         <h1 className="mt-2">What Our Clients Say</h1>
         <div className="h-full w-full mt-16">

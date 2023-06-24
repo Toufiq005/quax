@@ -4,14 +4,14 @@ import Image from "next/image"
 
 export default function ServiceSection() {
   return (
-    <section className="section-two flex flex-col items-center justify-center">
+    <section className="section-two flex flex-col items-center ">
       <div data-aos="zoom-in-up" data-aos-duration="1000">
-        <h3>Our Services</h3>
+        <h3 className="pt-32">Our Services</h3>
         <h1>
           Integrate The <br /> Tools You Use Everyday
         </h1>
       </div>
-      <div className="service-wrapper mt-14 pb-28 ">
+      <div className="service-wrapper mt-14 pb-32 ">
         {data.map((items) => {
           return (
             <div

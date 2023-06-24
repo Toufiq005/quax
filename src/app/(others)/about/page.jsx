@@ -5,8 +5,6 @@ import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSe
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import "font-awesome/css/font-awesome.min.css";
-// import CountUp from "react-countup";
-// import ScrollTrigger from "react-scroll-trigger";
 import TeamMemberSection from "@/components/Sections/TeamMemberSection/TeamMemberSection";
 
 export default function About() {
@@ -27,7 +25,7 @@ export default function About() {
 
 function AboutSection() {
   return (
-    <section className="w-full min-h-screen bg-color flex items-center justify-center">
+    <section className="w-full h-auto bg-color flex items-center justify-center">
       <div className="wrapper about-section flex items-center justify-center  max-lg:flex-col max-lg:mt-10">
         <div className="about-section-content max-lg:flex flex-col items-center justify-center">
           <h3 className="text-header font-medium">About Us</h3>
@@ -68,8 +66,8 @@ function AboutSection() {
 
 function WhatWeDo() {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-very-light-gray">
-      <div className="wrapper what-we-do flex items-center justify-center my-28 max-lg:w-full">
+    <section className="w-full h-auto flex items-center justify-center bg-very-light-gray">
+      <div className="wrapper what-we-do flex items-center justify-center max-lg:w-full">
         <div
           data-aos="fade-right"
           className="what-we-do-image bg-no-repeat flex justify-center mr-5 max-lg:mr-0 max-lg:mt-5"
@@ -135,8 +133,8 @@ function WhatWeDo() {
 
 function WhyChoseUS() {
   return (
-    <section className="w-full min-h-screen bg-color flex items-center justify-center">
-      <div className="wrapper flex items-center justify-center max-lg:flex-col my-28 overflow-hidden">
+    <section className="w-full h-auto bg-color flex items-center justify-center">
+      <div className="wrapper flex items-center justify-center max-lg:flex-col overflow-hidden">
         <div className="why-chose-us-content mr-12 max-lg:pt-10 max-lg:text-center max-lg:mr-0 max-lg:flex flex-col items-center justify-center">
           <h3>Why Choose Us</h3>
           <h1>Save Your Time & Grow Your Business.</h1>

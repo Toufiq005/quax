@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function PricingSection() {
   return (
-    <section className="section-four flex flex-col items-center justify-center">
-      <h2>Explore & Create</h2>
+    <section className="section-four flex flex-col items-center ">
+      <h2 className="pt-32">Explore & Create</h2>
       <h1>
         Simple <br /> Scalable Pricing.
       </h1>

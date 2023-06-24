@@ -1,8 +1,9 @@
 footer {
   background-color: var(--background-light);
-  min-height: 50vh;
+  height: auto;
 }
 .footer-div {
+  padding-top: 128px;
   max-width: 1170px;
 }
 footer h1 {

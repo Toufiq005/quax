@@ -270,7 +270,7 @@ function Experience() {
           This UI Kit uses attractive colors and modern typography to make you
           look good, no matter what business youre in.
         </p>
-        <div className="flex items-center justify-evenly w-full mt-10 pb-24 max-md:flex-col">
+        <div className="flex items-center justify-center w-full gap-64 mt-10 pb-24 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
             <h5>
               {/* {counterOn && <CountUp start={0} end={18} duration={2}></CountUp>} */}
@@ -298,9 +298,8 @@ function Experience() {
   );
 }
 function WhatNext() {
-  // const [animationOn, setAnimationOn] = useState(false);
   return (
-    <section className="w-full min-h-screen flex items-center justify-center">
+    <section className="w-full h-auto flex items-center justify-center">
       <div className="what-next ">
         <h1>Whats Next?</h1>
         <p>Are you interested in our services? We will arrange a phone call.</p>

@@ -2,7 +2,7 @@
 
 .section-two {
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   background-color: var(--background-light);
   background-image: url("/assets/sections/services/service-section-bg.svg");
   background-repeat: no-repeat;

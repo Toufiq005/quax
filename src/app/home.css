@@ -355,7 +355,7 @@ button {
 
 .blogpost {
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   background-color: var(--background);
 }
 .blogpost h1 {
