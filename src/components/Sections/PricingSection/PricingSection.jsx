@@ -17,12 +17,12 @@ export default function PricingSection() {
           className="price mb-16 flex flex-col items-center"
         >
           <h2>Solo</h2>
-          <p>Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
+          <p  className="mx-3">Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
           <h1>
             <span className="text-6xl">$44</span>
             /mo
           </h1>
-          <a href="/" className="bg-white text-red">
+          <a href="/" className="bg-white text-header">
             Buy Now
           </a>
           <div className="flex flex-col justify-center mt-10">
@@ -53,12 +53,12 @@ export default function PricingSection() {
           className="price mb-16 flex flex-col items-center"
         >
           <h2>Team</h2>
-          <p>Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
+          <p  className="mx-3">Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
           <h1>
             <span className="text-6xl">$64</span>
             /mo
           </h1>
-          <a href="/" className="bg-header text-white">
+          <a href="/" className="bg-white text-header">
             Buy Now
           </a>
           <div className="flex flex-col justify-center mt-10">
@@ -89,12 +89,12 @@ export default function PricingSection() {
           className="price mb-16 flex flex-col items-center"
         >
           <h2>Agency</h2>
-          <p>Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
+          <p className="mx-3">Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.</p>
           <h1>
             <span className="text-6xl">$78</span>
             /mo
           </h1>
-          <a href="/" className="bg-white text-red">
+          <a href="/" className="bg-white text-header">
             Buy Now
           </a>
           <div className="flex flex-col justify-center mt-10">

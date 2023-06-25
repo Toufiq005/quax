@@ -1,3 +1,4 @@
+"use client";
 import "./blog-details.css";
 import Banner from "@/components/Sections/Banner/Banner";
 import Image from "next/image";
@@ -26,68 +27,71 @@ export default async function page() {
       <section className="w-full min-h-screen bg-color flex items-center justify-center">
         <div className="wrapper h-auto blog-details">
           <div>
-            <h1>
-              Seven Advices That You Must Listen Before Studying Business
-              Strategy.
-            </h1>
-            <Image
-              width={770}
-              height={500}
-              src="/assets/blog-post/blog-post-two.png"
-              alt="img"
-              className="my-6"
-            />
-            <p>
-              The European languag are member of the same family. Their separate
-              existence is a myth. For science, music, sport, etc, Europe uses
-              the same vocabulary. The languages only differ in their grammar,
-              their pronunciation and their most common words.
-              <br />
-              <br />
-              Everyone realizes why a new common language would be desirable:
-              one could refuse to pay expensive translators. To achieve this, it
-              would be necessary to have uniform grammar, pronunciation and more
-              common words. If several languages coalesce, the grammar of the
-              resulting language is more simple and regular than that of the
-              individual languages. The new common language will be more simple
-              and regular than the existing European languages.
-            </p>
-            <div className="w-full bg-very-light-gray h-auto rounded-lg my-10">
-              <h2 className="p-10">
+            <div className="blog-details-post">
+              <h1>
+                Seven Advices That You Must Listen Before Studying Business
+                Strategy.
+              </h1>
+              <Image
+                width={770}
+                height={500}
+                src="/assets/blog-post/blog-post-two.png"
+                alt="img"
+                className="my-6"
+              />
+              <p>
+                The European languag are member of the same family. Their
+                separate existence is a myth. For science, music, sport, etc,
+                Europe uses the same vocabulary. The languages only differ in
+                their grammar, their pronunciation and their most common words.
+                <br />
+                <br />
                 Everyone realizes why a new common language would be desirable:
-                one could re to pay expensive translators. To achieve this, it
-                would be necessary to have uniform grammar, pronunciation and
+                one could refuse to pay expensive translators. To achieve this,
+                it would be necessary to have uniform grammar, pronunciation and
                 more common words. If several languages coalesce, the grammar of
-                the resulting language is more simple and regular.
-              </h2>
+                the resulting language is more simple and regular than that of
+                the individual languages. The new common language will be more
+                simple and regular than the existing European languages.
+              </p>
+              <div className="w-full bg-very-light-gray h-auto rounded-lg my-10">
+                <h2 className="p-10">
+                  Everyone realizes why a new common language would be
+                  desirable: one could re to pay expensive translators. To
+                  achieve this, it would be necessary to have uniform grammar,
+                  pronunciation and more common words. If several languages
+                  coalesce, the grammar of the resulting language is more simple
+                  and regular.
+                </h2>
+              </div>
+              <p>
+                The new common language will be more simple and regular than the
+                existing European languages. The European languag are member of
+                the same family. Their separate existence is a myth. For
+                science, music, sport, etc, Europe uses the same vocabulary. The
+                languages only differ in their grammar, their pronunciation and
+                their most common words. To achieve this, it would be necessary
+                to have uniform grammar, pronunciation and more common words. If
+                several languages coalesce, the grammar of the resulting
+                language is more simple.
+                <br />
+                <br />
+                Everyone realizes why a new common language would be desirable:
+                one could refuse to pay expensive translators. To achieve this,
+                it would be necessary to have uniform grammar, pronunciation and
+                more common words.
+              </p>
             </div>
-            <p>
-              The new common language will be more simple and regular than the
-              existing European languages. The European languag are member of
-              the same family. Their separate existence is a myth. For science,
-              music, sport, etc, Europe uses the same vocabulary. The languages
-              only differ in their grammar, their pronunciation and their most
-              common words. To achieve this, it would be necessary to have
-              uniform grammar, pronunciation and more common words. If several
-              languages coalesce, the grammar of the resulting language is more
-              simple.
-              <br />
-              <br />
-              Everyone realizes why a new common language would be desirable:
-              one could refuse to pay expensive translators. To achieve this, it
-              would be necessary to have uniform grammar, pronunciation and more
-              common words.
-            </p>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mt-10">
               <div className="flex items-center justify-center gap-3">
                 <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h1 className="text-black/60">Business Strategy</h1>
+                  <h3 className="text-black/60">Business Strategy</h3>
                 </div>
                 <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h1 className="text-black/60">Business</h1>
+                  <h3 className="text-black/60">Business</h3>
                 </div>
                 <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h1 className="text-black/60">Technology</h1>
+                  <h3 className="text-black/60">Technology</h3>
                 </div>
               </div>
               <div>
@@ -99,7 +103,7 @@ export default async function page() {
                 />
               </div>
             </div>
-            <div className="flex items-center justify-center gap-10">
+            <div className="flex items-center justify-center gap-10 my-7 blog-details-about-author">
               <div>
                 <Image
                   width={115}
@@ -109,9 +113,7 @@ export default async function page() {
                 />
               </div>
               <div>
-                <h1 className="text-lg font-semibold text-black/70">
-                  Peter Vine
-                </h1>
+                <h1>Peter Vine</h1>
                 <p>
                   The languages only differ in their grammar, their
                   pronunciation and their most common words. To achieve this, it
@@ -119,8 +121,8 @@ export default async function page() {
                 </p>
               </div>
             </div>
-            <div>
-              <h1 className="text-2xl text-black/80">Related Post</h1>
+            <div className="bolg-details-related-post">
+              <h5>Related Post</h5>
               <div className="flex">
                 {relatedBlog.slice(0, 2).map((items) => {
                   return (
@@ -174,40 +176,105 @@ export default async function page() {
                 })}
               </div>
             </div>
-            <div>
+            <div className="blog-details-comments">
               <h1>6 Comments</h1>
               <div className="flex flex-col items-end">
-                {/* {data.map((items) => {
-                  console.log(items.comments);
-                  return (
-                    <div className="flex items-start">
-                      <Image
-                        width={120}
-                        height={120}
-                        src="/assets/blog-post/icon-polear-vainte.png"
-                        alt="img"
-                      />
-                      <div>
-                        <div className="flex justify-between items-center">
-                          <h2>Polear Vainte</h2>
-                          <h3>AUGUST 25, 2021</h3>
-                        </div>
-                        <p>
-                          To achieve this, it would be necessary to have uniform
-                          grammar, pronunciatio and more common words. If
-                          several languages coalesce, the grammar of the
-                          resulting language is more simple and regular than
-                          that of the individual languages.
-                        </p>
-                        <div className="flex items-center justify-start gap-1">
-                          <h4>Reply</h4>
-                          <FontAwesomeIcon icon={faReply} />
-                        </div>
-                      </div>
+                <div className="flex items-start mt-7">
+                  <Image
+                    width={120}
+                    height={120}
+                    src="/assets/blog-post/icon-polear-vainte.png"
+                    alt="img"
+                  />
+                  <div>
+                    <div className="flex justify-between items-center">
+                      <h2>Polear Vainte</h2>
+                      <h3>AUGUST 25, 2021</h3>
                     </div>
-                  );
-                })} */}
+                    <p>
+                      To achieve this, it would be necessary to have uniform
+                      grammar, pronunciatio and more common words. If several
+                      languages coalesce, the grammar of the resulting language
+                      is more simple and regular than that of the individual
+                      languages.
+                    </p>
+                    <div className="flex items-center justify-start gap-1 mt-4">
+                      <h4>Reply</h4>
+                      <FontAwesomeIcon
+                        icon={faReply}
+                        className="text-gray-600/60"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start mt-7 w-11/12">
+                  <Image
+                    width={120}
+                    height={120}
+                    src="/assets/blog-post/icon-polear-vainte.png"
+                    alt="img"
+                  />
+                  <div>
+                    <div className="flex justify-between items-center">
+                      <h2>Polear Vainte</h2>
+                      <h3>AUGUST 25, 2021</h3>
+                    </div>
+                    <p>
+                      To achieve this, it would be necessary to have uniform
+                      grammar, pronunciatio and more common words.
+                    </p>
+                    <div className="flex items-center justify-start gap-1 mt-4">
+                      <h4>Reply</h4>
+                      <FontAwesomeIcon
+                        icon={faReply}
+                        className="text-gray-600/60"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start mt-7 w-11/12">
+                  <Image
+                    width={120}
+                    height={120}
+                    src="/assets/blog-post/icon-polear-vainte.png"
+                    alt="img"
+                  />
+                  <div>
+                    <div className="flex justify-between items-center">
+                      <h2>Polear Vainte</h2>
+                      <h3>AUGUST 25, 2021</h3>
+                    </div>
+                    <p>
+                      To achieve this, it would be necessary to have uniform
+                      grammar, pronunciatio and more common words.
+                    </p>
+                    <div className="flex items-center justify-start gap-1 mt-4">
+                      <h4>Reply</h4>
+                      <FontAwesomeIcon
+                        icon={faReply}
+                        className="text-gray-600/60"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div className="blog-details-reply">
+              <h1>Leave a Comment</h1>
+              <form>
+                <div className="flex items-center justify-start gap-7 mt-8">
+                  <input type="text" placeholder="Full Name" required />
+                  <input type="text" placeholder="Your Email" required />
+                </div>
+                <textarea
+                  name="message"
+                  placeholder="Add comment"
+                  cols="30"
+                  rows="10"
+                  className="mt-8"
+                ></textarea>
+                <button className="">Submit Comment</button>
+              </form>
             </div>
           </div>
           <BlogSection />

@@ -10,7 +10,7 @@ import blogData from "../data/home-blogpost";
 export default function Home() {
   return (
     <>
-      <Navbar bgColor="bg-dark-blue" textColor="text-white" homePage={true}/>
+      <Navbar bgColor="bg-dark-blue" textColor="text-white" homePage={true} />
       <Header />
       <AboutCompany />
       <ServiceSection />
@@ -50,12 +50,13 @@ function Header() {
             PURCHES NOW
           </a>
         </div>
-        <div
-          className="ml-5 -mt-6 max-lg:ml-0 hero-img"
-          data-aos="fade-left"
-          data-aos-duration="1500"
-        >
-          <Image width={470} height={580} src="/assets/home/hero-image.webp" alt="heroImg" />
+        <div className="ml-5 -mt-6 max-lg:ml-0 hero-img">
+          <Image
+            width={470}
+            height={580}
+            src="/assets/home/hero-image.webp"
+            alt="heroImg"
+          />
         </div>
       </div>
 
@@ -71,16 +72,16 @@ function AboutCompany() {
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 mr-11 max-lg:mr-0">
           <div>
             <Image
-            width={500}
-            height={400}
+              width={500}
+              height={400}
               data-aos="fade-right"
               data-aos-duration="300"
               src="/assets/home/about-image.webp"
               alt="img"
             />
             <Image
-            width={410}
-            height={222}
+              width={410}
+              height={222}
               data-aos="fade-up"
               data-aos-duration="2000"
               src="/assets/home/about-vector.svg"
@@ -89,8 +90,8 @@ function AboutCompany() {
             />
           </div>
           <Image
-          width={31}
-          height={85}
+            width={31}
+            height={85}
             src="/assets/home/about-decoration.svg"
             alt="decoration"
             className="mt-9 max-sm:hidden max-lg:-ml-12"
@@ -126,7 +127,12 @@ function AboutCompany() {
           Get Started <span className="text-red">- Its free</span>
         </h1>
         <div className="flex items-center justify-center">
-          <Image width={36} height={36} src="/assets/home/arrow-icon.svg" alt="arrow" />
+          <Image
+            width={36}
+            height={36}
+            src="/assets/home/arrow-icon.svg"
+            alt="arrow"
+          />
           <h2>Start Your 14-Days Free Trial</h2>
         </div>
         <form className="pb-28">
@@ -185,15 +191,15 @@ function Experience() {
             className="card-two"
           />
           <Image
-          width={270}
-          height={480}
+            width={270}
+            height={480}
             src="/assets/home/exp-image-one.webp"
             alt="img"
             className="exp-img-one"
           />
           <Image
-          width={270}
-          height={480}
+            width={270}
+            height={480}
             src="/assets/home/exp-image-two.webp"
             alt="img"
             className="exp-img-two"
@@ -245,8 +251,8 @@ function Experience() {
         <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-full">
           <div className="exp-video cursor-pointer">
             <Image
-            width={970}
-            height={500}
+              width={970}
+              height={500}
               src="/assets/home/exp-video-effect.svg"
               alt="video"
               className="exp-video-effect"
@@ -309,7 +315,12 @@ function WhatNext() {
             data-aos-duration="500"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <Image width={40} height={37} src="/assets/home/message.svg" alt="icon" />
+            <Image
+              width={40}
+              height={37}
+              src="/assets/home/message.svg"
+              alt="icon"
+            />
             <h2>Leave a Message</h2>
             <h3>
               Send us the address of your website and your contact number We
@@ -324,7 +335,12 @@ function WhatNext() {
             data-aos-duration="1000"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <Image width={40} height={37} src="/assets/home/talk.svg" alt="icon" />
+            <Image
+              width={40}
+              height={37}
+              src="/assets/home/talk.svg"
+              alt="icon"
+            />
             <h2>Lets Talk!</h2>
             <h3>
               We will then call you or meet to talk about your business goals
@@ -339,7 +355,12 @@ function WhatNext() {
             data-aos-duration="1500"
             className="flex flex-col items-center justify-center max-lg:py-5"
           >
-            <Image width={38} height={38} src="/assets/home/plan.svg" alt="icon" />
+            <Image
+              width={38}
+              height={38}
+              src="/assets/home/plan.svg"
+              alt="icon"
+            />
             <h2>Leave a Message</h2>
             <h3>
               Send us the address of your website and your contact number We
@@ -354,7 +375,6 @@ function WhatNext() {
     </section>
   );
 }
-
 
 function Blog() {
   return (
@@ -375,18 +395,36 @@ function Blog() {
               data-aos-duration="1000"
               className="post hover:scale-105 duration-500 flex flex-col items-center justify-center"
             >
-              <Image width={370} height={250} src={items.img} alt="img" className="postImg" />
+              <Image
+                width={370}
+                height={250}
+                src={items.img}
+                alt="img"
+                className="postImg"
+              />
               <div className="flex items-center justify-center post-info">
                 <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
                   <span>
-                    <Image  src='/assets/icon-user.svg' width={12} height={12} alt="icon" className="w-3 h-3 mx-2" />
+                    <Image
+                      src="/assets/icon-user.svg"
+                      width={12}
+                      height={12}
+                      alt="icon"
+                      className="w-3 h-3 mx-2"
+                    />
                   </span>
                   By {items.author}
                 </h2>
-              
+
                 <h2 className="text-black/40 font-medium pr-5 flex items-center">
                   <span>
-                    <Image src="/assets/icon-folder.svg" width={14} height={10}  alt="icon" className="w-3 h-3 mx-2" />
+                    <Image
+                      src="/assets/icon-folder.svg"
+                      width={14}
+                      height={10}
+                      alt="icon"
+                      className="w-3 h-3 mx-2"
+                    />
                   </span>
                   {items.category}
                 </h2>

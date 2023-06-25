@@ -54,7 +54,7 @@ export default async function page() {
                       <h3>{items.date}</h3>
                     </div>
                   </div>
-                  <h1>{items.title}</h1>
+                  <a href={"/blog-details/" + (items.id)} ><h1>{items.title}</h1></a>
                   <p>{items.summary}</p>
                   <div className="m-10">
                     <Button title="Continue" link="/" />
