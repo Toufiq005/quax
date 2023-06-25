@@ -26,7 +26,7 @@ export default async function page() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <section className="w-full min-h-screen bg-color flex items-center justify-center">
-        <div className="wrapper w-full h-auto blog py-32">
+        <div className="wrapper h-auto blog py-32">
           <div>
             {data.map((items) => {
               return (
@@ -35,6 +35,7 @@ export default async function page() {
                     width={768}
                     height={499}
                     src={items.thumbnail}
+                    sizes="(max-width: 868px) 80%"
                     alt="img"
                   />
                   <div className="flex items-center justify-start mt-10 ml-10">
@@ -56,10 +57,10 @@ export default async function page() {
                   </div>
                   <a href={"/blog-details/" + (items.id)} ><h1>{items.title}</h1></a>
                   <p>{items.summary}</p>
-                  <div className="m-10">
+                  <div className="m-10 max-md:pb-10">
                     <Button title="Continue" link="/" />
                   </div>
-                  <div className="w-32 h-10 flex items-center justify-center bg-red-500/50 rounded-md blog-post-catagory">
+                  <div className="w-32 h-10 flex items-center justify-center bg-red-500/50 rounded-md blog-post-catagory max-md:hidden">
                     <h2>{items.catagory}</h2>
                   </div>
                 </div>

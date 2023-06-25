@@ -143,3 +143,31 @@
   line-height: 26px;
   color: var(--text-header);
 }
+@media (max-width: 1280px) {
+  .blog-details {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .blog-details-reply {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .blog-details-reply textarea {
+    width: 100%;
+  }
+  .blog-details-reply input {
+    width: 100%;
+  }
+  .blog-details-reply form {
+    width: 80%;
+  }
+}
+@media (max-width: 640px) {
+  .post {
+    margin: 0;
+  }
+}

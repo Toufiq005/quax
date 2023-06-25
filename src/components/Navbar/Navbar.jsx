@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import Image from "next/image";
 import DarkMode from "./DarkMode/DarkMode";
@@ -359,15 +359,15 @@ export default function Navbar(props) {
                       href="/blog"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Blog One
+                      Blog
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/blog-two"
+                      href="/blog-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Blog Two
+                      Blog Details
                     </a>
                   </li>
                 </ul>
@@ -401,18 +401,18 @@ export default function Navbar(props) {
                 >
                   <li>
                     <a
-                      href="/shop"
+                      href="/service"
                       className="text-black/80 pr-4  hover:text-red-600"
                     >
-                      Shop One
+                      Shop
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/shop-two"
+                      href="/service-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Shop Two
+                      Shop Details
                     </a>
                   </li>
                 </ul>
@@ -454,7 +454,7 @@ export default function Navbar(props) {
                   </li>
                   <li>
                     <a
-                      href="/contact-two"
+                      href="/contact"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
                       Contact Two
@@ -515,7 +515,7 @@ export default function Navbar(props) {
           <div className="h-25 bg-dark-blue w-full flex items-center justify-between">
             <a href="/" className="mx-3">
               <Image
-                src="/assets/navbar/logo-white.svg"
+                src="/assets/logo-white.svg"
                 width="155"
                 height="50"
                 alt="Logo"
@@ -570,10 +570,11 @@ export default function Navbar(props) {
                   >
                     <Image
                       src="/assets/navbar/Homepage-1.webp"
-                      fill
+                      width={100}
+                      height={50}
                       alt="img"
                     />
-                    <p>Homepage One</p>
+                    <p className="text-xs">Homepage One</p>
                   </a>
                 </li>
                 <li
@@ -593,10 +594,11 @@ export default function Navbar(props) {
                   >
                     <Image
                       src="/assets/navbar/Homepage-2.webp"
-                      fill
+                      width={100}
+                      height={50}
                       alt="img"
                     />
-                    <p>Homepage Two</p>
+                    <p className="text-xs">Homepage Two</p>
                   </a>
                 </li>
                 <li
@@ -616,10 +618,11 @@ export default function Navbar(props) {
                   >
                     <Image
                       src="/assets/navbar/Homepage-3.webp"
-                      fill
+                      width={100}
+                      height={50}
                       alt="img"
                     />
-                    <p>Homepage Three</p>
+                    <p className="text-xs">Homepage Three</p>
                   </a>
                 </li>
               </ul>

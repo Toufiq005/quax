@@ -151,21 +151,23 @@ export default async function BlogSection() {
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             Recent Posts
           </h1>
-          {data.slice(0, 5).map((items) => {
-            return (
-              <a href="/blog" key={items.id}>
-                <div className="flex items-start justify-center gap-5 my-10 mx-7">
-                  <Image
-                    width={120}
-                    height={80}
-                    src={items.thumbnail}
-                    alt="img"
-                  />
-                  <h2 className="text-black/70">{items.title}</h2>
-                </div>
-              </a>
-            );
-          })}
+          <div className="flex flex-col items-start justify-center">
+            {data.slice(0, 5).map((items) => {
+              return (
+                <a href="/blog" key={items.id} className="blog">
+                  <div className="flex items-start justify-center gap-5 my-10 mx-7">
+                    <Image
+                      width={120}
+                      height={80}
+                      src={items.thumbnail}
+                      alt="img"
+                    />
+                    <h2 className="text-black/70">{items.title}</h2>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <div className="blog-div my-4">
           <h1 className="font-semibold text-black/70 text-3xl m-7">

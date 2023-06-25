@@ -25,8 +25,8 @@ export default async function page() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <section className="w-full min-h-screen bg-color flex items-center justify-center">
-        <div className="wrapper h-auto blog-details">
-          <div>
+        <div className="wrapper max-xl:w-full h-auto blog-details">
+          <div className="max-xl:w-full">
             <div className="blog-details-post">
               <h1>
                 Seven Advices That You Must Listen Before Studying Business
@@ -36,6 +36,7 @@ export default async function page() {
                 width={770}
                 height={500}
                 src="/assets/blog-post/blog-post-two.png"
+                sizes="(max-width: 868px) 80%"
                 alt="img"
                 className="my-6"
               />
@@ -54,7 +55,7 @@ export default async function page() {
                 the individual languages. The new common language will be more
                 simple and regular than the existing European languages.
               </p>
-              <div className="w-full bg-very-light-gray h-auto rounded-lg my-10">
+              <div className="w-full bg-very-light-gray h-auto rounded-lg my-10 max-xl:w-4/5">
                 <h2 className="p-10">
                   Everyone realizes why a new common language would be
                   desirable: one could re to pay expensive translators. To
@@ -82,8 +83,8 @@ export default async function page() {
                 more common words.
               </p>
             </div>
-            <div className="flex items-center justify-between mt-10">
-              <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-between mt-10 max-sm:flex-col">
+              <div className="flex items-center justify-center gap-3 max-sm:flex-col">
                 <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
                   <h3 className="text-black/60">Business Strategy</h3>
                 </div>
@@ -100,10 +101,11 @@ export default async function page() {
                   height={15}
                   src="/assets/blog-post/social-icon.svg"
                   alt="icon"
+                  className="max-sm:mt-5"
                 />
               </div>
             </div>
-            <div className="flex items-center justify-center gap-10 my-7 blog-details-about-author">
+            <div className="flex items-center justify-center gap-10 my-7 blog-details-about-author max-xl:w-4/5">
               <div>
                 <Image
                   width={115}
@@ -123,14 +125,14 @@ export default async function page() {
             </div>
             <div className="bolg-details-related-post">
               <h5>Related Post</h5>
-              <div className="flex">
+              <div className="flex max-sm:flex-col">
                 {relatedBlog.slice(0, 2).map((items) => {
                   return (
                     <div
                       key={items.id}
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      className="post hover:scale-105 duration-500 flex flex-col items-center justify-center"
+                      className="post max-sm:hover:scale-100 hover:scale-105 duration-500 flex flex-col items-center justify-center"
                     >
                       <Image
                         width={370}
@@ -261,8 +263,8 @@ export default async function page() {
             </div>
             <div className="blog-details-reply">
               <h1>Leave a Comment</h1>
-              <form>
-                <div className="flex items-center justify-start gap-7 mt-8">
+              <form className="max-md:w-4/5">
+                <div className="flex max-md:flex-col max-md:justify-center items-center justify-start gap-7 mt-8">
                   <input type="text" placeholder="Full Name" required />
                   <input type="text" placeholder="Your Email" required />
                 </div>
