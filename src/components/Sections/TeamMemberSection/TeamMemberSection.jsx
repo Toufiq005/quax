@@ -4,7 +4,8 @@ import React from "react";
 import "./TeamMemberSection.css";
 import { useState, } from "react";
 import data from '@/data/team-members.js';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faTwitter, faVimeoV } from "@fortawesome/free-brands-svg-icons";
 
 export default async function TeamMemberSection(props) {
 
@@ -30,7 +31,7 @@ export default async function TeamMemberSection(props) {
     </section>
   );
 }
-function TeamProfile({ name, img, position, socialLinks }) {
+function TeamProfile({ name, img, role, socialLinks }) {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
@@ -42,25 +43,28 @@ function TeamProfile({ name, img, position, socialLinks }) {
       <div>
         <img src={img} alt="img" className="team-member-profile-img" />
         <h2>{name}</h2>
-        <h3>{position}</h3>
+        <h3>{role}</h3>
       </div>
       {showLinks && (
-        <div data-aos="fade-left" className="social-links block w-10">
-          <a href={socialLinks.facebook}>
-            <div className="w-10 h-10 rounded bg-white flex items-center justify-center ">
-              <img src="/assets/icon-facebook.svg" alt="icon" />
-            </div>
-          </a>
-          <a href={socialLinks.twitter}>
-            <div className="w-10 h-10 rounded bg-header flex items-center justify-center ">
-              <img src="/assets/icon-twitter.svg" alt="icon" />
-            </div>
-          </a>
-          <a href={socialLinks.vimeo}>
-            <div className="w-10 h-10 rounded bg-white flex items-center justify-center ">
-              <img src="/assets/icon-vimeo.svg" alt="icon" />
-            </div>
-          </a>
+        <div data-aos="fade-left" className="social-links flex flex-col w-10">
+         <a
+              href={socialLinks.facebook}
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+            >
+              <FontAwesomeIcon icon={faFacebookF} />
+            </a>
+            <a
+              href={socialLinks.twitter}
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a
+              href={socialLinks.vimeo}
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+            >
+              <FontAwesomeIcon icon={faVimeoV} />
+            </a>
         </div>
       )}
     </div>

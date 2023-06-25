@@ -3,9 +3,6 @@ import CaseStudySection from "@/components/Sections/CaseStudySection/CaseStudySe
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
 
 export default async function CaseStudy() {
-
-
-
   return (
     <>
       <Banner
@@ -13,7 +10,7 @@ export default async function CaseStudy() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <CaseStudySection />
-      <SubscribeSection/>
+      <SubscribeSection />
     </>
   );
 }

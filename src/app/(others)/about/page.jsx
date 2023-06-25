@@ -82,7 +82,7 @@ function WhatWeDo() {
         <div className="what-we-do-content ml-5 max-lg:flex flex-col items-center justify-center max-lg:ml-0">
           <h3 className="max-lg:pt-10">What We Do</h3>
           <div>
-            <h1 className="max-lg:text-center max-lg:mt-5">
+            <h1 className="max-lg:text-center max-lg:mt-5 mr-2">
               Grow Your Business With Us.
             </h1>
           </div>

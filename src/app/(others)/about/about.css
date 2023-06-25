@@ -89,12 +89,12 @@
 }
 /* =====What-we-do===== */
 .what-we-do-image {
-  width: 606px;
+  width: 50%;
   height: 500px;
   background-image: url(/assets/sections/about/about-section-what-we-do-decoration.svg);
 }
 .what-we-do-content {
-  width: 570px;
+  width: 50%;
 }
 .what-we-do-content h1 {
   font-weight: 600;

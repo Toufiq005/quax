@@ -16,21 +16,21 @@ export default function FaqSection(props) {
       <div className="wrapper flex flex-col items-center justify-center faq-section">
         <h3>FAQ</h3>
         <h1>Frequently Asked Questions</h1>
-        <div className="flex items-center justify-center gap-28 mt-14">
-          <div className="faq-seciton-content">
+        <div className="flex items-center justify-center gap-28 mt-14 max-xl:flex-col max-sm:w-full">
+          <div className="faq-seciton-content ">
             {props.data.map(({ id, qustion, answer }) => {
               return (
                 <div
                   key={id}
-                  className="faq-question flex flex-col items-center bg-white"
+                  className="faq-question flex flex-col items-center bg-white max-sm:w-4/5"
                 >
                   <button
-                    className="bg-white flex items-center justify-between"
+                    className="bg-white flex items-center justify-between max-sm:justify-evenly max-sm:w-4/5"
                     onClick={() => handleFaqSelect(id)}
                   >
                     <h2
                       className={
-                        "ml-8" +
+                        "ml-8 max-sm:ml-0" +
                         " " +
                         (selectedFaq === id ? "text-red-500" : "text-black/70")
                       }
@@ -42,20 +42,20 @@ export default function FaqSection(props) {
                         width={16}
                         height={2}
                         src="/assets/faq/icon-minus.svg"
-                        className="mr-7"
+                        className="mr-7 max-sm:mr-0"
                       />
                     ) : (
                       <Image
                         width={16}
                         height={2}
                         src="/assets/faq/icon-plus.svg"
-                        className="mr-7"
+                        className="mr-7 max-sm:mr-0"
                       />
                     )}
                   </button>
                   {selectedFaq === id && (
-                    <div className="faq-answer flex justify-center pt-5 pb-8 border-t border-black/10">
-                      <p>{answer}</p>
+                    <div className="faq-answer max-sm:pt-0 max-sm:pb-0 flex justify-center pt-5 pb-8 border-t border-black/10">
+                      <p className="max-sm:py-3">{answer}</p>
                     </div>
                   )}
                 </div>

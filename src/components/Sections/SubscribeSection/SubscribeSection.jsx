@@ -1,25 +1,25 @@
-import "./SubscribeSection.css"
+import "./SubscribeSection.css";
 
 export default function SubscribeSection() {
   return (
     <section className="w-full h-auto bg-color flex items-center justify-center">
-      <div className="wrapper">
-      <div className="subscribe-section bg-header flex flex-col items-center justify-center">
-        <h1>Get Your Site Optimized & Converting Now</h1>
-        <form
-          data-aos="zoom-in"
-          className="max-md:flex flex-col items-center justify-center"
-        >
-          <input
-            type="email"
-            placeholder="&#xf0e0;   e-mail address"
-            style={{ fontFamily: "FontAwesome" }}
-            className="bg-transparent text-white placeholder:text-white"
-          />
-          <button type="submit">SUBSCRIBE NOW</button>
-        </form>
-      </div>
+      <div className="w-full flex items-center justify-center py-32">
+        <div className="subscribe-section bg-header flex flex-col items-center justify-center">
+          <h1>Get Your Site Optimized & Converting Now</h1>
+          <form
+            data-aos="zoom-in"
+            className="max-xl:flex flex-col items-center justify-center"
+          >
+            <input
+              type="email"
+              placeholder="&#xf0e0;   e-mail address"
+              style={{ fontFamily: "FontAwesome" }}
+              className="bg-transparent text-white placeholder:text-white"
+            />
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+        </div>
       </div>
     </section>
-  )
+  );
 }

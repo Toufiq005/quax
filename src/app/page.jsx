@@ -169,8 +169,6 @@ function AboutCompany() {
 }
 
 function Experience() {
-  // const [counterOn, setCounterOn] = useState(false);
-  // const [experienceBar, setExperienceBar] = useState(false);
 
   return (
     <section className="section-three ">
@@ -258,45 +256,33 @@ function Experience() {
               className="exp-video-effect"
             />
           </div>
-          <div className="flex items-center justify-between -mt-20 max-sm:-my-14 max-sm:w-full ">
-            {/* <img
-              src={videoPlayIcon}
-              alt="icon"
-              className="mx-24 max-sm:mx-7 max-sm:scale-50"
-            />
-            <img
-              src={videoDuration}
-              alt="icon"
-              className="mx-24 max-sm:mx-7 max-sm:scale-50"
-            /> */}
-          </div>
         </div>
         <h2 className="max-sm:text-center">Spice it up with a wide video</h2>
         <p className="text-center">
           This UI Kit uses attractive colors and modern typography to make you
           look good, no matter what business youre in.
         </p>
-        <div className="flex items-center justify-center w-full gap-64 mt-10 pb-24 max-md:flex-col">
+        <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-10 pb-24 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
             <h5>
               {/* {counterOn && <CountUp start={0} end={18} duration={2}></CountUp>} */}
               18%
             </h5>
-            <h6>Reduced running costs</h6>
+            <h6 className="text-center">Reduced running costs</h6>
           </div>
           <div className="flex flex-col items-center justify-center max-md:my-5">
             <h5>
               {/* {counterOn && <CountUp start={0} end={4} duration={2}></CountUp>} */}
               4x
             </h5>
-            <h6>Increase in user activity</h6>
+            <h6 className="text-center">Increase in user activity</h6>
           </div>
           <div className="flex flex-col items-center justify-center">
             <h5>
               {/* {counterOn && <CountUp start={0} end={13} duration={2}></CountUp>} */}
               13K
             </h5>
-            <h6>Increase in subscribers</h6>
+            <h6 className="text-center">Increase in subscribers</h6>
           </div>
         </div>
       </div>

@@ -27,3 +27,12 @@
   top: -40px;
   right: -250px;
 }
+@media (max-width: 1280px) {
+  .services-details-content {
+    width: 90%;
+    text-align: center;
+  }
+  .services-details-image {
+    width: 90%;
+  }
+}

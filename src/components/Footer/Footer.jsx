@@ -5,6 +5,8 @@ import Image from "next/image";
 // import { useState } from "react";
 import "./Footer.css";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVimeoV,  faFacebookF , faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   // const [animationOn, setAnimationOn] = useState(false);
@@ -40,7 +42,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full flex flex-col items-center justify-center ">
-      <div className="flex items-start justify-between w-full footer-div">
+      <div className="flex items-start justify-between w-full max-md:items-center footer-div">
         <div className="max-md:flex flex-col items-center justify-center max-md:text-center">
           <Image
             width={155}
@@ -57,39 +59,24 @@ export default function Footer() {
               separate existence is a myth.
             </p>
           </div>
-          <div className="w-full h-48 flex items-start justify-start max-md:justify-center">
+          <div className="w-full h-48 flex items-start justify-start max-md:justify-center gap-3">
             <a
               href="/"
-              className="flex w-11 h-11  bg-white rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
-              <Image
-                width={10}
-                height={20}
-                src="/assets/icon-facebook.svg"
-                alt="icon"
-              />
+              <FontAwesomeIcon icon={faFacebookF} />
             </a>
             <a
               href="/"
-              className="flex w-11 h-11 mx-3 bg-header rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
-              <Image
-                width={20}
-                height={16}
-                src="/assets/icon-twitter.svg"
-                alt="icon"
-              />
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
             <a
               href="/"
-              className="flex w-11 h-11 bg-white rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
-              <Image
-                width={17}
-                height={15}
-                src="/assets/icon-vimeo.svg"
-                alt="icon"
-              />
+              <FontAwesomeIcon icon={faVimeoV} />
             </a>
           </div>
         </div>
@@ -102,12 +89,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className={({ isActive }) => {
-                      return (
-                        "uppercase font-medium" +
-                        (!isActive ? " text-base" : " text-header")
-                      );
-                    }}
+                   className="text-black/70 hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -125,12 +107,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className={({ isActive }) => {
-                      return (
-                        "uppercase font-medium" +
-                        (!isActive ? " text-base" : " text-header")
-                      );
-                    }}
+                    className="text-black/70 hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -148,12 +125,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className={({ isActive }) => {
-                      return (
-                        "uppercase font-medium" +
-                        (!isActive ? " text-base" : " text-header")
-                      );
-                    }}
+                    className="text-black/70 hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>

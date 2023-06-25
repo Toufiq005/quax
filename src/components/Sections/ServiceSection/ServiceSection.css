@@ -46,6 +46,16 @@
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
 }
+@media (max-width: 1280px) {
+  .service-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .service-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 400px) {
   .services {
     width: 80%;
