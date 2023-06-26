@@ -1,3 +1,5 @@
+"use client"
+
 import "./ServiceSection.css";
 import data from "../../../data/services";
 import Image from "next/image";

@@ -1,3 +1,5 @@
+"use client"
+
 import "./PricingSection.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
