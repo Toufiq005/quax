@@ -1,4 +1,7 @@
+"use client"
+
 import "./SubscribeSection.css";
+import { motion } from "framer-motion";
 
 export default function SubscribeSection() {
   return (
@@ -6,8 +9,10 @@ export default function SubscribeSection() {
       <div className="w-full flex items-center justify-center py-32">
         <div className="subscribe-section bg-header flex flex-col items-center justify-center">
           <h1>Get Your Site Optimized & Converting Now</h1>
-          <form
-            data-aos="zoom-in"
+          <motion.form
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: [1 ,1.3,1], opacity: 1 }}
+          transition={{ duration: 0.3 }}
             className="max-xl:flex flex-col items-center justify-center"
           >
             <input
@@ -17,7 +22,7 @@ export default function SubscribeSection() {
               className="bg-transparent text-white placeholder:text-white"
             />
             <button type="submit">SUBSCRIBE NOW</button>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

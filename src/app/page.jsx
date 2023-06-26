@@ -9,7 +9,7 @@ import ServiceSection from "@/components/Sections/ServiceSection/ServiceSection"
 import PricingSection from "@/components/Sections/PricingSection/PricingSection";
 import Testimonial from "@/components/Testimonial/Testimonial";
 import blogData from "../data/home-blogpost";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
@@ -83,27 +83,25 @@ function AboutCompany() {
     <section className="section-one">
       <div className="flex items-center justify-center w-full pt-28 max-lg:flex-col">
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 mr-11 max-lg:mr-0">
-          <AnimatePresence>
-            <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image
-                width={500}
-                height={400}
-                src="/assets/home/about-image.webp"
-                alt="img"
-              />
-              <Image
-                width={410}
-                height={222}
-                src="/assets/home/about-vector.svg"
-                alt="img"
-                className="-mt-40 -ml-40  max-lg:ml-0"
-              />
-            </motion.div>
-          </AnimatePresence>
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              width={500}
+              height={400}
+              src="/assets/home/about-image.webp"
+              alt="img"
+            />
+            <Image
+              width={410}
+              height={222}
+              src="/assets/home/about-vector.svg"
+              alt="img"
+              className="-mt-40 -ml-40  max-lg:ml-0"
+            />
+          </motion.div>
           <Image
             width={31}
             height={85}
@@ -235,7 +233,7 @@ function Experience() {
           />
           <motion.img
             initial={{ y: -250, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 50, opacity: 1 }}
             transition={{ duration: 0.3 }}
             src="/assets/home/exp-image-two.webp"
             alt="img"
@@ -291,7 +289,11 @@ function Experience() {
           <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
             <h4>Competitor Research</h4>
             <div className="bar">
-              <motion.div initial={{ x: -200 }} whileInView={{ x: 0 }} className="bar-three"></motion.div>
+              <motion.div
+                initial={{ x: -200 }}
+                whileInView={{ x: 0 }}
+                className="bar-three"
+              ></motion.div>
             </div>
           </div>
         </div>
@@ -308,22 +310,33 @@ function Experience() {
             />
           </div>
         </div>
-        <motion.h2 initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="max-sm:text-center">Spice it up with a wide video</motion.h2>
-        <ScrollTrigger
-          onEnter={() => setCounterOn(true)}
-          onExit={() => setCounterOn(false)}
+        <motion.h2
+          initial={{ y: -150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="max-sm:text-center"
         >
-          <motion.p initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3}} className="text-center">
-            This UI Kit uses attractive colors and modern typography to make you
-            look good, no matter what business youre in.
-          </motion.p>
-        </ScrollTrigger>
+          Spice it up with a wide video
+        </motion.h2>
+        <motion.p
+          initial={{ y: -150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center"
+        >
+          This UI Kit uses attractive colors and modern typography to make you
+          look good, no matter what business youre in.
+        </motion.p>
         <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-10 pb-24 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
-            <h5>
-              {counterOn && <CountUp start={0} end={18} duration={2}></CountUp>}
-              %
-            </h5>
+            <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+              <h5>
+                {counterOn && (
+                  <CountUp start={0} end={18} duration={2}></CountUp>
+                )}
+                %
+              </h5>
+            </ScrollTrigger>
             <h6 className="text-center">Reduced running costs</h6>
           </div>
           <div className="flex flex-col items-center justify-center max-md:my-5">
@@ -348,10 +361,27 @@ function WhatNext() {
   return (
     <section className="w-full h-auto flex items-center justify-center bg-color">
       <div className="what-next ">
-        <motion.h1 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Whats Next?</motion.h1>
-        <motion.p initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Are you interested in our services? We will arrange a phone call.</motion.p>
+        <motion.h1
+          initial={{ x: -150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Whats Next?
+        </motion.h1>
+        <motion.p
+          initial={{ x: 150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Are you interested in our services? We will arrange a phone call.
+        </motion.p>
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
-          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="flex flex-col items-center justify-center max-lg:py-5">
+          <motion.div
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="flex flex-col items-center justify-center max-lg:py-5"
+          >
             <Image
               width={40}
               height={37}
@@ -367,7 +397,12 @@ function WhatNext() {
               Write to us
             </a>
           </motion.div>
-          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.2 }} className="flex flex-col items-center justify-center max-lg:py-5">
+          <motion.div
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="flex flex-col items-center justify-center max-lg:py-5"
+          >
             <Image
               width={40}
               height={37}
@@ -383,7 +418,12 @@ function WhatNext() {
               Contact us
             </a>
           </motion.div>
-          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.4 }} className="flex flex-col items-center justify-center max-lg:py-5">
+          <motion.div
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="flex flex-col items-center justify-center max-lg:py-5"
+          >
             <Image
               width={38}
               height={38}
@@ -408,10 +448,27 @@ function WhatNext() {
 function Blog() {
   return (
     <section className="blogpost flex flex-col items-center justify-center">
-      <motion.h3 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Our Blogpost</motion.h3>
-      <motion.h1 initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Our Daily Blogpost</motion.h1>
+      <motion.h3
+        initial={{ x: -150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        Our Blogpost
+      </motion.h3>
+      <motion.h1
+        initial={{ x: 150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        Our Daily Blogpost
+      </motion.h1>
 
-      <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="flex items-center justify-center  mb-28 mt-16 post-div">
+      <motion.div
+        initial={{ y: 150, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="flex items-center justify-center  mb-28 mt-16 post-div"
+      >
         {blogData.map((items, i) => {
           return (
             <div

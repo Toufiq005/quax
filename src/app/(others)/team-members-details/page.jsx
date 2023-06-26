@@ -1,3 +1,5 @@
+"use client";
+
 import "./team-members-details.css";
 import Image from "next/image";
 import Banner from "@/components/Sections/Banner/Banner";
@@ -10,6 +12,7 @@ import {
   faTwitter,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 export default function page() {
   return (
@@ -22,12 +25,14 @@ export default function page() {
         <div className="wrapper flex flex-col items-center justify-center gap-20">
           <div className="max-lg:flex-col max-lg:text-center flex items-center justify-center gap-20 w-full ">
             <div className="members-image flex items-center justify-center bg-color w-1/2">
-              <Image
-                width={485}
-                height={485}
-                src="/assets/sections/team-members/member-robert-banks.png"
-                alt="img"
-              />
+              <motion.div initial={{ scale: 0, rotate: -90, opacity: 0 }} whileInView={{ scale: 1, rotate: 0, opacity: 1 }} transition={{ duration: 0.3 }}>
+                <Image
+                  width={485}
+                  height={485}
+                  src="/assets/sections/team-members/member-robert-banks.png"
+                  alt="img"
+                />
+              </motion.div>
             </div>
             <div className="members-info w-1/2">
               <h1>Robert Banks</h1>

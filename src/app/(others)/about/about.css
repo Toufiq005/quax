@@ -34,7 +34,7 @@
 .about-section-image {
   height: 500px;
   width: 650px;
-  background-image: url(/assets/sections/about/about-section-decoration.svg);
+  background-image: url(/assets/about/about-section-decoration.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -91,7 +91,7 @@
 .what-we-do-image {
   width: 50%;
   height: 500px;
-  background-image: url(/assets/sections/about/about-section-what-we-do-decoration.svg);
+  background-image: url(/assets/about/about-section-what-we-do-decoration.svg);
 }
 .what-we-do-content {
   width: 50%;
