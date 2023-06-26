@@ -19,8 +19,8 @@ export default function Decoration() {
 
   function floatImages() {
     const newPositions = positions.map((position) => ({
-      top: `${Math.random() * (parentSize.height - 100)}px`,
-      left: `${Math.random() * (parentSize.width - 100)}px`,
+      top: `${Math.random() * (950 - 100)}px`,
+      left: `${Math.random() * (1750 - 100)}px`,
     }));
     setPositions(newPositions);
   }
@@ -30,16 +30,18 @@ export default function Decoration() {
     return () => clearInterval(intervalId);
   }, [parentSize]);
 
-  // window.addEventListener("scroll", function () {
-  //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  //   var parallaxElements = document.querySelectorAll(".parallax-element");
-  //   for (var i = 0; i < parallaxElements.length; i++) {
-  //     var parallaxElement = parallaxElements[i];
-  //     var speed = parallaxElement.getAttribute("data-speed");
-  //     parallaxElement.style.transform =
-  //       "translateY(" + scrollTop * speed + "px)";
-  //   }
-  // });
+  useEffect(() => {
+    window.addEventListener("scroll", function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var parallaxElements = document.querySelectorAll(".parallax-element");
+      for (var i = 0; i < parallaxElements.length; i++) {
+        var parallaxElement = parallaxElements[i];
+        var speed = parallaxElement.getAttribute("data-speed");
+        parallaxElement.style.transform =
+          "translateY(" + scrollTop * speed + "px)";
+      }
+    });
+  }, []);
   return (
     <div className=" absolute top-0">
       <div
@@ -59,7 +61,7 @@ export default function Decoration() {
         style={{ top: positions[3].top, left: positions[3].left }}
       ></div>
       <div className="decoration-dots parallax-element" data-speed="0.5">
-        {/* <img src={decoration} alt="decoration" className="decoration-img" /> */}
+        <img src='/assets/header-decoration.svg' alt="decoration" className="decoration-img" />
       </div>
     </div>
   );

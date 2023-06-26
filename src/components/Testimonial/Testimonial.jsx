@@ -5,16 +5,17 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import data from "../../data/testimonial";
+import { motion } from "framer-motion";
 
 export default function Testimonial() {
   return (
     <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
       <div className="testimonial py-32">
-        <h3>Testimonial</h3>
-        <h1 className="mt-2">What Our Clients Say</h1>
-        <div className="h-full w-full mt-16">
+        <motion.h3 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Testimonial</motion.h3>
+        <motion.h1 initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="mt-2">What Our Clients Say</motion.h1>
+        <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}  transition={{ duration: 0.3, delay: 0.1 }} className="h-full w-full mt-16">
           <Carousel />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

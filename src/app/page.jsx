@@ -1,4 +1,7 @@
+"use client";
+
 import "./home.css";
+import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Decoration from "@/components/Decoration/Decoration";
@@ -6,6 +9,9 @@ import ServiceSection from "@/components/Sections/ServiceSection/ServiceSection"
 import PricingSection from "@/components/Sections/PricingSection/PricingSection";
 import Testimonial from "@/components/Testimonial/Testimonial";
 import blogData from "../data/home-blogpost";
+import { motion, AnimatePresence } from "framer-motion";
+import CountUp from "react-countup";
+import ScrollTrigger from "react-scroll-trigger";
 
 export default function Home() {
   return (
@@ -28,21 +34,23 @@ function Header() {
     <header className="relative flex items-center justify-evenly parent overflow-hidden">
       <div className="hero  max-lg:flex-col max-lg:mt-28">
         <div className="mr-5 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
-          <h1
-            data-aos="fade-down"
-            data-aos-duration="2000"
+          <motion.h1
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="max-lg:text-4xl"
           >
             Guiding Your Business to Achieve Online Success
-          </h1>
-          <p
-            data-aos="fade-down"
-            data-aos-duration="1500"
+          </motion.h1>
+          <motion.p
+            initial={{ y: -100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
             className="mt-5 mb-10 max-lg:text-sm "
           >
             Me old mucker knackered a load of old tosh wellies amongst lost the
             plot say bodge tickety boo.!s
-          </p>
+          </motion.p>
           <a
             href="#price"
             className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white "
@@ -50,14 +58,19 @@ function Header() {
             PURCHES NOW
           </a>
         </div>
-        <div className="ml-5 -mt-6 max-lg:ml-0 hero-img">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="ml-5 -mt-6 max-lg:ml-0 hero-img"
+        >
           <Image
             width={470}
             height={580}
             src="/assets/home/hero-image.webp"
             alt="heroImg"
           />
-        </div>
+        </motion.div>
       </div>
 
       <Decoration />
@@ -70,25 +83,27 @@ function AboutCompany() {
     <section className="section-one">
       <div className="flex items-center justify-center w-full pt-28 max-lg:flex-col">
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 mr-11 max-lg:mr-0">
-          <div>
-            <Image
-              width={500}
-              height={400}
-              data-aos="fade-right"
-              data-aos-duration="300"
-              src="/assets/home/about-image.webp"
-              alt="img"
-            />
-            <Image
-              width={410}
-              height={222}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              src="/assets/home/about-vector.svg"
-              alt="img"
-              className="-mt-40 -ml-40  max-lg:ml-0"
-            />
-          </div>
+          <AnimatePresence>
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                width={500}
+                height={400}
+                src="/assets/home/about-image.webp"
+                alt="img"
+              />
+              <Image
+                width={410}
+                height={222}
+                src="/assets/home/about-vector.svg"
+                alt="img"
+                className="-mt-40 -ml-40  max-lg:ml-0"
+              />
+            </motion.div>
+          </AnimatePresence>
           <Image
             width={31}
             height={85}
@@ -98,23 +113,39 @@ function AboutCompany() {
           />
         </div>
         <div className="section-one-text ml-11 max-lg:ml-0 flex flex-col items-start justify-center">
-          <h3 className="text-header">EST. 1987</h3>
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="1000"
+          <motion.h3
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="text-header"
+          >
+            EST. 1987
+          </motion.h3>
+          <motion.h1
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="max-lg:text-4xl max-lg:mt-0"
           >
             Built For You, By People Who Care
-          </h1>
-          <h2>Recognizing the need is the primary condition for design</h2>
-          <p data-aos="fade-up" data-aos-duration="1500">
+          </motion.h1>
+          <motion.h2
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            Recognizing the need is the primary condition for design
+          </motion.h2>
+          <motion.p
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             Pick a template, customize the content and design elements, and
             launch! Or, design your next fabulous email on your own with our
             simple visual builder.
-          </p>
+          </motion.p>
           <a
-            data-aos="fade-up"
-            data-aos-duration="2000"
             href="/"
             className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white border border-red-500/60"
           >
@@ -122,7 +153,12 @@ function AboutCompany() {
           </a>
         </div>
       </div>
-      <div className="form mt-10" data-aos="fade-up" data-aos-duration="1000">
+      <motion.div
+        initial={{ y: 150, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="form mt-10"
+      >
         <h1>
           Get Started <span className="text-red">- Its free</span>
         </h1>
@@ -163,12 +199,13 @@ function AboutCompany() {
             </span>
           </p>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 function Experience() {
+  const [counterOn, setCounterOn] = useState(false);
 
   return (
     <section className="section-three ">
@@ -188,59 +225,73 @@ function Experience() {
             alt="img"
             className="card-two"
           />
-          <Image
-            width={270}
-            height={480}
+          <motion.img
+            initial={{ y: 250, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
             src="/assets/home/exp-image-one.webp"
             alt="img"
             className="exp-img-one"
           />
-          <Image
-            width={270}
-            height={480}
+          <motion.img
+            initial={{ y: -250, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
             src="/assets/home/exp-image-two.webp"
             alt="img"
             className="exp-img-two"
           />
         </div>
         <div className="ml-10 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center max-xl:text-center max-sm:w-full max-sm:ml-0">
-          <h3>Explore & Create</h3>
-          <h1 className="max-sm:max-w-xs max-sm:h-auto">
+          <motion.h3
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            Explore & Create
+          </motion.h3>
+          <motion.h1
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="max-sm:max-w-xs max-sm:h-auto"
+          >
             Bringing new business Solutions and ideas
-          </h1>
-          <p className="my-5">
+          </motion.h1>
+          <motion.p
+            initial={{ y: -150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="my-5"
+          >
             Pick a template, customize the content and design elements, and
             launch! Or, design your next fabulous email on your own with our
             simple visual builder.
-          </p>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center"
-          >
+          </motion.p>
+          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
             <h4>Social Media Marketing</h4>
             <div className="bar">
-              <div className="bar-one"></div>
+              <motion.div
+                initial={{ x: -250 }}
+                whileInView={{ x: 0 }}
+                className="bar-one"
+              ></motion.div>
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center"
-          >
+          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
             <h4>Web Development</h4>
             <div className="bar">
-              <div className="bar-two"></div>
+              <motion.div
+                initial={{ x: -250 }}
+                whileInView={{ x: 0 }}
+                className="bar-two"
+              ></motion.div>
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center"
-          >
+          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
             <h4>Competitor Research</h4>
             <div className="bar">
-              <div className="bar-three"></div>
+              <motion.div initial={{ x: -200 }} whileInView={{ x: 0 }} className="bar-three"></motion.div>
             </div>
           </div>
         </div>
@@ -257,30 +308,34 @@ function Experience() {
             />
           </div>
         </div>
-        <h2 className="max-sm:text-center">Spice it up with a wide video</h2>
-        <p className="text-center">
-          This UI Kit uses attractive colors and modern typography to make you
-          look good, no matter what business youre in.
-        </p>
+        <motion.h2 initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="max-sm:text-center">Spice it up with a wide video</motion.h2>
+        <ScrollTrigger
+          onEnter={() => setCounterOn(true)}
+          onExit={() => setCounterOn(false)}
+        >
+          <motion.p initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3}} className="text-center">
+            This UI Kit uses attractive colors and modern typography to make you
+            look good, no matter what business youre in.
+          </motion.p>
+        </ScrollTrigger>
         <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-10 pb-24 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
             <h5>
-              {/* {counterOn && <CountUp start={0} end={18} duration={2}></CountUp>} */}
-              18%
+              {counterOn && <CountUp start={0} end={18} duration={2}></CountUp>}
+              %
             </h5>
             <h6 className="text-center">Reduced running costs</h6>
           </div>
           <div className="flex flex-col items-center justify-center max-md:my-5">
             <h5>
-              {/* {counterOn && <CountUp start={0} end={4} duration={2}></CountUp>} */}
-              4x
+              {counterOn && <CountUp start={0} end={4} duration={2}></CountUp>}x
             </h5>
             <h6 className="text-center">Increase in user activity</h6>
           </div>
           <div className="flex flex-col items-center justify-center">
             <h5>
-              {/* {counterOn && <CountUp start={0} end={13} duration={2}></CountUp>} */}
-              13K
+              {counterOn && <CountUp start={0} end={13} duration={2}></CountUp>}
+              K
             </h5>
             <h6 className="text-center">Increase in subscribers</h6>
           </div>
@@ -291,16 +346,12 @@ function Experience() {
 }
 function WhatNext() {
   return (
-    <section className="w-full h-auto flex items-center justify-center">
+    <section className="w-full h-auto flex items-center justify-center bg-color">
       <div className="what-next ">
-        <h1>Whats Next?</h1>
-        <p>Are you interested in our services? We will arrange a phone call.</p>
+        <motion.h1 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Whats Next?</motion.h1>
+        <motion.p initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Are you interested in our services? We will arrange a phone call.</motion.p>
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
-          <div
-            data-aos="fade-up"
-            data-aos-duration="500"
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
+          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="flex flex-col items-center justify-center max-lg:py-5">
             <Image
               width={40}
               height={37}
@@ -315,12 +366,8 @@ function WhatNext() {
             <a href="/" className="bg-header text-white ">
               Write to us
             </a>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
+          </motion.div>
+          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.2 }} className="flex flex-col items-center justify-center max-lg:py-5">
             <Image
               width={40}
               height={37}
@@ -332,15 +379,11 @@ function WhatNext() {
               We will then call you or meet to talk about your business goals
               and priorities.
             </h3>
-            <a href="/" className="bg-white text-red ">
+            <a href="/" className="bg-white text-header ">
               Contact us
             </a>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
+          </motion.div>
+          <motion.div initial={{ y: -150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.4 }} className="flex flex-col items-center justify-center max-lg:py-5">
             <Image
               width={38}
               height={38}
@@ -355,7 +398,7 @@ function WhatNext() {
             <a href="/" className="bg-header text-white ">
               View Plan
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -365,20 +408,14 @@ function WhatNext() {
 function Blog() {
   return (
     <section className="blogpost flex flex-col items-center justify-center">
-      <h3 data-aos="fade-up" data-aos-duration="500">
-        Our Blogpost
-      </h3>
-      <h1 data-aos="fade-up" data-aos-duration="700">
-        Our Daily Blogpost
-      </h1>
+      <motion.h3 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Our Blogpost</motion.h3>
+      <motion.h1 initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Our Daily Blogpost</motion.h1>
 
-      <div className="flex items-center justify-center  mb-28 mt-16 post-div">
-        {blogData.map((items) => {
+      <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="flex items-center justify-center  mb-28 mt-16 post-div">
+        {blogData.map((items, i) => {
           return (
             <div
               key={items.id}
-              data-aos="fade-up"
-              data-aos-duration="1000"
               className="post hover:scale-105 duration-500 flex flex-col items-center justify-center"
             >
               <Image
@@ -423,7 +460,7 @@ function Blog() {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

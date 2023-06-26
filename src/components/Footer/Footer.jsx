@@ -2,15 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-// import { useState } from "react";
 import "./Footer.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVimeoV,  faFacebookF , faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Footer() {
-  // const [animationOn, setAnimationOn] = useState(false);
-  // const [logoAnimationOn, setLogoAnimationOn] = useState(false);
 
   const quickLink = [
     { key: 1, name: "Home", href: "/" },
@@ -44,11 +42,10 @@ export default function Footer() {
     <footer className="w-full flex flex-col items-center justify-center ">
       <div className="flex items-start justify-between w-full max-md:items-center footer-div">
         <div className="max-md:flex flex-col items-center justify-center max-md:text-center">
-          <Image
-            width={155}
-            height={50}
-            data-aos="fade-right"
-            data-aos-duration="1000"
+          <motion.img
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
             src="/assets/logo-dark.svg"
             alt="logo"
           />
@@ -89,7 +86,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                   className="text-black/70 hover:text-red-500 duration-100"
+                   className=" hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -107,7 +104,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className="text-black/70 hover:text-red-500 duration-100"
+                    className=" hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -125,7 +122,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className="text-black/70 hover:text-red-500 duration-100"
+                    className="hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -137,9 +134,9 @@ export default function Footer() {
       </div>
 
       <div className="w-full h-24 flex justify-center items-center border-t mt-24">
-        <p className=" text-center w-full pt-0 duration-1000 opacity-100">
+        <motion.p initial={{ y: 80, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className=" text-center w-full pt-0 duration-1000 opacity-100">
           ©2021 All Rights Reserved. With Design by Loyalcoders
-        </p>
+        </motion.p>
       </div>
     </footer>
   );

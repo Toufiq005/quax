@@ -1,32 +1,31 @@
 import "./ServiceSection.css";
 import data from "../../../data/services";
-import Image from "next/image"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ServiceSection() {
   return (
     <section className="section-two flex flex-col items-center ">
-      <div data-aos="zoom-in-up" data-aos-duration="1000">
+      <div>
         <h3 className="pt-32">Our Services</h3>
-        <h1>
+        <motion.h1 initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }}>
           Integrate The <br /> Tools You Use Everyday
-        </h1>
+        </motion.h1>
       </div>
       <div className="service-wrapper mt-14 pb-32 ">
-        {data.map((items) => {
+        {data.map((items, i) => {
           return (
-            <div
-              className="services "
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-duration="2000"
-              key={items.id}
-            >
-              <Image src={items.icon} width={70} height={80} alt="icon" className="hoverEffect" />
+            <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.2, delay: i * 0.1 }} className="services " key={items.id}>
+              <Image
+                src={items.icon}
+                width={70}
+                height={80}
+                alt="icon"
+                className="hoverEffect"
+              />
               <h2>{items.title}</h2>
-              <p>
-                {items.description}
-              </p>
-            </div>
+              <p>{items.description}</p>
+            </motion.div>
           );
         })}
       </div>

@@ -20,6 +20,9 @@ footer p {
   color: var(--text-light);
   width: 304px;
 }
+footer li {
+  color: var(--text-light);
+}
 @media (max-width: 768px) {
   .footer-div {
     flex-direction: column;
