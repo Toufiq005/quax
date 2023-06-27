@@ -1,7 +1,7 @@
 "use client";
 
 import "./CaseStudySection.css";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 require("dotenv").config();
@@ -39,10 +39,10 @@ export default async function CaseStudySection() {
             <h4>E-Commerce</h4>
           </li>
         </ul>
-        <div className="case-study-container">
-          {data.map((props) => {
+        <div className="case-study-container overflow-hidden">
+          {data.map((props , i) => {
             return (
-              <div key={props.id} className="relative mx-4">
+              <motion.div initial={{y:-150, opacity: 0 }} whileInView={{y:0, opacity: 1 }} transition={{ duration: 0.3, delay: i * 0.2 }} key={props.id} className="relative mx-4">
                 <Image
                   width={370}
                   height={370}
@@ -59,7 +59,7 @@ export default async function CaseStudySection() {
                 <div className="relative flex items-center justify-center case-study-type">
                   <h5>{props.category}</h5>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

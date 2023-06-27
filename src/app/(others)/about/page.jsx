@@ -32,8 +32,8 @@ export default function About() {
 function AboutSection() {
   return (
     <section className="w-full h-auto bg-color flex items-center justify-center">
-      <div className="wrapper about-section flex items-center justify-center  max-lg:flex-col max-lg:mt-10">
-        <div className="about-section-content max-lg:flex flex-col items-center justify-center">
+      <div className="wrapper about-section flex items-center justify-center  max-lg:flex-col max-lg:mt-10 overflow-hidden">
+        <div className="about-section-content max-lg:flex flex-col items-center justify-center overflow-hidden">
           <motion.h3
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -102,7 +102,7 @@ function WhatWeDo() {
 
   return (
     <section className="w-full h-auto flex items-center justify-center bg-very-light-gray">
-      <div className="wrapper what-we-do flex items-center justify-center max-lg:w-full">
+      <div className="wrapper what-we-do flex items-center justify-center max-lg:w-full overflow-hidden">
         <motion.div initial={{ x: -200, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}
 
           className="what-we-do-image bg-no-repeat flex justify-center mr-5 max-lg:mr-0 max-lg:mt-5"

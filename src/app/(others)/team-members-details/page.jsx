@@ -15,6 +15,33 @@ import {
 import { motion } from "framer-motion";
 
 export default function page() {
+  const socialLinks = [
+    {
+      id: 1,
+      link: "/",
+      name: "facebook",
+      icon: faFacebookF,
+    },
+    {
+      id: 2,
+      link: "/",
+      name: "instagram",
+      icon: faInstagram,
+    },
+    {
+      id: 3,
+      link: "/",
+      name: "twitter",
+      icon: faTwitter,
+    },
+    {
+      id: 4,
+      link: "/",
+      name: "linkedin",
+      icon: faLinkedinIn,
+    },
+  ];
+
   return (
     <>
       <Banner
@@ -25,7 +52,11 @@ export default function page() {
         <div className="wrapper flex flex-col items-center justify-center gap-20">
           <div className="max-lg:flex-col max-lg:text-center flex items-center justify-center gap-20 w-full ">
             <div className="members-image flex items-center justify-center bg-color w-1/2">
-              <motion.div initial={{ scale: 0, rotate: -90, opacity: 0 }} whileInView={{ scale: 1, rotate: 0, opacity: 1 }} transition={{ duration: 0.3 }}>
+              <motion.div
+                initial={{ scale: 0, rotate: -90, opacity: 0 }}
+                whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   width={485}
                   height={485}
@@ -65,30 +96,16 @@ export default function page() {
                 </div>
               </div>
               <div className="flex items-center justify-start max-lg:justify-center gap-5 mt-10">
-                <a
-                  href="#"
-                  className="flex items-center justify-center text-red-500 hover:text-white hover:bg-red-500 duration-100 w-10 h-10 rounded-full border border-red-500"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center text-red-500 hover:text-white hover:bg-red-500 duration-100 w-10 h-10 rounded-full border border-red-500"
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center text-red-500 hover:text-white hover:bg-red-500 duration-100 w-10 h-10 rounded-full border border-red-500"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center text-red-500 hover:text-white hover:bg-red-500 duration-100 w-10 h-10 rounded-full border border-red-500"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
+                {socialLinks.map((props, i) => (
+                  <motion.a
+                  initial={{y:-50,opacity: 0}} whileInView={{y: 0,opacity: 1}} transition={{duration: 0.2, delay: i * 0.2}}
+                    key={props.id}
+                    href={props.link}
+                    className="flex items-center justify-center text-red-500 hover:text-white hover:bg-red-500 duration-100 w-10 h-10 rounded-full border border-red-500"
+                  >
+                    <FontAwesomeIcon icon={props.icon} />
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
@@ -122,25 +139,45 @@ export default function page() {
                 <div className="max-lg:w-4/5">
                   <h3>Wordpress</h3>
                   <div className="exp-bar">
-                    <div className="exp-bar-wordpress"></div>
+                    <motion.div
+                      initial={{ x: -300 }}
+                      whileInView={{ x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="exp-bar-wordpress"
+                    ></motion.div>
                   </div>
                 </div>
                 <div className="max-lg:w-4/5">
                   <h3>Joomla</h3>
                   <div className="exp-bar">
-                    <div className="exp-bar-joomla"></div>
+                    <motion.div
+                      initial={{ x: -300 }}
+                      whileInView={{ x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="exp-bar-joomla"
+                    ></motion.div>
                   </div>
                 </div>
                 <div className="max-lg:w-4/5">
                   <h3>Laravel</h3>
                   <div className="exp-bar">
-                    <div className="exp-bar-laravel"></div>
+                    <motion.div
+                      initial={{ x: -300 }}
+                      whileInView={{ x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="exp-bar-laravel"
+                    ></motion.div>
                   </div>
                 </div>
                 <div className="max-lg:w-4/5">
                   <h3>Magento</h3>
                   <div className="exp-bar">
-                    <div className="exp-bar-magento"></div>
+                    <motion.div
+                      initial={{ x: -300 }}
+                      whileInView={{ x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="exp-bar-magento"
+                    ></motion.div>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 export default function Testimonial() {
   return (
     <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
-      <div className="testimonial py-32">
+      <div className="testimonial py-32 overflow-hidden">
         <motion.h3 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Testimonial</motion.h3>
         <motion.h1 initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="mt-2">What Our Clients Say</motion.h1>
         <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}  transition={{ duration: 0.3, delay: 0.1 }} className="h-full w-full mt-16">

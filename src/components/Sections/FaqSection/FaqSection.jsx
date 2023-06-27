@@ -3,6 +3,7 @@
 import "./FaqSection.css";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function FaqSection(props) {
   const [selectedFaq, setSelectedFaq] = useState(1);
@@ -22,7 +23,7 @@ export default function FaqSection(props) {
               return (
                 <div
                   key={id}
-                  className="faq-question flex flex-col items-center bg-white max-sm:w-4/5"
+                  className="faq-question flex flex-col items-center bg-white max-sm:w-4/5 overflow-hidden"
                 >
                   <button
                     className="bg-white flex items-center justify-between max-sm:justify-evenly max-sm:w-4/5"
@@ -38,25 +39,34 @@ export default function FaqSection(props) {
                       {qustion}
                     </h2>
                     {selectedFaq === id ? (
-                      <Image
-                        width={16}
-                        height={2}
-                        src="/assets/faq/icon-minus.svg"
-                        className="mr-7 max-sm:mr-0"
-                      />
+                      <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.3}}>
+                        <Image
+                          width={16}
+                          height={2}
+                          src="/assets/faq/icon-minus.svg"
+                          className="mr-7 max-sm:mr-0"
+                        />
+                      </motion.div>
                     ) : (
-                      <Image
-                        width={16}
-                        height={2}
-                        src="/assets/faq/icon-plus.svg"
-                        className="mr-7 max-sm:mr-0"
-                      />
+                      <motion.div  initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.3}}>
+                        <Image
+                          width={16}
+                          height={2}
+                          src="/assets/faq/icon-plus.svg"
+                          className="mr-7 max-sm:mr-0"
+                        />
+                      </motion.div>
                     )}
                   </button>
                   {selectedFaq === id && (
-                    <div className="faq-answer max-sm:pt-0 max-sm:pb-0 flex justify-center pt-5 pb-8 border-t border-black/10">
+                    <motion.div
+                      initial={{ y: -100, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="faq-answer max-sm:pt-0 max-sm:pb-0 flex justify-center pt-5 pb-8 border-t border-black/10"
+                    >
                       <p className="max-sm:py-3">{answer}</p>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               );

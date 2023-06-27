@@ -360,7 +360,7 @@ function Experience() {
 function WhatNext() {
   return (
     <section className="w-full h-auto flex items-center justify-center bg-color">
-      <div className="what-next ">
+      <div className="what-next overflow-hidden">
         <motion.h1
           initial={{ x: -150, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -447,7 +447,7 @@ function WhatNext() {
 
 function Blog() {
   return (
-    <section className="blogpost flex flex-col items-center justify-center">
+    <section className="blogpost flex flex-col items-center justify-center overflow-hidden">
       <motion.h3
         initial={{ x: -150, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}

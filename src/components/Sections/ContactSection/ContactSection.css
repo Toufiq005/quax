@@ -47,13 +47,19 @@
 .contact-section button {
   background: var(--text-header);
   border-radius: 5px;
-  width: 166px;
-  height: 50px;
-  font-weight: 600;
+  border: 1px solid var(--text-header);
+  width: 165px;
+  height: 49px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
   margin-top: 80px;
+  transition: 300ms;
+}
+.contact-section button:hover {
+  color: var(--text-header);
+  background: #ffffff;
 }
 
 @media (max-width: 1024px) {

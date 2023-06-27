@@ -15,8 +15,6 @@ export default function Navbar(props) {
   const [isServicesOption, setServicesOption] = useState(false);
   const [isPagesOption, setPagesOption] = useState(false);
   const [isBlogOption, setBlogOption] = useState(false);
-  const [isShopOption, setShopOption] = useState(false);
-  const [isContactOption, setContactOption] = useState(false);
   const [timerId, setTimerId] = useState(null);
   const [isHomePage, setIsHomePage] = useState(true);
 
@@ -95,20 +93,15 @@ export default function Navbar(props) {
     }
   };
 
-  // window.addEventListener("scroll", changeNavbarColor);
-
-  // useEffect(() => {
-  //   if (location.pathname === "/") {
-  //     setIsHomePage(true);
-  //   } else {
-  //     setIsHomePage(false);
-  //   }
-  // }, []);
 
   return (
     <>
       <nav
-        className={"w-full h-25 flex items-center justify-center fixed z-50" + " " + (props.bgColor)}
+        className={
+          "w-full h-25 flex items-center justify-center fixed z-50" +
+          " " +
+          props.bgColor
+        }
       >
         <div className="navbar">
           <a href="/">
@@ -148,7 +141,7 @@ export default function Navbar(props) {
                 onMouseLeave={() => {
                   handleMouseLeave(1);
                 }}
-                className={"flex items-center" + " " + (props.textColor)}
+                className={"flex items-center" + " " + props.textColor}
                 href="/"
               >
                 <p>HOME</p>
@@ -158,7 +151,6 @@ export default function Navbar(props) {
               {isHomeOption && (
                 <div className="home-option-wrapper">
                   <ul
-                    data-aos="fade-up"
                     onMouseEnter={() => {
                       handleMouseEnter(1);
                     }}
@@ -216,7 +208,9 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/about"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>ABOUT</p>
               </a>
@@ -230,7 +224,9 @@ export default function Navbar(props) {
                   handleMouseLeave(2);
                 }}
                 href="/service"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>SERVICES</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -243,8 +239,6 @@ export default function Navbar(props) {
                   onMouseLeave={() => {
                     handleMouseLeave(2);
                   }}
-                  data-aos="fade-up"
-                  data-aos-duration="500"
                   className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
                 >
                   <li>
@@ -252,7 +246,7 @@ export default function Navbar(props) {
                       href="/service"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Services One
+                      Services
                     </a>
                   </li>
                   <li>
@@ -260,7 +254,7 @@ export default function Navbar(props) {
                       href="/service-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Services details
+                      Services Details
                     </a>
                   </li>
                 </ul>
@@ -275,8 +269,9 @@ export default function Navbar(props) {
                   handleMouseLeave(3);
                 }}
                 href="/team-members"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
-          
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>PAGES</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -290,8 +285,6 @@ export default function Navbar(props) {
                     handleMouseLeave(3);
                   }}
                   className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
                 >
                   <li>
                     <a
@@ -306,7 +299,7 @@ export default function Navbar(props) {
                       href="/team-members-details"
                       className="text-black/80 pr-4 hover:text-red-600"
                     >
-                      Team members details
+                      Team Members Details
                     </a>
                   </li>
                   <li>
@@ -337,7 +330,9 @@ export default function Navbar(props) {
                   handleMouseLeave(4);
                 }}
                 href="/blog"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>BLOG</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
@@ -351,8 +346,6 @@ export default function Navbar(props) {
                     handleMouseLeave(4);
                   }}
                   className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
                 >
                   <li>
                     <a
@@ -375,93 +368,23 @@ export default function Navbar(props) {
             </li>
             <li>
               <a
-                onMouseEnter={() => {
-                  handleMouseEnter(5);
-                }}
-                onMouseLeave={() => {
-                  handleMouseLeave(5);
-                }}
                 href="/shop"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>SHOP</p>
-                <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
               </a>
-              {isShopOption && (
-                <ul
-                  onMouseEnter={() => {
-                    handleMouseEnter(5);
-                  }}
-                  onMouseLeave={() => {
-                    handleMouseLeave(5);
-                  }}
-                  className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
-                >
-                  <li>
-                    <a
-                      href="/service"
-                      className="text-black/80 pr-4  hover:text-red-600"
-                    >
-                      Shop
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/service-details"
-                      className="text-black/80 pr-4 hover:text-red-600"
-                    >
-                      Shop Details
-                    </a>
-                  </li>
-                </ul>
-              )}
             </li>
             <li>
               <a
-                onMouseEnter={() => {
-                  handleMouseEnter(6);
-                }}
-                onMouseLeave={() => {
-                  handleMouseLeave(6);
-                }}
                 href="/contact"
-                className={"hover:text-red-500 flex items-center" + " " + (props.textColor)}
+                className={
+                  "hover:text-red-500 flex items-center" + " " + props.textColor
+                }
               >
                 <p>CONTACT</p>
-                <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
               </a>
-              {isContactOption && (
-                <ul
-                  onMouseEnter={() => {
-                    handleMouseEnter(6);
-                  }}
-                  onMouseLeave={() => {
-                    handleMouseLeave(6);
-                  }}
-                  className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
-                >
-                  <li>
-                    <a
-                      href="/contact"
-                      className="text-black/80 pr-4 hover:text-red-600"
-                    >
-                      Contact One
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/contact"
-                      className="text-black/80 pr-4 hover:text-red-600"
-                    >
-                      Contact Two
-                    </a>
-                  </li>
-                </ul>
-              )}
             </li>
           </ul>
           <div className="dark-mode-desk">
@@ -656,12 +579,12 @@ export default function Navbar(props) {
               >
                 <li className={isServicesOption ? "block" : "hidden"}>
                   <a href="/service" className="text-black/80 ml-5">
-                    Services One
+                    Services 
                   </a>
                 </li>
                 <li className={isServicesOption ? "block" : "hidden"}>
                   <a href="/service-details" className="text-black/80 ml-5">
-                    Services details
+                    Services Details
                   </a>
                 </li>
               </ul>
@@ -695,23 +618,17 @@ export default function Navbar(props) {
                     href="/team-members-details"
                     className="text-black/80 ml-5"
                   >
-                    Team members details
+                    Team Members Details
                   </a>
                 </li>
                 <li className={isPagesOption ? "block" : "hidden"}>
-                  <a
-                    href="/faq"
-                    className="text-black/80 ml-5"
-                  >
+                  <a href="/faq" className="text-black/80 ml-5">
                     FAQ
                   </a>
                 </li>
                 <li className={isPagesOption ? "block" : "hidden"}>
-                  <a
-                    href="/case-study"
-                    className="text-black/80 ml-5"
-                  >
-                    Case study
+                  <a href="/case-study" className="text-black/80 ml-5">
+                    Case Study
                   </a>
                 </li>
               </ul>
@@ -737,77 +654,25 @@ export default function Navbar(props) {
               >
                 <li className={isBlogOption ? "block" : "hidden"}>
                   <a href="/blog" className="text-black/80 ml-5">
-                    Blog One
+                    Blog
                   </a>
                 </li>
                 <li className={isBlogOption ? "block" : "hidden"}>
-                  <a href="/blog-two" className="text-black/80 ml-5">
-                    Blog Two
+                  <a href="/blog-deltails" className="text-black/80 ml-5">
+                    Blog Details
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <div
-                onClick={() => {
-                  clearHoverOptions();
-                  setShopOption(!isShopOption);
-                }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
-              >
+              <div className=" text-white hover:text-red-500 flex items-center justify-between ">
                 <p>Shop</p>
-                <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
               </div>
-
-              <ul
-                className={
-                  isShopOption
-                    ? "w-2/3 rounded-md h-28 bg-white flex flex-col items-start justify-evenly duration-500 my-3"
-                    : "h-0 duration-500 w-2/3"
-                }
-              >
-                <li className={isShopOption ? "block " : "hidden "}>
-                  <a href="/shop" className="text-black/80 ml-5">
-                    Shop One
-                  </a>
-                </li>
-                <li className={isShopOption ? "block " : "hidden "}>
-                  <a href="/shop-two" className="text-black/80 ml-5">
-                    Shop Two
-                  </a>
-                </li>
-              </ul>
             </li>
             <li>
-              <div
-                onClick={() => {
-                  clearHoverOptions();
-                  setContactOption(!isContactOption);
-                }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
-              >
+              <div className=" text-white hover:text-red-500 flex items-center justify-between ">
                 <p>Contact</p>
-                <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
               </div>
-
-              <ul
-                className={
-                  isContactOption
-                    ? "w-2/3 rounded-md h-28 bg-white flex flex-col items-start justify-evenly duration-500 my-3"
-                    : "h-0 duration-500 w-2/3 rounded-md bg-white flex flex-col items-start justify-evenly"
-                }
-              >
-                <li className={isContactOption ? "block" : "hidden"}>
-                  <a href="/contact" className="text-black/80 ml-5">
-                    Contact One
-                  </a>
-                </li>
-                <li className={isContactOption ? "block" : "hidden"}>
-                  <a href="/contact-two" className="text-black/80 ml-5">
-                    Contact Two
-                  </a>
-                </li>
-              </ul>
             </li>
             <li className="mt-5">
               <a href="/contact" className="mobile-nav-contact-link">
