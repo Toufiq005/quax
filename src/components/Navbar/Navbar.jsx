@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import Image from "next/image";
 import DarkMode from "./DarkMode/DarkMode";
@@ -9,7 +9,7 @@ import { faAdd, faMultiply } from "@fortawesome/free-solid-svg-icons";
 import "next/navigation";
 
 export default function Navbar(props) {
-  const [navbarColor, setNavbarColor] = useState(false);
+  const [navColor, setNavColor] = useState(false);
   const [isActive, setActive] = useState(false);
   const [isHomeOption, setHomeOption] = useState(false);
   const [isServicesOption, setServicesOption] = useState(false);
@@ -23,7 +23,6 @@ export default function Navbar(props) {
     setServicesOption(false);
     setPagesOption(false);
     setBlogOption(false);
-    setContactOption(false);
   }
 
   function handleMouseLeave(props) {
@@ -51,12 +50,6 @@ export default function Navbar(props) {
           setBlogOption(false);
         }, 500)
       );
-    } else if (props === 6) {
-      setTimerId(
-        setTimeout(function () {
-          setContactOption(false);
-        }, 500)
-      );
     }
   }
 
@@ -74,18 +67,28 @@ export default function Navbar(props) {
     }
   }
 
-  const changeNavbarColor = () => {
-    if (window.scrollY > 100) {
-      setNavbarColor(true);
-    } else {
-      setNavbarColor(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
+      if (scrollPosition > 100) {
+        setNavColor(true);
+      } else {
+        setNavColor(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <nav
+        style={{backgroundColor: navColor ? "#fff" : "", }}
         className={
           "w-full h-25 flex items-center justify-center fixed z-50" +
           " " +
@@ -101,7 +104,7 @@ export default function Navbar(props) {
                   width="155"
                   height="50"
                   alt="Logo"
-                  className={navbarColor ? "hidden logo" : "block logo"}
+                  className={navColor ? "hidden logo" : "block logo"}
                   priority
                 />
                 <Image
@@ -109,7 +112,7 @@ export default function Navbar(props) {
                   width="155"
                   height="50"
                   alt="Logo"
-                  className={!navbarColor ? "hidden logo" : "block logo"}
+                  className={!navColor ? "hidden logo" : "block logo"}
                 />
               </>
             ) : (
@@ -122,7 +125,7 @@ export default function Navbar(props) {
               />
             )}
           </a>
-          <ul className="flex items-center">
+          <ul className="flex items-center" >
             <li>
               <a
                 onMouseEnter={() => {
@@ -131,6 +134,7 @@ export default function Navbar(props) {
                 onMouseLeave={() => {
                   handleMouseLeave(1);
                 }}
+                style={{color: navColor ? "#444444" : ""}}
                 className={"flex items-center" + " " + props.textColor}
                 href="/"
               >
@@ -198,6 +202,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/about"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -214,6 +219,7 @@ export default function Navbar(props) {
                   handleMouseLeave(2);
                 }}
                 href="/service"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -259,6 +265,7 @@ export default function Navbar(props) {
                   handleMouseLeave(3);
                 }}
                 href="/team-members"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -274,9 +281,9 @@ export default function Navbar(props) {
                   onMouseLeave={() => {
                     handleMouseLeave(3);
                   }}
-                  className="w-auto rounded-md absolute top-20 h-28 bg-white flex flex-col items-start justify-evenly"
+                  className="w-auto rounded-md absolute top-20 min-h-28 bg-white flex flex-col gap-3 items-start justify-evenly"
                 >
-                  <li>
+                  <li className="pt-3">
                     <a
                       href="/team-members"
                       className="text-black/80 pr-4 hover:text-red-600"
@@ -300,7 +307,7 @@ export default function Navbar(props) {
                       FAQ
                     </a>
                   </li>
-                  <li>
+                  <li className="pb-3">
                     <a
                       href="/case-study"
                       className="text-black/80 pr-4 hover:text-red-600"
@@ -320,6 +327,7 @@ export default function Navbar(props) {
                   handleMouseLeave(4);
                 }}
                 href="/blog"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -359,6 +367,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/shop"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -369,6 +378,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/contact"
+                style={{color: navColor ? "#444444" : ""}}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -396,14 +406,14 @@ export default function Navbar(props) {
                   width="14"
                   height="9"
                   alt="menu"
-                  className={!navbarColor ? "block w-5 h-5" : "hidden"}
+                  className={!navColor ? "block w-5 h-5" : "hidden"}
                 />
                 <Image
                   src="/assets/navbar/menu-bars-red.svg"
                   width="14"
                   height="9"
                   alt="menu"
-                  className={!navbarColor ? "hidden" : "block w-5 h-5"}
+                  className={!navColor ? "hidden" : "block w-5 h-5"}
                 />
               </>
             ) : (
@@ -447,7 +457,7 @@ export default function Navbar(props) {
               />
             </button>
           </div>
-          <ul className="flex items-center flex-col w-full">
+          <ul className="flex items-center flex-col gap-2 w-full">
             <li>
               <div
                 onClick={() => {
@@ -569,7 +579,7 @@ export default function Navbar(props) {
               >
                 <li className={isServicesOption ? "block" : "hidden"}>
                   <a href="/service" className="text-black/80 ml-5">
-                    Services 
+                    Services
                   </a>
                 </li>
                 <li className={isServicesOption ? "block" : "hidden"}>
@@ -594,11 +604,11 @@ export default function Navbar(props) {
               <ul
                 className={
                   isPagesOption
-                    ? "w-2/3 rounded-md h-28 bg-white flex flex-col items-start justify-evenly duration-500 my-3"
+                    ? "w-2/3 rounded-md min-h-28 bg-white flex flex-col items-start justify-evenly duration-500 my-3 gap-3"
                     : "h-0 w-2/3 duration-500"
                 }
               >
-                <li className={isPagesOption ? "block" : "hidden"}>
+                <li className={isPagesOption ? "block pt-3" : "hidden"}>
                   <a href="/team-members" className="text-black/80 ml-5">
                     Team members
                   </a>
@@ -616,7 +626,7 @@ export default function Navbar(props) {
                     FAQ
                   </a>
                 </li>
-                <li className={isPagesOption ? "block" : "hidden"}>
+                <li className={isPagesOption ? "block pb-3" : "hidden"}>
                   <a href="/case-study" className="text-black/80 ml-5">
                     Case Study
                   </a>
@@ -656,7 +666,7 @@ export default function Navbar(props) {
             </li>
             <li>
               <div className=" text-white hover:text-red-500 flex items-center justify-between ">
-                <p>Shop</p>
+                <a href="/service">Shop</a>
               </div>
             </li>
             <li>
