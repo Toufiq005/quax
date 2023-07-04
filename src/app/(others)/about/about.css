@@ -12,7 +12,7 @@
   color: var(--text-base);
   margin: 8px 0 24px 0;
 }
-.about-section-content h2 {
+.about-section-content q {
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
@@ -48,7 +48,7 @@
 }
 .about-section-image-two {
   position: relative;
-  top: -400px;
+  top: -540px;
   left: 240px;
 }
 @media (max-width: 1024px) {

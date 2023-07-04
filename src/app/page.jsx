@@ -32,7 +32,7 @@ export default function Home() {
 function Header() {
   return (
     <header className="relative flex items-center justify-evenly parent overflow-hidden">
-      <div className="hero  max-lg:flex-col max-lg:mt-28">
+      <div className="hero max-lg:flex-col max-lg:mt-28">
         <div className="max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
           <motion.h1
             initial={{ y: -150, opacity: 0 }}

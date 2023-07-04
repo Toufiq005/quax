@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function SubscribeSection() {
   return (
     <section className="w-full h-auto bg-color flex items-center justify-center">
-      <div className="w-full flex items-center justify-center py-32">
+      <div className="w-full flex items-center justify-center py-29">
         <div className="subscribe-section bg-header flex flex-col items-center justify-center overflow-hidden">
           <h1>Get Your Site Optimized & Converting Now</h1>
           <motion.form
@@ -17,7 +17,7 @@ export default function SubscribeSection() {
           >
             <input
               type="email"
-              placeholder="&#xf0e0;   e-mail address"
+              placeholder="&#xf0e0;    e-mail address"
               style={{ fontFamily: "FontAwesome" }}
               className="bg-transparent text-white placeholder:text-white"
             />

@@ -1,6 +1,7 @@
 .testimonial {
   width: 1170px;
   height: auto;
+  overflow: hidden;
 }
 .testimonial h1 {
   font-weight: 600;

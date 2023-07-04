@@ -59,6 +59,7 @@ header p {
   }
   .hero {
     margin: 0;
+    gap: 0;
   }
 }
 

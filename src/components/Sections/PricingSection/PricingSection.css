@@ -79,3 +79,8 @@
     max-width: 90%;
   }
 }
+@media (max-width: 768px) {
+  .section-four p {
+    width: 90%;
+  }
+}
