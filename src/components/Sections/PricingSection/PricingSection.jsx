@@ -1,17 +1,56 @@
-"use client"
+"use client";
 
 import "./PricingSection.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function PricingSection() {
+  const price = [
+    {
+      id: 0,
+      plan: "Solo",
+      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
+      link: "/",
+      price: "$44",
+      bulletPoint: {
+        bpOne: "Lorem ipsum dolor sit ametv",
+        bpTwo: "Unlimited Employees",
+        bpThree: "24/7 Live Chat Support",
+      },
+    },
+    {
+      id: 1,
+      plan: "Team",
+      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
+      link: "/",
+      price: "$64",
+      bulletPoint: {
+        bpOne: "Lorem ipsum dolor sit ametv",
+        bpTwo: "Unlimited Employees",
+        bpThree: "24/7 Live Chat Support",
+      },
+    },
+    {
+      id: 2,
+      plan: "Agency",
+      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
+      link: "/",
+      price: "$78",
+      bulletPoint: {
+        bpOne: "Lorem ipsum dolor sit ametv",
+        bpTwo: "Unlimited Employees",
+        bpThree: "24/7 Live Chat Support",
+      },
+    },
+  ];
+
   return (
     <section className="section-four flex flex-col items-center ">
       <motion.h2
         initial={{ y: -150, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="pt-32"
+        className="pt-29"
       >
         Explore & Create
       </motion.h2>
@@ -30,168 +69,63 @@ export default function PricingSection() {
         Lorem ipsum dolor sit amet, consectur adipiscing elit.
       </motion.p>
 
-      <div className="flex items-center justify-center mt-16 price-div">
-        <motion.div
-          initial={{ y: 250, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="price mb-16 flex flex-col items-center"
-        >
-          <h2>Solo</h2>
-          <p className="mx-3">
-            Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.
-          </p>
-          <h1>
-            <span className="text-6xl">$44</span>
-            /mo
-          </h1>
-          <a href="/" className="bg-white text-header">
-            Buy Now
-          </a>
-          <div className="flex flex-col justify-center mt-10">
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Lorem ipsum dolor sit ametv
-            </p>
-            <p className="flex ml-10 my-7">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Unlimited Employees
-            </p>
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              24/7 Live Chat Support
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 250, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="price mb-16 flex flex-col items-center"
-        >
-          <h2>Team</h2>
-          <p className="mx-3">
-            Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.
-          </p>
-          <h1>
-            <span className="text-6xl">$64</span>
-            /mo
-          </h1>
-          <a href="/" className="bg-white text-header">
-            Buy Now
-          </a>
-          <div className="flex flex-col justify-center mt-10">
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Lorem ipsum dolor sit ametv
-            </p>
-            <p className="flex ml-10 my-7">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Unlimited Employees
-            </p>
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              24/7 Live Chat Support
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 250, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.5 }}
-          className="price mb-16 flex flex-col items-center"
-        >
-          <h2>Agency</h2>
-          <p className="mx-3">
-            Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.
-          </p>
-          <h1>
-            <span className="text-6xl">$78</span>
-            /mo
-          </h1>
-          <a href="/" className="bg-white text-header">
-            Buy Now
-          </a>
-          <div className="flex flex-col justify-center mt-10">
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Lorem ipsum dolor sit ametv
-            </p>
-            <p className="flex ml-10 my-7">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              Unlimited Employees
-            </p>
-            <p className="flex ml-10">
-              <span className="mx-3">
-                <Image
-                  width={25}
-                  height={25}
-                  src="/assets/cheak-mark.svg"
-                  alt="icon"
-                />
-              </span>
-              24/7 Live Chat Support
-            </p>
-          </div>
-        </motion.div>
+      <div className="flex items-center justify-center mt-17 price-div">
+        {price.map((props, i) => {
+          return (
+            <motion.div
+              initial={{ y: 250, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 * i}}
+              className="price flex flex-col items-center"
+              key={props.id}
+            >
+              <h2>{props.plan}</h2>
+              <p className="mx-3">{props.title}</p>
+              <h1>
+                <span className="text-6xl">{props.price}</span>
+                /mo
+              </h1>
+              <a href={props.link} className="bg-white text-header">
+                Buy Now
+              </a>
+              <div className="flex flex-col justify-center mt-10">
+                <p className="flex ml-10">
+                  <span className="mx-3">
+                    <Image
+                      width={25}
+                      height={25}
+                      src="/assets/cheak-mark.svg"
+                      alt="icon"
+                    />
+                  </span>
+                  {props.bulletPoint.bpOne}
+                </p>
+                <p className="flex ml-10 my-7">
+                  <span className="mx-3">
+                    <Image
+                      width={25}
+                      height={25}
+                      src="/assets/cheak-mark.svg"
+                      alt="icon"
+                    />
+                  </span>
+                  {props.bulletPoint.bpTwo}
+                </p>
+                <p className="flex ml-10">
+                  <span className="mx-3">
+                    <Image
+                      width={25}
+                      height={25}
+                      src="/assets/cheak-mark.svg"
+                      alt="icon"
+                    />
+                  </span>
+                  {props.bulletPoint.bpThree}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

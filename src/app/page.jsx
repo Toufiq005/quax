@@ -33,7 +33,7 @@ function Header() {
   return (
     <header className="relative flex items-center justify-evenly parent overflow-hidden">
       <div className="hero  max-lg:flex-col max-lg:mt-28">
-        <div className="mr-5 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
+        <div className="max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
           <motion.h1
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -46,23 +46,25 @@ function Header() {
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="mt-5 mb-10 max-lg:text-sm "
+            className="mt-5 mb-16 max-lg:text-sm "
           >
             Me old mucker knackered a load of old tosh wellies amongst lost the
             plot say bodge tickety boo.!s
           </motion.p>
-          <a
-            href="#price"
-            className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white "
-          >
-            PURCHES NOW
-          </a>
+          <div>
+            <a
+              href="#price"
+              className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white "
+            >
+              PURCHES NOW
+            </a>
+          </div>
         </div>
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="ml-5 -mt-6 max-lg:ml-0 hero-img"
+          className="-mt-6 max-lg:ml-0 hero-img"
         >
           <Image
             width={470}
@@ -81,8 +83,8 @@ function Header() {
 function AboutCompany() {
   return (
     <section className="section-one">
-      <div className="flex items-center justify-center w-full pt-28 max-lg:flex-col">
-        <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 mr-11 max-lg:mr-0">
+      <div className="flex gap-16 items-center justify-center w-full pt-29 max-lg:flex-col">
+        <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 max-lg:mr-0">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -110,7 +112,7 @@ function AboutCompany() {
             className="mt-9 max-sm:hidden max-lg:-ml-12"
           />
         </div>
-        <div className="section-one-text ml-11 max-lg:ml-0 flex flex-col items-start justify-center">
+        <div className="section-one-text max-lg:ml-0 flex flex-col items-start justify-center">
           <motion.h3
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -145,7 +147,7 @@ function AboutCompany() {
           </motion.p>
           <a
             href="/"
-            className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white border border-red-500/60"
+            className="px-7 py-4 text-white bg-header rounded hover:text-red-500 duration-200 hover:bg-white border border-red-500/60"
           >
             DISCOVER MORE
           </a>
@@ -158,19 +160,21 @@ function AboutCompany() {
         className="form mt-10"
       >
         <h1>
-          Get Started <span className="text-red">- Its free</span>
+          Get Started <span className="text-header">- Its free</span>
         </h1>
-        <div className="flex items-center justify-center">
-          <Image
-            width={36}
-            height={36}
-            src="/assets/home/arrow-icon.svg"
-            alt="arrow"
-          />
-          <h2>Start Your 14-Days Free Trial</h2>
-        </div>
-        <form className="pb-28">
-          <div className="flex mt-7 justify-center max-lg:items-center max-lg:flex-col">
+        <h2 className="flex items-center justify-center">
+          <span>
+            <Image
+              width={36}
+              height={36}
+              src="/assets/home/arrow-icon.svg"
+              alt="arrow"
+            />
+          </span>
+          Start Your 14-Days Free Trial
+        </h2>
+        <form className="pb-29">
+          <div className="flex justify-center max-lg:items-center max-lg:flex-col">
             <input
               type="text"
               placeholder="Enter your name"
@@ -191,7 +195,7 @@ function AboutCompany() {
             </span>
             By signing up you agree to our
             <span className="mx-1">
-              <a href="/" className="text-red">
+              <a href="/" className="text-header">
                 Terms & Conditions.
               </a>
             </span>
@@ -327,9 +331,12 @@ function Experience() {
           This UI Kit uses attractive colors and modern typography to make you
           look good, no matter what business youre in.
         </motion.p>
-        <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-10 pb-24 max-md:flex-col">
+        <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-13 pb-29 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
-            <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+            <ScrollTrigger
+              onEnter={() => setCounterOn(true)}
+              onExit={() => setCounterOn(false)}
+            >
               <h5>
                 {counterOn && (
                   <CountUp start={0} end={18} duration={2}></CountUp>
@@ -358,6 +365,36 @@ function Experience() {
   );
 }
 function WhatNext() {
+  const contactOptions = [
+    {
+      id: 0,
+      icon: "",
+      title: "Leave a Message",
+      discription:
+        "Send us the address of your website and your contact number We will get in touch.",
+      method: "Write to us",
+      href: "/",
+    },
+    {
+      id: 1,
+      icon: "",
+      title: "Lets Talk!",
+      discription:
+        "We will then call you or meet to talk about your business goals and priorities.",
+      method: "Contact us",
+      href: "/",
+    },
+    {
+      id: 2,
+      icon: "",
+      title: "Leave a Message",
+      discription:
+        "Send us the address of your website and your contact number We will get in touch.",
+      method: "View Plan",
+      href: "/",
+    },
+  ];
+
   return (
     <section className="w-full h-auto flex items-center justify-center bg-color">
       <div className="what-next overflow-hidden">
@@ -372,73 +409,37 @@ function WhatNext() {
           initial={{ x: 150, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}
+          className="mt-3"
         >
           Are you interested in our services? We will arrange a phone call.
         </motion.p>
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
-          <motion.div
-            initial={{ y: -150, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
-            <Image
-              width={40}
-              height={37}
-              src="/assets/home/message.svg"
-              alt="icon"
-            />
-            <h2>Leave a Message</h2>
-            <h3>
-              Send us the address of your website and your contact number We
-              will get in touch.
-            </h3>
-            <a href="/" className="bg-header text-white ">
-              Write to us
-            </a>
-          </motion.div>
-          <motion.div
-            initial={{ y: -150, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
-            <Image
-              width={40}
-              height={37}
-              src="/assets/home/talk.svg"
-              alt="icon"
-            />
-            <h2>Lets Talk!</h2>
-            <h3>
-              We will then call you or meet to talk about your business goals
-              and priorities.
-            </h3>
-            <a href="/" className="bg-white text-header ">
-              Contact us
-            </a>
-          </motion.div>
-          <motion.div
-            initial={{ y: -150, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-            className="flex flex-col items-center justify-center max-lg:py-5"
-          >
-            <Image
-              width={38}
-              height={38}
-              src="/assets/home/plan.svg"
-              alt="icon"
-            />
-            <h2>Leave a Message</h2>
-            <h3>
-              Send us the address of your website and your contact number We
-              will get in touch.
-            </h3>
-            <a href="/" className="bg-header text-white ">
-              View Plan
-            </a>
-          </motion.div>
+          {contactOptions.map((props, i) => {
+            return (
+              <motion.div
+                initial={{ y: 150, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 * i }}
+                key={props.id}
+                className="flex flex-col items-center justify-center max-lg:py-5"
+              >
+                <Image
+                  width={38}
+                  height={38}
+                  src="/assets/home/plan.svg"
+                  alt="icon"
+                />
+                <h2>{props.title}</h2>
+                <h3>{props.discription}</h3>
+                <a
+                  href={props.href}
+                  className="bg-red-500 hover:bg-white hover:text-red-500 duration-200 text-white "
+                >
+                  {props.method}
+                </a>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

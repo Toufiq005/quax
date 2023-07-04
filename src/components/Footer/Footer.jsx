@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import "./Footer.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVimeoV,  faFacebookF , faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faVimeoV,
+  faFacebookF,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 
 export default function Footer() {
-
   const quickLink = [
     { key: 1, name: "Home", href: "/" },
     { key: 2, name: "About", href: "/about" },
@@ -86,7 +88,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                   className=" hover:text-red-500 duration-100"
+                    className=" hover:text-red-500 duration-100"
                   >
                     {item.name}
                   </Link>
@@ -133,8 +135,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24 flex justify-center items-center border-t mt-24">
-        <motion.p initial={{ y: 80, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className=" text-center w-full pt-0 duration-1000 opacity-100">
+      <div className="w-full h-24  flex justify-center items-center border-t mt-24">
+        <motion.p
+          initial={{ y: 80, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className=" text-center w-full pt-0"
+        >
           ©2021 All Rights Reserved. With Design by Loyalcoders
         </motion.p>
       </div>

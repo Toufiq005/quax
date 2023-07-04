@@ -23,7 +23,6 @@ export default function Navbar(props) {
     setServicesOption(false);
     setPagesOption(false);
     setBlogOption(false);
-    setShopOption(false);
     setContactOption(false);
   }
 
@@ -52,12 +51,6 @@ export default function Navbar(props) {
           setBlogOption(false);
         }, 500)
       );
-    } else if (props === 5) {
-      setTimerId(
-        setTimeout(function () {
-          setShopOption(false);
-        }, 500)
-      );
     } else if (props === 6) {
       setTimerId(
         setTimeout(function () {
@@ -78,10 +71,6 @@ export default function Navbar(props) {
       setPagesOption(true);
     } else if (props === 4) {
       setBlogOption(true);
-    } else if (props === 5) {
-      setShopOption(true);
-    } else if (props === 6) {
-      setContactOption(true);
     }
   }
 
@@ -113,6 +102,7 @@ export default function Navbar(props) {
                   height="50"
                   alt="Logo"
                   className={navbarColor ? "hidden logo" : "block logo"}
+                  priority
                 />
                 <Image
                   src="/assets/logo-dark.svg"

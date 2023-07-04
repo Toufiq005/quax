@@ -3,17 +3,37 @@
 import "./Testimonial.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {Pagination } from "swiper";
 import "swiper/css";
+import 'swiper/css/pagination';
 import data from "../../data/testimonial";
 import { motion } from "framer-motion";
 
 export default function Testimonial() {
   return (
     <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
-      <div className="testimonial py-32 overflow-hidden">
-        <motion.h3 initial={{ x: -150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Testimonial</motion.h3>
-        <motion.h1 initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="mt-2">What Our Clients Say</motion.h1>
-        <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}  transition={{ duration: 0.3, delay: 0.1 }} className="h-full w-full mt-16">
+      <div className="testimonial py-29 ">
+        <motion.h3
+          initial={{ x: -150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Testimonial
+        </motion.h3>
+        <motion.h1
+          initial={{ x: 150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="mt-2"
+        >
+          What Our Clients Say
+        </motion.h1>
+        <motion.div
+          initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="h-full w-full mt-16"
+        >
           <Carousel />
         </motion.div>
       </div>
@@ -24,6 +44,8 @@ export default function Testimonial() {
 function Carousel() {
   return (
     <Swiper
+      modules={[ Pagination]}
+      pagination={{ clickable: true }}
       spaceBetween={3}
       breakpoints={{
         "@0.00": {
@@ -46,8 +68,8 @@ function Carousel() {
       className="flex items-center justify-center"
     >
       {data.map((item) => (
-        <SwiperSlide key={item.id}>
-          <div className="testimonial-card flex flex-col items-start max-md:items-center justify-center">
+        <SwiperSlide key={item.id} >
+          <div className="testimonial-card flex flex-col items-start max-md:items-center justify-center mb-32">
             <div className="testimonial-card-content flex items-center justify-center text-center">
               <p className="m-10">{item.comment}</p>
             </div>

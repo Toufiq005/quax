@@ -6,7 +6,7 @@
   height: auto;
 }
 .section-four h1 {
-  margin: 10px 0 10px 0;
+  margin: 8px 0 24px 0;
   font-weight: 600;
   font-size: 45px;
   line-height: 53px;
@@ -23,7 +23,6 @@
   color: var(--text-light);
 }
 .price {
-  margin: 15px;
   width: 370px;
   min-height: 550px;
   background: var(--price-background);
@@ -62,6 +61,9 @@
   height: 195px;
   background: #f2f2f2;
 }
+.price-div {
+  gap: 30px;
+}
 
 @media (max-width: 1200px) {
   .section-four h1 {
@@ -71,7 +73,6 @@
     flex-direction: column;
   }
   .price {
-    margin: 15px 0 15px 0;
     width: 90%;
   }
   .price div {

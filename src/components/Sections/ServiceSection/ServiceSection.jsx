@@ -9,12 +9,12 @@ export default function ServiceSection() {
   return (
     <section className="section-two flex flex-col items-center ">
       <div>
-        <h3 className="pt-32">Our Services</h3>
-        <motion.h1 initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }}>
+        <h3>Our Services</h3>
+        <motion.h1 initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="mb-">
           Integrate The <br /> Tools You Use Everyday
         </motion.h1>
       </div>
-      <div className="service-wrapper mt-14 pb-32 ">
+      <div className="service-wrapper mt-17 pb-29 ">
         {data.map((items, i) => {
           return (
             <motion.div initial={{ y: 150, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.2, delay: i * 0.1 }} className="services " key={items.id}>

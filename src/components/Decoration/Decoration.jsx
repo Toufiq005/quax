@@ -13,20 +13,19 @@ export default function Decoration() {
   const [parentSize, setParentSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const parent = document.querySelector(".parent");
-    setParentSize({ width: parent.offsetWidth, height: parent.offsetHeight });
+    setParentSize({ width: 200, height: 200 });
   }, []);
 
   function floatImages() {
     const newPositions = positions.map((position) => ({
-      top: `${Math.random() * (950 - 100)}px`,
-      left: `${Math.random() * (1750 - 100)}px`,
+      top: `${(Math.random() * (100)) + (position.top)}px`,
+      left: `${(Math.random() * (100)) + (position.left)}px`,
     }));
     setPositions(newPositions);
   }
 
   useEffect(() => {
-    const intervalId = setInterval(floatImages, 9500);
+    const intervalId = setInterval(floatImages, 2500);
     return () => clearInterval(intervalId);
   }, [parentSize]);
 
@@ -43,7 +42,7 @@ export default function Decoration() {
     });
   }, []);
   return (
-    <div className=" absolute top-0">
+    <>
       <div
         className="decoration-dots dots-one"
         style={{ top: positions[0].top, left: positions[0].left }}
@@ -61,8 +60,12 @@ export default function Decoration() {
         style={{ top: positions[3].top, left: positions[3].left }}
       ></div>
       <div className="decoration-dots parallax-element" data-speed="0.5">
-        <img src='/assets/header-decoration.svg' alt="decoration" className="decoration-img" />
+        <img
+          src="/assets/header-decoration.svg"
+          alt="decoration"
+          className="decoration-img"
+        />
       </div>
-    </div>
+    </>
   );
 }

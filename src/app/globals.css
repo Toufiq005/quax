@@ -15,6 +15,12 @@ html {
   --dark-blue: #182957;
   --light-blue: #2d4c9f;
   --price-background: #ffe5e5;
+  --swiper-pagination-top: 370px;
+  --swiper-pagination-bullet-width: 10px;
+  --swiper-pagination-bullet-height: 10px;
+  --swiper-theme-color: #ff4f4f !important;
+  --swiper-pagination-bullet-inactive-color: rgba(172, 172, 172, 1);
+  --swiper-pagination-bullet-inactive-opacity: 1;
 }
 
 [data-theme="dark"] {
@@ -24,6 +30,9 @@ html {
   --background: #090317;
   --background-light: #110a24;
   --price-background: #2d2c64;
+  --swiper-theme-color: #94a0c2 !important;
+  --swiper-pagination-bullet-inactive-color: #e4dafb;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
 }
 
 body {
@@ -58,6 +67,22 @@ body {
 .wrapper {
   max-width: 1170px;
   padding: 128px 0;
+}
+.pt-29 {
+  padding-top: 120px;
+}
+.pb-29 {
+  padding-bottom: 120px;
+}
+.py-29 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.mt-17 {
+  margin-top: 70px;
+}
+.mt-13 {
+  margin-top: 50px;
 }
 
 /* ===================Effects=================== */
