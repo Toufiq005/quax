@@ -7,19 +7,25 @@
   height: 6px;
   border-radius: 50%;
   background: #4fffdf;
+  top: 38px;
+  left: 583px;
 }
 .dots-two {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #fbff4f;
+  top: 413px;
+  left: 199px;
 }
 .dots-three {
   width: 35px;
   height: 35px;
   background-color: transparent;
-  border: 2px solid var(--red);
+  border: 2px solid #ff4f4f;
   border-radius: 50%;
+  top: 676px;
+  left: 711px;
 }
 .dots-four {
   width: 25px;
@@ -27,4 +33,30 @@
   background-color: transparent;
   border: 2px solid #e622f8;
   border-radius: 50%;
+  top: 68px;
+}
+.dots-five {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: #ff4f4f;
+  top: 227px;
+  left: 871px;
+}
+.dots-six {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #1dff5c;
+  top: 780px;
+  left: 377px;
+}
+.parallax-element-one {
+  top: 57px;
+  left: 155px;
+}
+.parallax-element-two {
+  top: 578px;
+  left: -12px;
+  transform: rotate(90deg);
 }

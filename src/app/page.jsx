@@ -73,9 +73,8 @@ function Header() {
             alt="heroImg"
           />
         </motion.div>
-      </div>
-
       <Decoration />
+      </div>
     </header>
   );
 }
