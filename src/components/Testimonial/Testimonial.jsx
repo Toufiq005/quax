@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 export default function Testimonial() {
   return (
     <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
-      <div className="testimonial py-29 ">
+      <div className="testimonial pt-29 pb-18 ">
         <motion.h3
           initial={{ x: -150, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
