@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default async function TeamMemberSection(props) {
+export default function TeamMemberSection(props) {
   return (
     <section
       className={
