@@ -15,7 +15,7 @@ header h1 {
   font-size: 60px;
   line-height: 64px;
   color: #ffffff;
-  width: 591px;
+  width: 600px;
 }
 header p {
   width: 591px;
@@ -71,11 +71,15 @@ header p {
 .section-one-text h1 {
   width: 461px;
 }
-.section-one-text h2 {
-  width: 461px;
+.section-one-text q {
+  color: var(--text-base);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  width: 360px;
 }
 .section-one-text p {
-  width: 461px;
+  width: 436px;
 }
 .section-one {
   background-color: var(--background);
@@ -188,7 +192,7 @@ button {
   color: var(--light-blue);
 }
 .section-three p {
-  width: 460px;
+  width: 458px;
   line-height: 30px;
   color: var(--text-light);
 }

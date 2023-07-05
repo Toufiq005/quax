@@ -127,15 +127,15 @@ function AboutCompany() {
             transition={{ duration: 0.3, delay: 0.2 }}
             className="max-lg:text-4xl max-lg:mt-0"
           >
-            Built For You, By People Who Care
+            Built For You, <br/> By People Who Care
           </motion.h1>
-          <motion.h2
+          <motion.q
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.1 }}
           >
             Recognizing the need is the primary condition for design
-          </motion.h2>
+          </motion.q>
           <motion.p
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
