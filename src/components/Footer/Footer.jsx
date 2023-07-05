@@ -15,29 +15,29 @@ export default function Footer() {
   const quickLink = [
     { key: 1, name: "Home", href: "/" },
     { key: 2, name: "About", href: "/about" },
-    { key: 3, name: "Services", href: "/services" },
-    { key: 4, name: "Pages", href: "/pages" },
+    { key: 3, name: "Services", href: "/service" },
+    { key: 4, name: "Pages", href: "/" },
     { key: 5, name: "Blog", href: "/blog" },
-    { key: 6, name: "Shop", href: "/shop" },
+    { key: 6, name: "Shop", href: "/" },
     { key: 7, name: "Contact", href: "/contact" },
   ];
 
   const importantLink = [
-    { key: 1, name: "Our Team", href: "/our-team" },
-    { key: 2, name: "News & Media", href: "/news-and-media" },
-    { key: 3, name: "Case Studies", href: "/case-studies" },
-    { key: 4, name: "How it Works", href: "/how-it-works" },
-    { key: 5, name: "Locations", href: "/locations" },
-    { key: 6, name: "Resources", href: "/resources" },
+    { key: 1, name: "Our Team", href: "/team-members" },
+    { key: 2, name: "News & Media", href: "/blog" },
+    { key: 3, name: "Case Studies", href: "/case-study" },
+    { key: 4, name: "How it Works", href: "/" },
+    { key: 5, name: "Locations", href: "/" },
+    { key: 6, name: "Resources", href: "/" },
   ];
 
   const supportLink = [
-    { key: 1, name: "Forum Support", href: "/forum-support" },
-    { key: 2, name: "Help & FAQ", href: "/help-and-faq" },
+    { key: 1, name: "Forum Support", href: "/" },
+    { key: 2, name: "Help & FAQ", href: "/faq" },
     { key: 3, name: "Contact Us", href: "/contact" },
-    { key: 4, name: "Pricing And plans", href: "/pricing" },
-    { key: 5, name: "Cookies Policy", href: "/cookies-policy" },
-    { key: 6, name: "Privacy Policy", href: "/privacy-policy" },
+    { key: 4, name: "Pricing And plans", href: "/service-details" },
+    { key: 5, name: "Cookies Policy", href: "/" },
+    { key: 6, name: "Privacy Policy", href: "/" },
   ];
 
   return (
