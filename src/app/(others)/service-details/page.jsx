@@ -53,9 +53,15 @@ export default function page() {
               mollit dolore cillum minim tempor enim. Elit aute irure tempo
               cupidatat incididunt sint deser deserunt nisi.
             </motion.p>
-            <div className="max-xl:flex flex-col items-center justify-center">
+            <div className="max-xl:flex flex-col items-center justify-center max-md:overflow-hidden">
               {servicePoints.map((props, i) => (
-                <motion.div initial={{ x: 150, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 * (i + 1) }} key={props.id} className="flex">
+                <motion.div
+                  initial={{ x: 150, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 * (i + 1) }}
+                  key={props.id}
+                  className="flex"
+                >
                   <Image
                     src="/assets/icon-check-square.svg"
                     width={24}
@@ -78,19 +84,15 @@ export default function page() {
               transition={{ duration: 0.3 }}
               className="services-details-image xl:scale-120"
             >
-              <Image
-                width={570}
-                height={380}
+              <img
                 src="/assets/service-details/service-details-image-one.webp"
                 alt="img"
-                className="services-details-image-one xl:scale-150"
+                className="services-details-image-one max-md:scale-90"
               />
-              <Image
-                width={370}
-                height={250}
+              <img
                 src="/assets/service-details/service-details-image-two.webp"
                 alt="img"
-                className="services-details-image-two xl:scale-110"
+                className="services-details-image-two"
               />
             </motion.div>
           </div>

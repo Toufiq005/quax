@@ -16,7 +16,6 @@ export default function Navbar(props) {
   const [isPagesOption, setPagesOption] = useState(false);
   const [isBlogOption, setBlogOption] = useState(false);
   const [timerId, setTimerId] = useState(null);
-  const [isHomePage, setIsHomePage] = useState(true);
 
   function clearHoverOptions() {
     setHomeOption(false);
@@ -399,7 +398,7 @@ export default function Navbar(props) {
             }}
             className="navbar-button"
           >
-            {isHomePage ? (
+            {props.homePage ? (
               <>
                 <Image
                   src="/assets/navbar/menu-bars-white.svg"
@@ -658,7 +657,7 @@ export default function Navbar(props) {
                   </a>
                 </li>
                 <li className={isBlogOption ? "block" : "hidden"}>
-                  <a href="/blog-deltails" className="text-black/80 ml-5">
+                  <a href="/blog-details" className="text-black/80 ml-5">
                     Blog Details
                   </a>
                 </li>

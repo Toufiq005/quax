@@ -32,7 +32,7 @@ export default function About() {
 function AboutSection() {
   return (
     <section className="w-full h-auto bg-color flex items-center justify-center">
-      <div className="wrapper about-section flex items-center justify-center pb-29 mt-10 max-lg:flex-col max-lg:mt-10 ">
+      <div className="wrapper about-section flex items-center justify-center pb-29 mt-10 max-lg:flex-col max-lg:mt-10 overflow-hidden">
         <div className="about-section-content max-lg:flex flex-col items-center justify-center ">
           <h3 className="text-header font-medium">About Us</h3>
           <h1 className="font-semibold">Our Company Story</h1>
@@ -73,7 +73,7 @@ function WhatWeDo() {
 
   return (
     <section className="w-full h-auto flex items-center justify-center bg-very-light-gray">
-      <div className="wrapper what-we-do flex gap-6 items-center justify-center py-29 max-lg:w-full overflow-hidden">
+      <div className="wrapper what-we-do flex gap-6 items-center justify-center py-29 max-lg:w-full max-md:overflow-hidden">
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

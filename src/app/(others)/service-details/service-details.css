@@ -16,11 +16,16 @@
   line-height: 26px;
 }
 .services-details-image {
-  width: 50%;
+  width: 100%;
   position: relative;
   background-image: url(/assets/service-details/service-details-decoration-bg.svg);
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+.services-details-image-one {
+  position: relative;
+  width: 570px;
+  height: 380px;
 }
 .services-details-image-two {
   position: relative;

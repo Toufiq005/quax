@@ -20,7 +20,7 @@ export default async function TeamMemberSection(props) {
       }
     >
       <div className="wrapper team-member flex flex-col items-center justify-center">
-        <div>
+        <div className="max-md:overflow-hidden">
           <motion.h1
             initial={{ x: -150, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}

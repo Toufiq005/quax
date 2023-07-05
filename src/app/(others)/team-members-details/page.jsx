@@ -65,7 +65,7 @@ export default function page() {
                 />
               </motion.div>
             </div>
-            <div className="members-info w-1/2">
+            <div className="members-info w-1/2 max-md:w-11/12">
               <h1>Robert Banks</h1>
               <h3>CEO & Founder</h3>
               <p>
