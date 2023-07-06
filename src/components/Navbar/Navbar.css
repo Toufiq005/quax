@@ -109,15 +109,14 @@
   }
   .mobile-home-dropdown {
     width: 95%;
-    height: 100px;
-    overflow-x: scroll;
+    height: auto;
     border-radius: 5px;
     margin: 12px 0 12px 0;
     background-color: white;
     transition: 500ms;
-    display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .mobile-home-dropdown-hidden {
     width: 95%;
@@ -151,6 +150,7 @@
   }
   .mobile-nav ul {
     display: flex;
+    overflow-x: hidden;
   }
   .mobile-navbar {
     width: 0;
@@ -160,7 +160,7 @@
     transition: 300ms ease-out;
   }
   .mobile-navbar-active {
-    width: 387px;
+    width: 375px;
     overflow: hidden;
   }
 

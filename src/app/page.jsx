@@ -211,9 +211,9 @@ function AboutCompany() {
               <span>
                 <input type="checkbox" className="mx-2" />
               </span>
-              By signing up you agree to our
-              <span className="mx-1">
-                <a href="/" className="text-header">
+              <span>
+                By signing up you agree to our
+                <a href="/" className="text-header ml-1 leading-7">
                   Terms & Conditions.
                 </a>
               </span>
@@ -495,11 +495,7 @@ function WhatNext() {
                   transition={{ duration: 0.3, delay: 0.2 * i }}
                   className="flex flex-col items-center justify-center max-lg:py-5"
                 >
-                  <img
-                    className="w-8 h-8"
-                    src={props.icon}
-                    alt="icon"
-                  />
+                  <img className="w-8 h-8" src={props.icon} alt="icon" />
                   <h2>{props.title}</h2>
                   <h3>{props.discription}</h3>
                   <a

@@ -84,6 +84,15 @@ export default function Navbar(props) {
     };
   }, []);
 
+  const toggleNavModal = () => {
+    setActive(!isActive);
+    if (!isActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  };
+
   return (
     <>
       <nav
@@ -405,7 +414,7 @@ export default function Navbar(props) {
           </a>
           <button
             onClick={() => {
-              setActive(!isActive);
+              toggleNavModal();
             }}
             className="navbar-button"
           >
@@ -457,7 +466,7 @@ export default function Navbar(props) {
             </a>
             <button
               onClick={() => {
-                setActive(!isActive);
+                toggleNavModal();
               }}
               className="navbar-button mx-3"
             >
@@ -489,7 +498,7 @@ export default function Navbar(props) {
                 <li
                   className={
                     isHomeOption
-                      ? "w-full h-auto flex flex-col items-center justify-center"
+                      ? "h-auto flex flex-col items-center justify-center  pt-7"
                       : "hidden"
                   }
                 >
@@ -501,19 +510,14 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image
-                      src="/assets/navbar/Homepage-1.webp"
-                      width={100}
-                      height={50}
-                      alt="img"
-                    />
+                    <img src="/assets/navbar/Homepage-1.webp" alt="img" />
                     <p className="text-xs">Homepage One</p>
                   </a>
                 </li>
                 <li
                   className={
                     isHomeOption
-                      ? "w-full h-auto flex flex-col items-center justify-center"
+                      ? "h-auto flex flex-col items-center justify-center  pt-7"
                       : "hidden"
                   }
                 >
@@ -525,19 +529,14 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image
-                      src="/assets/navbar/Homepage-2.webp"
-                      width={100}
-                      height={50}
-                      alt="img"
-                    />
+                    <img src="/assets/navbar/Homepage-2.webp" alt="img" />
                     <p className="text-xs">Homepage Two</p>
                   </a>
                 </li>
                 <li
                   className={
                     isHomeOption
-                      ? "w-full h-auto flex flex-col items-center justify-center"
+                      ? "h-auto flex flex-col items-center justify-center  pt-7"
                       : "hidden"
                   }
                 >
@@ -549,12 +548,7 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <Image
-                      src="/assets/navbar/Homepage-3.webp"
-                      width={100}
-                      height={50}
-                      alt="img"
-                    />
+                    <img src="/assets/navbar/Homepage-3.webp" alt="img" />
                     <p className="text-xs">Homepage Three</p>
                   </a>
                 </li>
@@ -693,7 +687,7 @@ export default function Navbar(props) {
         </div>
         <div
           onClick={() => {
-            setActive(!isActive);
+            toggleNavModal();
           }}
           className={
             isActive

@@ -110,7 +110,7 @@ function Carousel() {
     >
       {data.map((item) => (
         <SwiperSlide key={item.id}>
-          <div className="testimonial-card flex flex-col items-start max-md:items-center justify-center mb-32">
+          <div className="testimonial-card flex flex-col items-start max-md:items-center justify-center">
             <div
               className={
                 "testimonial-card-content flex items-center justify-center text-center " +
@@ -121,7 +121,7 @@ function Carousel() {
             >
               <p className="m-10">{item.comment}</p>
             </div>
-            <div className="testimonial-card-author flex items-center justify-center mt-6 ml-4">
+            <div className="testimonial-card-author flex items-center justify-center mt-9 ml-4">
               <Image
                 width={60}
                 height={60}
@@ -133,6 +133,19 @@ function Carousel() {
                 <p>{item.role}</p>
               </div>
             </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="50"
+              viewBox="0 0 42 50"
+              fill="none"
+              className="card-arrow"
+            >
+              <path
+                d="M-1.22392e-06 25L42 0.751291L42 49.2487L-1.22392e-06 25Z"
+                fill={currentSlide === item.id - offsetIndex ? "#ff4f4f" : "white"}
+              />
+            </svg>
           </div>
         </SwiperSlide>
       ))}

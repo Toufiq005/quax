@@ -85,7 +85,7 @@ header p {
   font-weight: 500;
   line-height: 30px;
   display: block;
-  width: 360px;
+  width: 348px;
 }
 .section-one-text p {
   width: 436px;
@@ -325,6 +325,20 @@ button {
   }
   .section-three-video h2 {
     margin-top: 80px;
+  }
+  .exp-img-one {
+    margin: -467px 0 0px -50px;
+    scale: 0.6;
+  }
+  .exp-img-two {
+    margin: -614px 0 0 119px;
+    scale: 0.6;
+  }
+  .section-three .left-content {
+    max-width: 375px;
+  }
+  .card-two {
+    margin: 367px 0 0 180px;
   }
 }
 /* What next */
