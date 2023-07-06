@@ -44,7 +44,7 @@ export default function Decoration() {
   }, []);
   return (
     <>
-      <div
+    <div
         className="decoration-dots dots-one"
         style={{ top: positions[0].top, left: positions[0].left }}
       ></div>

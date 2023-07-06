@@ -26,6 +26,7 @@
   width: 370px;
   height: 250px;
   background: var(--background);
+  border-radius: 5px;
 }
 .services img {
   padding: 30px 0 0 20px;

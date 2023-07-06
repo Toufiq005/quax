@@ -53,10 +53,10 @@
 }
 .parallax-element-one {
   top: 57px;
-  left: 155px;
+  left: 12%;
 }
 .parallax-element-two {
   top: 578px;
-  left: -12px;
-  transform: rotate(90deg);
+  left: 0px;
+  transform: rotate(90deg) translateY(30px);
 }

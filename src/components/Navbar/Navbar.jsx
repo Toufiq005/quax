@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import Image from "next/image";
-import DarkMode from "./DarkMode/DarkMode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faMultiply } from "@fortawesome/free-solid-svg-icons";
 import "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Navbar(props) {
   const [navColor, setNavColor] = useState(false);
@@ -87,7 +87,7 @@ export default function Navbar(props) {
   return (
     <>
       <nav
-        style={{backgroundColor: navColor ? "#fff" : "", }}
+        style={{ backgroundColor: navColor ? "#fff" : "" }}
         className={
           "w-full h-25 flex items-center justify-center fixed z-50" +
           " " +
@@ -124,7 +124,7 @@ export default function Navbar(props) {
               />
             )}
           </a>
-          <ul className="flex items-center" >
+          <ul className="flex items-center">
             <li>
               <a
                 onMouseEnter={() => {
@@ -133,7 +133,7 @@ export default function Navbar(props) {
                 onMouseLeave={() => {
                   handleMouseLeave(1);
                 }}
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={"flex items-center" + " " + props.textColor}
                 href="/"
               >
@@ -142,7 +142,12 @@ export default function Navbar(props) {
               </a>
 
               {isHomeOption && (
-                <div className="home-option-wrapper">
+                <motion.div
+                  initial={{ opacity: 0, y: 120 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="home-option-wrapper"
+                >
                   <ul
                     onMouseEnter={() => {
                       handleMouseEnter(1);
@@ -150,7 +155,7 @@ export default function Navbar(props) {
                     onMouseLeave={() => {
                       handleMouseLeave(1);
                     }}
-                    className="home-option"
+                    className="home-option pt-3"
                   >
                     <li>
                       <a
@@ -195,13 +200,13 @@ export default function Navbar(props) {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </motion.div>
               )}
             </li>
             <li>
               <a
                 href="/about"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -218,7 +223,7 @@ export default function Navbar(props) {
                   handleMouseLeave(2);
                 }}
                 href="/service"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -227,7 +232,10 @@ export default function Navbar(props) {
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
               </a>
               {isServicesOption && (
-                <ul
+                <motion.ul
+                  initial={{ opacity: 0, y: 120 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
                   onMouseEnter={() => {
                     handleMouseEnter(2);
                   }}
@@ -252,7 +260,7 @@ export default function Navbar(props) {
                       Services Details
                     </a>
                   </li>
-                </ul>
+                </motion.ul>
               )}
             </li>
             <li>
@@ -264,7 +272,7 @@ export default function Navbar(props) {
                   handleMouseLeave(3);
                 }}
                 href="/team-members"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -273,7 +281,10 @@ export default function Navbar(props) {
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
               </a>
               {isPagesOption && (
-                <ul
+                <motion.ul
+                  initial={{ opacity: 0, y: 120 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
                   onMouseEnter={() => {
                     handleMouseEnter(3);
                   }}
@@ -314,7 +325,7 @@ export default function Navbar(props) {
                       Case Study
                     </a>
                   </li>
-                </ul>
+                </motion.ul>
               )}
             </li>
             <li>
@@ -326,7 +337,7 @@ export default function Navbar(props) {
                   handleMouseLeave(4);
                 }}
                 href="/blog"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -335,7 +346,10 @@ export default function Navbar(props) {
                 <FontAwesomeIcon icon={faAdd} className="text-xs ml-1" />
               </a>
               {isBlogOption && (
-                <ul
+                <motion.ul
+                  initial={{ opacity: 0, y: 120 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
                   onMouseEnter={() => {
                     handleMouseEnter(4);
                   }}
@@ -360,13 +374,13 @@ export default function Navbar(props) {
                       Blog Details
                     </a>
                   </li>
-                </ul>
+                </motion.ul>
               )}
             </li>
             <li>
               <a
                 href="/shop"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -377,7 +391,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/contact"
-                style={{color: navColor ? "#444444" : ""}}
+                style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
                 }
@@ -386,9 +400,6 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
-          <div className="dark-mode-desk">
-            <DarkMode />
-          </div>
           <a href="/contact" className="nav-contact-link">
             LETS TALK
           </a>
@@ -677,11 +688,6 @@ export default function Navbar(props) {
               <a href="/contact" className="mobile-nav-contact-link">
                 LETS TALK
               </a>
-            </li>
-            <li className="mt-5">
-              <div className="dark-mode-mobile">
-                <DarkMode />
-              </div>
             </li>
           </ul>
         </div>

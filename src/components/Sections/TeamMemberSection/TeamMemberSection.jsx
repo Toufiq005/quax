@@ -3,6 +3,7 @@
 import React from "react";
 import "./TeamMemberSection.css";
 import { useState } from "react";
+import Reveal from "@/components/ui/Reveal/Reveal";
 import data from "@/data/team-members.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,7 +11,7 @@ import {
   faTwitter,
   faVimeoV,
 } from "@fortawesome/free-brands-svg-icons";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function TeamMemberSection(props) {
   return (
@@ -21,21 +22,25 @@ export default function TeamMemberSection(props) {
     >
       <div className="wrapper team-member flex flex-col items-center justify-center">
         <div className="max-md:overflow-hidden">
-          <motion.h1
-            initial={{ x: -150, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            Our Marketing expertise
-          </motion.h1>
-          <motion.p
-            initial={{ x: 150, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
-            amet.
-          </motion.p>
+          <Reveal>
+            <motion.h1
+              initial={{ x: -150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              Our Marketing expertise
+            </motion.h1>
+          </Reveal>
+          <Reveal>
+            <motion.p
+              initial={{ x: 150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
+              amet.
+            </motion.p>
+          </Reveal>
         </div>
 
         <Team data={data} limit={props.limit} />
@@ -47,20 +52,20 @@ function TeamProfile({ name, img, role, socialLinks, i }) {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
-    <motion.div
-      className="team-member-profile overflow-hidden"
-      onMouseEnter={() => setShowLinks(true)}
-      onMouseLeave={() => setShowLinks(false)}
-      initial={{ y: 150, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.2 * (i + 1) }}
-    >
-      <div>
-        <img src={img} alt="img" className="team-member-profile-img" />
-        <h2>{name}</h2>
-        <h3>{role}</h3>
-      </div>
-      <AnimatePresence>
+    <Reveal>
+      <motion.div
+        className="team-member-profile overflow-hidden"
+        onMouseEnter={() => setShowLinks(true)}
+        onMouseLeave={() => setShowLinks(false)}
+        initial={{ y: 150, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.2 * (i + 1) }}
+      >
+        <div>
+          <img src={img} alt="img" className="team-member-profile-img" />
+          <h2>{name}</h2>
+          <h3>{role}</h3>
+        </div>
         {showLinks && (
           <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -88,8 +93,8 @@ function TeamProfile({ name, img, role, socialLinks, i }) {
             </a>
           </motion.div>
         )}
-      </AnimatePresence>
-    </motion.div>
+      </motion.div>
+    </Reveal>
   );
 }
 function Team(props) {

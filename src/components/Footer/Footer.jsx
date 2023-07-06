@@ -10,6 +10,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import Reveal from "../ui/Reveal/Reveal";
 
 export default function Footer() {
   const quickLink = [
@@ -44,13 +45,15 @@ export default function Footer() {
     <footer className="w-full flex flex-col items-center justify-center ">
       <div className="flex items-start justify-between w-full max-md:items-center footer-div">
         <div className="max-md:flex flex-col items-center justify-center max-md:text-center">
-          <motion.img
-            initial={{ x: -200, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            src="/assets/logo-dark.svg"
-            alt="logo"
-          />
+          <Reveal>
+            <motion.img
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              src="/assets/logo-dark.svg"
+              alt="logo"
+            />
+          </Reveal>
 
           <div>
             <p className="my-4">
@@ -136,14 +139,16 @@ export default function Footer() {
       </div>
 
       <div className="w-full h-24  flex justify-center items-center border-t mt-24">
-        <motion.p
-          initial={{ y: 80, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className=" text-center w-full pt-0"
-        >
-          ©2021 All Rights Reserved. With Design by Loyalcoders
-        </motion.p>
+        <Reveal>
+          <motion.p
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className=" text-center w-full pt-0"
+          >
+            ©2021 All Rights Reserved. With Design by Loyalcoders
+          </motion.p>
+        </Reveal>
       </div>
     </footer>
   );
