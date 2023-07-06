@@ -25,13 +25,12 @@ export default function ServiceSection() {
       <div className="service-wrapper mt-17 pb-29 ">
         {data.map((items, i) => {
           return (
-            <Reveal className="max-lg:flex items-center justify-center">
+            <Reveal key={items.id} className="max-lg:flex items-center justify-center">
               <motion.div
                 initial={{ y: 150, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: i * 0.3 }}
                 className="services"
-                key={items.id}
               >
                 <Image
                   src={items.icon}
