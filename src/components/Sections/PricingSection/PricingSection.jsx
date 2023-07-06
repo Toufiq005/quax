@@ -80,7 +80,7 @@ export default function PricingSection() {
         {price.map((props, i) => {
           return (
             <Reveal
-              key={props.id}
+              keys={props.id}
               className="max-lg:flex items-center justify-center"
             >
               <motion.div
