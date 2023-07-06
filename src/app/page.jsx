@@ -488,7 +488,7 @@ function WhatNext() {
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
           {contactOptions.map((props, i) => {
             return (
-            <Reveal keys={props.id}>
+            <Reveal key={props.id}>
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
