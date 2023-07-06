@@ -154,7 +154,7 @@ export default function Navbar(props) {
                 <motion.div
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.4 }}
                   className="home-option-wrapper"
                 >
                   <ul
@@ -244,7 +244,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.4 }}
                   onMouseEnter={() => {
                     handleMouseEnter(2);
                   }}
@@ -293,7 +293,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.4 }}
                   onMouseEnter={() => {
                     handleMouseEnter(3);
                   }}
@@ -358,7 +358,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.4 }}
                   onMouseEnter={() => {
                     handleMouseEnter(4);
                   }}
