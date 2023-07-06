@@ -150,7 +150,7 @@ function AboutCompany() {
               Recognizing the need is the primary condition for design
             </motion.q>
           </Reveal>
-          <Reveal className='max-lg:flex flex-col items-center justify-center'>
+          <Reveal className="max-lg:flex flex-col items-center justify-center">
             <motion.p
               initial={{ y: -150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -488,30 +488,29 @@ function WhatNext() {
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
           {contactOptions.map((props, i) => {
             return (
-              <Reveal>
-                <motion.div
-                  initial={{ y: 150, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.2 * i }}
-                  key={props.id}
-                  className="flex flex-col items-center justify-center max-lg:py-5"
-                >
-                  <Image
-                    width={38}
-                    height={38}
-                    src="/assets/home/plan.svg"
-                    alt="icon"
-                  />
-                  <h2>{props.title}</h2>
-                  <h3>{props.discription}</h3>
-                  <a
-                    href={props.href}
-                    className="bg-red-500 hover:bg-white hover:text-red-500 duration-200 text-white "
+                <Reveal key={props.id}>
+                  <motion.div
+                    initial={{ y: 150, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.2 * i }}
+                    className="flex flex-col items-center justify-center max-lg:py-5"
                   >
-                    {props.method}
-                  </a>
-                </motion.div>
-              </Reveal>
+                    <Image
+                      width={38}
+                      height={38}
+                      src="/assets/home/plan.svg"
+                      alt="icon"
+                    />
+                    <h2>{props.title}</h2>
+                    <h3>{props.discription}</h3>
+                    <a
+                      href={props.href}
+                      className="bg-red-500 hover:bg-white hover:text-red-500 duration-200 text-white "
+                    >
+                      {props.method}
+                    </a>
+                  </motion.div>
+                </Reveal>
             );
           })}
         </div>
@@ -544,54 +543,53 @@ function Blog() {
       <div className="flex items-center justify-center  mb-28 mt-16 post-div">
         {blogData.map((items, i) => {
           return (
-            <Reveal>
-              <motion.div
-                initial={{ y: 150, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.2 * i }}
-                key={items.id}
-                className="post flex flex-col items-center justify-center"
-              >
-                <Image
-                  width={370}
-                  height={250}
-                  src={items.img}
-                  alt="img"
-                  className="postImg"
-                />
-                <div className="flex items-center justify-center post-info">
-                  <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
-                    <span>
-                      <Image
-                        src="/assets/icon-user.svg"
-                        width={12}
-                        height={12}
-                        alt="icon"
-                        className="w-3 h-3 mx-2"
-                      />
-                    </span>
-                    By {items.author}
-                  </h2>
-                  <h2 className="text-black/40 font-medium pr-5 flex items-center">
-                    <span>
-                      <Image
-                        src="/assets/icon-folder.svg"
-                        width={14}
-                        height={10}
-                        alt="icon"
-                        className="w-3 h-3 mx-2"
-                      />
-                    </span>
-                    {items.category}
-                  </h2>
-                </div>
-                <h1>{items.title}</h1>
-                <p>{items.description}</p>
-                <div className="pb-8">
-                  <a href={items.link}>View Details</a>
-                </div>
-              </motion.div>
-            </Reveal>
+              <Reveal key={items.id}>
+                <motion.div
+                  initial={{ y: 150, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.2, delay: 0.2 * i }}
+                  className="post flex flex-col items-center justify-center"
+                >
+                  <Image
+                    width={370}
+                    height={250}
+                    src={items.img}
+                    alt="img"
+                    className="postImg"
+                  />
+                  <div className="flex items-center justify-center post-info">
+                    <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
+                      <span>
+                        <Image
+                          src="/assets/icon-user.svg"
+                          width={12}
+                          height={12}
+                          alt="icon"
+                          className="w-3 h-3 mx-2"
+                        />
+                      </span>
+                      By {items.author}
+                    </h2>
+                    <h2 className="text-black/40 font-medium pr-5 flex items-center">
+                      <span>
+                        <Image
+                          src="/assets/icon-folder.svg"
+                          width={14}
+                          height={10}
+                          alt="icon"
+                          className="w-3 h-3 mx-2"
+                        />
+                      </span>
+                      {items.category}
+                    </h2>
+                  </div>
+                  <h1>{items.title}</h1>
+                  <p>{items.description}</p>
+                  <div className="pb-8">
+                    <a href={items.link}>View Details</a>
+                  </div>
+                </motion.div>
+              </Reveal>
           );
         })}
       </div>
