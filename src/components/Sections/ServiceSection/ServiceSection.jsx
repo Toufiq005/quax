@@ -16,7 +16,6 @@ export default function ServiceSection() {
             initial={{ y: 150, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.3 }}
-            className="mb-"
           >
             Integrate The <br /> Tools You Use Everyday
           </motion.h1>

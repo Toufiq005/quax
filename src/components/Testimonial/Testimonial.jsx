@@ -52,9 +52,9 @@ export default function Testimonial() {
 function Carousel() {
   var offsetIndex;
   if (window.matchMedia("(max-width: 780px)").matches) {
-    offsetIndex = 2;
-  } else {
     offsetIndex = 1;
+  } else {
+    offsetIndex = 2;
   }
 
   const swiperRef = useRef(null);
