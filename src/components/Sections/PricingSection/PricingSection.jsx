@@ -79,13 +79,12 @@ export default function PricingSection() {
       <div className="flex items-center justify-center mt-17 price-div">
         {price.map((props, i) => {
           return (
-            <Reveal className="max-lg:flex items-center justify-center">
+            <Reveal key={props.id} className="max-lg:flex items-center justify-center">
               <motion.div
                 initial={{ y: 250, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 * i }}
                 className="price flex flex-col items-center"
-                key={props.id}
               >
                 <h2>{props.plan}</h2>
                 <p className="mx-3">{props.title}</p>
