@@ -26,16 +26,16 @@ export default function TeamMemberSection(props) {
             <motion.h1
               initial={{ x: -150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Our Marketing expertise
+              {props.isTitle ? `${props.title}` : "Our Marketing expertise"}
             </motion.h1>
           </Reveal>
           <Reveal>
             <motion.p
               initial={{ x: 150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
               amet.
@@ -70,24 +70,24 @@ function TeamProfile({ name, img, role, socialLinks, i }) {
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="social-links flex flex-col w-10"
           >
             <a
               href={socialLinks.facebook}
-              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
             <a
               href={socialLinks.twitter}
-              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
               <FontAwesomeIcon icon={faTwitter} />
             </a>
             <a
               href={socialLinks.vimeo}
-              className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
             >
               <FontAwesomeIcon icon={faVimeoV} />
             </a>

@@ -4,6 +4,7 @@ import "./FaqSection.css";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 export default function FaqSection(props) {
   const [selectedFaq, setSelectedFaq] = useState(1);
@@ -39,34 +40,48 @@ export default function FaqSection(props) {
                       {qustion}
                     </h2>
                     {selectedFaq === id ? (
-                      <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.3}}>
-                        <Image
-                          width={16}
-                          height={2}
-                          src="/assets/faq/icon-minus.svg"
-                          className="mr-7 max-sm:mr-0"
-                        />
-                      </motion.div>
+                      <Reveal>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3, delay: 0.3 }}
+                        >
+                          <Image
+                            width={16}
+                            height={2}
+                            src="/assets/faq/icon-minus.svg"
+                            className="mr-7 max-sm:mr-0"
+                          />
+                        </motion.div>
+                      </Reveal>
                     ) : (
-                      <motion.div  initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.3}}>
-                        <Image
-                          width={16}
-                          height={2}
-                          src="/assets/faq/icon-plus.svg"
-                          className="mr-7 max-sm:mr-0"
-                        />
-                      </motion.div>
+                      <Reveal>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3, delay: 0.3 }}
+                        >
+                          <Image
+                            width={16}
+                            height={2}
+                            src="/assets/faq/icon-plus.svg"
+                            className="mr-7 max-sm:mr-0"
+                          />
+                        </motion.div>
+                      </Reveal>
                     )}
                   </button>
                   {selectedFaq === id && (
-                    <motion.div
-                      initial={{ y: -100, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="faq-answer max-sm:pt-0 max-sm:pb-0 flex justify-center pt-5 pb-8 border-t border-black/10"
-                    >
-                      <p className="max-sm:py-3">{answer}</p>
-                    </motion.div>
+                    <Reveal>
+                      <motion.div
+                        initial={{ y: -100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="faq-answer max-sm:pt-0 max-sm:pb-0 flex justify-center pt-5 pb-8 border-t border-black/10"
+                      >
+                        <p className="max-sm:py-3">{answer}</p>
+                      </motion.div>
+                    </Reveal>
                   )}
                 </div>
               );

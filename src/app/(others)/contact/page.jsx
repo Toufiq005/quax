@@ -57,7 +57,13 @@ export default function page() {
           </div>
         </div>
       </section>
-      <ContactSection bgColor="bg-color" inputColor="bg-very-light-gray" />
+      <ContactSection
+        bgColor="bg-color"
+        inputColor="bg-very-light-gray"
+        headerTwo="Send us a message"
+        headerThree="The European language are memb of the same family. Their separate is a
+myth. For science Europe the same vocabulary."
+      />
     </>
   );
 }

@@ -151,22 +151,25 @@ export default async function BlogSection() {
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             Recent Posts
           </h1>
-          <div className="flex flex-col items-start justify-center">
-            {data.slice(0, 5).map((items) => {
-              return (
-                <a href="/blog" key={items.id} className="blog">
-                  <div className="flex items-start justify-center gap-5 my-10 mx-7">
-                    <Image
-                      width={120}
-                      height={80}
-                      src={items.thumbnail}
-                      alt="img"
-                    />
-                    <h2 className="text-black/70">{items.title}</h2>
-                  </div>
-                </a>
-              );
-            })}
+          <div className="w-full flex flex-col items-center justify-center">
+            <a href="/">
+              <div className="flex w-80 my-5 ">
+                <img src="/assets/blog-post/blog-post-one.png" alt="img" style={{width: "120px", height: "80px"}} />
+                <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Sass That Had Gone Way To Far.</h>
+              </div>
+            </a>
+            <a href="/">
+              <div className="flex w-80 my-5 ">
+                <img src="/assets/blog-post/blog-post-two.png" alt="img" style={{width: "120px", height: "80px"}} />
+                <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Moments To Remember From Seo.</h>
+              </div>
+            </a>
+            <a href="/">
+              <div className="flex w-80 my-5 ">
+                <img src="/assets/blog-post/blog-post-three.png" alt="img" style={{width: "120px", height: "80px"}} />
+                <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Simple Guidance For You In Startup Business.</h>
+              </div>
+            </a>
           </div>
         </div>
         <div className="blog-div my-4">
@@ -177,7 +180,7 @@ export default async function BlogSection() {
             {blogCategories.map(({ id, category, href }) => {
               return (
                 <a href={href} key={id} target="_blank">
-                  <h2 className="text-lg text-black/70 hover:text-red-500 font-medium mx-7 my-3">
+                  <h2 className="text-lg text-black/70 duration-300 hover:text-red-500 font-medium mx-7 my-3">
                     {category}
                   </h2>
                 </a>
@@ -196,7 +199,7 @@ export default async function BlogSection() {
                   href={items.link}
                   key={items.id}
                   target="_blank"
-                  className="hover:scale-105"
+                  className="hover:scale-105 duration-300"
                 >
                   <Image width={90} height={90} src={items.icon} alt="icon" />
                 </a>
@@ -210,7 +213,7 @@ export default async function BlogSection() {
             {blogTags.map(({ id, tag, href }) => {
               return (
                 <a href={href} key={id} target="_blank">
-                  <h2 className="px-3 py-2 hover:bg-red-500 bg-very-light-gray text-black/30 hover:text-white rounded m-1 text-center">
+                  <h2 className="px-3 py-2 hover:bg-red-500 bg-very-light-gray duration-300 text-black/30 hover:text-white rounded m-1 text-center">
                     {tag}
                   </h2>
                 </a>

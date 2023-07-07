@@ -34,8 +34,12 @@
   width: 270px;
   height: 378px;
   background: #ffffff;
-  border: 1px solid #cdcdcd;
+  border: 1px solid #cccccc;
   border-radius: 10px;
+  transition: 500ms;
+}
+.team-member-profile:hover {
+  box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.2);
 }
 .team-member-profile h2 {
   margin-top: 24px;
@@ -48,7 +52,7 @@
 .social-links {
   position: relative;
   top: -350px;
-  left: 207px;
+  left: 190px;
 }
 .social-links a {
   margin: 10px;

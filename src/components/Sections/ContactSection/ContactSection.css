@@ -5,7 +5,12 @@
   text-align: center;
   color: var(--text-base);
 }
-
+.contact-section h3 {
+  color: var(--text-header);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
 .contact-section p {
   margin: 24px 0 70px 0;
   width: 572px;

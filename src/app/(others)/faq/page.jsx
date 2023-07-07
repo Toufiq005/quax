@@ -20,7 +20,7 @@ export default async function page() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <FaqSection data={data} />
-      <ContactSection bgColor="bg-very-light-gray" inputColor="bg-color" />
+      <ContactSection bgColor="bg-very-light-gray" inputColor="bg-color" headerOne="Contact Us" headerTwo="Drop Us a Text Massege" />
       <SubscribeSection />
     </>
   );

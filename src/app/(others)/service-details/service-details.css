@@ -41,3 +41,8 @@
     width: 90%;
   }
 }
+@media (max-width: 640px) {
+  .services-details-image-two {
+    right: 0;
+  }
+}
