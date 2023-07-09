@@ -34,7 +34,7 @@ export default function ContactSection(props) {
           </motion.h1>
         </Reveal>
         {props.headerThree ? (
-          <Reveal>
+          <Reveal className="flex items-center justify-center">
             <motion.p
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -45,31 +45,29 @@ export default function ContactSection(props) {
           </Reveal>
         ) : null}
         <form className="flex flex-col justify-center items-center max-lg:w-full">
-          <div className="flex items-center max-lg:flex-col max-sm:w-full">
+          <div className="from-input-wrapper">
             <input
               type="text"
               placeholder="First Name"
               required
-              className={"mr-4 max-lg:mr-0" + " " + props.inputColor}
+              className={"focus:outline-blue-300" + " " + props.inputColor}
             />
             <input
               type="text"
               placeholder="Last Name"
               required
-              className={"mr-4 max-lg:mr-0" + " " + props.inputColor}
+              className={"focus:outline-blue-300" + " " + props.inputColor}
             />
-          </div>
-          <div className="flex items-center max-lg:flex-col max-sm:w-full">
             <input
               type="text"
               placeholder="Phone NO"
               required
-              className={"mr-4 max-lg:mr-0" + " " + props.inputColor}
+              className={"focus:outline-blue-300" + " " + props.inputColor}
             />
             <input
               type="text"
               placeholder="Subject ..."
-              className={"mr-4 max-lg:mr-0" + " " + props.inputColor}
+              className={"focus:outline-blue-300" + " " + props.inputColor}
             />
           </div>
           <textarea
@@ -77,7 +75,7 @@ export default function ContactSection(props) {
             cols="30"
             rows="10"
             placeholder="Type massege ..."
-            className={props.inputColor}
+            className={"focus:outline-blue-300" + " " + props.inputColor}
           ></textarea>
           <button type="submit">Submit Message</button>
         </form>

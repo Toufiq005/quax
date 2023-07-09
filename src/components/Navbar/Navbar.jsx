@@ -2,9 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import Logo from "../ui/Logo/Logo";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAdd, faMultiply } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAdd,
+  faArrowRight,
+  faMagnifyingGlass,
+  faMultiply,
+} from "@fortawesome/free-solid-svg-icons";
 import "next/navigation";
 import { motion } from "framer-motion";
 
@@ -15,6 +21,7 @@ export default function Navbar(props) {
   const [isServicesOption, setServicesOption] = useState(false);
   const [isPagesOption, setPagesOption] = useState(false);
   const [isBlogOption, setBlogOption] = useState(false);
+  const [isSearchOption, setSearchOption] = useState(false);
   const [timerId, setTimerId] = useState(null);
 
   function clearHoverOptions() {
@@ -22,6 +29,7 @@ export default function Navbar(props) {
     setServicesOption(false);
     setPagesOption(false);
     setBlogOption(false);
+    setSearchOption(false);
   }
 
   function handleMouseLeave(props) {
@@ -104,34 +112,8 @@ export default function Navbar(props) {
         }
       >
         <div className="navbar">
-          <a href="/">
-            {props.homePage ? (
-              <>
-                <Image
-                  src="/assets/logo-white.svg"
-                  width="155"
-                  height="50"
-                  alt="Logo"
-                  className={navColor ? "hidden logo" : "block logo"}
-                  priority
-                />
-                <Image
-                  src="/assets/logo-dark.svg"
-                  width="155"
-                  height="50"
-                  alt="Logo"
-                  className={!navColor ? "hidden logo" : "block logo"}
-                />
-              </>
-            ) : (
-              <Image
-                src="/assets/logo-dark.svg"
-                width="155"
-                height="50"
-                alt="Logo"
-                className="logo"
-              />
-            )}
+          <a href="/" className="max-sm:ml-4">
+            <Logo pageIndex={props.pageIndex} />
           </a>
           <ul className="flex items-center">
             <li>
@@ -154,7 +136,7 @@ export default function Navbar(props) {
                 <motion.div
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5 }}
                   className="home-option-wrapper"
                 >
                   <ul
@@ -177,12 +159,12 @@ export default function Navbar(props) {
                           height="168"
                           alt="img"
                         />
-                        <p>Homepage One</p>
+                        <p className="pb-3">Homepage One</p>
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/home-page-two"
                         className="flex flex-col items-center justify-center"
                       >
                         <Image
@@ -191,7 +173,7 @@ export default function Navbar(props) {
                           height="161"
                           alt="img"
                         />
-                        <p>Homepage Two</p>
+                        <p className="pb-3">Homepage Two</p>
                       </a>
                     </li>
                     <li>
@@ -205,7 +187,7 @@ export default function Navbar(props) {
                           height="160"
                           alt="img"
                         />
-                        <p>Homepage Three</p>
+                        <p className="pb-3">Homepage Three</p>
                       </a>
                     </li>
                   </ul>
@@ -244,7 +226,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
                     handleMouseEnter(2);
                   }}
@@ -293,7 +275,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
                     handleMouseEnter(3);
                   }}
@@ -358,7 +340,7 @@ export default function Navbar(props) {
                 <motion.ul
                   initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
                     handleMouseEnter(4);
                   }}
@@ -388,7 +370,7 @@ export default function Navbar(props) {
             </li>
             <li>
               <a
-                href="/shop"
+                href="/service"
                 style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor
@@ -407,6 +389,39 @@ export default function Navbar(props) {
               >
                 <p>CONTACT</p>
               </a>
+            </li>
+            <li>
+              <p
+                onClick={() => {
+                  setSearchOption(!isSearchOption);
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  style={{ color: navColor ? "#444444" : "#fff" }}
+                  className=" relative top-0 left-16"
+                />
+              </p>
+              {isSearchOption && (
+                <motion.div
+                  initial={{ y: 80, x: 135, opacity: 0 }}
+                  animate={{ y: 0, x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="search-bar absolute flex"
+                >
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="w-full h-full ml-5"
+                  />
+                  <button>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="text-red-500 ml-3"
+                    />
+                  </button>
+                </motion.div>
+              )}
             </li>
           </ul>
           <a href="/contact" className="nav-contact-link">
@@ -522,7 +537,7 @@ export default function Navbar(props) {
                   }
                 >
                   <a
-                    href="/"
+                    href="/home-page-two"
                     className={
                       isHomeOption
                         ? "text-black/60 hover:text-red-500 flex flex-col items-center"
@@ -674,9 +689,9 @@ export default function Navbar(props) {
               </div>
             </li>
             <li>
-              <div className=" text-white hover:text-red-500 flex items-center justify-between ">
+              <a href="/contact" className=" text-white hover:text-red-500 flex items-center justify-between ">
                 <p>Contact</p>
-              </div>
+              </a>
             </li>
             <li className="mt-5">
               <a href="/contact" className="mobile-nav-contact-link">

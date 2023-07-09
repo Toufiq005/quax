@@ -17,7 +17,7 @@ import YoutubeEmbed from "@/components/ui/YoutubeEmbed/YoutubeEmbed";
 export default function Home() {
   return (
     <>
-      <Navbar bgColor="bg-dark-blue" textColor="text-white" homePage={true} />
+      <Navbar bgColor="bg-dark-blue" textColor="text-white" pageIndex={1} />
       <Header />
       <AboutCompany />
       <ServiceSection />
@@ -136,7 +136,7 @@ function AboutCompany() {
               initial={{ y: -150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.2 }}
-              className="max-lg:text-4xl max-lg:mt-0"
+              className="max-lg:mt-0"
             >
               Built For You, <br /> By People Who Care
             </motion.h1>
@@ -207,7 +207,7 @@ function AboutCompany() {
                 Sign Up
               </button>
             </div>
-            <p className="flex items-center justify-center max-sm:text-xs">
+            <p className="flex items-center justify-center terms-and-condition max-sm:text-xs">
               <span>
                 <input type="checkbox" className="mx-2" />
               </span>
@@ -318,7 +318,7 @@ function Experience() {
               simple visual builder.
             </motion.p>
           </Reveal>
-          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
+          <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
             <h4>Social Media Marketing</h4>
             <div className="bar">
               <Reveal>
@@ -330,7 +330,7 @@ function Experience() {
               </Reveal>
             </div>
           </div>
-          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
+          <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
             <h4>Web Development</h4>
             <div className="bar">
               <Reveal>
@@ -342,7 +342,7 @@ function Experience() {
               </Reveal>
             </div>
           </div>
-          <div className="mt-5 max-sm:w-full max-sm:flex flex-col items-center justify-center">
+          <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
             <h4>Competitor Research</h4>
             <div className="bar">
               <Reveal>

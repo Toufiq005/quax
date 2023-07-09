@@ -9,6 +9,7 @@ import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSe
 import Button from "@/components/Buttons/Button";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
+import "font-awesome/css/font-awesome.min.css";
 
 export default function page() {
   const servicePoints = [

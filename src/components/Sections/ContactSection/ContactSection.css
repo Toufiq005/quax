@@ -25,7 +25,7 @@
 
 .contact-section input {
   margin-bottom: 24px;
-  width: 370px;
+  width: 375px;
   padding: 0 20px 0 20px;
   height: 50px;
   border-radius: 5px;
@@ -38,7 +38,7 @@
 
 .contact-section textarea {
   padding: 20px;
-  width: 770px;
+  width: 760px;
   height: 200px;
   resize: none;
   border-radius: 5px;
@@ -66,7 +66,12 @@
   color: var(--text-header);
   background: #ffffff;
 }
-
+.from-input-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
 @media (max-width: 1024px) {
   .contact-section form {
     width: 100%;
@@ -74,8 +79,19 @@
   .contact-section textarea {
     width: 90%;
   }
+  .contact-section h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
-
+@media (max-width: 768px) {
+  .from-input-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .from-input-wrapper input {
+    width: 90%;
+  }
+}
 @media (max-width: 640px) {
   .contact-section p {
     width: 90%;

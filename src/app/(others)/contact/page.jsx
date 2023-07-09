@@ -17,8 +17,8 @@ export default function page() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <section className="contact flex items-center justify-center">
-        <div className="wrapper flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center my-14">
+        <div className="wrapper flex max-lg:flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center my-14 max-lg:my-5">
             <div className="contact-icon">
               <FontAwesomeIcon
                 icon={faPhone}
@@ -30,7 +30,7 @@ export default function page() {
               (+1) 012 345 6789 <br /> (+1) 012 345 6789
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center mx-40 max-lg:mx-0 my-14">
+          <div className="flex flex-col items-center justify-center mx-40 max-lg:mx-0 my-14 max-lg:my-5">
             <div className="contact-icon">
               <FontAwesomeIcon
                 icon={faEnvelope}
@@ -42,7 +42,7 @@ export default function page() {
               support@loyalcoder.com <br /> info@loyalcoder.com
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center my-14">
+          <div className="flex flex-col items-center justify-center my-14 max-lg:my-5">
             <div className="contact-icon">
               <FontAwesomeIcon
                 icon={faLocationDot}

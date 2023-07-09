@@ -72,9 +72,18 @@
 .mobile-nav ul {
   display: none;
 }
-/* .dark-mode-mobile {
-  display: none;
-} */
+.search-bar {
+  width: 375px;
+  height: 60px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 3px solid var(--text-header);
+  background-color: white;
+  right: 135px;
+}
+.search-bar input:focus {
+  outline: none;
+}
 @media (max-width: 1100px) {
   .navbar {
     justify-content: center;

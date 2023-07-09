@@ -57,6 +57,10 @@
     margin: 0 0 60px 0;
     width: 90%;
   }
+  .about-section-content h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
   .about-section-image {
     margin-bottom: 60px;
     margin-left: 0;
@@ -123,6 +127,10 @@
   .what-we-do {
     flex-direction: column-reverse;
   }
+  .what-we-do h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
   .what-we-do-image {
     margin-bottom: 40px;
   }
@@ -168,7 +176,12 @@
   font-weight: 500;
   color: var(--text-header);
 }
-
+@media (max-width: 1024px) {
+  .why-chose-us-content h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
 @media (max-width: 640px) {
   .why-chose-us-content {
     width: 90%;

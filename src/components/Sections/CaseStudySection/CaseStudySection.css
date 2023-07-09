@@ -75,6 +75,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 1024px) {
+  .case-study h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
 @media (max-width: 820px) {
   .case-study-container {
     grid-template-columns: 1fr;

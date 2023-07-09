@@ -1,6 +1,7 @@
 import Banner from "@/components/Sections/Banner/Banner";
 import CaseStudySection from "@/components/Sections/CaseStudySection/CaseStudySection";
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
+import "font-awesome/css/font-awesome.min.css";
 
 export default async function CaseStudy() {
   return (

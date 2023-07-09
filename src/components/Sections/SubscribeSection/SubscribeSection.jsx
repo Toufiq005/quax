@@ -19,9 +19,8 @@ export default function SubscribeSection() {
             >
               <input
                 type="email"
-                placeholder="&#xf0e0;    e-mail address"
-                style={{ fontFamily: "FontAwesome" }}
-                className="bg-transparent text-white placeholder:text-white"
+                placeholder='&#xf0e0;     e-mail address'
+                className="bg-transparent subscribe-input text-white placeholder:text-white focus:outline-blue-300"
               />
               <button type="submit">SUBSCRIBE NOW</button>
             </motion.form>

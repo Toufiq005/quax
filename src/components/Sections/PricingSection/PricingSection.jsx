@@ -86,7 +86,7 @@ export default function PricingSection() {
               <motion.div
                 initial={{ y: 250, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 * i }}
+                transition={{ duration: 0.3, delay: 0.3 * i }}
                 className="price flex flex-col items-center"
               >
                 <h2>{props.plan}</h2>

@@ -150,14 +150,28 @@ button {
     align-items: center;
     text-align: center;
   }
+  .from h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
   .section-one-text h1 {
     width: 80%;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
   .section-one-text h2 {
     width: 80%;
   }
   .section-one-text p {
     width: 80%;
+  }
+}
+@media (max-width: 419px) {
+  .terms-and-condition {
+    align-items: start;
+  }
+  .terms-and-condition input {
+    margin-top: 8px;
   }
 }
 
@@ -224,7 +238,7 @@ button {
   overflow: hidden;
 }
 .card-one {
-  margin: -15px 0px 0px 30px;
+  margin: -15px 0 -58px 4px;
   scale: 1.5;
 }
 .card-two {
@@ -287,6 +301,12 @@ button {
   background: var(--text-header);
   border-radius: 5px;
   transition: 3000ms;
+}
+@media (max-width: 1024px) {
+  .section-three h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 @media (max-width: 768px) {
   .section-three h1 {
@@ -394,6 +414,10 @@ button {
   .what-next p {
     margin: 0 15px 0 15px;
   }
+  .what-next h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 /* Our Blogpost */
 
@@ -469,5 +493,15 @@ button {
   }
   .post-div {
     flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  .blogpost h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .post h1 {
+    font-size: 2rem;
+    line-height: 2.15rem;
   }
 }

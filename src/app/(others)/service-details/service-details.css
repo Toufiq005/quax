@@ -41,6 +41,12 @@
     width: 90%;
   }
 }
+@media (max-width: 1024px) {
+  .services-details-content h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
 @media (max-width: 640px) {
   .services-details-image-two {
     right: 0;

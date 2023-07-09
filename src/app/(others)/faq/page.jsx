@@ -2,6 +2,7 @@ import Banner from "@/components/Sections/Banner/Banner";
 import FaqSection from "@/components/Sections/FaqSection/FaqSection";
 import ContactSection from "@/components/Sections/ContactSection/ContactSection";
 import SubscribeSection from "@/components/Sections/SubscribeSection/SubscribeSection";
+import "font-awesome/css/font-awesome.min.css";
 
 require("dotenv").config();
 
