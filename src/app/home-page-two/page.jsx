@@ -1,7 +1,7 @@
 "use client";
 
 import "./homePageTwo.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import testimonialData from "@/data/testimonial";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -59,6 +59,22 @@ export default function page() {
 }
 
 function Header() {
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const parallax = document.querySelector(".hero-card");
+      const top = -380;
+      parallax.style.top = (scrollTop * 0.2) + top + "px";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className="w-full h-auto min-h-screen flex items-center justify-center home-two relative -top-25 overflow-hidden">
       <div className="wrapper w-full flex items-center justify-between max-xl:flex-col">
@@ -115,11 +131,11 @@ function Header() {
             transition={{ delay: 0.4, duration: 0.4 }}
             src="/assets/home-two/hero-card.svg"
             alt="hero-card"
-            className="relative -top-96 -left-16 max-sm:left-0"
+            className="relative -top-96 -left-16 max-sm:left-0 hero-card"
           />
         </Reveal>
       </div>
-      {/* <DecorationTwo/> */}
+      <DecorationTwo/>
     </header>
   );
 }
@@ -357,7 +373,7 @@ function Analysis() {
     <section className="w-full h-auto flex items-center justify-center free-analysis overflow-hidden">
       <div className="wrapper flex justify-between items-center max-xl:flex-col max-xl:gap-20">
         <Reveal className="left max-xl:flex flex-col items-center justify-center">
-          <motion.h1 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-6">We're the perfect local business assists</motion.h1>
+          <motion.h1 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-6">We&apos;re the perfect local business assists</motion.h1>
           <motion.p initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.6 }} className="mb-6">
             The new common language will be more simple and regular than the
             existing European languages. It will be as simple as Occidental; in
