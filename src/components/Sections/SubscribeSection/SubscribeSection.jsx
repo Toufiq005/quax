@@ -3,6 +3,7 @@
 import "./SubscribeSection.css";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
+import 'font-awesome/css/font-awesome.min.css';
 
 export default function SubscribeSection() {
   return (

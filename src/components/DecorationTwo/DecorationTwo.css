@@ -1,0 +1,65 @@
+.shape-one {
+  top: 604px;
+  left: 250px;
+  transition: top 3s, left 3s;
+}
+.shape-two {
+  top: 190px;
+  left: 350px;
+  transition: top 3s, left 3s;
+}
+.shape-three {
+  top: 750px;
+  left: 582px;
+  transition: top 3s, left 3s;
+}
+.shape-four {
+  top: 452px;
+  left: 731px;
+  transition: top 3s, left 3s;
+}
+.shape-five {
+  top: 283px;
+  left: 966px;
+  transition: top 3s, left 3s;
+}
+.shape-six {
+  top: 742px;
+  left: 961px;
+  transition: top 3s, left 3s;
+}
+.shape-seven {
+  top: 222px;
+  left: 1500px;
+  transition: top 3s, left 3s;
+}
+@media (max-width: 1540px) {
+  .shape-one {
+    top: 624px;
+    left: 110px;
+  }
+  .shape-two {
+    top: 190px;
+    left: 158px;
+  }
+  .shape-three {
+    top: 750px;
+    left: 455px;
+  }
+  .shape-four {
+    top: 452px;
+    left: 579px;
+  }
+  .shape-five {
+    top: 281px;
+    left: 843px;
+  }
+  .shape-six {
+    top: 742px;
+    left: 797px;
+  }
+  .shape-seven {
+    top: 222px;
+    left: 1229px;
+  }
+}

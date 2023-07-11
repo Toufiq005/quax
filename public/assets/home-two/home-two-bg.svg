@@ -1,0 +1,19 @@
+<svg width="1750" height="950" viewBox="0 0 1750 950" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_36_22" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1750" height="950">
+<rect width="1750" height="950" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_36_22)">
+<circle cx="464.5" cy="0.5" r="525.5" fill="url(#paint0_radial_36_22)" fill-opacity="0.8"/>
+<circle cx="1315.5" cy="950.5" r="525.5" fill="url(#paint1_radial_36_22)" fill-opacity="0.6"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_36_22" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(464.5 0.5) rotate(90) scale(525.5)">
+<stop stop-color="#681080"/>
+<stop offset="1" stop-color="#160941"/>
+</radialGradient>
+<radialGradient id="paint1_radial_36_22" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1315.5 950.5) rotate(90) scale(525.5)">
+<stop stop-color="#2E1C72"/>
+<stop offset="1" stop-color="#160941"/>
+</radialGradient>
+</defs>
+</svg>

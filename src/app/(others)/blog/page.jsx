@@ -3,7 +3,11 @@ import Image from "next/image";
 import Banner from "@/components/Sections/Banner/Banner";
 import Button from "@/components/Buttons/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
 
 require("dotenv").config();
@@ -18,6 +22,29 @@ async function getData() {
 
 export default async function page() {
   const data = await getData();
+
+  const otherPages = [
+    {
+      id: 1,
+      href: "#",
+      name: "1",
+    },
+    {
+      id: 2,
+      href: "#",
+      name: "2",
+    },
+    {
+      id: 3,
+      href: "#",
+      name: "3",
+    },
+    {
+      id: 4,
+      href: "#",
+      name: "...",
+    },
+  ];
 
   return (
     <>
@@ -55,7 +82,9 @@ export default async function page() {
                       <h3>{items.date}</h3>
                     </div>
                   </div>
-                  <a href={"/blog-details/" + (items.id)} ><h1>{items.title}</h1></a>
+                  <a href={"/blog-details/" + items.id}>
+                    <h1>{items.title}</h1>
+                  </a>
                   <p>{items.summary}</p>
                   <div className="m-10 max-md:pb-10">
                     <Button title="Continue" link="/" />
@@ -66,8 +95,33 @@ export default async function page() {
                 </div>
               );
             })}
+            <div className="flex items-center justify-center gap-3 mt-5">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-sm border text-xl text-gray-500 hover:text-white duration-300 hover:bg-red-500 flex items-center justify-center"
+              >
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </a>
+              {otherPages.map(({ id, name, href }) => {
+                return (
+                  <a
+                    key={id}
+                    href={href}
+                    className="w-10 h-10 rounded-sm border text-xl text-gray-500 hover:text-white duration-300 hover:bg-red-500 flex items-center justify-center"
+                  >
+                    {name}
+                  </a>
+                );
+              })}
+              <a
+                href="#"
+                className="w-10 h-10 rounded-sm border text-xl text-gray-500 hover:text-white duration-300 hover:bg-red-500 flex items-center justify-center"
+              >
+                <FontAwesomeIcon icon={faArrowRight} />
+              </a>
+            </div>
           </div>
-          <BlogSection/>
+          <BlogSection />
         </div>
       </section>
     </>

@@ -43,13 +43,23 @@ export default function TeamMemberSection(props) {
           </Reveal>
         </div>
 
-        <Team data={data} limit={props.limit} />
+        <Team data={data} limit={props.limit} pageIndex={props.pageIndex} />
       </div>
     </section>
   );
 }
-function TeamProfile({ name, img, role, socialLinks, i }) {
+function TeamProfile({ name, img, role, socialLinks, i, pageIndex }) {
   const [showLinks, setShowLinks] = useState(false);
+
+  let hoverBrand;
+
+  if(pageIndex === 1){
+    hoverBrand = "hover:bg-red-500";
+  }else if(pageIndex === 2){
+    hoverBrand = "hover:bg-blue-500";
+  }else{
+    hoverBrand = "hover:bg-red-500";
+  }
 
   return (
     <Reveal>
@@ -75,19 +85,19 @@ function TeamProfile({ name, img, role, socialLinks, i }) {
           >
             <a
               href={socialLinks.facebook}
-              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className={"flex w-11 h-11 duration-200 text-header hover:text-white bg-white rounded-lg items-center justify-center" + " " + hoverBrand}
             >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
             <a
               href={socialLinks.twitter}
-              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className={"flex w-11 h-11 duration-200 text-header hover:text-white bg-white rounded-lg items-center justify-center" + " " + hoverBrand}
             >
               <FontAwesomeIcon icon={faTwitter} />
             </a>
             <a
               href={socialLinks.vimeo}
-              className="flex w-11 h-11 duration-200 text-header hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
+              className={"flex w-11 h-11 duration-200 text-header hover:text-white bg-white rounded-lg items-center justify-center" + " " + hoverBrand}
             >
               <FontAwesomeIcon icon={faVimeoV} />
             </a>
@@ -101,7 +111,7 @@ function Team(props) {
   return (
     <div className="team w-full h-auto mt-11 ">
       {props.data.slice(0, props.limit).map((profile, i) => (
-        <TeamProfile key={profile.name} {...profile} i={i} />
+        <TeamProfile key={profile.name} {...profile} i={i} pageIndex={props.pageIndex} />
       ))}
     </div>
   );

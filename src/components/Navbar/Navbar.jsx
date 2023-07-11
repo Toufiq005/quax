@@ -22,6 +22,7 @@ export default function Navbar(props) {
   const [isPagesOption, setPagesOption] = useState(false);
   const [isBlogOption, setBlogOption] = useState(false);
   const [isSearchOption, setSearchOption] = useState(false);
+  const [isMobileSearchOption, setMobileSearchOption] = useState(false);
   const [timerId, setTimerId] = useState(null);
 
   function clearHoverOptions() {
@@ -30,6 +31,7 @@ export default function Navbar(props) {
     setPagesOption(false);
     setBlogOption(false);
     setSearchOption(false);
+    setMobileSearchOption(false);
   }
 
   function handleMouseLeave(props) {
@@ -469,10 +471,10 @@ export default function Navbar(props) {
             isActive ? "mobile-navbar mobile-navbar-active" : "mobile-navbar"
           }
         >
-          <div className="h-25 bg-dark-blue w-full flex items-center justify-between">
+          <div className="h-25 bg-white w-full flex items-center justify-between">
             <a href="/" className="mx-3">
               <Image
-                src="/assets/logo-white.svg"
+                src="/assets/logo-dark.svg"
                 width="155"
                 height="50"
                 alt="Logo"
@@ -487,7 +489,7 @@ export default function Navbar(props) {
             >
               <FontAwesomeIcon
                 icon={faMultiply}
-                className="text-2xl text-white hover:text-red-500 mr-4"
+                className="text-2xl text-black/60 hover:text-red-500 mr-4"
               />
             </button>
           </div>
@@ -498,7 +500,7 @@ export default function Navbar(props) {
                   clearHoverOptions();
                   setHomeOption(!isHomeOption);
                 }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
               >
                 <p>Home</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
@@ -572,7 +574,7 @@ export default function Navbar(props) {
             <li>
               <a
                 href="/about"
-                className=" text-white hover:text-red-500 flex items-center justify-between "
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
               >
                 <p>About</p>
               </a>
@@ -583,7 +585,7 @@ export default function Navbar(props) {
                   clearHoverOptions();
                   setServicesOption(!isServicesOption);
                 }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
               >
                 <p>Serices</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
@@ -614,7 +616,7 @@ export default function Navbar(props) {
                   clearHoverOptions();
                   setPagesOption(!isPagesOption);
                 }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
               >
                 <p>Pages</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
@@ -658,7 +660,7 @@ export default function Navbar(props) {
                   clearHoverOptions();
                   setBlogOption(!isBlogOption);
                 }}
-                className=" text-white hover:text-red-500 flex items-center justify-between "
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
               >
                 <p>Blog</p>
                 <FontAwesomeIcon icon={faAdd} className="text-xs mr-3" />
@@ -684,19 +686,49 @@ export default function Navbar(props) {
               </ul>
             </li>
             <li>
-              <div className=" text-white hover:text-red-500 flex items-center justify-between ">
+              <div className=" text-black/60 hover:text-red-500 flex items-center justify-between ">
                 <a href="/service">Shop</a>
               </div>
             </li>
             <li>
-              <a href="/contact" className=" text-white hover:text-red-500 flex items-center justify-between ">
+              <a
+                href="/contact"
+                className=" text-black/60 hover:text-red-500 flex items-center justify-between "
+              >
                 <p>Contact</p>
               </a>
             </li>
-            <li className="mt-5">
-              <a href="/contact" className="mobile-nav-contact-link">
-                LETS TALK
-              </a>
+            <li className="mt-5 w-full">
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <a href="/contact" className="mobile-nav-contact-link">
+                    LETS TALK
+                  </a>
+                </div>
+                <div onClick={() => setMobileSearchOption(!isMobileSearchOption)}>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-5 text-red-500"/>
+                </div>
+                {isMobileSearchOption && (
+                <motion.div
+                  initial={{ y: 80, x: 135, opacity: 0 }}
+                  animate={{ y: 0, x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="mobile-search-bar absolute flex"
+                >
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="w-full h-full ml-5"
+                  />
+                  <button>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="text-red-500 ml-3"
+                    />
+                  </button>
+                </motion.div>
+              )}
+              </div>
             </li>
           </ul>
         </div>

@@ -67,7 +67,7 @@ body {
   height: 100px;
 }
 .wrapper {
-  max-width: 1170px;
+  width: 1170px;
   padding: 120px 0;
 }
 .pt-29 {
@@ -83,11 +83,30 @@ body {
 .pb-18 {
   padding-bottom: 70px;
 }
+.mb-29 {
+  margin-bottom: 120px;
+}
 .mt-17 {
   margin-top: 70px;
 }
 .mt-13 {
   margin-top: 50px;
+}
+.-top-25 {
+  top: -100px;
+}
+.text-1xl {
+  font-size: 22px;
+  line-height: 24px;
+}
+.gap-13 {
+  gap: 50px;
+}
+.bg-blue {
+  background: #387efa;
+}
+.bg-blue-o-20 {
+  background: #387ffa20;
 }
 
 /* ===================Effects=================== */

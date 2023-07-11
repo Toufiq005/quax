@@ -1,5 +1,6 @@
 import "./BlogSection.css";
 import Image from "next/image";
+import Line from '@/components/ui/Line/Line';
 
 const blogFollowUsLinks = [
   {
@@ -147,10 +148,17 @@ export default async function BlogSection() {
   return (
     <>
       <div className="w-full">
+        <div className="blog-div mb-4">
+          <from className="w-full flex items-center justify-center h-14">
+            <input type="text" placeholder="Search..." className="focus:outline-blue-300 w-2/3 h-full pl-3" />
+            <button className="w-1/3 h-full bg-header font-bold text-white rounded-tr-lg rounded-br-lg">Search</button>
+          </from>
+        </div>
         <div className="blog-div w-full h-auto mb-4">
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             Recent Posts
           </h1>
+          <Line/>
           <div className="w-full flex flex-col items-center justify-center">
             <a href="/">
               <div className="flex w-80 my-5 ">
@@ -176,6 +184,7 @@ export default async function BlogSection() {
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             Categories
           </h1>
+          <Line/>
           <div>
             {blogCategories.map(({ id, category, href }) => {
               return (
@@ -188,10 +197,11 @@ export default async function BlogSection() {
             })}
           </div>
         </div>
-        <div className="blog-div my-4">
+        <div className="blog-div w-full my-4">
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             Follow Us
           </h1>
+          <Line/>
           <div className="follow-us-icons pb-3">
             {blogFollowUsLinks.map((items) => {
               return (
@@ -199,7 +209,7 @@ export default async function BlogSection() {
                   href={items.link}
                   key={items.id}
                   target="_blank"
-                  className="hover:scale-105 duration-300"
+                  className="hover:scale-105 duration-300 block"
                 >
                   <Image width={90} height={90} src={items.icon} alt="icon" />
                 </a>
@@ -209,6 +219,7 @@ export default async function BlogSection() {
         </div>
         <div className="blog-div my-4">
           <h1 className="font-semibold text-black/70 text-3xl m-7">Tags</h1>
+          <Line/>
           <div className="blog-tags ">
             {blogTags.map(({ id, tag, href }) => {
               return (
@@ -225,6 +236,7 @@ export default async function BlogSection() {
           <h1 className="font-semibold text-black/70 text-3xl m-7">
             About Author
           </h1>
+          <Line/>
           <p className="text-light-gray m-7">
             Pick a template, customize the content and design elements, and
             launc design your next fabulous email on your with our simple visual
