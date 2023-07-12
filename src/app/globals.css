@@ -86,6 +86,9 @@ body {
 .mb-29 {
   margin-bottom: 120px;
 }
+.mb-15 {
+  margin-bottom: 60px;
+}
 .mt-17 {
   margin-top: 70px;
 }
@@ -107,6 +110,18 @@ body {
 }
 .bg-blue-o-20 {
   background: #387ffa20;
+}
+.top-74 {
+  top: 300px;
+}
+.left-17 {
+  left: 73px;
+}
+.w-wrapper {
+  width: 1170px;
+}
+.text-brand-two {
+  color: rgba(72, 71, 209, 1);
 }
 
 /* ===================Effects=================== */

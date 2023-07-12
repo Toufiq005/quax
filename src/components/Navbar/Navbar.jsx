@@ -180,7 +180,7 @@ export default function Navbar(props) {
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/home-page-three"
                         className="flex flex-col items-center justify-center"
                       >
                         <Image
@@ -398,11 +398,19 @@ export default function Navbar(props) {
                   setSearchOption(!isSearchOption);
                 }}
               >
-                <FontAwesomeIcon
+                {props.pageIndex === 2 ? (
+                  <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  style={{ color: "#444444"}}
+                  className=" relative top-0 left-16"
+                />
+                ): (
+                  <FontAwesomeIcon
                   icon={faMagnifyingGlass}
                   style={{ color: navColor ? "#444444" : "#fff" }}
                   className=" relative top-0 left-16"
                 />
+                )}
               </p>
               {isSearchOption && (
                 <motion.div
@@ -426,9 +434,7 @@ export default function Navbar(props) {
               )}
             </li>
           </ul>
-          <a href="/contact" className="nav-contact-link">
-            LETS TALK
-          </a>
+            <NavBtn pageIndex={props.navBtn}/>
           <button
             onClick={() => {
               toggleNavModal();
@@ -558,7 +564,7 @@ export default function Navbar(props) {
                   }
                 >
                   <a
-                    href="/"
+                    href="/home-page-three"
                     className={
                       isHomeOption
                         ? "text-black/60 hover:text-red-500 flex flex-col items-center "
@@ -705,29 +711,34 @@ export default function Navbar(props) {
                     LETS TALK
                   </a>
                 </div>
-                <div onClick={() => setMobileSearchOption(!isMobileSearchOption)}>
-                  <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-5 text-red-500"/>
+                <div
+                  onClick={() => setMobileSearchOption(!isMobileSearchOption)}
+                >
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="mr-5 text-red-500"
+                  />
                 </div>
                 {isMobileSearchOption && (
-                <motion.div
-                  initial={{ y: 80, x: 135, opacity: 0 }}
-                  animate={{ y: 0, x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="mobile-search-bar absolute flex"
-                >
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="w-full h-full ml-5"
-                  />
-                  <button>
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="text-red-500 ml-3"
+                  <motion.div
+                    initial={{ y: 80, x: 135, opacity: 0 }}
+                    animate={{ y: 0, x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="mobile-search-bar absolute flex"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="w-full h-full ml-5"
                     />
-                  </button>
-                </motion.div>
-              )}
+                    <button>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="text-red-500 ml-3"
+                      />
+                    </button>
+                  </motion.div>
+                )}
               </div>
             </li>
           </ul>
@@ -745,4 +756,45 @@ export default function Navbar(props) {
       </div>
     </>
   );
+}
+
+function NavBtn({ pageIndex }) {
+  const [navColor, setNavColor] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 100) {
+        setNavColor(true);
+      } else {
+        setNavColor(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  if (pageIndex === 1) {
+    return (
+      <a href="/contact" className="nav-contact-link">
+        LETS TALK
+      </a>
+    );
+  }else if (pageIndex === 2){
+    return (
+      <a href="/contact" className="nav-contact-link">
+        LETS TALK
+      </a>
+    );
+  }else if (pageIndex === 3){
+    return (
+      <a href="/contact" className="nav-contact-link-three">
+        <p style={{color: navColor ? "#444" : "#fff"}}>Call Us</p>
+        <h1 style={{color: navColor ? "#444" : "#fff"}}>+1 012 345 6789</h1>
+      </a>
+    );
+  }
 }

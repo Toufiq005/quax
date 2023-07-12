@@ -43,6 +43,7 @@ export default function page() {
         textColor="text-white hover:text-blue-500"
         bgColor="bg-transparent"
         pageIndex={3}
+        navBtn={2}
       />
       <Header />
       <About />

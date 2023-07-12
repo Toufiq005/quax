@@ -8,6 +8,7 @@ export default function Layout({ children }) {
         bgColor="bg-white border-b"
         textColor="text-black/80"
         pageIndex={2}
+        navBtn={1}
       />
       {children}
       <Footer />

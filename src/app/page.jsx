@@ -20,7 +20,7 @@ import YoutubeEmbed from "@/components/ui/YoutubeEmbed/YoutubeEmbed";
 export default function Home() {
   return (
     <>
-      <Navbar bgColor="bg-dark-blue" textColor="text-white" pageIndex={1} />
+      <Navbar bgColor="bg-dark-blue" textColor="text-white" pageIndex={1} navBtn={1} />
       <Header />
       <AboutCompany />
       <ServiceSection />

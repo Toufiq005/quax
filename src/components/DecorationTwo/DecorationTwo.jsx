@@ -19,7 +19,7 @@ export default function DecorationTwo() {
 
     useEffect(() => {
         setParentSize({ width: 200, height: 200 });
-    })
+    },[])
 
     function floatImages() {
         const newPositions = positions.map((position) => ({
