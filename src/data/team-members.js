@@ -67,7 +67,7 @@ const data = [
   },
   {
     id: 7,
-    img: "/assets/sections/team-members/member-toya-mciver.png",
+    img: "/assets/sections/team-members/member-toya-mcIver.png",
     name: "Toya McIver",
     role: "Co-Founder",
     socialLinks: {
