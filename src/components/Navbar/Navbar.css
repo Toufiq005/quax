@@ -125,6 +125,9 @@
   .nav-contact-link {
     display: none;
   }
+  .nav-contact-link-three {
+    display: none;
+  }
   .navbar-button {
     display: block;
     width: 20px;
