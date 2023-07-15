@@ -5,7 +5,7 @@ import "./CaseStudySection.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal/Reveal";
-import data from "@/data/case-study.js";
+import data from "@/data/section/case-study.js";
 
 export default function CaseStudySection() {
   const [category, setCategory] = useState("all");

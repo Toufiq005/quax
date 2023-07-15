@@ -1,14 +1,15 @@
 import Banner from "@/components/Sections/Banner/Banner";
 import TeamMemberSection from "@/components/Sections/TeamMemberSection/TeamMemberSection";
+import data from '@/data/pages/team-members.js';
 
 export default function page() {
   return (
     <>
       <Banner
-        title="Team Members"
-        description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
+        title={data[0].title}
+        description={data[0].description}
       />
-      <TeamMemberSection bgColor="bg-color" limit={8} pageIndex={1}/>
+      <TeamMemberSection bgColor="bg-color" limit={8} pageIndex={1} title="Our Marketing expertise" headLine="Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet."/>
     </>
   );
 }

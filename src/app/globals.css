@@ -123,6 +123,9 @@ body {
 .text-brand-two {
   color: rgba(72, 71, 209, 1);
 }
+.min-h-75 {
+  min-height: 75vh;
+}
 
 /* ===================Effects=================== */
 

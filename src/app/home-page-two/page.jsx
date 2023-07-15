@@ -1,8 +1,8 @@
 "use client";
 
 import "./homePageTwo.css";
-import { useState, useEffect } from "react";
-import testimonialData from "@/data/testimonial";
+import { useState, useEffect, useRef } from "react";
+import testimonialData from "@/data/section/testimonial";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
@@ -10,16 +10,9 @@ import "swiper/css/pagination";
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
-import blogData from "@/data/home-blogpost";
+import blogData from "@/data/section/home-blogpost";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPenToSquare,
-  faLightbulb,
-  faDesktop,
-  faPieChart,
-  faHeadphones,
-  faArrowUp,
-  faArrowDown,
   faPhone,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
@@ -35,6 +28,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import DecorationTwo from "@/components/DecorationTwo/DecorationTwo";
 import CountUp from "react-countup";
+import data from "@/data/pages/home-two.js";
 
 export default function page() {
   return (
@@ -50,7 +44,13 @@ export default function page() {
       <Analysis />
       <HowItWrok />
       <Testimonial />
-      <TeamMemberSection bgColor="mt-40 max-sm:pt-64" limit={4} pageIndex={2} />
+      <TeamMemberSection
+        bgColor="mt-40 max-sm:pt-64"
+        limit={4}
+        pageIndex={2}
+        title="Our Marketing expertise"
+        headLine="Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet."
+      />
       <PricingSection />
       <Blog />
       <SubscribeSection />
@@ -61,12 +61,18 @@ export default function page() {
 
 function Header() {
 
+  const heroCard = useRef(null);
+
+  // scroll speed of hero-card
+  const parallaxSpeed = 0.2;
+  
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       const parallax = document.querySelector(".hero-card");
       const top = -380;
-      parallax.style.top = (scrollTop * 0.2) + top + "px";
+      {parallax ? parallax.style.top = scrollTop * parallaxSpeed + top + "px" : null};
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -74,7 +80,7 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [heroCard.current]);
 
   return (
     <header className="w-full h-auto min-h-screen flex items-center justify-center home-two relative -top-25 overflow-hidden">
@@ -86,7 +92,7 @@ function Header() {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="max-xl:pt-28 max-xl:text-center"
           >
-            Your business find SEO Solutions
+            {data[0].title}
           </motion.h1>
           <motion.h2
             initial={{ y: -100, opacity: 0 }}
@@ -94,15 +100,15 @@ function Header() {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="mb-10 max-xl:text-center"
           >
-            Me old mucker knackered a load of old tosh wellies amongst lost the
-            plot.!
+            {data[0].headLineOne}
           </motion.h2>
-          <a href="/" className="flex items-center justify-center mb-10">
-            PURCHASE NOW
+          <a
+            href={data[0].btn.href}
+            className="flex items-center justify-center mb-10"
+          >
+            {data[0].btn.text}
           </a>
-          <p className="mb-6">
-            Join over 100+ real people who have worked with us
-          </p>
+          <p className="mb-6">{data[0].headLineTwo}</p>
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -123,102 +129,27 @@ function Header() {
             initial={{ y: -150, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4 }}
-            src="/assets/home-two/hero-img.webp"
-            alt="hero-img"
+            src={data[0].imgOne.src}
+            alt={data[0].imgOne.alt}
           />
           <motion.img
             initial={{ x: -150, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.4 }}
-            src="/assets/home-two/hero-card.svg"
-            alt="hero-card"
+            src={data[0].imgTwo.src}
+            alt={data[0].imgTwo.alt}
+            ref={heroCard}
             className="relative -top-96 -left-16 max-sm:left-0 hero-card"
-          />
-        </Reveal>
+            />
+          </Reveal>
       </div>
-      <DecorationTwo/>
+      <DecorationTwo />
     </header>
   );
 }
 
 function About() {
   const [aboutIndex, setAboutIndex] = useState(0);
-
-  const aboutData = [
-    {
-      id: 0,
-      name: "Idea & Concept",
-      title: "Lorem ipsum dolor sit amet, consectetur...",
-      href: "#",
-      img: "/assets/home-two/about/about-top-image.webp",
-      icon: faPenToSquare,
-    },
-    {
-      id: 1,
-      name: "Infrastructure Plan",
-      title: "Lorem ipsum dolor sit amet, consectetur...",
-      href: "#",
-      img: "/assets/home-two/about/about-top-image.webp",
-      icon: faLightbulb,
-    },
-    {
-      id: 2,
-      name: "Desktop Computing",
-      title: "Lorem ipsum dolor sit amet, consectetur...",
-      href: "#",
-      img: "/assets/home-two/about/about-top-image.webp",
-      icon: faDesktop,
-    },
-    {
-      id: 3,
-      name: "UI Kit Template",
-      title: "Lorem ipsum dolor sit amet, consectetur...",
-      href: "#",
-      img: "/assets/home-two/about/about-top-image.webp",
-      icon: faPieChart,
-    },
-    {
-      id: 4,
-      name: "Support & Secure",
-      title: "Lorem ipsum dolor sit amet, consectetur...",
-      href: "#",
-      img: "/assets/home-two/about/about-top-image.webp",
-      icon: faHeadphones,
-    },
-  ];
-
-  const companies = [
-    {
-      id: 1,
-      name: "WordPress",
-      icon: "/assets/home-two/about/word-press.svg",
-      href: "#",
-    },
-    {
-      id: 2,
-      name: "WooCommerce",
-      icon: "/assets/home-two/about/woo-commerce.svg",
-      href: "#",
-    },
-    {
-      id: 3,
-      name: "Envato",
-      icon: "/assets/home-two/about/envato.svg",
-      href: "#",
-    },
-    {
-      id: 4,
-      name: "CitiBank",
-      icon: "/assets/home-two/about/citibank.svg",
-      href: "#",
-    },
-    {
-      id: 5,
-      name: "Magneto",
-      icon: "/assets/home-two/about/magneto.svg",
-      href: "#",
-    },
-  ];
 
   return (
     <section className="w-full h-auto flex items-center justify-center overflow-hidden">
@@ -230,20 +161,19 @@ function About() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              How we can level up your business
+              {data[1].title}
             </motion.h1>
             <motion.p
               initial={{ x: -150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
-              amet.
+              {data[1].headLineOne}
             </motion.p>
           </Reveal>
           <div className="top-content-container max-xl:flex-col max-xl:items-center max-xl:justify-center">
             <div className="left flex flex-col items-center justify-center overflow-hidden ">
-              {aboutData.map((item, i) => (
+              {data[1].aboutData.map((item, i) => (
                 <button
                   onClick={() => setAboutIndex(item.id)}
                   key={item.id}
@@ -269,7 +199,7 @@ function About() {
               ))}
             </div>
             <div className="right relative overflow-hidden">
-              <img src={aboutData[aboutIndex].img} alt="about-img" />
+              <img src={data[1].aboutData[aboutIndex].img} alt="about-img" />
               <Reveal className="w-full relative bg-blue-500/90 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
@@ -278,12 +208,12 @@ function About() {
                   className="ml-10 max-sm:ml-3"
                 >
                   <h2 className="text-1xl text-white font-semibold mb-2">
-                    {aboutData[aboutIndex].name}
+                    {data[1].aboutData[aboutIndex].name}
                   </h2>
-                  <h4>{aboutData[aboutIndex].title}</h4>
+                  <h4>{data[1].aboutData[aboutIndex].title}</h4>
                 </motion.div>
                 <a
-                  href={aboutData[aboutIndex].href}
+                  href={data[1].aboutData[aboutIndex].href}
                   className="mr-10 max-sm:mr-3 flex items-center justify-center"
                 >
                   VIEW MORE
@@ -293,13 +223,18 @@ function About() {
           </div>
         </div>
         <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-20 flex flex-col items-center justify-center">
-          <h1>Join 400+ other companies who switched</h1>
+          <h1>{data[1].headLineTwo}</h1>
           <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-4">
-            {companies.map((item, i) => {
+            {data[1].companies.map((item, i) => {
               return (
                 <div key={item.id} title={item.name}>
                   <Reveal>
-                    <motion.a initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 * i }} href={item.href}>
+                    <motion.a
+                      initial={{ y: -100, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.3, delay: 0.3 * i }}
+                      href={item.href}
+                    >
                       <img src={item.icon} alt="company" />
                     </motion.a>
                   </Reveal>
@@ -314,8 +249,8 @@ function About() {
               initial={{ x: 150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
-              src="/assets/home-two/about/about-image-one.webp"
-              alt="about-image"
+              src={data[2].imgOne.src}
+              alt={data[2].imgOne.alt}
               className="relative"
             />
             <img
@@ -327,40 +262,51 @@ function About() {
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.6 }}
-              src="/assets/home-two/about/about-card-one.webp"
-              alt="card"
+              src={data[2].imgTwo.src}
+              alt={data[2].imgOne.alt}
               className="relative about-two-card"
             />
           </Reveal>
           <Reveal className="right max-xl:flex flex-col items-center justify-center">
-            <motion.h1 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-6 mt-12">What people Think about company</motion.h1>
-            <motion.p initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.6 }}>
-              Owt to do with me jolly good a cheers barmy arse over tit you mug
-              say the little rotter, pukka cack pardon me golly gosh what a
-              load.!s
+            <motion.h1
+              initial={{ x: 150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              className="mb-6 mt-12"
+            >
+              {data[2].title}
+            </motion.h1>
+            <motion.p
+              initial={{ x: -150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+            >
+              {data[2].headLine}
             </motion.p>
             <div className="flex items-start justify-start gap-13 mt-6 max-sm:flex-col max-sm:gap-5 max-xl:items-center max-xl:justify-center">
-              <Reveal>
-                <h3>
-                  <CountUp start={0} end={8} delay={0.9} duration={3}/>.<CountUp start={0} end={44} delay={0.9} duration={3}/>%
-                  <span className="ml-4 text-2xl text-green-500">
-                    <FontAwesomeIcon icon={faArrowUp} />
-                  </span>
-                </h3>
-                <p className="mt-1">Increase in monthly</p>
-              </Reveal>
-              <Reveal>
-                <h3>
-                  <CountUp start={0} end={1} delay={0.9} duration={3}/>.0<CountUp start={0} end={8} delay={0.9} duration={3}/>%
-                  <span className="ml-4 text-2xl text-red-500">
-                    <FontAwesomeIcon icon={faArrowDown} />
-                  </span>
-                </h3>
-                <p className="mt-1">Decrease in yearly</p>
-              </Reveal>
+              {data[2].details.map((props) => {
+                return (
+                  <Reveal key={props.id}>
+                    <h3>
+                      <CountUp start={0} end={props.numOne} delay={0.9} duration={3} />.
+                      <CountUp start={0} end={props.numTwo} delay={0.9} duration={3} />%
+                      <span className="ml-4 text-2xl" style={{ color: props.color }}>
+                        <FontAwesomeIcon icon={props.icon} />
+                      </span>
+                    </h3>
+                    <p className="mt-1">{props.title}</p>
+                  </Reveal>
+                );
+              })}
             </div>
-            <motion.a initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.9 }} href="#" className="flex items-center justify-center mt-10">
-              ANALYZE WEBSITE
+            <motion.a
+              initial={{ x: 150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+              href={data[2].btn.href}
+              className="flex items-center justify-center mt-10"
+            >
+              {data[2].btn.text}
             </motion.a>
           </Reveal>
         </div>
@@ -374,28 +320,55 @@ function Analysis() {
     <section className="w-full h-auto flex items-center justify-center free-analysis overflow-hidden">
       <div className="wrapper flex justify-between items-center max-xl:flex-col max-xl:gap-20">
         <Reveal className="left max-xl:flex flex-col items-center justify-center">
-          <motion.h1 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-6">We&apos;re the perfect local business assists</motion.h1>
-          <motion.p initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.6 }} className="mb-6">
-            The new common language will be more simple and regular than the
-            existing European languages. It will be as simple as Occidental; in
-            fact, it will be Occidental. To an English
+          <motion.h1
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="mb-6"
+          >
+            {data[3].title}
+          </motion.h1>
+          <motion.p
+            initial={{ x: -150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+            className="mb-6"
+          >
+            {data[3].discription}
           </motion.p>
-          <motion.h3 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.9 }} className="mb-6">Need Help? Talk to An Expert</motion.h3>
-          <motion.h2 initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.9 }}>
+          <motion.h3
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.9 }}
+            className="mb-6"
+          >
+            {data[3].headLine}
+          </motion.h3>
+          <motion.h2
+            initial={{ x: -150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.9 }}
+          >
             <span className="mr-4">
               <FontAwesomeIcon icon={faPhone} />
             </span>
-            +1-844-562-6896
+            {data[3].phoneNumber}
           </motion.h2>
         </Reveal>
         <div className="right max-sm:w-full max-sm:flex items-center justify-center">
           <form className="flex flex-col items-center justify-center">
             <div className="max-sm:w-full">
               <h1 className="mb-5 max-sm:w-4/5 max-sm:ml-10">
-                Get Free SEO Analysis?
+              {data[3].from.title}
               </h1>
               <Reveal className="max-sm:w-4/5 max-sm:ml-10">
-                <motion.h2 initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }}>Full Name</motion.h2>
+                <motion.h2
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                >
+                  {data[3].from.inputs[0].title}
+                </motion.h2>
                 <input
                   type="text"
                   placeholder="&#xf007;    Type Hear"
@@ -403,7 +376,13 @@ function Analysis() {
                 />
               </Reveal>
               <Reveal className="max-sm:w-4/5 max-sm:ml-10">
-                <motion.h2 initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.6 }}>Work email</motion.h2>
+                <motion.h2
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.6 }}
+                >
+                  {data[3].from.inputs[1].title}
+                </motion.h2>
                 <input
                   type="text"
                   placeholder="&#xf0e0;    Type Hear"
@@ -411,7 +390,13 @@ function Analysis() {
                 />
               </Reveal>
               <Reveal className="max-sm:w-4/5 max-sm:ml-10">
-                <motion.h2 initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.9 }}>Website</motion.h2>
+                <motion.h2
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.9 }}
+                >
+                  {data[3].from.inputs[2].title}
+                </motion.h2>
                 <input
                   type="text"
                   placeholder="&#xf0ac;    Type Hear"
@@ -419,7 +404,7 @@ function Analysis() {
                 />
               </Reveal>
               <button className="max-sm:w-4/5 max-sm:ml-10">
-                SEND MESSAGE
+                {data[3].from.btn.text}
               </button>
             </div>
           </form>
@@ -432,74 +417,30 @@ function Analysis() {
 function HowItWrok() {
   const [index, setIndex] = useState(1);
 
-  const data = [
-    {
-      id: 0,
-      name: "SEND MESSAGE",
-      title: "It's all about The people, and process",
-      href: "#",
-      points: {
-        1: "Analyze the date",
-        2: "Create template",
-        3: "SEO Content Strategy",
-        4: "Content Marketing",
-        5: "Flexible and responsive",
-      },
-    },
-    {
-      id: 1,
-      name: "SEO",
-      title: "It's all about The people, and process",
-      href: "#",
-      points: {
-        1: "Analyze the date",
-        2: "Create template",
-        3: "SEO Content Strategy",
-        4: "Content Marketing",
-        5: "Flexible and responsive",
-      },
-    },
-    {
-      id: 2,
-      name: "WEB MONITORING",
-      title: "It's all about The people, and process",
-      href: "#",
-      points: {
-        1: "Analyze the date",
-        2: "Create template",
-        3: "SEO Content Strategy",
-        4: "Content Marketing",
-        5: "Flexible and responsive",
-      },
-    },
-    {
-      id: 3,
-      name: "RESEARCH",
-      title: "It's all about The people, and process",
-      href: "#",
-      points: {
-        1: "Analyze the date",
-        2: "Create template",
-        3: "SEO Content Strategy",
-        4: "Content Marketing",
-        5: "Flexible and responsive",
-      },
-    },
-  ];
-
   return (
     <section className="w-full h-auto flex items-center justify-center overflow-hidden">
       <div className="wrapper how-it-work">
         <Reveal className="flex flex-col items-center">
-          <motion.h1 initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-6">How we can level up your business</motion.h1>
-          <motion.h3 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-16">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
-            amet.
+          <motion.h1
+            initial={{ x: -150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="mb-6"
+          >
+            {data[4].title}
+          </motion.h1>
+          <motion.h3
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="mb-16"
+          >
+            {data[4].headLine}
           </motion.h3>
         </Reveal>
         <div>
           <Reveal className="flex items-center justify-center gap-7 mt-2 max-xl:flex-col">
-            {data.map((props) => {
+            {data[4].data.map((props) => {
               return (
                 <motion.button
                   initial={{ y: -100, opacity: 0 }}
@@ -542,57 +483,89 @@ function HowItWrok() {
               />
             </div>
             <Reveal className="right max-xl:flex flex-col items-center justify-center">
-              <motion.h2 initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-10 max-xl:text-center">{data[index].title}</motion.h2>
-              <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 }} className="mb-5 max-xl:text-center">
+              <motion.h2
+                initial={{ y: 150, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="mb-10 max-xl:text-center"
+              >
+                {data[4].data[index].title}
+              </motion.h2>
+              <motion.p
+                initial={{ x: 150, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="mb-5 max-xl:text-center"
+              >
                 <span>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-blue-500 mr-3"
                   />
                 </span>
-                {data[index].points[1]}
+                {data[4].data[index].points[1]}
               </motion.p>
-              <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.6 }} className="mb-5 max-xl:text-center">
+              <motion.p
+                initial={{ x: 150, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+                className="mb-5 max-xl:text-center"
+              >
                 <span>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-blue-500 mr-3"
                   />
                 </span>
-                {data[index].points[2]}
+                {data[4].data[index].points[2]}
               </motion.p>
-              <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.9 }} className="mb-5 max-xl:text-center">
+              <motion.p
+                initial={{ x: 150, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.9 }}
+                className="mb-5 max-xl:text-center"
+              >
                 <span>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-blue-500 mr-3"
                   />
                 </span>
-                {data[index].points[3]}
+                {data[4].data[index].points[3]}
               </motion.p>
-              <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 1.2 }} className="mb-5 max-xl:text-center">
+              <motion.p
+                initial={{ x: 150, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 1.2 }}
+                className="mb-5 max-xl:text-center"
+              >
                 <span>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-blue-500 mr-3"
                   />
                 </span>
-                {data[index].points[4]}
+                {data[4].data[index].points[4]}
               </motion.p>
-              <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 1.5 }} className="mb-10 max-xl:text-center">
+              <motion.p
+                initial={{ x: 150, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 1.5 }}
+                className="mb-10 max-xl:text-center"
+              >
                 <span>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-blue-500 mr-3"
                   />
                 </span>
-                {data[index].points[5]}
+                {data[4].data[index].points[5]}
               </motion.p>
               <a
-                href={data[index].href}
+                href={data[4].data[index].btn.href}
                 className="how-it-work-button-active flex items-center justify-center"
               >
-                TRY SEO TOOLKIT
+                {data[4].data[index].btn.text}
               </a>
             </Reveal>
           </div>
@@ -603,45 +576,26 @@ function HowItWrok() {
 }
 
 function Testimonial() {
-  const data = [
-    {
-      id: 1,
-      numbers: 104,
-      name: "Happy Quantum Usars",
-      icon: "/assets/home-two/testimonial/testimonial-two-happy-face.svg",
-    },
-    {
-      id: 2,
-      numbers: 306,
-      name: "Successfull Projects",
-      icon: "/assets/home-two/testimonial/testimonial-two-successful-projects.svg",
-    },
-    {
-      id: 3,
-      numbers: 208,
-      name: "Positive Feedback",
-      icon: "/assets/home-two/testimonial/testimonial-two-positive-feedback.svg",
-    },
-    {
-      id: 4,
-      numbers: 440,
-      name: "Positive Feedback",
-      icon: "/assets/home-two/testimonial/testimonial-two-blog-post.svg",
-    },
-  ];
-
   return (
     <section className="w-full h-auto items-center justify-center bg-very-light-gray">
       <div className="pt-29 testimonial-two">
         <div className="flex w-full items-center justify-center gap-28 max-xl:flex-col max-xl:gap-10">
-          {data.map((item) => {
+          {data[5].data.map((item) => {
             return (
               <Reveal
                 key={item.id}
                 className="flex flex-col items-center justify-center"
               >
                 <img src={item.icon} alt="testimonial" />
-                <h1><CountUp start={0} end={item.numbers} duration={4} delay={0.3} />+</h1>
+                <h1>
+                  <CountUp
+                    start={0}
+                    end={item.numbers}
+                    duration={4}
+                    delay={0.3}
+                  />
+                  +
+                </h1>
                 <h3>{item.name}</h3>
               </Reveal>
             );
@@ -680,60 +634,27 @@ function Testimonial() {
 }
 
 function PricingSection() {
-  const data = [
-    {
-      id: 0,
-      plan: "STARTER PLAN",
-      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
-      link: "/",
-      price: "$0",
-      bulletPoint: {
-        1: "10 hours of support",
-        2: "Advanced analytic",
-        3: "Free hosting",
-        4: "A Dedicated Domain",
-        5: "2GB of storage space",
-      },
-    },
-    {
-      id: 1,
-      plan: "REGULAR PLAN",
-      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
-      link: "/",
-      price: "$50",
-      bulletPoint: {
-        1: "Unlimited of support",
-        2: "Advanced analytic",
-        3: "Free hosting",
-        4: "1 Dedicated Domain",
-        5: "10GB of storage space",
-      },
-    },
-    {
-      id: 2,
-      plan: "PREMIUM PLAN",
-      title: "Bunc id tincidunt duis faucibus urna Adipiscing. Id lorem diam.",
-      link: "/",
-      price: "$100",
-      bulletPoint: {
-        1: "Unlimited of support",
-        2: "Advanced analytic",
-        3: "Free hosting",
-        4: "2 Dedicated Domain",
-        5: "20GB of storage space",
-      },
-    },
-  ];
-
   return (
     <section className="w-full h-auto flex items-center justify-center pricing-section-two overflow-hidden">
       <div className="wrapper">
         <Reveal className="flex flex-col items-center justify-center">
-          <motion.h1 initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Simple Scalable Pricing.</motion.h1>
-          <motion.p initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>Lorem ipsum dolor sit amet, consectur adipiscing elit.</motion.p>
+          <motion.h1
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {data[6].title}
+          </motion.h1>
+          <motion.p
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {data[6].headLine}
+          </motion.p>
         </Reveal>
         <Reveal className="w-full flex items-center justify-between mt-16 max-xl:flex-col max-xl:gap-8">
-          {data.map((props) => {
+          {data[6].data.map((props) => {
             return (
               <motion.div
                 initial={{ y: 150, opacity: 0 }}

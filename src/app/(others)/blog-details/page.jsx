@@ -3,7 +3,7 @@ import "./blog-details.css";
 import Banner from "@/components/Sections/Banner/Banner";
 import Image from "next/image";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
-import relatedBlog from "@/data/home-blogpost.js";
+import relatedBlog from "@/data/section/home-blogpost.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 

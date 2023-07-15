@@ -4,7 +4,7 @@ import React from "react";
 import "./TeamMemberSection.css";
 import { useState } from "react";
 import Reveal from "@/components/ui/Reveal/Reveal";
-import data from "@/data/team-members.js";
+import data from "@/data/section/team-members.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -21,14 +21,14 @@ export default function TeamMemberSection(props) {
       }
     >
       <div className="wrapper team-member flex flex-col items-center justify-center">
-        <div className="max-md:overflow-hidden">
+        <div className="max-md:overflow-hidden flex flex-col items-center justify-center">
           <Reveal>
             <motion.h1
               initial={{ x: -150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              {props.isTitle ? `${props.title}` : "Our Marketing expertise"}
+              {props.title}
             </motion.h1>
           </Reveal>
           <Reveal>
@@ -37,8 +37,7 @@ export default function TeamMemberSection(props) {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit
-              amet.
+              {props.headLine}
             </motion.p>
           </Reveal>
         </div>

@@ -43,9 +43,9 @@ export default function Logo(props) {
     return (
       <>
         {!logoColor ? (
-          <img src="/assets/logo-white.svg" alt="logo" />
+          <img src="/assets/logo-white-blue.svg" alt="logo" />
         ) : (
-          <img src="/assets/logo-dark.svg" alt="logo" />
+          <img src="/assets/logo-dark-blue.svg" alt="logo" />
         )}
       </>
     );

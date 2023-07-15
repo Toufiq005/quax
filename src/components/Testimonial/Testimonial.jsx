@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import data from "../../data/testimonial";
+import data from "@/data/section/testimonial";
 import { motion } from "framer-motion";
 import Reveal from "../ui/Reveal/Reveal";
 import { useRef, useState, useEffect, useCallback } from "react";

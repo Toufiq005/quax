@@ -1,7 +1,7 @@
 "use client";
 
 import "./ServiceSection.css";
-import data from "../../../data/services";
+import data from "@/data/section/services";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";

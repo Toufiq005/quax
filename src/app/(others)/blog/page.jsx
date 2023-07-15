@@ -9,6 +9,7 @@ import {
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
+import siteData from '@/data/pages/blog.js';
 
 require("dotenv").config();
 
@@ -49,8 +50,8 @@ export default async function page() {
   return (
     <>
       <Banner
-        title="Blog"
-        description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
+        title={siteData[0].title}
+        description={siteData[0].description}
       />
       <section className="w-full min-h-screen bg-color flex items-center justify-center">
         <div className="wrapper h-auto blog py-32">

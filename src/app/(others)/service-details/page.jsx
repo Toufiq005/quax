@@ -10,30 +10,17 @@ import Button from "@/components/Buttons/Button";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import "font-awesome/css/font-awesome.min.css";
+import data from '@/data/pages/service-details.js';
 
 export default function page() {
-  const servicePoints = [
-    {
-      id: 1,
-      title: "Elit aute irure tempor cupidatat.",
-    },
-    {
-      id: 2,
-      title: "Sunt qui esse pariatur.",
-    },
-    {
-      id: 3,
-      title: "Aliqua id fugiat nostrud.",
-    },
-  ];
 
   return (
     <>
       <Banner
-        title="Business Idea"
-        description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
+        title={data[0].title}
+        description={data[0].description}
       />
-      <section className="w-full h-auto flex items-center justify-center bg-color">
+      <section className="w-full h-auto min-h-75 flex items-center justify-center bg-color">
         <div className="wrapper -mt-28 h-auto flex max-xl:flex-col items-center justify-center gap-20">
           <div className="services-details-content">
             <Reveal>
@@ -42,7 +29,7 @@ export default function page() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Increase Business Idea For your Business.
+                {data[1].title}
               </motion.h1>
             </Reveal>
             <Reveal>
@@ -51,16 +38,11 @@ export default function page() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
               >
-                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
-                Sunt qui esse pariatur duis deserun mollit dolore cillum minim
-                tempor enim. Elit aute irure tempor cupidatat incididunt sint
-                deserunt ut duis ea quis id quis ad et. Sunt qui esse pariatur
-                duis deser mollit dolore cillum minim tempor enim. Elit aute
-                irure tempo cupidatat incididunt sint deser deserunt nisi.
+                {data[1].description}
               </motion.p>
             </Reveal>
             <div className="max-xl:flex flex-col items-center justify-center max-md:overflow-hidden">
-              {servicePoints.map((props, i) => (
+              {data[1].servicePoints.map((props, i) => (
                 <Reveal key={props.id}>
                   <motion.div
                     initial={{ x: 150, opacity: 0 }}
@@ -80,7 +62,7 @@ export default function page() {
                 </Reveal>
               ))}
               <div className="mt-6">
-                <Button title="Get Started" link="/contact" />
+                <Button title={data[1].btn.text} link={data[1].btn.href} />
               </div>
             </div>
           </div>
@@ -93,13 +75,13 @@ export default function page() {
                 className="services-details-image xl:scale-120 mt-32 max-xl:mt-0"
               >
                 <img
-                  src="/assets/service-details/service-details-image-one.webp"
-                  alt="img"
+                  src={data[1].imgOne.src}
+                  alt={data[1].imgOne.alt}
                   className="services-details-image-one max-md:scale-90"
                 />
                 <img
-                  src="/assets/service-details/service-details-image-two.webp"
-                  alt="img"
+                  src={data[1].imgTwo.src}
+                  alt={data[1].imgTwo.alt}
                   className="services-details-image-two"
                 />
               </motion.div>

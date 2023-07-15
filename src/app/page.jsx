@@ -9,13 +9,14 @@ import Decoration from "@/components/Decoration/Decoration";
 import ServiceSection from "@/components/Sections/ServiceSection/ServiceSection";
 import PricingSection from "@/components/Sections/PricingSection/PricingSection";
 import Testimonial from "@/components/Testimonial/Testimonial";
-import blogData from "../data/home-blogpost";
+import blogData from "../data/section/home-blogpost";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVimeoV, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import CountUp from "react-countup";
 import YoutubeEmbed from "@/components/ui/YoutubeEmbed/YoutubeEmbed";
+import data from '../data/pages/home-one.js';
 
 export default function Home() {
   return (
@@ -46,7 +47,7 @@ function Header() {
               transition={{ duration: 0.3, delay: 0.1 }}
               className="max-lg:text-4xl"
             >
-              Guiding Your Business to Achieve Online Success
+              {data[0].title}
             </motion.h1>
           </Reveal>
           <Reveal className="max-lg:flex items-center justify-center">
@@ -56,16 +57,15 @@ function Header() {
               transition={{ duration: 0.3 }}
               className="mt-5 mb-16 max-lg:text-sm "
             >
-              Me old mucker knackered a load of old tosh wellies amongst lost
-              the plot say bodge tickety boo.!s
+              {data[0].headLine}
             </motion.p>
           </Reveal>
           <div>
             <a
-              href="#price"
+              href={data[0].btn.href}
               className="px-7 py-4 text-white bg-header rounded hover:text-red-500 hover:bg-white "
             >
-              PURCHES NOW
+              {data[0].btn.text}
             </a>
           </div>
         </div>
@@ -102,16 +102,16 @@ function AboutCompany() {
               transition={{ duration: 0.3 }}
             >
               <Image
-                width={500}
-                height={400}
-                src="/assets/home/about-image.webp"
-                alt="img"
+                width={data[1].imgOne.width}
+                height={data[1].imgOne.height}
+                src={data[1].imgOne.src}
+                alt={data[1].imgOne.alt}
               />
               <Image
-                width={410}
-                height={222}
-                src="/assets/home/about-vector.svg"
-                alt="img"
+                width={data[1].imgTwo.width}
+                height={data[1].imgTwo.height}
+                src={data[1].imgTwo.src}
+                alt={data[1].imgTwo.alt}
                 className="-mt-40 -ml-40  max-lg:ml-0"
               />
             </motion.div>
@@ -132,7 +132,7 @@ function AboutCompany() {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="text-header"
             >
-              EST. 1987
+              {data[1].time}
             </motion.h3>
           </Reveal>
           <Reveal className="max-lg:flex items-center justify-center">
@@ -142,7 +142,7 @@ function AboutCompany() {
               transition={{ duration: 0.3, delay: 0.2 }}
               className="max-lg:mt-0"
             >
-              Built For You, <br /> By People Who Care
+              {data[1].title}
             </motion.h1>
           </Reveal>
           <Reveal>
@@ -151,7 +151,7 @@ function AboutCompany() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Recognizing the need is the primary condition for design
+              {data[1].headLineOne}
             </motion.q>
           </Reveal>
           <Reveal className="max-lg:flex flex-col items-center justify-center">
@@ -160,16 +160,14 @@ function AboutCompany() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              Pick a template, customize the content and design elements, and
-              launch! Or, design your next fabulous email on your own with our
-              simple visual builder.
+              {data[1].headLineTwo}
             </motion.p>
           </Reveal>
           <a
-            href="/"
+            href={data[1].btn.href}
             className="px-7 py-4 text-white bg-header rounded hover:text-red-500 duration-200 hover:bg-white border border-red-500/60"
           >
-            DISCOVER MORE
+            {data[1].btn.text}
           </a>
         </div>
       </div>
@@ -181,7 +179,7 @@ function AboutCompany() {
           className="form mt-10"
         >
           <h1>
-            Get Started <span className="text-header">- Its free</span>
+            {data[2].title.text}<span className="text-header">{data[2].title.span}</span>
           </h1>
           <h2 className="flex items-center justify-center">
             <span>
@@ -193,7 +191,7 @@ function AboutCompany() {
                 className="mr-2"
               />
             </span>
-            Start Your 14-Days Free Trial
+            {data[2].headLine}
           </h2>
           <form className="pb-29">
             <div className="flex justify-center max-lg:items-center max-lg:flex-col">
@@ -208,7 +206,7 @@ function AboutCompany() {
                 className="mx-4 max-lg:my-4 focus:outline-blue-300"
               />
               <button className="max-lg:mx-4 text-white bg-header font-semibold rounded">
-                Sign Up
+              {data[2].btn.text}
               </button>
             </div>
             <p className="flex items-center justify-center terms-and-condition max-sm:text-xs">
@@ -243,6 +241,8 @@ function Experience() {
     }
   };
 
+  const thumbnail = "url(" + data[3].video.img.thumbnail + ")";
+
   return (
     <section className="section-three">
       {isVideo && (
@@ -250,7 +250,7 @@ function Experience() {
           className="video-popup fixed top-0 z-50 felx items-center justify-center w-full h-screen bg-black/50"
           onClick={() => toggleVideo()}
         >
-          <YoutubeEmbed embedId="CcYaZybdQYc" />
+          <YoutubeEmbed embedId={data[3].video.embedId} />
         </div>
       )}
       <div className="flex items-center justify-center pt-36 mb-96 max-xl:flex-col max-sm:mb-40">
@@ -274,8 +274,8 @@ function Experience() {
               initial={{ y: 250, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
-              src="/assets/home/exp-image-one.webp"
-              alt="img"
+              src={data[3].imgOne.src}
+              alt={data[3].imgOne.alt}
               className="exp-img-one"
             />
           </Reveal>
@@ -284,8 +284,8 @@ function Experience() {
               initial={{ y: -250, opacity: 0 }}
               animate={{ y: 50, opacity: 1 }}
               transition={{ duration: 0.3 }}
-              src="/assets/home/exp-image-two.webp"
-              alt="img"
+              src={data[3].imgOne.src}
+              alt={data[3].imgOne.alt}
               className="exp-img-two"
             />
           </Reveal>
@@ -297,7 +297,7 @@ function Experience() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Explore & Create
+              {data[3].headLineOne}
             </motion.h3>
           </Reveal>
           <Reveal className="max-lg:flex items-center justify-center">
@@ -307,7 +307,7 @@ function Experience() {
               transition={{ duration: 0.3, delay: 0.2 }}
               className="max-sm:max-w-xs max-sm:h-auto"
             >
-              Bringing new business Solutions and ideas
+              {data[3].title}
             </motion.h1>
           </Reveal>
           <Reveal className="max-lg:flex items-center justify-center">
@@ -317,13 +317,11 @@ function Experience() {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="my-5"
             >
-              Pick a template, customize the content and design elements, and
-              launch! Or, design your next fabulous email on your own with our
-              simple visual builder.
+              {data[3].headLineTwo}
             </motion.p>
           </Reveal>
           <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
-            <h4>Social Media Marketing</h4>
+            <h4>{data[3].exp.marketing}</h4>
             <div className="bar">
               <Reveal>
                 <motion.div
@@ -335,7 +333,7 @@ function Experience() {
             </div>
           </div>
           <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
-            <h4>Web Development</h4>
+            <h4>{data[3].exp.development}</h4>
             <div className="bar">
               <Reveal>
                 <motion.div
@@ -347,7 +345,7 @@ function Experience() {
             </div>
           </div>
           <div className="mt-5 max-sm:w-11/12 max-sm:flex flex-col items-center justify-center max-sm:items-start max-sm:ml-8">
-            <h4>Competitor Research</h4>
+            <h4>{data[3].exp.research}</h4>
             <div className="bar">
               <Reveal>
                 <motion.div
@@ -362,7 +360,7 @@ function Experience() {
       </div>
       <div className="bg-very-light-gray section-three-video flex flex-col items-center justify-center">
         <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-full">
-          <div className="exp-video cursor-pointer relative">
+          <div style={{ backgroundImage: thumbnail}} className="exp-video cursor-pointer relative">
             <Image
               width={970}
               height={500}
@@ -392,7 +390,7 @@ function Experience() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="max-sm:text-center"
           >
-            Spice it up with a wide video
+            {data[3].video.title}
           </motion.h2>
         </Reveal>
         <Reveal className="max-lg:flex items-center justify-center">
@@ -402,34 +400,33 @@ function Experience() {
             transition={{ duration: 0.3 }}
             className="text-center"
           >
-            This UI Kit uses attractive colors and modern typography to make you
-            look good, no matter what business youre in.
+            {data[3].video.headLine}
           </motion.p>
         </Reveal>
         <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-13 pb-29 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <h5>
-                <CountUp start={0} end={18} duration={2}></CountUp>%
+                <CountUp start={0} end={data[3].details[0].num} duration={2}></CountUp>%
               </h5>
             </Reveal>
-            <h6 className="text-center">Reduced running costs</h6>
+            <h6 className="text-center">{data[3].details[0].title}</h6>
           </div>
           <div className="flex flex-col items-center justify-center max-md:my-5">
             <Reveal>
               <h5>
-                <CountUp start={0} end={4} duration={2}></CountUp>x
+                <CountUp start={0} end={data[3].details[1].num} duration={2}></CountUp>x
               </h5>
             </Reveal>
-            <h6 className="text-center">Increase in user activity</h6>
+            <h6 className="text-center">{data[3].details[1].title}</h6>
           </div>
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <h5>
-                <CountUp start={0} end={13} duration={2}></CountUp>K
+                <CountUp start={0} end={data[3].details[2].num} duration={2}></CountUp>K
               </h5>
             </Reveal>
-            <h6 className="text-center">Increase in subscribers</h6>
+            <h6 className="text-center">{data[3].details[2].title}</h6>
           </div>
         </div>
       </div>
@@ -437,36 +434,6 @@ function Experience() {
   );
 }
 function WhatNext() {
-  const contactOptions = [
-    {
-      id: 0,
-      icon: "/assets/home/message.svg",
-      title: "Leave a Message",
-      discription:
-        "Send us the address of your website and your contact number We will get in touch.",
-      method: "Write to us",
-      href: "/",
-    },
-    {
-      id: 1,
-      icon: "/assets/home/talk.svg",
-      title: "Lets Talk!",
-      discription:
-        "We will then call you or meet to talk about your business goals and priorities.",
-      method: "Contact us",
-      href: "/",
-    },
-    {
-      id: 2,
-      icon: "/assets/home/plan.svg",
-      title: "You need a plan",
-      discription:
-        "Based on the analysis of need and your website, Check out what perfectly fits for you.",
-      method: "View Plan",
-      href: "/",
-    },
-  ];
-
   return (
     <section className="w-full h-auto flex items-center justify-center bg-color">
       <div className="what-next overflow-hidden">
@@ -476,7 +443,7 @@ function WhatNext() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
           >
-            Whats Next?
+            {data[4].title}
           </motion.h1>
         </Reveal>
         <Reveal>
@@ -486,11 +453,11 @@ function WhatNext() {
             transition={{ duration: 0.3 }}
             className="mt-3"
           >
-            Are you interested in our services? We will arrange a phone call.
+            {data[4].headLine}
           </motion.p>
         </Reveal>
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
-          {contactOptions.map((props, i) => {
+          {data[4].contactOptions.map((props, i) => {
             return (
             <Reveal key={props.id}>
                 <motion.div

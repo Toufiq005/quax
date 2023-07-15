@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
+import data from '@/data/pages/team-members-details.js';
 
 export default function page() {
   const socialLinks = [
@@ -46,8 +47,8 @@ export default function page() {
   return (
     <>
       <Banner
-        title="Team Members Details"
-        description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
+        title={data[0].title}
+        description={data[0].description}
       />
       <section className="w-full h-auto flex flex-col items-center justify-center bg-very-light-gray">
         <div className="wrapper flex flex-col items-center justify-center gap-20">
@@ -62,44 +63,30 @@ export default function page() {
                   <Image
                     width={485}
                     height={485}
-                    src="/assets/sections/team-members/member-robert-banks.png"
+                    src={data[1].img}
                     alt="img"
                   />
                 </motion.div>
               </Reveal>
             </div>
             <div className="members-info w-1/2 max-md:w-11/12">
-              <h1>Robert Banks</h1>
-              <h3>CEO & Founder</h3>
+              <h1>{data[1].name}</h1>
+              <h3>{data[1].role}</h3>
               <p>
-                But I must explain to you how all this mistaken idea of denounci
-                pleasure and paling was born and I will give you a complete
-                account of the system and expound the actual teachings of the
-                great explorer of the truth, the master-builder of human
-                happiness.
+              {data[1].description}
               </p>
               <div className="flex flex-col items-start max-lg:items-center justify-center gap-3 mt-5">
-                <div className="flex items-center justify-start max-lg:justify-center gap-6">
-                  <div className="w-10 h-10 bg-header rounded-full flex items-center justify-center">
-                    <FontAwesomeIcon icon={faPhone} className="text-white" />
-                  </div>
-                  <h2>+1 012 345 6789</h2>
+              {data[1].contactLinks.map((props) => (
+                <div key={props.id} className="flex items-center justify-start max-lg:justify-center gap-6">
+                <div className="w-10 h-10 bg-header rounded-full flex items-center justify-center">
+                  <FontAwesomeIcon icon={props.icon} className="text-white" />
                 </div>
-                <div className="flex items-center justify-start gap-6">
-                  <div className="w-10 h-10 bg-header rounded-full flex items-center justify-center">
-                    <FontAwesomeIcon icon={faTty} className="text-white" />
-                  </div>
-                  <h2>+44-208-1234567</h2>
-                </div>
-                <div className="flex items-center justify-start gap-6">
-                  <div className="w-10 h-10 bg-header rounded-full flex items-center justify-center">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-white" />
-                  </div>
-                  <h2>mail@loyalcoder.com</h2>
-                </div>
+                <h2>{props.link}</h2>
+              </div>
+              ))}
               </div>
               <div className="flex items-center justify-start max-lg:justify-center gap-5 mt-10">
-                {socialLinks.map((props, i) => (
+                {data[1].socialLinks.map((props, i) => (
                   <Reveal key={props.id}>
                     <motion.a
                       initial={{ y: -50, opacity: 0 }}
@@ -119,24 +106,7 @@ export default function page() {
             <div className="members-overview max-lg:w-4/5 w-1/2">
               <h1>Overview</h1>
               <p>
-                But I must explain to you how all this mistaken idea of denounci
-                pleasure and paling was born and I will give you a complete
-                account of the system and expound the actual teachings give you
-                a complete account of the system and expound the actual
-                teachings of the great explorer of the truth, the master-builder
-                of human happiness.
-                <br />
-                <br />
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been give you a complete account of
-                the system and expound the actual teachings the industrys
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a type
-                specimen book.
-                <br />
-                <br />
-                Lorem Ipsum has been give you a complete account of the system
-                and expound the actual teachings the industry.
+               {data[1].overview}
               </p>
             </div>
             <div className="members-experience max-lg:w-full w-1/2">
@@ -199,7 +169,7 @@ export default function page() {
           </div>
         </div>
       </section>
-      <TeamMemberSection bgColor="bg-color" limit={4} isTitle={true} title="Another Team Members" />
+      <TeamMemberSection bgColor="bg-color" limit={4} isTitle={true} title="Another Team Members" headLine="Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet." />
     </>
   );
 }

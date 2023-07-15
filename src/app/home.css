@@ -263,7 +263,7 @@ button {
   max-width: 970px;
   max-height: 500px;
   margin-top: -250px;
-  background-image: url(/assets/home/exp-wide-video.webp);
+  /* background-image: url(/assets/home/exp-wide-video.webp); */
   background-size: cover;
 }
 .bar {

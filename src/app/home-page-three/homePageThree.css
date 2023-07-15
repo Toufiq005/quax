@@ -39,7 +39,7 @@
   transition: 400ms;
 }
 .home-page-three .left-content a:hover {
-  background: var(--text-header);
+  background: #ff4f4f;
 }
 .home-page-three .right-content {
   background-image: url(/assets/home-three/home-three-bg-shape.svg);
