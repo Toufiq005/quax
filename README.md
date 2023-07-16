@@ -1,20 +1,20 @@
 # Introduction
 
-Welcome to the Quata documentation!
+Welcome to the Quax documentation!
 
 ### Supported Platforms For Local Development
 
 ```    
 Compatible Browsers (Firefox, Safari, Chrome, Edge)
-Server(Node.js 16.14.0)
+Server(Node.js 18.16.0)
 MacOS, Windows, and Linux are supported
 ```
 
 ### Requirements
 
 ```
-node(16.14.0)
-yarn
+node(18.16.0)
+npm
 editor: Visual Studio Code(recommended)
 ```
 
@@ -22,16 +22,16 @@ editor: Visual Studio Code(recommended)
 
 ```
 NextJs
-React-Query
-Axios
-Typescript
-Bootstrap
-React Hook Form
+React
+Javascript
+Tailwind
+Framer Motion
+Font Awesome
 ```
 
 ### Getting Started & Installation
 
->Make sure you moved the quata-react folder to a generic folder like Desktop, Document, or your
+>Make sure you moved the quax-react folder to a generic folder like Desktop, Document, or your
 specific code folder. Otherwise, the top folder name causes several path issues in generating the
 schema or installing npm packages
 
@@ -41,55 +41,66 @@ directory. Then run below command for getting started with specific part
 # on root directory
 
 ```
-yarn
-yarn build
-yarn start
+npm install
+npm run build
+npm run start
 ```
 
 Available Scripts: You can run below commands in the root folder for your need.
 
 ```
-"clean": "rimraf \"{.next,dist,build,out,node_modules}\"",
 "dev": "next dev",
 "build": "next build",
-"start": "next start"
+"start": "next start",
+"lint": "next lint"
 ```
 
 For customizing the template's default site settings:
 
-### Header Part
+### For Each Pages
 
 ```
-src\settings\site-settings.tsx
-src\utils\routes.ts
+src/data/pages/
+about.js
+blog.js
+home-one.js
+home-two.js
+home-three.js
+service-details.js
+service.js
+team-members-details.js
+team-members.js
 ```
-### Blog API Part
+### For Each Sections
 
 ```
-public\data\blogs.json
+src/data/section/
+blog-post.js
+blog-section.js
+case-study.js
+home-blogpost.js
+pricing-section.js
+service.js
+team-member.js
+testimonial.js
 ```
 
-### Integration API Part
+### For API Part
 
 ```
-public\data\integration.json
+src/pages/api/
 ```
 ### For static data
 
-#### For static data
-
 ```
-src\framework\basic-rest\static
-about
-banner
-client
-contact
-features
-footer
-home
-integration
-section
-and many more...
+src/components/
+Buttons
+Footer
+Navbar
+Sections
+Testimonial
+ui
+and many more
 ```
 
 # Deployment
@@ -104,51 +115,102 @@ If you want to host the template in vercel.com then follow the below command
 
 #### Step 1:
 
+Install vercel-cli
+
 ```
-After deploying the api you will get the api endpoint url. Put that url in the
-[your-frontend-project]/.env and vercel.json file.
-NEXT_PUBLIC_REST_API_ENDPOINT= '{put_your_api_url_here}'
+npm install -g vercel
 ```
+![img](./screenshots/npm-i-vercel.png)
+
+For updating vercel-cli
+```
+npm install -g vercel@latest
+```
+
 #### Step 2:
 
+Navigate to quax-react and run below command
+
 ```
-Navigate to [your-frontend-project]
+npm install
 ```
+![img](./screenshots/npm-install.png)
 
 #### Step 3:
-
 Now run below command
 
 ```
-"build": "next build",
-"start": "next start"
+npm run build
 ```
+
+![img](./screenshots/npm-run-build.png)
 
 #### Step 4:
 
 Now run below command
 
 ```
+vercel init
+```
+![img](./screenshots/vercel-init.png)
+
+select **nextjs** using up and down arrow and press enter to continue
+
+![img](./screenshots/vercel-init-end.png)
+
+#### Step 5:
+
+Now run below command
+
+```
+cd nextjs
+```
+![img](./screenshots/cd-nextjs.png)
+
+#### Step 6:
+
+Now run below command
+
+And then continue with the process
+
+```
 vercel
-NOTE: for deploying to vercel you need to install vercel-cli on your machine for
-more information please visit here
+```
+![img](./screenshots/vercel.png)
+
+After you will see this following screen
+
+You can preview the template from the preview link
+
+![img](./screenshots/vercel-two.png)
+
+#### Step 7:
+
+Now run this final command
+
+```
+vercel --prod
 ```
 
-New Static Page
+![img](./screenshots/vercel-prod.png)
 
-We are built using React NextJS framework. So all the existing pages are available to this location.
+You can get the production link from hear
 
-```
-src/pages
-```
+![img](./screenshots/vercel-prod-two.png)
 
-You can use the NextJS routing feature for the new pages. Check these official NextJS docs for pages and
-routing,
+Congratulations! You have successfully deployed the template.
+
+### Importent Links
 
 
-[https://nextjs.org/docs/basic-features/pages](https://nextjs.org/docs/basic-features/pages)
+Vercel
+[Documentation](https://vercel.com/docs)
 
-[https://nextjs.org/docs/routing/introduction](https://nextjs.org/docs/routing/introduction)
+Basic Features
+[How Next js works](https://nextjs.org/learn/foundations/how-nextjs-works)
+
+For Routing
+[Next js docs](https://nextjs.org/docs/pages/building-your-application/routing)
 
 ## FAQ
 
