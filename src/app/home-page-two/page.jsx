@@ -201,7 +201,7 @@ function About() {
             </div>
             <div className="right relative overflow-hidden">
               <img src={data[1].aboutData[aboutIndex].img} alt="about-img" />
-              <Reveal className="w-full relative bg-blue-500/90 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
+              <Reveal className="w-full relative bg-blue-500/90 max-sm:h-20 max-sm:mt-6 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -362,7 +362,7 @@ function Analysis() {
               <h1 className="mb-5 max-sm:w-4/5 max-sm:ml-10">
               {data[3].from.title}
               </h1>
-              <Reveal className="max-sm:w-4/5 max-sm:ml-10">
+              <Reveal className="max-sm:w-full max-sm:ml-10">
                 <motion.h2
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -376,7 +376,7 @@ function Analysis() {
                   className="focus:outline-blue-300"
                 />
               </Reveal>
-              <Reveal className="max-sm:w-4/5 max-sm:ml-10">
+              <Reveal className="max-sm:w-full max-sm:ml-10">
                 <motion.h2
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -390,7 +390,7 @@ function Analysis() {
                   className="focus:outline-blue-300"
                 />
               </Reveal>
-              <Reveal className="max-sm:w-4/5 max-sm:ml-10">
+              <Reveal className="max-sm:w-full max-sm:ml-10">
                 <motion.h2
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}

@@ -149,28 +149,6 @@ npm run build
 
 Now run below command
 
-```
-vercel init
-```
-![img](./screenshots/vercel-init.png)
-
-select **nextjs** using up and down arrow and press enter to continue
-
-![img](./screenshots/vercel-init-end.png)
-
-#### Step 5:
-
-Now run below command
-
-```
-cd nextjs
-```
-![img](./screenshots/cd-nextjs.png)
-
-#### Step 6:
-
-Now run below command
-
 And then continue with the process
 
 ```
@@ -184,7 +162,7 @@ You can preview the template from the preview link
 
 ![img](./screenshots/vercel-two.png)
 
-#### Step 7:
+#### Step 5:
 
 Now run this final command
 

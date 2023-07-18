@@ -61,6 +61,11 @@
     text-align: center;
   }
 }
+@media (max-width: 460px) {
+  .hero-card {
+    scale: 0.8;
+  }
+}
 
 /* =============About Section============= */
 

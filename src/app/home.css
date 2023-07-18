@@ -85,7 +85,7 @@ header p {
   font-weight: 500;
   line-height: 30px;
   display: block;
-  width: 348px;
+  width: 370px;
 }
 .section-one-text p {
   width: 436px;
@@ -231,39 +231,41 @@ button {
 }
 .section-three .left-content {
   width: 580px;
-  height: 598px;
+  min-height: 598px;
   background-image: url(/assets/home/exp-bg.svg);
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;
+  position: relative;
 }
-.card-one {
-  margin: -15px 0 -58px 4px;
-  scale: 1.5;
+.section-three .left-content .card-one {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 60px;
 }
-.card-two {
-  margin: 367px 0 0 218px;
-  scale: 1.7;
+.section-three .left-content .card-two {
+  position: absolute;
+  bottom: 5px;
+  left: 230px;
+  width: 140px;
+  height: 44px;
 }
-.exp-img-one {
-  margin: -478px 0 0 0;
-  transition: 500ms;
+.section-three .left-content .exp-img-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-.exp-img-two {
-  margin: -614px 0 0 308px;
-  transition: 500ms;
+.section-three .left-content .exp-img-two {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.exp-img-one-hidden {
-  margin: -38px 0 0 0;
-}
-.exp-img-two-hidden {
-  margin: -1500px 0 0 308px;
-}
+
 .exp-video {
   max-width: 970px;
   max-height: 500px;
   margin-top: -250px;
-  /* background-image: url(/assets/home/exp-wide-video.webp); */
   background-size: cover;
 }
 .bar {
@@ -346,19 +348,21 @@ button {
   .section-three-video h2 {
     margin-top: 80px;
   }
-  .exp-img-one {
-    margin: -467px 0 0px -50px;
-    scale: 0.6;
-  }
-  .exp-img-two {
-    margin: -614px 0 0 119px;
-    scale: 0.6;
-  }
   .section-three .left-content {
-    max-width: 375px;
+    width: 100vw;
+    height: 1073px;
   }
-  .card-two {
-    margin: 367px 0 0 180px;
+  .section-three .left-content .exp-img-one {
+    top: 100px;
+    left: 0;
+  }
+  .section-three .left-content .exp-img-two {
+    top: 470px;
+    right: 0;
+  }
+  .section-three .left-content .card-two {
+    bottom: 66px;
+    left: 218px;
   }
 }
 /* What next */

@@ -68,7 +68,7 @@ export default function Decoration() {
         className="decoration-dots dots-six"
         style={{ top: positions[5].top, left: positions[5].left }}
       ></div>
-      <div className="decoration-dots parallax-element parallax-element-one" data-speed="1.1">
+      <div className="decoration-dots parallax-element parallax-element-one" data-speed="0.8">
         <img
           src="/assets/header-decoration.svg"
           alt="decoration"

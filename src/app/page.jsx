@@ -1,7 +1,7 @@
 "use client";
 
 import "./home.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
@@ -49,7 +49,7 @@ export default function Home() {
 function Header() {
   return (
     <header className="relative flex items-center justify-evenly parent overflow-hidden">
-      <div className="hero max-lg:flex-col max-lg:mt-28">
+      <div className="hero max-lg:flex-col max-lg:mt-28 -mt-8">
         <div className="max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
           <Reveal className="max-lg:flex items-center justify-center">
             <motion.h1
@@ -267,21 +267,11 @@ function Experience() {
       )}
       <div className="flex items-center justify-center pt-36 mb-96 max-xl:flex-col max-sm:mb-40">
         <div className="mr-10 left-content max-xl:mx-0 max-xl:mb-7">
-          <Image
-            width={180}
-            height={60}
+          <img
             src="/assets/home/exp-profit-card.svg"
             alt="img"
             className="card-one"
           />
-          <Image
-            width={144}
-            height={44}
-            src="/assets/home/exp-ratting-card.svg"
-            alt="img"
-            className="card-two"
-          />
-          <Reveal>
             <motion.img
               initial={{ y: 250, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -290,17 +280,19 @@ function Experience() {
               alt={data[3].imgOne.alt}
               className="exp-img-one"
             />
-          </Reveal>
-          <Reveal>
             <motion.img
               initial={{ y: -250, opacity: 0 }}
               animate={{ y: 50, opacity: 1 }}
               transition={{ duration: 0.3 }}
-              src={data[3].imgOne.src}
-              alt={data[3].imgOne.alt}
+              src={data[3].imgTwo.src}
+              alt={data[3].imgTwo.alt}
               className="exp-img-two"
             />
-          </Reveal>
+          <img
+            src="/assets/home/exp-ratting-card.svg"
+            alt="img"
+            className="card-two"
+          />
         </div>
         <div className="ml-10 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center max-xl:text-center max-sm:w-full max-sm:ml-0">
           <Reveal>

@@ -26,9 +26,9 @@ export default function page() {
   return (
     <Loading>
       <Navbar
-        pageIndex={3}
+        pageIndex={1}
         textColor="text-white hover:text-red-500"
-        bgColor="bg-transparent"
+        bgColor="bg-transparent border-b border-gray-200/50"
         navBtn={3}
       />
       <Header />
