@@ -5,47 +5,15 @@ import Image from "next/image";
 import Banner from "@/components/Sections/Banner/Banner";
 import TeamMemberSection from "@/components/Sections/TeamMemberSection/TeamMemberSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faTty } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import data from '@/data/pages/team-members-details.js';
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
-  const socialLinks = [
-    {
-      id: 1,
-      link: "/",
-      name: "facebook",
-      icon: faFacebookF,
-    },
-    {
-      id: 2,
-      link: "/",
-      name: "instagram",
-      icon: faInstagram,
-    },
-    {
-      id: 3,
-      link: "/",
-      name: "twitter",
-      icon: faTwitter,
-    },
-    {
-      id: 4,
-      link: "/",
-      name: "linkedin",
-      icon: faLinkedinIn,
-    },
-  ];
 
   return (
-    <>
+    <Loading>
       <Banner
         title={data[0].title}
         description={data[0].description}
@@ -170,6 +138,6 @@ export default function page() {
         </div>
       </section>
       <TeamMemberSection bgColor="bg-color" limit={4} isTitle={true} title="Another Team Members" headLine="Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet." />
-    </>
+    </Loading>
   );
 }

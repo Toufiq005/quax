@@ -1,7 +1,7 @@
 "use client";
 
 import "./home.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
@@ -12,16 +12,27 @@ import Testimonial from "@/components/Testimonial/Testimonial";
 import blogData from "../data/section/home-blogpost";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVimeoV, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faVimeoV,
+  faFacebookF,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import CountUp from "react-countup";
 import YoutubeEmbed from "@/components/ui/YoutubeEmbed/YoutubeEmbed";
-import data from '../data/pages/home-one.js';
+import data from "../data/pages/home-one.js";
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function Home() {
+
   return (
-    <>
-      <Navbar bgColor="bg-dark-blue" textColor="text-white" pageIndex={1} navBtn={1} />
+    <Loading>
+      <Navbar
+        bgColor="bg-dark-blue"
+        textColor="text-white"
+        pageIndex={1}
+        navBtn={1}
+      />
       <Header />
       <AboutCompany />
       <ServiceSection />
@@ -30,8 +41,8 @@ export default function Home() {
       <WhatNext />
       <Testimonial />
       <Blog />
-      <Footer/>
-    </>
+      <Footer />
+    </Loading>
   );
 }
 
@@ -179,7 +190,8 @@ function AboutCompany() {
           className="form mt-10"
         >
           <h1>
-            {data[2].title.text}<span className="text-header">{data[2].title.span}</span>
+            {data[2].title.text}
+            <span className="text-header">{data[2].title.span}</span>
           </h1>
           <h2 className="flex items-center justify-center">
             <span>
@@ -206,7 +218,7 @@ function AboutCompany() {
                 className="mx-4 max-lg:my-4 focus:outline-blue-300"
               />
               <button className="max-lg:mx-4 text-white bg-header font-semibold rounded">
-              {data[2].btn.text}
+                {data[2].btn.text}
               </button>
             </div>
             <p className="flex items-center justify-center terms-and-condition max-sm:text-xs">
@@ -360,7 +372,10 @@ function Experience() {
       </div>
       <div className="bg-very-light-gray section-three-video flex flex-col items-center justify-center">
         <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-full">
-          <div style={{ backgroundImage: thumbnail}} className="exp-video cursor-pointer relative">
+          <div
+            style={{ backgroundImage: thumbnail }}
+            className="exp-video cursor-pointer relative"
+          >
             <Image
               width={970}
               height={500}
@@ -407,7 +422,12 @@ function Experience() {
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <h5>
-                <CountUp start={0} end={data[3].details[0].num} duration={2}></CountUp>%
+                <CountUp
+                  start={0}
+                  end={data[3].details[0].num}
+                  duration={2}
+                ></CountUp>
+                %
               </h5>
             </Reveal>
             <h6 className="text-center">{data[3].details[0].title}</h6>
@@ -415,7 +435,12 @@ function Experience() {
           <div className="flex flex-col items-center justify-center max-md:my-5">
             <Reveal>
               <h5>
-                <CountUp start={0} end={data[3].details[1].num} duration={2}></CountUp>x
+                <CountUp
+                  start={0}
+                  end={data[3].details[1].num}
+                  duration={2}
+                ></CountUp>
+                x
               </h5>
             </Reveal>
             <h6 className="text-center">{data[3].details[1].title}</h6>
@@ -423,7 +448,12 @@ function Experience() {
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <h5>
-                <CountUp start={0} end={data[3].details[2].num} duration={2}></CountUp>K
+                <CountUp
+                  start={0}
+                  end={data[3].details[2].num}
+                  duration={2}
+                ></CountUp>
+                K
               </h5>
             </Reveal>
             <h6 className="text-center">{data[3].details[2].title}</h6>
@@ -459,7 +489,7 @@ function WhatNext() {
         <div className="flex items-center justify-evenly mt-14 max-lg:flex-col">
           {data[4].contactOptions.map((props, i) => {
             return (
-            <Reveal key={props.id}>
+              <Reveal key={props.id}>
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}

@@ -8,10 +8,11 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
   return (
-    <>
+    <Loading>
       <Banner
         title="Contact Us"
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
@@ -64,6 +65,6 @@ export default function page() {
         headerThree="The European language are memb of the same family. Their separate is a
 myth. For science Europe the same vocabulary."
       />
-    </>
+    </Loading>
   );
 }

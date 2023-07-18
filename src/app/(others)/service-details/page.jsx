@@ -11,11 +11,12 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import "font-awesome/css/font-awesome.min.css";
 import data from '@/data/pages/service-details.js';
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
 
   return (
-    <>
+    <Loading>
       <Banner
         title={data[0].title}
         description={data[0].description}
@@ -92,6 +93,6 @@ export default function page() {
       <ServiceSection />
       <PricingSection />
       <SubscribeSection />
-    </>
+    </Loading>
   );
 }

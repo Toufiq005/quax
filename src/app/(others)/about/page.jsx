@@ -11,14 +11,14 @@ import "font-awesome/css/font-awesome.min.css";
 import TeamMemberSection from "@/components/Sections/TeamMemberSection/TeamMemberSection";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import { motion, useInView } from "framer-motion";
+import { motion,} from "framer-motion";
 import data from "@/data/pages/about.js";
 import Reveal from "@/components/ui/Reveal/Reveal";
-import { useRef } from "react";
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function About() {
   return (
-    <>
+    <Loading>
       <Banner title={data[0].title} description={data[0].headLine} />
       <AboutSection />
       <WhatWeDo />
@@ -30,7 +30,7 @@ export default function About() {
         headLine="Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet."
       />
       <SubscribeSection />
-    </>
+    </Loading>
   );
 }
 

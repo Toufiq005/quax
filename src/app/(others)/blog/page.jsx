@@ -9,6 +9,7 @@ import {
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
+import Loading from "@/components/ui/Loading/Loading";
 import siteData from '@/data/pages/blog.js';
 
 require("dotenv").config();
@@ -48,7 +49,7 @@ export default async function page() {
   ];
 
   return (
-    <>
+    <Loading>
       <Banner
         title={siteData[0].title}
         description={siteData[0].description}
@@ -125,6 +126,6 @@ export default async function page() {
           <BlogSection />
         </div>
       </section>
-    </>
+    </Loading>
   );
 }

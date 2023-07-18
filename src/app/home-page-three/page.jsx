@@ -20,10 +20,11 @@ import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import data from '@/data/pages/home-three.js'
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
   return (
-    <>
+    <Loading>
       <Navbar
         pageIndex={3}
         textColor="text-white hover:text-red-500"
@@ -41,7 +42,7 @@ export default function page() {
       <TeamMemberSection limit={4} pageIndex={2} title="Meet our Expert team member" headLine="Lorem ipsum dolor sit amet, consectur adipiscing elit." />
       <Testimonial/>
       <Footer/>
-    </>
+    </Loading>
   );
 }
 

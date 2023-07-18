@@ -29,10 +29,11 @@ import Link from "next/link";
 import DecorationTwo from "@/components/DecorationTwo/DecorationTwo";
 import CountUp from "react-countup";
 import data from "@/data/pages/home-two.js";
+import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
   return (
-    <>
+    <Loading>
       <Navbar
         textColor="text-white hover:text-blue-500"
         bgColor="bg-transparent"
@@ -55,7 +56,7 @@ export default function page() {
       <Blog />
       <SubscribeSection />
       <Footer />
-    </>
+    </Loading>
   );
 }
 

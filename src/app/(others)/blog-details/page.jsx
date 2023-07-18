@@ -5,6 +5,7 @@ import Image from "next/image";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
 import relatedBlog from "@/data/section/home-blogpost.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loading from "@/components/ui/Loading/Loading";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 
 require("dotenv").config();
@@ -19,7 +20,7 @@ export default async function page() {
   const data = await getData();
 
   return (
-    <>
+    <Loading>
       <Banner
         title="Blog Details"
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
@@ -282,6 +283,6 @@ export default async function page() {
           <BlogSection />
         </div>
       </section>
-    </>
+    </Loading>
   );
 }
