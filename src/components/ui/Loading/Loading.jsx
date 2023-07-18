@@ -9,15 +9,20 @@ export default function Loading({ children }) {
   useEffect(() => {
     setInterval(() => {
       setIsLoading(false);
-    },300)
+    }, 1500);
   });
 
   return (
     <>
       {isLoading ? (
-        <section className="w-full h-screen flex items-center justify-center loading-section">
-          <div className="w-8 h-8 rounded-full bg-red-500 loading-dot"></div>
-        </section>
+        <div className="circles-preloader">
+          <div className="circle circle-1"></div>
+          <div className="circle circle-2"></div>
+          <div className="circle circle-3"></div>
+          <div className="circle circle-4"></div>
+          <div className="circle circle-5"></div>
+          <div className="circle circle-6"></div>
+        </div>
       ) : (
         children
       )}
