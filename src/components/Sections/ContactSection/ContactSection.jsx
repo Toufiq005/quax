@@ -16,14 +16,7 @@ export default function ContactSection(props) {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey);
   };
 
   return (

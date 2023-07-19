@@ -137,15 +137,24 @@ npm install
 ![img](./screenshots/npm-install.png)
 
 #### Step 3:
-Now run below command
+Add your service id, template id, and public key
+into the **quax/.env** file from [emailjs](https://emailjs.com)
+![dotenv](./screenshots/dotenv-location.png)
 
+Add your keys hear
+
+![env](./screenshots/env.png)
+
+Don't change marked parameters in your emailjs template.
+![emailjs](./screenshots/emailjs-template.png)
+#### Step 4:
 ```
 npm run build
 ```
 
 ![img](./screenshots/npm-run-build.png)
 
-#### Step 4:
+#### Step 5:
 
 Now run below command
 
@@ -162,7 +171,7 @@ You can preview the template from the preview link
 
 ![img](./screenshots/vercel-two.png)
 
-#### Step 5:
+#### Step 6:
 
 Now run this final command
 
@@ -180,6 +189,7 @@ Congratulations! You have successfully deployed the template.
 
 ### Importent Links
 
+EmailJS [Documentation](https://emailjs.com/docs/)
 
 Vercel
 [Documentation](https://vercel.com/docs)
