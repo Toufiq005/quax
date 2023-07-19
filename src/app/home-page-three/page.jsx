@@ -143,7 +143,7 @@ function CompanyLogo() {
             {data[1].title}
           </h1>
         </div>
-        <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-4">
+        <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-8">
           {data[1].companies.map((item, i) => {
             return (
               <div key={item.id} title={item.name}>
@@ -250,7 +250,7 @@ function CaseStudy() {
               {data[3].headLine}
             </motion.h3>
           </Reveal>
-          <div className="flex items-center justify-center gap-5 max-xl:mt-5">
+          <div className="flex items-center justify-center gap-5 max-xl:mt-5 max-sm:items-end max-sm:justify-end max-sm:w-screen max-sm:mr-5 max-sm:mt-7">
             <button onClick={() => swiperRef.current.slideNext()}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -276,7 +276,7 @@ function CaseStudy() {
                     <img
                       src={props.img}
                       alt="image"
-                      className="w-full h-auto"
+                      className="img"
                     />
                     <div className="absolute z-10 bottom-5 left-5">
                       <h2>{props.title}</h2>
@@ -568,7 +568,7 @@ function Testimonial() {
             <h1>{data[8].title}</h1>
             <p>{data[8].headLine}</p>
           </div>
-          <div className="mt-10 flex gap-5">
+          <div className="mt-10 flex max-sm:w-screen max-sm:items-end max-sm:justify-end max-sm:mr-5 gap-5">
             <button onClick={() => swiper.current.slideNext()}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -742,7 +742,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24  flex justify-center items-center border-t border-black/80 mt-24">
+      <div className="w-full h-24 flex justify-center items-center mt-24 border-t border-brand-four">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

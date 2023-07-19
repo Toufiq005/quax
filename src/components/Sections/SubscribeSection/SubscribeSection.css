@@ -62,6 +62,8 @@
   }
   .subscribe-section h1 {
     padding-top: 40px;
+    font-size: 36px;
+    line-height: 30px;
   }
   .subscribe-section button {
     margin-bottom: 40px;

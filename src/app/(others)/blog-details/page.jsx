@@ -87,21 +87,21 @@ export default async function page() {
             </div>
             <div className="flex items-center justify-between mt-10 max-sm:flex-col">
               <div className="flex items-center justify-center gap-3 max-sm:flex-col">
-                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h3 className="text-black/60">Business Strategy</h3>
+                <a href="#" className="w-40 h-10 text-black/60 bg-very-light-gray hover:bg-red-500 hover:text-white duration-500 flex items-center justify-center">
+                  <h3>Business Strategy</h3>
                 </a>
-                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h3 className="text-black/60">Business</h3>
+                <a href="#" className="w-40 h-10 text-black/60 bg-very-light-gray hover:bg-red-500 hover:text-white duration-500 flex items-center justify-center">
+                  <h3>Business</h3>
                 </a>
-                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
-                  <h3 className="text-black/60">Technology</h3>
+                <a href="#" className="w-40 h-10 text-black/60 bg-very-light-gray hover:bg-red-500 hover:text-white duration-500 flex items-center justify-center">
+                  <h3>Technology</h3>
                 </a>
               </div>
-              <div className="max-sm:mt-5 flex items-center justify-center gap-4 text-gray-500">
-                <a href="#"><FontAwesomeIcon icon={faFacebookF}/></a>
-                <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                <a href="#"><FontAwesomeIcon icon={faTwitter}/></a>
-                <a href="#"><FontAwesomeIcon icon={faLinkedinIn}/></a>
+              <div className="max-sm:mt-5 flex items-center justify-center gap-4 ">
+                <a href="#"><FontAwesomeIcon icon={faFacebookF} className="text-gray-500 hover:text-red-500 duration-200"/></a>
+                <a href="#"><FontAwesomeIcon icon={faInstagram} className="text-gray-500 hover:text-red-500 duration-200"/></a>
+                <a href="#"><FontAwesomeIcon icon={faTwitter} className="text-gray-500 hover:text-red-500 duration-200"/></a>
+                <a href="#"><FontAwesomeIcon icon={faLinkedinIn} className="text-gray-500 hover:text-red-500 duration-200"/></a>
               </div>
             </div>
             <div className="flex items-center justify-center gap-10 my-7 blog-details-about-author max-xl:w-4/5">

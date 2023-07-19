@@ -225,7 +225,7 @@ function About() {
         </div>
         <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-40 flex flex-col items-center justify-center">
           <h1>{data[1].headLineTwo}</h1>
-          <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-4">
+          <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-8">
             {data[1].companies.map((item, i) => {
               return (
                 <div key={item.id} title={item.name}>

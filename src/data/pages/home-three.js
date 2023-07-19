@@ -132,6 +132,18 @@ const data = [
       {
         id: 4,
         img: "/assets/home-three/case-study/case-study-image-two.webp",
+        title: "Complexities of each new themey",
+        catagory: "Branding Strategy",
+      },
+      {
+        id: 5,
+        img: "/assets/home-three/about/about-image-one.webp",
+        title: "Business Agility beyand hype",
+        catagory: "Branding Strategy",
+      },
+      {
+        id: 6,
+        img: "/assets/home-three/home-three-image-one.webp",
         title: "Neural Network design",
         catagory: "Branding Strategy",
       },

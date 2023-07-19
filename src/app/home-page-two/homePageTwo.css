@@ -212,6 +212,13 @@
     width: 90%;
     font-size: 15px;
   }
+  .home-two-about .end-content .right h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .home-two-about .end-content .right p {
+    font-size: 16px;
+  }
   .top-content-container .left button h3 {
     font-size: 18px;
   }
@@ -516,6 +523,9 @@
   .testimonial-two-slide {
     min-height: 500px;
   }
+  .testimonial-two-slide p {
+    font-size: 18px;
+  }
 }
 /* ======================Pricing Section Two====================== */
 
@@ -722,6 +732,13 @@
   .post h1 {
     font-size: 2rem;
     line-height: 2.15rem;
+  }
+}
+@media (max-width: 640px) {
+  .post h1 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 24px 0 20px 0;
   }
 }
 
