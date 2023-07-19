@@ -107,9 +107,12 @@
   width: 370px;
   min-height: 533px;
   background-color: white;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 15px;
+  transition: 400ms;
+}
+.post:hover {
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
 }
 .postImg {
   width: 370px;

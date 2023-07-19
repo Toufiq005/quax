@@ -126,6 +126,18 @@ body {
 .min-h-75 {
   min-height: 75vh;
 }
+.border-brand-three {
+  border-color: #5e5eee;
+}
+.border-brand-two {
+  border-color: #5e5eee2f;
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 40px 0;
+  }
+}
 
 /* ===================Effects=================== */
 

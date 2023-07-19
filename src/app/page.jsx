@@ -49,7 +49,7 @@ export default function Home() {
 function Header() {
   return (
     <header className="relative flex items-center justify-evenly parent overflow-hidden">
-      <div className="hero max-lg:flex-col max-lg:mt-28 -mt-8">
+      <div className="hero max-lg:flex-col max-lg:mt-28 -mt-8 max-sm:m">
         <div className="max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:text-center max-lg:items-center max-sm:mt-28">
           <Reveal className="max-lg:flex items-center justify-center">
             <motion.h1
@@ -104,7 +104,7 @@ function Header() {
 function AboutCompany() {
   return (
     <section className="section-one">
-      <div className="flex gap-16 items-center justify-center w-full pt-29 max-lg:flex-col">
+      <div className="flex gap-16 items-center justify-center w-full pt-29 max-sm:pt-14 max-lg:flex-col">
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 max-lg:mr-0">
           <Reveal className="max-lg:flex items-center justify-center max-lg:w-full">
             <motion.div
@@ -205,7 +205,7 @@ function AboutCompany() {
             </span>
             {data[2].headLine}
           </h2>
-          <form className="pb-29">
+          <form className="pb-29 max-sm:pb-5">
             <div className="flex justify-center max-lg:items-center max-lg:flex-col">
               <input
                 type="text"
@@ -265,7 +265,7 @@ function Experience() {
           <YoutubeEmbed embedId={data[3].video.embedId} />
         </div>
       )}
-      <div className="flex items-center justify-center pt-36 mb-96 max-xl:flex-col max-sm:mb-40">
+      <div className="flex items-center justify-center pt-36 mb-96 max-sm:pt-12 max-xl:flex-col max-sm:mb-40">
         <div className="mr-10 left-content max-xl:mx-0 max-xl:mb-7">
           <img
             src="/assets/home/exp-profit-card.svg"
@@ -410,7 +410,7 @@ function Experience() {
             {data[3].video.headLine}
           </motion.p>
         </Reveal>
-        <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-13 pb-29 max-md:flex-col">
+        <div className="flex items-center justify-center w-full gap-64 max-md:gap-4 mt-13 pb-29 max-sm:pb-14 max-md:flex-col">
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <h5>
@@ -654,7 +654,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-0">
           <h1>Quick Link</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {quickLink.map((item) => {
@@ -710,7 +710,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24  flex justify-center items-center border-t mt-24">
+      <div className="w-full h-24 flex justify-center items-center border-t mt-24">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

@@ -70,6 +70,11 @@ header p {
     gap: 0;
   }
 }
+@media (max-width: 640px) {
+  .hero h1 {
+    padding-top: 25px;
+  }
+}
 
 /* built for you section */
 
@@ -423,6 +428,11 @@ button {
     line-height: 2.5rem;
   }
 }
+@media (max-width: 640px) {
+  .what-next {
+    margin: 56px 0 56px 0;
+  }
+}
 /* Our Blogpost */
 
 .blogpost {
@@ -507,6 +517,11 @@ button {
   .post h1 {
     font-size: 2rem;
     line-height: 2.15rem;
+  }
+}
+@media (max-width: 640px) {
+  .blogpost h3 {
+    margin-top: 56px;
   }
 }
 

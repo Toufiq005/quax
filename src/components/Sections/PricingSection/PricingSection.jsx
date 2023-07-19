@@ -15,7 +15,7 @@ export default function PricingSection() {
           initial={{ y: -150, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="pt-29"
+          className="pt-29 max-sm:pt-14"
         >
           {data.headLineOne}
         </motion.h2>

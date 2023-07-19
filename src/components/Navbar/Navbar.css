@@ -80,6 +80,7 @@
   border-left: 3px solid var(--text-header);
   background-color: white;
   right: 135px;
+  top: 80px;
 }
 .search-bar input:focus {
   outline: none;

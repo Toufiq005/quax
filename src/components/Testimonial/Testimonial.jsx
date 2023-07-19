@@ -14,7 +14,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 export default function Testimonial() {
   return (
     <section className="w-full h-auto bg-very-light-gray flex flex-col items-center justify-center">
-      <div className="testimonial pt-29 pb-18 ">
+      <div className="testimonial pt-29 pb-18 max-sm:pt-14 max-sm:pb-10 ">
         <Reveal>
           <motion.h3
             initial={{ x: -150, opacity: 0 }}

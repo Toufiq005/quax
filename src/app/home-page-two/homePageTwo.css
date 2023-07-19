@@ -293,6 +293,9 @@
   border-radius: 5px;
   background: #f1f1f3;
 }
+.free-analysis .right form input::placeholder {
+  color: rgba(99, 99, 99, 1);
+}
 .free-analysis .right form button {
   width: 370px;
   height: 50px;
@@ -570,6 +573,11 @@
   color: #387efa;
   font-size: 15px;
   font-weight: 500;
+  transition: 400ms;
+}
+.price-two a:hover {
+  background: #4847d1;
+  color: #fff;
 }
 .price-two-active {
   width: 370px;
@@ -609,7 +617,10 @@
   font-weight: 500;
   transition: 400ms;
 }
-
+.price-two-active a:hover {
+  background: #4847d1;
+  color: #fff;
+}
 @media (max-width: 640px) {
   .pricing-section-two h1 {
     width: 90%;

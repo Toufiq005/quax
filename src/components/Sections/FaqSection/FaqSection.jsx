@@ -24,6 +24,7 @@ export default function FaqSection(props) {
               return (
                 <div
                   key={id}
+                  style={{ boxShadow: selectedFaq === id ? "0px 5px 20px rgba(0, 0, 0, 0.1)" : ""}}
                   className="faq-question flex flex-col items-center bg-white max-sm:w-4/5 overflow-hidden"
                 >
                   <button
@@ -72,7 +73,6 @@ export default function FaqSection(props) {
                     )}
                   </button>
                   {selectedFaq === id && (
-                    <Reveal>
                       <motion.div
                         initial={{ y: -100, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -81,7 +81,6 @@ export default function FaqSection(props) {
                       >
                         <p className="max-sm:py-3">{answer}</p>
                       </motion.div>
-                    </Reveal>
                   )}
                 </div>
               );

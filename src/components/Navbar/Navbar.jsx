@@ -106,7 +106,7 @@ export default function Navbar(props) {
   return (
     <>
       <nav
-        style={{ backgroundColor: navColor ? "#fff" : "" }}
+        style={{ backgroundColor: navColor ? "#fff" : "", borderColor: navColor ? "#fff" : null }}
         className={
           "w-full h-25 flex items-center justify-center fixed z-50" +
           " " +
@@ -417,17 +417,17 @@ export default function Navbar(props) {
                   initial={{ y: 80, x: 135, opacity: 0 }}
                   animate={{ y: 0, x: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="search-bar absolute flex"
+                  className="search-bar absolute flex items-center justify-between"
                 >
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="w-full h-full ml-5"
+                    className="w-4/5 h-full ml-4"
                   />
-                  <button>
+                  <button className="w-1/5">
                     <FontAwesomeIcon
                       icon={faArrowRight}
-                      className="text-red-500 ml-3"
+                      className="text-red-500"
                     />
                   </button>
                 </motion.div>

@@ -12,10 +12,7 @@ import Image from "next/image";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 import blogData from "@/data/section/home-blogpost";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faCheck } from "@fortawesome/free-solid-svg-icons";
 import {
   faVimeoV,
   faFacebookF,
@@ -36,7 +33,7 @@ export default function page() {
     <Loading>
       <Navbar
         textColor="text-white hover:text-blue-500"
-        bgColor="bg-transparent"
+        bgColor="bg-transparent border-b border-brand-two"
         pageIndex={3}
         navBtn={2}
       />
@@ -61,19 +58,22 @@ export default function page() {
 }
 
 function Header() {
-
   const heroCard = useRef(null);
 
   // scroll speed of hero-card
   const parallaxSpeed = 0.2;
-  
+
   useEffect(() => {
     const handleScroll = () => {
-    const scrollTop =
+      const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       const parallax = document.querySelector(".hero-card");
       const top = -380;
-      {parallax ? parallax.style.top = scrollTop * parallaxSpeed + top + "px" : null};
+      {
+        parallax
+          ? (parallax.style.top = scrollTop * parallaxSpeed + top + "px")
+          : null;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -85,7 +85,7 @@ function Header() {
 
   return (
     <header className="w-full h-auto min-h-screen flex items-center justify-center home-two relative -top-25 overflow-hidden">
-      <div className="wrapper w-full flex items-center justify-between max-xl:flex-col">
+      <div className="wrapper max-sm:pt-28 w-full flex items-center justify-between max-xl:flex-col">
         <Reveal className="header-left-content max-xl:flex flex-col items-center justify-center">
           <motion.h1
             initial={{ y: -150, opacity: 0 }}
@@ -125,7 +125,7 @@ function Header() {
             <h3>ENQUIRE US</h3>
           </motion.div>
         </Reveal>
-        <Reveal className="relative max-xl:top-32 max-sm:m-3">
+        <Reveal className="relative max-xl:top-32 max-sm:m-3 max-sm:pb-10">
           <motion.img
             initial={{ y: -150, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -141,8 +141,8 @@ function Header() {
             alt={data[0].imgTwo.alt}
             ref={heroCard}
             className="relative -top-96 -left-16 max-sm:left-0 hero-card"
-            />
-          </Reveal>
+          />
+        </Reveal>
       </div>
       <DecorationTwo />
     </header>
@@ -223,7 +223,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-20 flex flex-col items-center justify-center">
+        <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-40 flex flex-col items-center justify-center">
           <h1>{data[1].headLineTwo}</h1>
           <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-4">
             {data[1].companies.map((item, i) => {
@@ -289,9 +289,24 @@ function About() {
                 return (
                   <Reveal key={props.id}>
                     <h3>
-                      <CountUp start={0} end={props.numOne} delay={0.9} duration={3} />.
-                      <CountUp start={0} end={props.numTwo} delay={0.9} duration={3} />%
-                      <span className="ml-4 text-2xl" style={{ color: props.color }}>
+                      <CountUp
+                        start={0}
+                        end={props.numOne}
+                        delay={0.9}
+                        duration={3}
+                      />
+                      .
+                      <CountUp
+                        start={0}
+                        end={props.numTwo}
+                        delay={0.9}
+                        duration={3}
+                      />
+                      %
+                      <span
+                        className="ml-4 text-2xl"
+                        style={{ color: props.color }}
+                      >
                         <FontAwesomeIcon icon={props.icon} />
                       </span>
                     </h3>
@@ -360,7 +375,7 @@ function Analysis() {
           <form className="flex flex-col items-center justify-center">
             <div className="max-sm:w-full">
               <h1 className="mb-5 max-sm:w-4/5 max-sm:ml-10">
-              {data[3].from.title}
+                {data[3].from.title}
               </h1>
               <Reveal className="max-sm:w-full max-sm:ml-10">
                 <motion.h2

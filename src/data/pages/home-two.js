@@ -198,7 +198,7 @@ const data = [
       {
         id: 0,
         name: "SEND MESSAGE",
-        title: "It's all about The people, and process",
+        title: "Lorem ipsum dolor sit amet, consectetur",
         points: {
           1: "Analyze the date",
           2: "Create template",
@@ -230,7 +230,7 @@ const data = [
       {
         id: 2,
         name: "WEB MONITORING",
-        title: "It's all about The people, and process",
+        title: "How we can level up your business",
         points: {
           1: "Analyze the date",
           2: "Create template",
@@ -246,7 +246,7 @@ const data = [
       {
         id: 3,
         name: "RESEARCH",
-        title: "It's all about The people, and process",
+        title: "We're the perfect local business assists",
         points: {
           1: "Analyze the date",
           2: "Create template",

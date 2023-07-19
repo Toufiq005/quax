@@ -154,7 +154,7 @@
   }
 }
 
-/* ====================Service==================== */
+/* ====================Case-Study==================== */
 
 .home-three-case-study img {
   width: auto;
@@ -195,6 +195,15 @@
   color: #e6e6e6;
   font-size: 16px;
   font-weight: 400;
+}
+.home-three-case-study .overlay {
+  z-index: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+  width: 100%;
+  height: 100%;
+}
+.home-three-case-study .overlay:hover {
+  background: rgba(255, 79, 79, 0.8);
 }
 @media (max-width: 640px) {
   .home-three-case-study h1 {
@@ -406,6 +415,11 @@
   font-size: 15px;
   font-weight: 500;
   margin-top: 30px;
+  transition: 400ms;
+}
+.home-three-pricing .pricing-active a:hover {
+  background: #ff4f4f;
+  color: #fff;
 }
 .home-three-pricing .pricing-active .fa-check {
   color: white;
@@ -439,6 +453,11 @@
   background: #fff;
   margin-top: 30px;
   color: #4847d1;
+  transition: 400ms;
+}
+.home-three-pricing .pricing a:hover {
+  background: #ff4f4f;
+  color: #fff;
 }
 .home-three-pricing .pricing .fa-check {
   color: #4847d1;

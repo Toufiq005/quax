@@ -7,6 +7,7 @@ import relatedBlog from "@/data/section/home-blogpost.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loading from "@/components/ui/Loading/Loading";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 require("dotenv").config();
 async function getData() {
@@ -86,24 +87,21 @@ export default async function page() {
             </div>
             <div className="flex items-center justify-between mt-10 max-sm:flex-col">
               <div className="flex items-center justify-center gap-3 max-sm:flex-col">
-                <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
+                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
                   <h3 className="text-black/60">Business Strategy</h3>
-                </div>
-                <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
+                </a>
+                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
                   <h3 className="text-black/60">Business</h3>
-                </div>
-                <div className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
+                </a>
+                <a href="#" className="w-40 h-10 bg-very-light-gray flex items-center justify-center">
                   <h3 className="text-black/60">Technology</h3>
-                </div>
+                </a>
               </div>
-              <div>
-                <Image
-                  width={95}
-                  height={15}
-                  src="/assets/blog-post/social-icon.svg"
-                  alt="icon"
-                  className="max-sm:mt-5"
-                />
+              <div className="max-sm:mt-5 flex items-center justify-center gap-4 text-gray-500">
+                <a href="#"><FontAwesomeIcon icon={faFacebookF}/></a>
+                <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                <a href="#"><FontAwesomeIcon icon={faTwitter}/></a>
+                <a href="#"><FontAwesomeIcon icon={faLinkedinIn}/></a>
               </div>
             </div>
             <div className="flex items-center justify-center gap-10 my-7 blog-details-about-author max-xl:w-4/5">
@@ -133,7 +131,7 @@ export default async function page() {
                       key={items.id}
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      className="post max-sm:hover:scale-100 hover:scale-105 duration-500 flex flex-col items-center justify-center"
+                      className="post cursor-pointer flex flex-col items-center justify-center"
                     >
                       <Image
                         width={370}

@@ -21,7 +21,7 @@ export default function ServiceSection() {
           </motion.h1>
         </Reveal>
       </div>
-      <div className="service-wrapper mt-17 pb-29 ">
+      <div className="service-wrapper mt-17 pb-29 max-sm:pb-14">
         {data.map((items, i) => {
           return (
             <Reveal key={items.id} className="max-lg:flex items-center justify-center">
