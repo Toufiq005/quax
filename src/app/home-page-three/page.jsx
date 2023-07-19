@@ -131,6 +131,8 @@ function CompanyLogo() {
 
 function Service() {
 
+  const [delay, setDelay] = useState(0.3);
+
   return (
     <section className="w-full h-auto flex items-center justify-center overflow-hidden">
       <div className="w-wrapper pt-29 home-three-service flex flex-col items-center justify-center">
@@ -143,14 +145,14 @@ function Service() {
         <Reveal className="service">
           {data[2].data.map((props) => {
             return (
-              <motion.div initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.3 * props.id }} key={props.id} className="card">
+              <motion.div initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} whileHover={{ y:-35}} transition={{ duration: 0.3, delay: delay * props.id }} onAnimationComplete={() => setDelay(0)} key={props.id} className="card cursor-pointer">
                 <div className="card-container">
                   <img src={props.icon} alt="icon" />
                   <h2>{props.name}</h2>
                   <p>{props.title}</p>
                   <a
                     href={props.href}
-                    className="text-black/70 hover:ml-3 duration-500"
+                    className="text-black/70 duration-500"
                   >
                     <FontAwesomeIcon icon={faArrowRight} />
                   </a>
@@ -200,7 +202,7 @@ function CaseStudy() {
             slidesPerView={3}
             spaceBetween={10}
             centeredSlides={false}
-            loop={true}
+            loop={false}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -215,7 +217,6 @@ function CaseStudy() {
                         <h2>{props.title}</h2>
                         <p>{props.catagory}</p>
                       </div>
-                      <div className="absolute top-0 left-0 w-full h-full hover:bg-red-500/60 duration-300"></div>
                     </div>
                   </div>
                 </SwiperSlide>

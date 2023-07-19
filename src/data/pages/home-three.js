@@ -131,7 +131,7 @@ const data = [
       },
       {
         id: 4,
-        img: "/assets/home-three/case-study/case-study-image-one.webp",
+        img: "/assets/home-three/case-study/case-study-image-two.webp",
         title: "Neural Network design",
         catagory: "Branding Strategy",
       },

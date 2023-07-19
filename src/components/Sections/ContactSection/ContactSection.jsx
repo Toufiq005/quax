@@ -1,10 +1,31 @@
 "use client";
 
 import "./ContactSection.css";
+import { useRef, } from "react";
+import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 
 export default function ContactSection(props) {
+  const form = useRef();
+
+  const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
+
   return (
     <section
       className={
@@ -44,29 +65,37 @@ export default function ContactSection(props) {
             </motion.p>
           </Reveal>
         ) : null}
-        <form className="flex flex-col justify-center items-center max-lg:w-full">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="flex flex-col justify-center items-center max-lg:w-full"
+        >
           <div className="from-input-wrapper">
             <input
               type="text"
               placeholder="First Name"
+              name="first_name"
               required
               className={"focus:outline-blue-300" + " " + props.inputColor}
             />
             <input
               type="text"
               placeholder="Last Name"
+              name="last_name"
               required
               className={"focus:outline-blue-300" + " " + props.inputColor}
             />
             <input
               type="text"
               placeholder="Phone NO"
+              name="phone_no"
               required
               className={"focus:outline-blue-300" + " " + props.inputColor}
             />
             <input
               type="text"
               placeholder="Subject ..."
+              name="subject"
               className={"focus:outline-blue-300" + " " + props.inputColor}
             />
           </div>
