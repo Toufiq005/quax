@@ -106,7 +106,7 @@ function WhatWeDo() {
                     )}
                     %
                   </div>
-                  <div className="max-lg:mt-3">
+                  <div className="max-lg:mt-3 max-sm:flex flex-col items-center justify-center">
                     <h2 className="mb-3">{props.title}</h2>
                     <p>{props.discription}</p>
                   </div>

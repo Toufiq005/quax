@@ -712,7 +712,10 @@ export default function Navbar(props) {
                   </a>
                 </div>
                 <div
-                  onClick={() => setMobileSearchOption(!isMobileSearchOption)}
+                  onClick={() => {
+                    clearHoverOptions();
+                    setMobileSearchOption(!isMobileSearchOption)
+                  }}
                 >
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
@@ -731,7 +734,7 @@ export default function Navbar(props) {
                       placeholder="Search..."
                       className="w-full h-full ml-5"
                     />
-                    <button>
+                    <button className="mr-5">
                       <FontAwesomeIcon
                         icon={faArrowRight}
                         className="text-red-500 ml-3"

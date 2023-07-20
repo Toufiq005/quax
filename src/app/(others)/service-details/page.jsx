@@ -11,12 +11,11 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import "font-awesome/css/font-awesome.min.css";
 import data from '@/data/pages/service-details.js';
-import Loading from "@/components/ui/Loading/Loading";
 
 export default function page() {
 
   return (
-    <Loading>
+    <>
       <Banner
         title={data[0].title}
         description={data[0].description}
@@ -43,13 +42,14 @@ export default function page() {
               </motion.p>
             </Reveal>
             <div className="max-xl:flex flex-col items-center justify-center max-md:overflow-hidden">
+              <div className="max-sm:flex flex-col items-start justify-start">
               {data[1].servicePoints.map((props, i) => (
                 <Reveal key={props.id}>
                   <motion.div
                     initial={{ x: 150, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3 , delay: i * 0.3 }}
-                    className="flex"
+                    className="flex items-center justify-center"
                   >
                     <Image
                       src="/assets/icon-check-square.svg"
@@ -62,6 +62,7 @@ export default function page() {
                   </motion.div>
                 </Reveal>
               ))}
+              </div>
               <div className="mt-6">
                 <Button title={data[1].btn.text} link={data[1].btn.href} />
               </div>
@@ -93,6 +94,6 @@ export default function page() {
       <ServiceSection />
       <PricingSection />
       <SubscribeSection />
-    </Loading>
+    </>
   );
 }

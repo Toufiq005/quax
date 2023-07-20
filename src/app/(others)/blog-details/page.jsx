@@ -1,27 +1,21 @@
 "use client";
+
 import "./blog-details.css";
 import Banner from "@/components/Sections/Banner/Banner";
 import Image from "next/image";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
 import relatedBlog from "@/data/section/home-blogpost.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Loading from "@/components/ui/Loading/Loading";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
-require("dotenv").config();
-async function getData() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/blog-post"
-  );
-  return res.json();
-}
 
-export default async function page() {
-  const data = await getData();
+
+export default function page() {
+
 
   return (
-    <Loading>
+    <>
       <Banner
         title="Blog Details"
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
@@ -30,7 +24,7 @@ export default async function page() {
         <div className="wrapper max-xl:w-full h-auto blog-details">
           <div className="max-xl:w-full">
             <div className="blog-details-post">
-              <h1>
+              <h1 className="max-sm:px-3">
                 Seven Advices That You Must Listen Before Studying Business
                 Strategy.
               </h1>
@@ -42,7 +36,7 @@ export default async function page() {
                 alt="img"
                 className="my-6"
               />
-              <p>
+              <p className="max-sm:px-5">
                 The European languag are member of the same family. Their
                 separate existence is a myth. For science, music, sport, etc,
                 Europe uses the same vocabulary. The languages only differ in
@@ -57,7 +51,7 @@ export default async function page() {
                 the individual languages. The new common language will be more
                 simple and regular than the existing European languages.
               </p>
-              <div className="w-full bg-very-light-gray h-auto rounded-lg my-10 max-xl:w-4/5">
+              <div className="w-full bg-very-light-gray h-auto rounded-lg my-10 max-xl:w-4/5 max-sm:ml-5">
                 <h2 className="p-10">
                   Everyone realizes why a new common language would be
                   desirable: one could re to pay expensive translators. To
@@ -67,7 +61,7 @@ export default async function page() {
                   and regular.
                 </h2>
               </div>
-              <p>
+              <p className="max-sm:px-5">
                 The new common language will be more simple and regular than the
                 existing European languages. The European languag are member of
                 the same family. Their separate existence is a myth. For
@@ -281,6 +275,6 @@ export default async function page() {
           <BlogSection />
         </div>
       </section>
-    </Loading>
+    </>
   );
 }

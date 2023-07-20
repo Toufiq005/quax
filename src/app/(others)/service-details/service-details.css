@@ -49,6 +49,6 @@
 }
 @media (max-width: 640px) {
   .services-details-image-two {
-    right: 0;
+    right: -15px;
   }
 }

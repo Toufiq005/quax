@@ -43,7 +43,7 @@ export default function page() {
               <p>
               {data[1].description}
               </p>
-              <div className="flex flex-col items-start max-xl:items-center justify-center gap-3 mt-5">
+              <div className="flex flex-col items-start justify-center gap-3 mt-5 max-sm:ml-5">
               {data[1].contactLinks.map((props) => (
                 <div key={props.id} className="flex items-center justify-start max-xl:justify-center gap-6">
                 <div className="w-10 h-10 bg-header rounded-full flex items-center justify-center">
@@ -80,7 +80,7 @@ export default function page() {
             <div className="members-experience max-xl:w-full w-1/2">
               <h1>Experiences</h1>
               <div className="max-xl:w-full max-xl:flex flex-col items-center justify-center">
-                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center">
+                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center max-sm:items-start">
                   <h3>Wordpress</h3>
                   <div className="exp-bar">
                     <Reveal>
@@ -93,7 +93,7 @@ export default function page() {
                     </Reveal>
                   </div>
                 </div>
-                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center">
+                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center max-sm:items-start">
                   <h3>Joomla</h3>
                   <div className="exp-bar">
                     <Reveal>
@@ -106,7 +106,7 @@ export default function page() {
                     </Reveal>
                   </div>
                 </div>
-                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center">
+                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center max-sm:items-start">
                   <h3>Laravel</h3>
                   <div className="exp-bar">
                     <Reveal>
@@ -119,7 +119,7 @@ export default function page() {
                     </Reveal>
                   </div>
                 </div>
-                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center">
+                <div className="max-xl:w-4/5 max-xl:flex flex-col items-center justify-center max-sm:items-start">
                   <h3>Magento</h3>
                   <div className="exp-bar">
                     <Reveal>

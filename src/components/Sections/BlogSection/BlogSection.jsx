@@ -7,7 +7,7 @@ export default  function BlogSection() {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full mt-10">
         <div className="blog-div mb-4">
           <from className="w-full flex items-center justify-center h-14">
             <input type="text" placeholder="Search..." className="focus:outline-blue-300 w-2/3 h-full pl-3" />
