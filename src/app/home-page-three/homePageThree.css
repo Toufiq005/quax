@@ -595,6 +595,10 @@
     font-size: 30px;
     line-height: 36px;
     text-align: center;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .home-three-testimonial p {
     font-size: 16px;

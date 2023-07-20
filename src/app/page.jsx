@@ -528,7 +528,7 @@ function Blog() {
           Our Daily Blogpost
         </motion.h1>
       </Reveal>
-      <div className="flex items-center justify-center  mb-28 mt-16 post-div">
+      <div className="flex items-center justify-center  mb-28 mt-16 post-div max-sm:mb-20">
         {blogData.map((items, i) => {
           return (
             <Reveal key={items.id}>
@@ -633,7 +633,7 @@ function Footer() {
               separate existence is a myth.
             </p>
           </div>
-          <div className="w-full h-48 flex items-start justify-start max-md:justify-center gap-3">
+          <div className="w-full h-48 max-sm:h-28 flex items-start justify-start max-md:justify-center gap-3">
             <a
               href="/"
               className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
@@ -709,8 +709,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-
-      <div className="w-full h-24 flex justify-center items-center border-t mt-24">
+      <div className="w-full h-24 flex justify-center items-center border-t mt-24 max-sm:mt-8">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

@@ -84,6 +84,9 @@
   .about-section-image-two {
     left: 190px;
   }
+  .about-section-image-one {
+    top: 222px;
+  }
 }
 @media (max-width: 400px) {
   .about-section-image-two {

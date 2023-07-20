@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.min.css';
 export default function SubscribeSection() {
   return (
     <section className="w-full h-auto bg-color flex items-center justify-center">
-      <div className="w-full flex items-center justify-center py-29 max-sm:pt-14">
+      <div className="w-full flex items-center justify-center py-29 max-sm:pt-14 max-sm:pb-14">
         <div className="subscribe-section bg-header flex flex-col items-center justify-center overflow-hidden">
           <h1>Get Your Site Optimized & Converting Now</h1>
           <Reveal>

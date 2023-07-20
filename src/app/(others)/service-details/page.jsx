@@ -22,7 +22,7 @@ export default function page() {
         description={data[0].description}
       />
       <section className="w-full h-auto min-h-75 flex items-center justify-center bg-color">
-        <div className="wrapper -mt-28 h-auto flex max-xl:flex-col items-center justify-center gap-20">
+        <div className="wrapper h-auto flex max-xl:flex-col items-center justify-center gap-20">
           <div className="services-details-content">
             <Reveal>
               <motion.h1

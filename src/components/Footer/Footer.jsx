@@ -61,7 +61,7 @@ export default function Footer() {
               separate existence is a myth.
             </p>
           </div>
-          <div className="w-full h-48 flex items-start justify-start max-md:justify-center gap-3">
+          <div className="w-full h-48 max-sm:h-28 flex items-start justify-start max-md:justify-center gap-3">
             <a
               href="/"
               className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
@@ -82,7 +82,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-10 max-sm:my-5">
           <h1>Quick Link</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {quickLink.map((item) => {
@@ -100,7 +100,7 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-10 max-sm:my-5">
           <h1>Important Links</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {importantLink.map((item) => {
@@ -118,7 +118,7 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-10 max-sm:my-5">
           <h1>Support</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {supportLink.map((item) => {
@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24  flex justify-center items-center border-t mt-24">
+      <div className="w-full h-24  flex justify-center items-center border-t mt-24 max-sm:mt-10">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

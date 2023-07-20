@@ -18,7 +18,7 @@ export default function page() {
         description="Pick a template, customize the content and design elements, and launch! Or, design your next fabulous email."
       />
       <section className="contact flex items-center justify-center">
-        <div className="wrapper flex max-lg:flex-col items-center justify-center">
+        <div className="wrapper flex max-lg:flex-col items-center justify-center max-lg:w-full">
           <div className="flex flex-col items-center justify-center my-14 max-lg:my-5">
             <div className="contact-icon">
               <FontAwesomeIcon

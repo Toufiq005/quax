@@ -225,7 +225,7 @@ function About() {
         </div>
         <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-40 flex flex-col items-center justify-center">
           <h1>{data[1].headLineTwo}</h1>
-          <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-8">
+          <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-11">
             {data[1].companies.map((item, i) => {
               return (
                 <div key={item.id} title={item.name}>
@@ -878,7 +878,7 @@ function Footer() {
               separate existence is a myth.
             </p>
           </div>
-          <div className="w-full h-48 flex items-start justify-start max-md:justify-center gap-3">
+          <div className="w-full h-48 max-sm:h-28 flex items-start justify-start max-md:justify-center gap-3">
             <a
               href="/"
               className="flex w-11 h-11 duration-200 text-black/70 hover:bg-blue-500 hover:text-white bg-white rounded-lg items-center justify-center"
@@ -899,7 +899,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-10 max-sm:my-3">
           <h1>Quick Link</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {quickLink.map((item) => {
@@ -955,7 +955,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24  flex justify-center items-center border-t mt-24">
+      <div className="w-full h-24  flex justify-center items-center border-t mt-24 max-sm:mt-10">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

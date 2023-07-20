@@ -171,6 +171,14 @@ button {
     width: 80%;
   }
 }
+@media (max-width: 640px) {
+  .form h1 {
+    padding: 0 10px 0 10px;
+  }
+  .form p {
+    margin-left: 30px;
+  }
+}
 @media (max-width: 419px) {
   .terms-and-condition {
     align-items: start;
@@ -558,5 +566,10 @@ footer li {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+}
+@media (max-width: 640px) {
+  .footer-div {
+    padding-top: 80px;
   }
 }

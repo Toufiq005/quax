@@ -58,7 +58,7 @@ export default function page() {
 function Header() {
   return (
     <header className="w-full h-auto min-h-screen flex items-center justify-center home-page-three relative -top-25 left-0 overflow-hidden">
-      <div className="wrapper flex items-center justify-between my-28 max-sm:pt-28 max-sm:gpa-10 max-xl:flex-col max-xl:justify-center max-xl:gap-20">
+      <div className="wrapper flex items-center justify-between my-28 max-sm:pt-28 max-sm:gpa-10 max-xl:flex-col max-xl:justify-center max-xl:gap-20 max-sm:gap-12 max-sm:pb-0">
         <Reveal className="left-content max-xl:flex flex-col items-center justify-center">
           <motion.p
             initial={{ x: 150, opacity: 0 }}
@@ -136,14 +136,14 @@ function Header() {
 
 function CompanyLogo() {
   return (
-    <section className="w-full h-auto flex items-center justify-center overflow-hidden">
+    <section className="w-full h-auto flex items-center justify-center overflow-hidden max-sm:-mt-24">
       <div className="w-wrapper h-auto flex flex-col items-center justify-center">
         <div className="w-80 flex items-center justify-center">
           <h1 className="text-2xl font-semibold text-black/80 text-center">
             {data[1].title}
           </h1>
         </div>
-        <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-8">
+        <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-10">
           {data[1].companies.map((item, i) => {
             return (
               <div key={item.id} title={item.name}>
@@ -250,7 +250,7 @@ function CaseStudy() {
               {data[3].headLine}
             </motion.h3>
           </Reveal>
-          <div className="flex items-center justify-center gap-5 max-xl:mt-5 max-sm:items-end max-sm:justify-end max-sm:w-screen max-sm:mr-5 max-sm:mt-7">
+          <div className="flex items-center justify-center gap-5 max-xl:mt-5 max-sm:items-end max-sm:justify-end max-sm:w-screen max-sm:pr-5 max-sm:mt-7">
             <button onClick={() => swiperRef.current.slideNext()}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -299,7 +299,7 @@ function About() {
 
   return (
     <section className="w-full h-auto flex items-center justify-center home-three-about overflow-hidden">
-      <div className="w-wrapper flex  items-center justify-center gap-20 pt-29 pb-36 max-xl:flex-col-reverse">
+      <div className="w-wrapper flex  items-center justify-center gap-20 pt-29 pb-36 max-sm:pb-52 max-xl:flex-col-reverse max-sm:pt-16">
         <Reveal className="left-content relative">
           <motion.img
             initial={{ y: -150, opacity: 0 }}
@@ -314,7 +314,7 @@ function About() {
             transition={{ duration: 0.3, delay: 0.6 }}
             src={data[4].imgTwo.src}
             alt={data[4].imgTwo.alt}
-            className="absolute -bottom-20 -left-28 max-lg:left-0 max-sm:scale-75"
+            className="absolute -bottom-20 max-sm:-bottom-40 -left-28 max-lg:left-0 max-sm:scale-75"
           />
           <img
             src="/assets/home-three/about/about-image-decoration.svg"
@@ -434,7 +434,7 @@ function WorkProcess() {
             {data[5].btn.text}
           </motion.a>
         </Reveal>
-        <Reveal className="right-content relative w-96 h-72">
+        <Reveal className="right-content relative w-96 h-72 max-sm:h-96">
           <img
             src="/assets/home-three/work-process/work-process-decoration.svg"
             alt="decoration"
@@ -465,7 +465,7 @@ function WorkProcess() {
 function Pricing() {
   return (
     <section className="w-full h-auto flex items-center justify-center overflow-hidden">
-      <div className="w-wrapper home-three-pricing pt-29 pb-29 max-xl:mt-28 max-xl:flex flex-col items-center justify-center">
+      <div className="w-wrapper home-three-pricing pt-29 pb-29 max-sm:pt-0 max-xl:mt-28 max-xl:flex flex-col items-center justify-center">
         <h1>{data[6].title}</h1>
         <h2>{data[6].headLine}</h2>
         <Reveal className="flex items-center justify-center gap-7 max-xl:flex-col">
@@ -568,7 +568,7 @@ function Testimonial() {
             <h1>{data[8].title}</h1>
             <p>{data[8].headLine}</p>
           </div>
-          <div className="mt-10 flex max-sm:w-screen max-sm:items-end max-sm:justify-end max-sm:mr-5 gap-5">
+          <div className="mt-10 flex max-sm:w-screen max-sm:items-end max-sm:justify-end max-sm:pr-5 gap-5">
             <button onClick={() => swiper.current.slideNext()}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -665,7 +665,7 @@ function Footer() {
               separate existence is a myth.
             </p>
           </div>
-          <div className="w-full h-48 flex items-start justify-start max-md:justify-center gap-3">
+          <div className="w-full h-48 max-sm:h-28 flex items-start justify-start max-md:justify-center gap-3">
             <a
               href="/"
               className="flex w-11 h-11 duration-200 text-black/70 hover:bg-red-500 hover:text-white bg-white rounded-lg items-center justify-center"
@@ -686,7 +686,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="max-md:my-10">
+        <div className="max-md:my-10 max-sm:my-5">
           <h1>Quick Link</h1>
           <ul className="flex flex-col items-start justify-center max-md:items-center">
             {quickLink.map((item) => {
@@ -742,7 +742,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-24 flex justify-center items-center mt-24 border-t border-brand-four">
+      <div className="w-full h-24 flex justify-center items-center mt-24 max-sm:mt-10 border-t border-brand-four">
         <Reveal>
           <motion.p
             initial={{ y: 80, opacity: 0 }}

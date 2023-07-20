@@ -225,6 +225,9 @@
   .top-content-container .left {
     width: 350px;
   }
+  .home-two-about .end-content {
+    margin-top: 80px;
+  }
   .home-two-about .end-content .left {
     width: 90%;
   }

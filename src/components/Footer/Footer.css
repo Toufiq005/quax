@@ -31,3 +31,8 @@ footer li {
     text-align: center;
   }
 }
+@media (max-width: 640px) {
+  .footer-div {
+    padding-top: 80px;
+  }
+}

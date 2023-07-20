@@ -19,7 +19,7 @@ export default function FaqSection(props) {
         <h3>FAQ</h3>
         <h1>Frequently Asked Questions</h1>
         <div className="flex items-center justify-center gap-28 mt-14 max-xl:flex-col max-sm:w-full">
-          <div className="faq-seciton-content ">
+          <div className="faq-seciton-content max-sm:flex flex-col items-center justify-center">
             {props.data.map(({ id, qustion, answer }) => {
               return (
                 <div
