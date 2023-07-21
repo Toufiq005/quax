@@ -109,6 +109,7 @@ function Header() {
           <img
             src="/assets/home-three/home-three-decoration.svg"
             alt="image"
+            loading="lazy"
             className="absolute top-0 -right-12 max-2xl:right-0 max-sm:left-40"
           />
           <motion.img
@@ -117,6 +118,7 @@ function Header() {
             transition={{ duration: 0.3, delay: 0.9 }}
             src={data[0].imgOne.src}
             alt={data[0].imgOne.alt}
+            loading="lazy"
             className="absolute top-0 left-17 max-sm:left-0"
           />
           <motion.img
@@ -125,6 +127,7 @@ function Header() {
             transition={{ duration: 0.3, delay: 1.2 }}
             src={data[0].imgTwo.src}
             alt={data[0].imgTwo.alt}
+            loading="lazy"
             className="absolute top-74 -right-28 max-2xl:right-0 max-sm:left-32"
           />
         </Reveal>
@@ -154,7 +157,7 @@ function CompanyLogo() {
                     transition={{ duration: 0.3, delay: 0.3 * i }}
                     href={item.href}
                   >
-                    <img src={item.icon} alt="company" />
+                    <img src={item.icon} alt="company" loading="lazy" />
                   </motion.a>
                 </Reveal>
               </div>
@@ -203,7 +206,7 @@ function Service() {
                 className="card cursor-pointer"
               >
                 <div className="card-container">
-                  <img src={props.icon} alt="icon" />
+                  <img src={props.icon} alt="icon" loading="lazy" />
                   <h2>{props.name}</h2>
                   <p>{props.title}</p>
                   <a href={props.href} className="text-black/70 duration-500">
@@ -276,6 +279,7 @@ function CaseStudy() {
                     <img
                       src={props.img}
                       alt="image"
+                      loading="lazy"
                       className="img"
                     />
                     <div className="absolute z-10 bottom-5 left-5">
@@ -307,6 +311,7 @@ function About() {
             transition={{ duration: 0.3, delay: 0.3 }}
             src={data[4].imgOne.src}
             alt={data[4].imgOne.alt}
+            loading="lazy"
           />
           <motion.img
             initial={{ x: -150, opacity: 0 }}
@@ -314,11 +319,13 @@ function About() {
             transition={{ duration: 0.3, delay: 0.6 }}
             src={data[4].imgTwo.src}
             alt={data[4].imgTwo.alt}
+            loading="lazy"
             className="absolute -bottom-20 max-sm:-bottom-40 -left-28 max-lg:left-0 max-sm:scale-75"
           />
           <img
             src="/assets/home-three/about/about-image-decoration.svg"
             alt="img"
+            loading="lazy"
             className="absolute -bottom-16 left-96 max-sm:hidden"
           />
         </Reveal>
@@ -438,6 +445,7 @@ function WorkProcess() {
           <img
             src="/assets/home-three/work-process/work-process-decoration.svg"
             alt="decoration"
+            loading="lazy"
             className="absolute top-72 left-10 max-sm:hidden"
           />
           <motion.img
@@ -446,6 +454,7 @@ function WorkProcess() {
             transition={{ duration: 0.3, delay: 0.6 }}
             src={data[5].imgOne.src}
             alt={data[5].imgOne.alt}
+            loading="lazy"
             className="absolute top-40 left-40 scale-125 max-sm:scale-100 img-one"
           />
           <motion.img
@@ -454,6 +463,7 @@ function WorkProcess() {
             transition={{ duration: 0.3, delay: 0.9 }}
             src={data[5].imgTwo.src}
             alt={data[5].imgTwo.alt}
+            loading="lazy"
             className="absolute top-0 left-0 img-two"
           />
         </Reveal>
@@ -487,12 +497,14 @@ function Pricing() {
                   <img
                     src="/assets/home-three/line-active.svg"
                     alt="line"
+                    loading="lazy"
                     className="pl-10 mb-8"
                   />
                 ) : (
                   <img
                     src="/assets/home-three/line.svg"
                     alt="line"
+                    loading="lazy"
                     className="pl-10 mb-8"
                   />
                 )}
@@ -594,12 +606,14 @@ function Testimonial() {
                       <img
                         src={props.profile}
                         alt="profile-image"
+                        loading="lazy"
                         className="img mt-10 ml-10 mb-3"
                       />
                       <p className="px-10 mb-3">{props.comment}</p>
                       <img
                         src="/assets/home-three/testimonial/line.svg"
                         alt="line"
+                        loading="lazy"
                         className="pl-10 mb-3"
                       />
                       <h3 className="pl-10 mb-1">{props.name}</h3>
@@ -656,6 +670,7 @@ function Footer() {
               transition={{ duration: 0.3 }}
               src="/assets/logo-white.svg"
               alt="logo"
+              loading="lazy"
             />
           </Reveal>
 

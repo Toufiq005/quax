@@ -65,6 +65,7 @@ export default async function page() {
                     height={499}
                     src={items.thumbnail}
                     sizes="(max-width: 868px) 80%"
+                    loading="lazy"
                     alt="img"
                   />
                   <div className="flex items-center justify-start mt-10 ml-10">
@@ -74,6 +75,7 @@ export default async function page() {
                         height={40}
                         src={items.author.profile}
                         alt="icon"
+                        loading="lazy"
                       />
                       <h3 className="text-black/50 font-medium mr-10">
                         {items.author.name}

@@ -136,7 +136,7 @@ export default function Navbar(props) {
 
               {isHomeOption && (
                 <motion.div
-                  initial={{ opacity: 0, y: 120 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   className="home-option-wrapper"
@@ -159,6 +159,7 @@ export default function Navbar(props) {
                           src="/assets/navbar/Homepage-1.webp"
                           width="307"
                           height="168"
+                          loading="lazy"
                           alt="img"
                         />
                         <p className="pb-3">Homepage One</p>
@@ -173,6 +174,7 @@ export default function Navbar(props) {
                           src="/assets/navbar/Homepage-2.webp"
                           width="307"
                           height="161"
+                          loading="lazy"
                           alt="img"
                         />
                         <p className="pb-3">Homepage Two</p>
@@ -187,6 +189,7 @@ export default function Navbar(props) {
                           src="/assets/navbar/Homepage-3.webp"
                           width="307"
                           height="160"
+                          loading="lazy"
                           alt="img"
                         />
                         <p className="pb-3">Homepage Three</p>
@@ -226,7 +229,7 @@ export default function Navbar(props) {
               </a>
               {isServicesOption && (
                 <motion.ul
-                  initial={{ opacity: 0, y: 120 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
@@ -275,7 +278,7 @@ export default function Navbar(props) {
               </a>
               {isPagesOption && (
                 <motion.ul
-                  initial={{ opacity: 0, y: 120 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
@@ -340,7 +343,7 @@ export default function Navbar(props) {
               </a>
               {isBlogOption && (
                 <motion.ul
-                  initial={{ opacity: 0, y: 120 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   onMouseEnter={() => {
@@ -533,7 +536,7 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <img src="/assets/navbar/Homepage-1.webp" alt="img" />
+                    <img src="/assets/navbar/Homepage-1.webp" alt="img" loading="lazy" />
                     <p className="text-xs">Homepage One</p>
                   </a>
                 </li>
@@ -552,7 +555,7 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <img src="/assets/navbar/Homepage-2.webp" alt="img" />
+                    <img src="/assets/navbar/Homepage-2.webp" alt="img" loading="lazy"/>
                     <p className="text-xs">Homepage Two</p>
                   </a>
                 </li>
@@ -571,7 +574,7 @@ export default function Navbar(props) {
                         : "hidden"
                     }
                   >
-                    <img src="/assets/navbar/Homepage-3.webp" alt="img" />
+                    <img src="/assets/navbar/Homepage-3.webp" alt="img" loading="lazy"/>
                     <p className="text-xs">Homepage Three</p>
                   </a>
                 </li>

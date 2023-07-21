@@ -33,6 +33,7 @@ export default function page() {
                     height={485}
                     src={data[1].img}
                     alt="img"
+                    loading="lazy"
                   />
                 </motion.div>
               </Reveal>

@@ -34,6 +34,7 @@ export default function page() {
                 src="/assets/blog-post/blog-post-two.png"
                 sizes="(max-width: 868px) 80%"
                 alt="img"
+                loading="lazy"
                 className="my-6"
               />
               <p className="max-sm:px-5">
@@ -105,6 +106,7 @@ export default function page() {
                   height={115}
                   src="/assets/blog-post/blog-post-author.svg"
                   alt="img"
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -132,6 +134,7 @@ export default function page() {
                         height={250}
                         src={items.img}
                         alt="img"
+                        loading="lazy"
                         className="postImg"
                       />
                       <div className="flex items-center justify-center post-info">
@@ -142,6 +145,7 @@ export default function page() {
                               width={12}
                               height={12}
                               alt="icon"
+                              loading="lazy"
                               className="w-3 h-3 mx-2"
                             />
                           </span>
@@ -155,6 +159,7 @@ export default function page() {
                               width={14}
                               height={10}
                               alt="icon"
+                              loading="lazy"
                               className="w-3 h-3 mx-2"
                             />
                           </span>
@@ -180,6 +185,7 @@ export default function page() {
                     height={120}
                     src="/assets/blog-post/icon-polear-vainte.png"
                     alt="img"
+                    loading="lazy"
                   />
                   <div>
                     <div className="flex justify-between items-center">
@@ -208,6 +214,7 @@ export default function page() {
                     height={120}
                     src="/assets/blog-post/icon-polear-vainte.png"
                     alt="img"
+                    loading="lazy"
                   />
                   <div>
                     <div className="flex justify-between items-center">
@@ -233,6 +240,7 @@ export default function page() {
                     height={120}
                     src="/assets/blog-post/icon-polear-vainte.png"
                     alt="img"
+                    loading="lazy"
                   />
                   <div>
                     <div className="flex justify-between items-center">

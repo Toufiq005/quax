@@ -119,6 +119,7 @@ function Header() {
             <Image
               width={170}
               height={50}
+              loading="lazy"
               src="/assets/home-two/widget.webp"
               alt="wedget"
             />
@@ -132,6 +133,7 @@ function Header() {
             transition={{ duration: 0.4 }}
             src={data[0].imgOne.src}
             alt={data[0].imgOne.alt}
+            loading="lazy"
           />
           <motion.img
             initial={{ x: -150, opacity: 0 }}
@@ -139,6 +141,7 @@ function Header() {
             transition={{ delay: 0.4, duration: 0.4 }}
             src={data[0].imgTwo.src}
             alt={data[0].imgTwo.alt}
+            loading="lazy"
             ref={heroCard}
             className="relative -top-96 -left-16 max-sm:left-0 hero-card"
           />
@@ -200,7 +203,7 @@ function About() {
               ))}
             </div>
             <div className="right relative overflow-hidden">
-              <img src={data[1].aboutData[aboutIndex].img} alt="about-img" />
+              <img src={data[1].aboutData[aboutIndex].img} alt="about-img" loading="lazy" />
               <Reveal className="w-full relative bg-blue-500/90 max-sm:h-20 max-sm:mt-6 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
@@ -236,7 +239,7 @@ function About() {
                       transition={{ duration: 0.3, delay: 0.3 * i }}
                       href={item.href}
                     >
-                      <img src={item.icon} alt="company" />
+                      <img src={item.icon} alt="company" loading="lazy" />
                     </motion.a>
                   </Reveal>
                 </div>
@@ -252,11 +255,13 @@ function About() {
               transition={{ duration: 0.3, delay: 0.3 }}
               src={data[2].imgOne.src}
               alt={data[2].imgOne.alt}
+              loading="lazy"
               className="relative"
             />
             <img
               src="/assets/home-two/about/about-decoration.svg"
               alt="decoration"
+              loading="lazy"
               className="relative about-two-decoration"
             />
             <motion.img
@@ -265,6 +270,7 @@ function About() {
               transition={{ duration: 0.3, delay: 0.6 }}
               src={data[2].imgTwo.src}
               alt={data[2].imgOne.alt}
+              loading="lazy"
               className="relative about-two-card"
             />
           </Reveal>
@@ -480,21 +486,25 @@ function HowItWrok() {
               <img
                 src="/assets/home-two/how-it-works/how-it-works-card-one.png"
                 alt="card one"
+                loading="lazy"
                 className="relative card-one"
               />
               <img
                 src="/assets/home-two/how-it-works/how-it-works-card-two.png"
                 alt="card two"
+                loading="lazy"
                 className="relative card-two"
               />
               <img
                 src="/assets/home-two/how-it-works/how-it-works-card-three.png"
                 alt="card three"
+                loading="lazy"
                 className="relative card-three"
               />
               <img
                 src="/assets/home-two/how-it-works/how-it-works-card-four.png"
                 alt="card four"
+                loading="lazy"
                 className="relative card-four"
               />
             </div>
@@ -602,7 +612,7 @@ function Testimonial() {
                 key={item.id}
                 className="flex flex-col items-center justify-center"
               >
-                <img src={item.icon} alt="testimonial" />
+                <img src={item.icon} alt="testimonial" loading="lazy" />
                 <h1>
                   <CountUp
                     start={0}
@@ -632,7 +642,7 @@ function Testimonial() {
                   <SwiperSlide key={props.id}>
                     <div className="flex items-center justify-center w-full">
                       <div className="testimonial-two-slide flex items-center justify-center flex-col text-center">
-                        <img src={props.profile} alt="image" className="mb-3" />
+                        <img src={props.profile} alt="image" loading="lazy" className="mb-3" />
                         <h2 className="mb-2">{props.name}</h2>
                         <h4>{props.role}</h4>
                         <p>{props.comment}</p>
@@ -705,6 +715,7 @@ function PricingSection() {
                         <img
                           src="/assets/cheak-mark-blue.svg"
                           alt="icon"
+                          loading="lazy"
                           className="mr-3"
                         />
                       </span>
@@ -715,6 +726,7 @@ function PricingSection() {
                         <img
                           src="/assets/cheak-mark-blue.svg"
                           alt="icon"
+                          loading="lazy"
                           className="mr-3"
                         />
                       </span>
@@ -725,6 +737,7 @@ function PricingSection() {
                         <img
                           src="/assets/cheak-mark-blue.svg"
                           alt="icon"
+                          loading="lazy"
                           className="mr-3"
                         />
                       </span>
@@ -735,6 +748,7 @@ function PricingSection() {
                         <img
                           src="/assets/cheak-mark-blue.svg"
                           alt="icon"
+                          loading="lazy"
                           className="mr-3"
                         />
                       </span>
@@ -745,6 +759,7 @@ function PricingSection() {
                         <img
                           src="/assets/cheak-mark-blue.svg"
                           alt="icon"
+                          loading="lazy"
                           className="mr-3"
                         />
                       </span>
@@ -788,6 +803,7 @@ function Blog() {
                   height={250}
                   src={items.img}
                   alt="img"
+                  loading="lazy"
                   className="postImg"
                 />
                 <div className="flex items-center justify-center post-info">
@@ -798,6 +814,7 @@ function Blog() {
                         width={12}
                         height={12}
                         alt="icon"
+                        loading="lazy"
                         className="w-3 h-3 mx-2"
                       />
                     </span>
@@ -810,6 +827,7 @@ function Blog() {
                         width={14}
                         height={10}
                         alt="icon"
+                        loading="lazy"
                         className="w-3 h-3 mx-2"
                       />
                     </span>
@@ -869,6 +887,7 @@ function Footer() {
               transition={{ duration: 0.3 }}
               src="/assets/logo-dark-blue.svg"
               alt="logo"
+              loading="lazy"
             />
           </Reveal>
 

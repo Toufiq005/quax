@@ -79,11 +79,13 @@ export default function page() {
                 <img
                   src={data[1].imgOne.src}
                   alt={data[1].imgOne.alt}
+                  loading="lazy"
                   className="services-details-image-one max-md:scale-90"
                 />
                 <img
                   src={data[1].imgTwo.src}
                   alt={data[1].imgTwo.alt}
+                  loading="lazy"
                   className="services-details-image-two"
                 />
               </motion.div>

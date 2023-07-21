@@ -55,7 +55,7 @@ function Header() {
             <motion.h1
               initial={{ y: -150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
               className="max-lg:text-4xl"
             >
               {data[0].title}
@@ -65,7 +65,7 @@ function Header() {
             <motion.p
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               className="mt-5 mb-16 max-lg:text-sm "
             >
               {data[0].headLine}
@@ -84,12 +84,13 @@ function Header() {
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="-mt-6 max-lg:ml-0 hero-img"
           >
             <Image
               width={470}
               height={580}
+              loading="lazy"
               src="/assets/home/hero-image.webp"
               alt="heroImg"
             />
@@ -110,19 +111,21 @@ function AboutCompany() {
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay:0.3 }}
             >
               <Image
                 width={data[1].imgOne.width}
                 height={data[1].imgOne.height}
                 src={data[1].imgOne.src}
                 alt={data[1].imgOne.alt}
+                loading="lazy"
               />
               <Image
                 width={data[1].imgTwo.width}
                 height={data[1].imgTwo.height}
                 src={data[1].imgTwo.src}
                 alt={data[1].imgTwo.alt}
+                loading="lazy"
                 className="-mt-40 -ml-40  max-lg:ml-0"
               />
             </motion.div>
@@ -130,6 +133,7 @@ function AboutCompany() {
           <Image
             width={31}
             height={85}
+            loading="lazy"
             src="/assets/home/about-decoration.svg"
             alt="decoration"
             className="mt-9 max-sm:hidden max-lg:-ml-12 max-lg:hidden"
@@ -198,6 +202,7 @@ function AboutCompany() {
               <Image
                 width={36}
                 height={36}
+                loading="lazy"
                 src="/assets/home/arrow-icon.svg"
                 alt="arrow"
                 className="mr-2"
@@ -270,27 +275,31 @@ function Experience() {
           <img
             src="/assets/home/exp-profit-card.svg"
             alt="img"
+            loading="lazy"
             className="card-one"
           />
             <motion.img
               initial={{ y: 250, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay:0.3 }}
               src={data[3].imgOne.src}
               alt={data[3].imgOne.alt}
+              loading="lazy"
               className="exp-img-one"
             />
             <motion.img
               initial={{ y: -250, opacity: 0 }}
               animate={{ y: 50, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, delay:0.3 }}
               src={data[3].imgTwo.src}
               alt={data[3].imgTwo.alt}
+              loading="lazy"
               className="exp-img-two"
             />
           <img
             src="/assets/home/exp-ratting-card.svg"
             alt="img"
+            loading="lazy"
             className="card-two"
           />
         </div>
@@ -371,6 +380,7 @@ function Experience() {
             <Image
               width={970}
               height={500}
+              loading="lazy"
               src="/assets/home/exp-video-effect.svg"
               alt="video"
               className="exp-video-effect"
@@ -380,11 +390,12 @@ function Experience() {
                 className="m-7 max-md:scale-75 max-md:m-5 max-sm:m-0 max-sm:scale-50"
                 onClick={() => toggleVideo()}
               >
-                <img src="/assets/video-play-icon.svg" alt="icon" />
+                <img src="/assets/video-play-icon.svg" alt="icon" loading="lazy" />
               </button>
               <img
                 className="m-7 max-md:scale-75 max-md:m-5 max-sm:m-0 max-sm:scale-50"
                 src="/assets/video-duration.svg"
+                loading="lazy"
                 alt="icon"
               />
             </div>
@@ -463,7 +474,7 @@ function WhatNext() {
           <motion.h1
             initial={{ x: -150, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, delay:0.3 }}
           >
             {data[4].title}
           </motion.h1>
@@ -472,7 +483,7 @@ function WhatNext() {
           <motion.p
             initial={{ x: 150, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, delay:0.3 }}
             className="mt-3"
           >
             {data[4].headLine}
@@ -488,7 +499,7 @@ function WhatNext() {
                   transition={{ duration: 0.3, delay: 0.2 * i }}
                   className="flex flex-col items-center justify-center max-lg:py-5"
                 >
-                  <img className="w-8 h-8" src={props.icon} alt="icon" />
+                  <img className="w-8 h-8" src={props.icon} alt="icon" loading="lazy" />
                   <h2>{props.title}</h2>
                   <h3>{props.discription}</h3>
                   <a
@@ -514,7 +525,7 @@ function Blog() {
         <motion.h3
           initial={{ x: -150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3,delay:0.3 }}
         >
           Our Blogpost
         </motion.h3>
@@ -523,7 +534,7 @@ function Blog() {
         <motion.h1
           initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3,delay:0.3 }}
         >
           Our Daily Blogpost
         </motion.h1>
@@ -542,6 +553,7 @@ function Blog() {
                   width={370}
                   height={250}
                   src={items.img}
+                  loading="lazy"
                   alt="img"
                   className="postImg"
                 />
@@ -564,6 +576,7 @@ function Blog() {
                         src="/assets/icon-folder.svg"
                         width={14}
                         height={10}
+                        loading="lazy"
                         alt="icon"
                         className="w-3 h-3 mx-2"
                       />
@@ -621,7 +634,8 @@ function Footer() {
             <motion.img
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3,delay:0.3 }}
+              loading="lazy"
               src="/assets/logo-dark.svg"
               alt="logo"
             />
@@ -714,7 +728,7 @@ function Footer() {
           <motion.p
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3,delay:0.3 }}
             className=" text-center w-full pt-0"
           >
             ©2021 All Rights Reserved. With Design by Loyalcoders

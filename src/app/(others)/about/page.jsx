@@ -52,15 +52,18 @@ function AboutSection() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="about-section-image "
+            loading="lazy"
           >
             <img
               src={data[1].imgOne.src}
               alt={data[1].imgOne.alt}
+              loading="lazy"
               className="about-section-image-one"
             />
             <img
               src={data[1].imgTwo.src}
               alt={data[1].imgTwo.alt}
+              loading="lazy"
               className="about-section-image-two"
             />
           </motion.div>
@@ -84,6 +87,7 @@ function WhatWeDo() {
             height={500}
             src={data[2].imgOne.src}
             alt={data[2].imgOne.alt}
+            loading="lazy"
           />
         </div>
         <div className="what-we-do-content ml-5 max-lg:flex flex-col items-center justify-center max-lg:ml-0">
@@ -156,6 +160,7 @@ function WhyChoseUS() {
               height={600}
               src={data[3].imgOne.src}
               alt={data[3].imgOne.alt}
+              loading="lazy"
             />
           </motion.div>
         </Reveal>
