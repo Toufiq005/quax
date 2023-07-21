@@ -385,7 +385,6 @@ button {
   width: 70%;
   min-height: 518px;
   background: #2d4c9f;
-  box-shadow: 0px 15px 50px rgba(78, 127, 255, 0.4);
   border-radius: 10px;
   margin: 120px 0 120px 0;
 }
