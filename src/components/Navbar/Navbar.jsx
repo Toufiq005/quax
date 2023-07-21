@@ -127,7 +127,7 @@ export default function Navbar(props) {
                   handleMouseLeave(1);
                 }}
                 style={{ color: navColor ? "#444444" : "" }}
-                className={"flex items-center" + " " + props.textColor}
+                className={"flex items-center hover:text-red-500" + " " + props.textColor}
                 href="/"
               >
                 <p>HOME</p>
