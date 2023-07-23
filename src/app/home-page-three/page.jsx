@@ -113,8 +113,8 @@ function Header() {
             className="absolute top-0 -right-12 max-2xl:right-0 max-sm:left-40"
           />
           <motion.img
-            initial={{ y: -150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.9 }}
             src={data[0].imgOne.src}
             alt={data[0].imgOne.alt}
@@ -122,8 +122,8 @@ function Header() {
             className="absolute top-0 left-17 max-sm:left-0"
           />
           <motion.img
-            initial={{ y: 150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 1.2 }}
             src={data[0].imgTwo.src}
             alt={data[0].imgTwo.alt}
@@ -152,8 +152,8 @@ function CompanyLogo() {
               <div key={item.id} title={item.name}>
                 <Reveal>
                   <motion.a
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
+                    initial={{ y: -100, opacity: 0, filter: "blur(20px)" }}
+                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.3, delay: 0.3 * i }}
                     href={item.href}
                   >
@@ -205,14 +205,14 @@ function Service() {
                 key={props.id}
                 className="card cursor-pointer"
               >
-                <div className="card-container">
-                  <img src={props.icon} alt="icon" loading="lazy" />
+                <Reveal className="card-container">
+                  <motion.img initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{duration: 0.4, delay: delay * props.id}} src={props.icon} alt="icon" loading="lazy" />
                   <h2>{props.name}</h2>
                   <p>{props.title}</p>
                   <a href={props.href} className="text-black/70 duration-500">
                     <FontAwesomeIcon icon={faArrowRight} />
                   </a>
-                </div>
+                </Reveal>
               </motion.div>
             );
           })}
@@ -275,8 +275,11 @@ function CaseStudy() {
             {data[3].data.map((props) => {
               return (
                 <SwiperSlide key={props.id}>
-                  <div className="relative">
-                    <img
+                  <Reveal className="relative">
+                    <motion.img
+                      initial={{filter: "blur(20px)"}}
+                      animate={{filter: "blur(0px)"}}
+                      transition={{duration: 0.3 , delay: 0.3 * props.id}}
                       src={props.img}
                       alt="image"
                       loading="lazy"
@@ -287,7 +290,7 @@ function CaseStudy() {
                       <p>{props.catagory}</p>
                     </div>
                     <div className="overlay absolute top-0 left-0"></div>
-                  </div>
+                  </Reveal>
                 </SwiperSlide>
               );
             })}
@@ -306,16 +309,16 @@ function About() {
       <div className="w-wrapper flex  items-center justify-center gap-20 pt-29 pb-36 max-sm:pb-52 max-xl:flex-col-reverse max-sm:pt-16">
         <Reveal className="left-content relative">
           <motion.img
-            initial={{ y: -150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.3 }}
             src={data[4].imgOne.src}
             alt={data[4].imgOne.alt}
             loading="lazy"
           />
           <motion.img
-            initial={{ x: -150, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.6 }}
             src={data[4].imgTwo.src}
             alt={data[4].imgTwo.alt}
@@ -449,8 +452,8 @@ function WorkProcess() {
             className="absolute top-72 left-10 max-sm:hidden"
           />
           <motion.img
-            initial={{ x: 150, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.6 }}
             src={data[5].imgOne.src}
             alt={data[5].imgOne.alt}
@@ -458,8 +461,8 @@ function WorkProcess() {
             className="absolute top-40 left-40 scale-125 max-sm:scale-100 img-one"
           />
           <motion.img
-            initial={{ y: -150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.9 }}
             src={data[5].imgTwo.src}
             alt={data[5].imgTwo.alt}
@@ -602,8 +605,11 @@ function Testimonial() {
               return (
                 <SwiperSlide key={props.id}>
                   <div className="flex items-center justify-center">
-                    <div className="testimonial-card my-7">
-                      <img
+                    <Reveal className="testimonial-card my-7">
+                      <motion.img
+                        initial={{ filter: "blur(15px)" }}
+                        animate={{filter: "blur(0px)"}}
+                        transition={{duration: 0.3,}}
                         src={props.profile}
                         alt="profile-image"
                         loading="lazy"
@@ -618,7 +624,7 @@ function Testimonial() {
                       />
                       <h3 className="pl-10 mb-1">{props.name}</h3>
                       <h4 className="pl-10 max-sm:pb-10">{props.role}</h4>
-                    </div>
+                    </Reveal>
                   </div>
                 </SwiperSlide>
               );

@@ -121,8 +121,11 @@ function Carousel() {
             >
               <p className="m-10">{item.comment}</p>
             </div>
-            <div className="testimonial-card-author flex items-center justify-center mt-9 ml-4">
-              <Image
+            <Reveal className="testimonial-card-author flex items-center justify-center mt-9 ml-4">
+              <motion.img
+                initial={{filter: "blur(10px)"}}
+                animate={{filter: "blur(0px)"}}
+                transition={{duration: 0.3, delay:0.4}}
                 width={60}
                 height={60}
                 src={item.profile}
@@ -132,7 +135,7 @@ function Carousel() {
                 <h3 className="mb-1">{item.name}</h3>
                 <p>{item.role}</p>
               </div>
-            </div>
+            </Reveal>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="42"

@@ -111,8 +111,8 @@ function Header() {
           </a>
           <p className="mb-6">{data[0].headLineTwo}</p>
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.3 }}
             className="flex items-center justify-start gap-5"
           >
@@ -128,16 +128,16 @@ function Header() {
         </Reveal>
         <Reveal className="relative max-xl:top-32 max-sm:m-3 max-sm:pb-10">
           <motion.img
-            initial={{ y: -150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ y: 0, opacity: 1 , filter: "blur(0px)"}}
             transition={{ duration: 0.4 }}
             src={data[0].imgOne.src}
             alt={data[0].imgOne.alt}
             loading="lazy"
           />
           <motion.img
-            initial={{ x: -150, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: -150, opacity: 0, filter: "blur(20px)" }}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ delay: 0.4, duration: 0.4 }}
             src={data[0].imgTwo.src}
             alt={data[0].imgTwo.alt}
@@ -202,9 +202,9 @@ function About() {
                 </button>
               ))}
             </div>
-            <div className="right relative overflow-hidden">
-              <img src={data[1].aboutData[aboutIndex].img} alt="about-img" loading="lazy" />
-              <Reveal className="w-full relative bg-blue-500/90 max-sm:h-20 max-sm:mt-6 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
+            <Reveal className="right relative overflow-hidden">
+              <motion.img initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{duration: 0.4 , delay:0.6}} src={data[1].aboutData[aboutIndex].img} alt="about-img" loading="lazy" />
+              <div className="w-full relative bg-blue-500/90 max-sm:h-20 max-sm:mt-6 h-25 rounded-br-xl rounded-bl-xl -top-25 flex justify-between items-center overflow-hidden">
                 <motion.div
                   initial={{ y: 150, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -222,8 +222,8 @@ function About() {
                 >
                   VIEW MORE
                 </a>
-              </Reveal>
-            </div>
+              </div>
+            </Reveal>
           </div>
         </div>
         <div className="middle-content w-full pt-28 max-sm:pt-0 max-sm:-mt-40 flex flex-col items-center justify-center">
@@ -234,8 +234,8 @@ function About() {
                 <div key={item.id} title={item.name}>
                   <Reveal>
                     <motion.a
-                      initial={{ y: -100, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
+                      initial={{ y: -100, opacity: 0, filter: "blur(20px)" }}
+                      animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                       transition={{ duration: 0.3, delay: 0.3 * i }}
                       href={item.href}
                     >
@@ -250,23 +250,26 @@ function About() {
         <div className="end-content flex items-start justify-between mb-29 max-xl:flex-col max-xl:items-center max-xl:justify-center">
           <Reveal className="left relative">
             <motion.img
-              initial={{ x: 150, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 150, opacity: 0, filter: "blur(20px)" }}
+              animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay: 0.3 }}
               src={data[2].imgOne.src}
               alt={data[2].imgOne.alt}
               loading="lazy"
               className="relative"
             />
-            <img
+            <motion.img
+              initial={{filter: "blur(20px)"}}
+              animate={{filter: "blur(0px)"}}
+              transition={{duration: 0.2 , delay:0.6}}
               src="/assets/home-two/about/about-decoration.svg"
               alt="decoration"
               loading="lazy"
               className="relative about-two-decoration"
             />
             <motion.img
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{ y: 150, opacity: 0, filter: "blur(20px)" }}
+              animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay: 0.6 }}
               src={data[2].imgTwo.src}
               alt={data[2].imgOne.alt}
@@ -482,32 +485,44 @@ function HowItWrok() {
             })}
           </Reveal>
           <div className="flex items-center justify-center gap-48 mt-20 max-xl:flex-col">
-            <div className="left relative">
-              <img
+            <Reveal className="left relative">
+              <motion.img
+                initial={{filter: "blur(20px)"}}
+                animate={{filter: "blur(0px)"}}
+                transition={{duration: 0.3, delay:0.4}}
                 src="/assets/home-two/how-it-works/how-it-works-card-one.png"
                 alt="card one"
                 loading="lazy"
                 className="relative card-one"
               />
-              <img
+              <motion.img
+                initial={{filter: "blur(20px)"}}
+                animate={{filter: "blur(0px)"}}
+                transition={{duration: 0.3, delay:0.4}}
                 src="/assets/home-two/how-it-works/how-it-works-card-two.png"
                 alt="card two"
                 loading="lazy"
                 className="relative card-two"
               />
-              <img
+              <motion.img
+                initial={{filter: "blur(20px)"}}
+                animate={{filter: "blur(0px)"}}
+                transition={{duration: 0.3, delay:0.4}}
                 src="/assets/home-two/how-it-works/how-it-works-card-three.png"
                 alt="card three"
                 loading="lazy"
                 className="relative card-three"
               />
-              <img
+              <motion.img
+                initial={{filter: "blur(20px)"}}
+                animate={{filter: "blur(0px)"}}
+                transition={{duration: 0.3, delay:0.4}}
                 src="/assets/home-two/how-it-works/how-it-works-card-four.png"
                 alt="card four"
                 loading="lazy"
                 className="relative card-four"
               />
-            </div>
+            </Reveal>
             <Reveal className="right max-xl:flex flex-col items-center justify-center">
               <motion.h2
                 initial={{ y: 150, opacity: 0 }}
@@ -606,13 +621,13 @@ function Testimonial() {
     <section className="w-full h-auto items-center justify-center bg-very-light-gray">
       <div className="pt-29 testimonial-two">
         <div className="flex w-full items-center justify-center gap-28 max-xl:flex-col max-xl:gap-10">
-          {data[5].data.map((item) => {
+          {data[5].data.map((item, i) => {
             return (
               <Reveal
                 key={item.id}
                 className="flex flex-col items-center justify-center"
               >
-                <img src={item.icon} alt="testimonial" loading="lazy" />
+                <motion.img initial={{ filter: "blur(20px)" }} animate={{ filter: "blur(0px)" }} transition={{duration : 0.3, delay:0.3 * i}} src={item.icon} alt="testimonial" loading="lazy" />
                 <h1>
                   <CountUp
                     start={0}
@@ -641,12 +656,12 @@ function Testimonial() {
                 return (
                   <SwiperSlide key={props.id}>
                     <div className="flex items-center justify-center w-full">
-                      <div className="testimonial-two-slide flex items-center justify-center flex-col text-center">
-                        <img src={props.profile} alt="image" loading="lazy" className="mb-3" />
+                      <Reveal className="testimonial-two-slide flex items-center justify-center flex-col text-center">
+                        <motion.img initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{duration : 0.3, delay:0.1}} src={props.profile} alt="image" loading="lazy" className="mb-3" />
                         <h2 className="mb-2">{props.name}</h2>
                         <h4>{props.role}</h4>
                         <p>{props.comment}</p>
-                      </div>
+                      </Reveal>
                     </div>
                   </SwiperSlide>
                 );
@@ -798,7 +813,10 @@ function Blog() {
                 transition={{ duration: 0.2, delay: 0.2 * i }}
                 className="post flex flex-col items-center justify-center"
               >
-                <Image
+                <motion.img
+                  initial={{filter: "blur(20px)"}}
+                  animate={{filter: "blur(0px)"}}
+                  transition={{duration: 0.3, delay: 0.3 * i}}
                   width={370}
                   height={250}
                   src={items.img}
@@ -806,7 +824,7 @@ function Blog() {
                   loading="lazy"
                   className="postImg"
                 />
-                <div className="flex items-center justify-center post-info">
+                <div className="flex items-center justify-center post-info relative">
                   <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
                     <span>
                       <Image

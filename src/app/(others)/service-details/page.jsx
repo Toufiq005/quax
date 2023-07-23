@@ -49,7 +49,7 @@ export default function page() {
                     initial={{ x: 150, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3 , delay: i * 0.3 }}
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-start"
                   >
                     <Image
                       src="/assets/icon-check-square.svg"
@@ -71,9 +71,9 @@ export default function page() {
           <div className="xl:ml-10 w-1/2 max-xl:w-full max-xl:flex flex-col items-center justify-center max-xl:overflow-hidden">
             <Reveal>
               <motion.div
-                initial={{ x: 150, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
+                initial={{ x: 150, opacity: 0,filter: "blur(20px)" }}
+                animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="services-details-image xl:scale-120 mt-32 max-xl:mt-0"
               >
                 <img

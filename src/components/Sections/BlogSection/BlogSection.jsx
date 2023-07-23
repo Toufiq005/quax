@@ -1,7 +1,11 @@
+"use client"
+
 import "./BlogSection.css";
 import Image from "next/image";
 import Line from '@/components/ui/Line/Line';
 import data from "@/data/section/blog-section"
+import Reveal from "@/components/ui/Reveal/Reveal";
+import { motion } from "framer-motion";
 
 export default  function BlogSection() {
 
@@ -21,22 +25,22 @@ export default  function BlogSection() {
           <Line/>
           <div className="w-full flex flex-col items-center justify-center">
             <a href="/">
-              <div className="flex w-80 my-5 ">
-                <img src="/assets/blog-post/blog-post-one.png" alt="img" style={{width: "120px", height: "80px"}} />
+              <Reveal className="flex w-80 my-5 ">
+                <motion.img initial={{filter: "blur(15px)"}} animate={{filter: "blur(0px)"}} transition={{duration:0.3, delay:0.3}} src="/assets/blog-post/blog-post-one.png" alt="img" style={{width: "120px", height: "80px"}} />
                 <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Sass That Had Gone Way To Far.</h>
-              </div>
+              </Reveal>
             </a>
             <a href="/">
-              <div className="flex w-80 my-5 ">
-                <img src="/assets/blog-post/blog-post-two.png" alt="img" style={{width: "120px", height: "80px"}} />
+              <Reveal className="flex w-80 my-5 ">
+                <motion.img initial={{filter: "blur(15px)"}} animate={{filter: "blur(0px)"}} transition={{duration:0.3, delay:0.3}} src="/assets/blog-post/blog-post-two.png" alt="img" style={{width: "120px", height: "80px"}} />
                 <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Moments To Remember From Seo.</h>
-              </div>
+              </Reveal>
             </a>
             <a href="/">
-              <div className="flex w-80 my-5 ">
-                <img src="/assets/blog-post/blog-post-three.png" alt="img" style={{width: "120px", height: "80px"}} />
+              <Reveal className="flex w-80 my-5 ">
+                <motion.img initial={{filter: "blur(15px)"}} animate={{filter: "blur(0px)"}} transition={{duration:0.3, delay:0.3}} src="/assets/blog-post/blog-post-three.png" alt="img" style={{width: "120px", height: "80px"}} />
                 <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Simple Guidance For You In Startup Business.</h>
-              </div>
+              </Reveal>
             </a>
           </div>
         </div>

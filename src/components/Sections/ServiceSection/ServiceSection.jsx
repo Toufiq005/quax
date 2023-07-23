@@ -2,7 +2,6 @@
 
 import "./ServiceSection.css";
 import data from "@/data/section/services";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal/Reveal";
 
@@ -31,7 +30,10 @@ export default function ServiceSection() {
                 transition={{ duration: 0.3, delay: i * 0.3 }}
                 className="services"
               >
-                <Image
+                <motion.img
+                  initial={{ filter: "blur(20px)" }}
+                  animate={{filter: "blur(0px)"}}
+                  transition={{ duration: 0.3, delay: i * 0.3 }}
                   src={items.icon}
                   width={70}
                   height={80}

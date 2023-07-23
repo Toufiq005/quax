@@ -82,8 +82,8 @@ function Header() {
         </div>
         <Reveal>
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 100, opacity: 0, filter: "blur(20px)" }}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.3 }}
             className="-mt-6 max-lg:ml-0 hero-img"
           >
@@ -109,8 +109,8 @@ function AboutCompany() {
         <div className="flex items-start justify-end w-1/2 max-lg:w-4/5 max-lg:mr-0">
           <Reveal className="max-lg:flex items-center justify-center max-lg:w-full">
             <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: -100, opacity: 0, filter: "blur(20px)" }}
+              animate={{ x: 0, opacity: 1 , filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay:0.3 }}
             >
               <Image
@@ -271,38 +271,44 @@ function Experience() {
         </div>
       )}
       <div className="flex items-center justify-center pt-36 mb-96 max-sm:pt-12 max-xl:flex-col max-sm:mb-40">
-        <div className="mr-10 left-content max-xl:mx-0 max-xl:mb-7">
-          <img
+        <Reveal className="mr-10 left-content max-xl:mx-0 max-xl:mb-7">
+          <motion.img
+            initial={{filter: "blur(20px)"}}
+            animate={{filter: "blur(0px)"}}
+            transition={{duration: 0.3, delay:1}}
             src="/assets/home/exp-profit-card.svg"
             alt="img"
             loading="lazy"
             className="card-one"
           />
             <motion.img
-              initial={{ y: 250, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay:0.3 }}
+              initial={{ y: 250, opacity: 0,filter: "blur(20px)" }}
+              animate={{ y: 0, opacity: 1,filter: "blur(0px)" }}
+              transition={{ duration: 0.3, delay:1 }}
               src={data[3].imgOne.src}
               alt={data[3].imgOne.alt}
               loading="lazy"
               className="exp-img-one"
             />
             <motion.img
-              initial={{ y: -250, opacity: 0 }}
-              animate={{ y: 50, opacity: 1 }}
-              transition={{ duration: 0.3, delay:0.3 }}
+              initial={{ y: -250, opacity: 0,filter: "blur(20px)" }}
+              animate={{ y: 50, opacity: 1,filter: "blur(0px)" }}
+              transition={{ duration: 0.3, delay:1 }}
               src={data[3].imgTwo.src}
               alt={data[3].imgTwo.alt}
               loading="lazy"
               className="exp-img-two"
             />
-          <img
+          <motion.img
+            initial={{filter: "blur(20px)"}}
+            animate={{filter: "blur(0px)"}}
+            transition={{duration: 0.3, delay:1}}
             src="/assets/home/exp-ratting-card.svg"
             alt="img"
             loading="lazy"
             className="card-two"
           />
-        </div>
+        </Reveal>
         <div className="ml-10 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center max-xl:text-center max-sm:w-full max-sm:ml-0">
           <Reveal>
             <motion.h3
@@ -373,19 +379,22 @@ function Experience() {
       </div>
       <div className="bg-very-light-gray section-three-video flex flex-col items-center justify-center">
         <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-full">
-          <div
+          <Reveal
             style={{ backgroundImage: thumbnail }}
             className="exp-video cursor-pointer relative"
           >
-            <Image
-              width={970}
-              height={500}
+            <motion.img
+              initial={{filter: "blur(20px)"}}
+              animate={{filter: "blur(0px)"}}
+              transition={{duration: 0.4, delay:2}}
+              // width={970}
+              // height={500}
               loading="lazy"
               src="/assets/home/exp-video-effect.svg"
               alt="video"
               className="exp-video-effect"
             />
-            <div className="absolute w-full h-auto flex justify-between items-center bottom-0 ">
+            <motion.div initial={{ filter: "blur(10px)"}} animate={{filter: "blur(0px)"}} transition={{duration: 0.4, delay: 0.7}} className="absolute w-full h-auto flex justify-between items-center bottom-0 ">
               <button
                 className="m-7 max-md:scale-75 max-md:m-5 max-sm:m-0 max-sm:scale-50"
                 onClick={() => toggleVideo()}
@@ -398,8 +407,8 @@ function Experience() {
                 loading="lazy"
                 alt="icon"
               />
-            </div>
-          </div>
+            </motion.div>
+          </Reveal>
         </div>
         <Reveal>
           <motion.h2
@@ -499,7 +508,7 @@ function WhatNext() {
                   transition={{ duration: 0.3, delay: 0.2 * i }}
                   className="flex flex-col items-center justify-center max-lg:py-5"
                 >
-                  <img className="w-8 h-8" src={props.icon} alt="icon" loading="lazy" />
+                  <motion.img initial={{filter: "blur(7px)"}} animate={{filter: "blur(0px)"}} transition={{duration: 0.3, delay: 0.3 * i}} className="w-8 h-8" src={props.icon} alt="icon" loading="lazy" />
                   <h2>{props.title}</h2>
                   <h3>{props.discription}</h3>
                   <a
@@ -549,7 +558,10 @@ function Blog() {
                 transition={{ duration: 0.2, delay: 0.2 * i }}
                 className="post flex flex-col items-center justify-center"
               >
-                <Image
+                <motion.img
+                  initial={{filter: "blur(20px)"}}
+                  animate={{filter: "blur(0px)"}}
+                  transition={{duration: 0.3, delay: 0.3 * i}}
                   width={370}
                   height={250}
                   src={items.img}
@@ -557,7 +569,7 @@ function Blog() {
                   alt="img"
                   className="postImg"
                 />
-                <div className="flex items-center justify-center post-info">
+                <div className="flex items-center justify-center post-info relative">
                   <h2 className="text-black/40 font-medium pr-3 flex items-center border-r">
                     <span>
                       <Image

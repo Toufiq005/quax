@@ -86,9 +86,9 @@ export default function FaqSection(props) {
               );
             })}
           </div>
-          <div className="faq-seciton-image">
-            <Image src="/assets/faq/faq-image.svg" width={520} height={585} />
-          </div>
+          <Reveal className="faq-seciton-image">
+            <motion.img initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{duration: 0.3, delay:0.2}} src="/assets/faq/faq-image.svg" width={520} height={585} />
+          </Reveal>
         </div>
       </div>
     </section>

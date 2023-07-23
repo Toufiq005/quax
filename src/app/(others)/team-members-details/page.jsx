@@ -24,8 +24,8 @@ export default function page() {
             <div className="members-image flex items-center justify-center bg-color w-1/2 max-xl:w-full">
               <Reveal>
                 <motion.div
-                  initial={{ scale: 0, rotate: -90, opacity: 0 }}
-                  animate={{ scale: 1, rotate: 0, opacity: 1 }}
+                  initial={{ scale: 0, rotate: -90, opacity: 0, filter: "blur(20px)" }}
+                  animate={{ scale: 1, rotate: 0, opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.3, delay: 0.3 }}
                 >
                   <Image

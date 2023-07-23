@@ -155,12 +155,16 @@ export default function Navbar(props) {
                         href="/"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image
+                        <motion.img
+                          initial={{filter: "blur(20px)"}}
+                          animate={{filter: "blur(0px)"}}
+                          transition={{duration: 0.3}}
                           src="/assets/navbar/Homepage-1.webp"
                           width="307"
                           height="168"
                           loading="lazy"
                           alt="img"
+                          className="navbar-home-img"
                         />
                         <p className="pb-3">Homepage One</p>
                       </a>
@@ -170,12 +174,16 @@ export default function Navbar(props) {
                         href="/home-page-two"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image
+                        <motion.img
+                          initial={{filter: "blur(20px)"}}
+                          animate={{filter: "blur(0px)"}}
+                          transition={{duration: 0.3}}
                           src="/assets/navbar/Homepage-2.webp"
                           width="307"
                           height="161"
                           loading="lazy"
                           alt="img"
+                          className="navbar-home-img"
                         />
                         <p className="pb-3">Homepage Two</p>
                       </a>
@@ -185,12 +193,16 @@ export default function Navbar(props) {
                         href="/home-page-three"
                         className="flex flex-col items-center justify-center"
                       >
-                        <Image
+                        <motion.img
+                          initial={{filter: "blur(20px)"}}
+                          animate={{filter: "blur(0px)"}}
+                          transition={{duration: 0.3}}
                           src="/assets/navbar/Homepage-3.webp"
                           width="307"
                           height="160"
                           loading="lazy"
                           alt="img"
+                          className="navbar-home-img"
                         />
                         <p className="pb-3">Homepage Three</p>
                       </a>

@@ -204,7 +204,7 @@
   transition: 400ms;
 }
 .home-three-case-study .overlay:hover {
-  background: rgba(255, 79, 79, 0.8);
+  background: rgba(255, 79, 79, 0.6);
 }
 @media (max-width: 640px) {
   .home-three-case-study h1 {

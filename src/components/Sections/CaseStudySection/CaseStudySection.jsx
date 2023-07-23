@@ -53,7 +53,10 @@ export default function CaseStudySection() {
                   transition={{ duration: 0.3, delay: i * 0.2 }}
                   className="relative mx-4"
                 >
-                  <Image
+                  <motion.img
+                    initial={{filter: "blur(20px)"}}
+                    animate={{filter: "blur(0px)"}}
+                    transition={{duration: 0.3, delay: i * 0.3}}
                     width={370}
                     height={370}
                     src={props.img}

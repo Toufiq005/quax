@@ -71,7 +71,7 @@ function TeamProfile({ name, img, role, socialLinks, i, pageIndex }) {
         transition={{ duration: 0.2 * (i + 1) }}
       >
         <div>
-          <img src={img} alt="img" className="team-member-profile-img" />
+          <motion.img initial={{filter: "blur(20px)"}} animate={{filter: "blur(0px)"}} transition={{delay: 0.2 * (i + 1)}} src={img} alt="img" className="team-member-profile-img" />
           <h2>{name}</h2>
           <h3>{role}</h3>
         </div>

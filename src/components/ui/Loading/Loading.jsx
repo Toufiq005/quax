@@ -4,7 +4,7 @@ import "./Loading.css";
 import { useState, useEffect } from "react";
 
 export default function Loading({ children }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setInterval(() => {

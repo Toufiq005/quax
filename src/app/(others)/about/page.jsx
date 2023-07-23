@@ -45,28 +45,25 @@ function AboutSection() {
           <p className="text-light-gray">{data[1].discription}</p>
           <a href={data[1].btn.href}>{data[1].btn.text}</a>
         </div>
-
-        <Reveal>
-          <motion.div
-            initial={{ x: 200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="about-section-image "
-            loading="lazy"
-          >
-            <img
+        <Reveal className="about-section-image ">
+            <motion.img
+              initial={{ x: -150, opacity: 0, filter: "blur(20px)" }}
+              animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+              transition={{duration:0.4, delay:0.3}}
               src={data[1].imgOne.src}
               alt={data[1].imgOne.alt}
               loading="lazy"
               className="about-section-image-one"
             />
-            <img
+            <motion.img
+              initial={{ y: -150, opacity: 0, filter: "blur(20px)" }}
+              animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+              transition={{duration:0.4, delay:0.7}}
               src={data[1].imgTwo.src}
               alt={data[1].imgTwo.alt}
               loading="lazy"
               className="about-section-image-two"
             />
-          </motion.div>
         </Reveal>
       </div>
     </section>
@@ -79,17 +76,20 @@ function WhatWeDo() {
   return (
     <section className="w-full h-auto flex items-center justify-center bg-very-light-gray">
       <div className="wrapper what-we-do flex gap-6 items-center justify-center py-29 max-lg:w-full max-md:overflow-hidden">
-        <div
-          className="what-we-do-image bg-no-repeat flex justify-center mr-5 max-lg:mr-0 max-lg:mt-5"
+        <Reveal
+          className="what-we-do-image bg-no-repeat flex justify-center mr-5 max-lg:mr-0 max-lg:mt-5 overflow-hidden"
         >
-          <Image
+          <motion.img
+            initial={{x: -100, opacity: 0, filter: "blur(20px)"}}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)"}}
+            transition={{duration:0.4, delay:0.4}}
             width={500}
             height={500}
             src={data[2].imgOne.src}
             alt={data[2].imgOne.alt}
             loading="lazy"
           />
-        </div>
+        </Reveal>
         <div className="what-we-do-content ml-5 max-lg:flex flex-col items-center justify-center max-lg:ml-0">
           <h3 className="max-lg:pt-10 mb-2">{data[2].headLine}</h3>
           <ScrollTrigger onEnter={() => setAnimationOn(true)}>
@@ -150,9 +150,9 @@ function WhyChoseUS() {
         </div>
         <Reveal>
           <motion.div
-            initial={{ x: 200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ x: 200, opacity: 0, filter: "blur(20px)" }}
+            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.5, delay:0.3 }}
             className="why-chose-us-image ml-12 max-lg:ml-5 max-lg:m-5 overflow-hidden"
           >
             <Image
