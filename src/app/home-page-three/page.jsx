@@ -254,10 +254,10 @@ function CaseStudy() {
             </motion.h3>
           </Reveal>
           <div className="flex items-center justify-center gap-5 max-xl:mt-5 max-sm:items-end max-sm:justify-end max-sm:w-screen max-sm:pr-5 max-sm:mt-7">
-            <button onClick={() => swiperRef.current.slideNext()}>
+            <button onClick={() => swiperRef.current.slideNext()} className="flex items-center justify-center">
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
-            <button onClick={() => swiperRef.current.slidePrev()}>
+            <button onClick={() => swiperRef.current.slidePrev()} className="flex items-center justify-center">
               <FontAwesomeIcon icon={faArrowRight} />
             </button>
           </div>
@@ -265,9 +265,9 @@ function CaseStudy() {
         <div className="max-xl:w-full overflow-hidden">
           <Swiper
             slidesPerView={3}
-            spaceBetween={10}
+            spaceBetween={28}
             centeredSlides={false}
-            loop={false}
+            loop={true}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}

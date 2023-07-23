@@ -304,7 +304,7 @@
   background: #f1f1f3;
 }
 .free-analysis .right form input::placeholder {
-  color: rgba(99, 99, 99, 1);
+  color: #a3a2aa;
 }
 .free-analysis .right form button {
   width: 370px;

@@ -506,15 +506,10 @@
   width: 150px;
   height: 60px;
   border-radius: 5px;
-  border: 1px solid #ff4f4f;
   background-color: #ff4f4f;
   font-weight: 500;
   color: white;
   transition: 400ms;
-}
-.home-three-seo button:hover {
-  background: white;
-  color: #ff4f4f;
 }
 @media (max-width: 640px) {
   .home-three-seo h1 {

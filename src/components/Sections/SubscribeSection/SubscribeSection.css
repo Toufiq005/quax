@@ -33,19 +33,11 @@
   height: 54px;
   background: #ffffff;
   border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
   text-align: center;
   color: var(--text-header);
-  transition: 400ms;
-}
-.subscribe-section button:hover {
-  border-color: white;
-  background-color: var(--text-header);
-  color: white;
 }
 @media (max-width: 1230px) {
   .subscribe-section {
