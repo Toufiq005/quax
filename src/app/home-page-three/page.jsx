@@ -149,7 +149,7 @@ function CompanyLogo() {
         <div className="w-full flex items-center justify-between mt-13 max-xl:flex-col max-xl:gap-10">
           {data[1].companies.map((item, i) => {
             return (
-              <div key={item.id} title={item.name}>
+              <div key={item.id} title={item.name} className="hoverEffect">
                 <Reveal>
                   <motion.a
                     initial={{ y: -100, opacity: 0, filter: "blur(20px)" }}

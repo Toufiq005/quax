@@ -1,7 +1,6 @@
 "use client"
 
 import "./blog.css";
-import Image from "next/image";
 import Banner from "@/components/Sections/Banner/Banner";
 import Button from "@/components/Buttons/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,23 +10,13 @@ import {
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import BlogSection from "@/components/Sections/BlogSection/BlogSection";
-import Loading from "@/components/ui/Loading/Loading";
 import siteData from '@/data/pages/blog.js';
 import Reveal from '@/components/ui/Reveal/Reveal'
 import {motion} from 'framer-motion'
+import data from '@/data/section/blog-post';
 
-require("dotenv").config();
 
-async function getData() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_REST_API_ENDPOINT + "/blog-post"
-  );
-
-  return res.json();
-}
-
-export default async function page() {
-  const data = await getData();
+export default function page() {
 
   const otherPages = [
     {
@@ -53,7 +42,7 @@ export default async function page() {
   ];
 
   return (
-    <Loading>
+    <>
       <Banner
         title={siteData[0].title}
         description={siteData[0].description}
@@ -138,6 +127,6 @@ export default async function page() {
           <BlogSection />
         </div>
       </section>
-    </Loading>
+    </>
   );
 }

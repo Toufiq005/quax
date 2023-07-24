@@ -13,10 +13,10 @@ export default  function BlogSection() {
     <>
       <div className="w-full mt-10">
         <div className="blog-div mb-4">
-          <from className="w-full flex items-center justify-center h-14">
+          <form className="w-full flex items-center justify-center h-14">
             <input type="text" placeholder="Search..." className="focus:outline-blue-300 w-2/3 h-full pl-3" />
             <button className="w-1/3 h-full bg-header font-bold text-white rounded-tr-lg rounded-br-lg">Search</button>
-          </from>
+          </form>
         </div>
         <div className="blog-div w-full h-auto mb-4">
           <h1 className="font-semibold text-black/70 text-3xl m-7">
@@ -27,7 +27,7 @@ export default  function BlogSection() {
             <a href="/">
               <Reveal className="flex w-80 my-5 ">
                 <motion.img initial={{filter: "blur(15px)"}} animate={{filter: "blur(0px)"}} transition={{duration:0.3, delay:0.3}} src="/assets/blog-post/blog-post-one.png" alt="img" style={{width: "120px", height: "80px"}} />
-                <h className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Sass That Had Gone Way To Far.</h>
+                <h1 className="ml-5 text-gray-600 text-xl font-medium hover:text-red-500 duration-300">Ten Sass That Had Gone Way To Far.</h1>
               </Reveal>
             </a>
             <a href="/">
@@ -56,6 +56,7 @@ export default  function BlogSection() {
                   <h2 className="text-lg text-black/70 duration-300 hover:text-red-500 font-medium mx-7 my-3">
                     {category}
                   </h2>
+                  <img src="/assets/ui/line/line-one.svg" />
                 </a>
               );
             })}

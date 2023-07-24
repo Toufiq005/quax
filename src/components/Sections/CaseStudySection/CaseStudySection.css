@@ -31,11 +31,6 @@
   transition: color 200ms;
 }
 
-.case-study h4:hover {
-  color: var(--text-header);
-  transition: color 200ms;
-}
-
 .case-study p {
   color: var(--text-light);
 }

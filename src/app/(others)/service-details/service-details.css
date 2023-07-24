@@ -49,6 +49,12 @@
 }
 @media (max-width: 640px) {
   .services-details-image-two {
-    right: -15px;
+    right: -18px;
+  }
+  .services-details-image-one {
+    width: 100%;
+    height: auto;
+    left: 18px;
+    scale: 1.5;
   }
 }

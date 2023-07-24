@@ -387,7 +387,7 @@ export default function Navbar(props) {
             </li>
             <li>
               <a
-                href="/service"
+                href="/error-page"
                 style={{ color: navColor ? "#444444" : "" }}
                 className={
                   "hover:text-red-500 flex items-center" + " " + props.textColor

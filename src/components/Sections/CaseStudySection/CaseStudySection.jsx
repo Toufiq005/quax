@@ -3,7 +3,6 @@
 import { useState } from "react";
 import "./CaseStudySection.css";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import data from "@/data/section/case-study.js";
 
@@ -28,19 +27,19 @@ export default function CaseStudySection() {
         <h1>Recent Case Study</h1>
         <ul className="flex items-center justify-between">
           <li onClick={() => handleCategoryChange("all")}>
-            <h4>All</h4>
+            <h4 style={{ color: category === "all" ? "var(--text-header)" : "" }}>All</h4>
           </li>
           <li onClick={() => handleCategoryChange("Marketing")}>
-            <h4>Marketing</h4>
+            <h4 style={{ color: category === "Marketing" ? "var(--text-header)" : "" }}>Marketing</h4>
           </li>
           <li onClick={() => handleCategoryChange("Designing")}>
-            <h4>Designing</h4>
+            <h4 style={{ color: category === "Designing" ? "var(--text-header)" : "" }}>Designing</h4>
           </li>
           <li onClick={() => handleCategoryChange("Development")}>
-            <h4>Development</h4>
+            <h4 style={{ color: category === "Development" ? "var(--text-header)" : "" }}>Development</h4>
           </li>
           <li onClick={() => handleCategoryChange("E-Commerce")}>
-            <h4>E-Commerce</h4>
+            <h4 style={{ color: category === "E-Commerce" ? "var(--text-header)" : "" }}>E-Commerce</h4>
           </li>
         </ul>
         <div className="case-study-container overflow-hidden">

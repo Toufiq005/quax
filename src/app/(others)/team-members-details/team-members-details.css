@@ -85,4 +85,14 @@
   .exp-bar {
     width: 90%;
   }
+  .members-overview h1 {
+    text-align: left;
+  }
+  .members-overview p {
+    text-align: left;
+  }
+  .members-experience h1 {
+    text-align: left;
+    margin-left: 10%;
+  }
 }
