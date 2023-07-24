@@ -139,6 +139,7 @@ npm install
 #### Step 3:
 Add your service id, template id, and public key
 into the **quax/.env** file from [emailjs](https://emailjs.com)
+
 ![dotenv](./screenshots/dotenv-location.png)
 
 Add your keys hear
