@@ -27,6 +27,7 @@
   min-height: 550px;
   background: var(--price-background);
   border-radius: 5px;
+  overflow: hidden;
 }
 .price h1 {
   margin: 32px 0 32px 0;
@@ -43,7 +44,7 @@
   color: var(--text-base);
 }
 .price p {
-  width: 310pxs;
+  width: 310px;
 }
 .price a {
   padding: 16px 110px 16px 110px;
@@ -58,7 +59,7 @@
 }
 .price div {
   width: 370px;
-  height: 195px;
+  height: 200px;
   background: #f2f2f2;
 }
 .price-div {
@@ -72,12 +73,6 @@
   .price-div {
     flex-direction: column;
   }
-  .price {
-    width: 90%;
-  }
-  .price div {
-    max-width: 90%;
-  }
 }
 @media (max-width: 1024px) {
   .section-four h1 {
@@ -88,5 +83,11 @@
 @media (max-width: 768px) {
   .section-four p {
     width: 90%;
+  }
+}
+@media (max-width: 640px) {
+  .price {
+    width: 90%;
+    max-width: 370px;
   }
 }

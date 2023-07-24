@@ -565,6 +565,7 @@
   text-align: center;
   font-size: 24px;
   font-weight: 600;
+  margin-top: 25px;
 }
 .price-two h3 {
   color: #444;
@@ -607,6 +608,7 @@
   color: #fff;
   font-size: 24px;
   font-weight: 600;
+  margin-top: 25px;
 }
 .price-two-active h3 {
   color: #444;

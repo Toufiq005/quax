@@ -62,7 +62,7 @@ export default function PricingSection() {
                   Buy Now
                 </a>
                 <div className="flex flex-col justify-center mt-10">
-                  <p className="flex ml-10 max-lg:ml-0">
+                  <p className="flex ml-10">
                     <span className="mx-3">
                       <Image
                         width={25}
@@ -73,7 +73,7 @@ export default function PricingSection() {
                     </span>
                     {props.bulletPoint.bpOne}
                   </p>
-                  <p className="flex ml-10 my-7 max-lg:ml-0">
+                  <p className="flex ml-10 my-7">
                     <span className="mx-3">
                       <Image
                         width={25}
@@ -84,7 +84,7 @@ export default function PricingSection() {
                     </span>
                     {props.bulletPoint.bpTwo}
                   </p>
-                  <p className="flex ml-10 max-lg:ml-0">
+                  <p className="flex ml-10">
                     <span className="mx-3">
                       <Image
                         width={25}

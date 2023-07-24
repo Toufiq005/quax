@@ -56,7 +56,7 @@ export default  function BlogSection() {
                   <h2 className="text-lg text-black/70 duration-300 hover:text-red-500 font-medium mx-7 my-3">
                     {category}
                   </h2>
-                  <img src="/assets/ui/line/line-one.svg" />
+                  <img src="/assets/ui/line/line-three.svg" className="relative left-7" />
                 </a>
               );
             })}
