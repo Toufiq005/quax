@@ -242,7 +242,7 @@ function CaseStudy() {
               transition={{ duration: 0.3, delay: 0.6 }}
               className="mb-6 max-xl:text-center"
             >
-              {data[3].title}
+              Solid results of <br />our different case studies
             </motion.h1>
             <motion.h3
               initial={{ y: -150, opacity: 0 }}
