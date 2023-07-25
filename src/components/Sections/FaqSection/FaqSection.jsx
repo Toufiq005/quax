@@ -28,12 +28,12 @@ export default function FaqSection(props) {
                   className="faq-question flex flex-col items-center bg-white max-sm:w-4/5 overflow-hidden"
                 >
                   <button
-                    className="bg-white flex items-center justify-between max-sm:justify-evenly max-sm:w-4/5"
+                    className="bg-white flex items-center max-sm:items-start justify-between max-sm:justify-start max-sm:w-4/5"
                     onClick={() => handleFaqSelect(id)}
                   >
                     <h2
                       className={
-                        "ml-8 max-sm:ml-0" +
+                        "ml-8 max-sm:ml-2 max-sm:mt-3" +
                         " " +
                         (selectedFaq === id ? "text-red-500" : "text-black/70")
                       }
@@ -51,7 +51,7 @@ export default function FaqSection(props) {
                             width={16}
                             height={2}
                             src="/assets/faq/icon-minus.svg"
-                            className="mr-7 max-sm:mr-0"
+                            className="mr-7 max-sm:mr-5 max-sm:mt-5"
                           />
                         </motion.div>
                       </Reveal>
@@ -66,7 +66,7 @@ export default function FaqSection(props) {
                             width={16}
                             height={2}
                             src="/assets/faq/icon-plus.svg"
-                            className="mr-7 max-sm:mr-0"
+                            className="mr-7 max-sm:mr-6 max-sm:mt-4"
                           />
                         </motion.div>
                       </Reveal>

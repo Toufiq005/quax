@@ -743,7 +743,7 @@ function Footer() {
             transition={{ duration: 0.3,delay:0.3 }}
             className=" text-center w-full pt-0"
           >
-            ©2021 All Rights Reserved. With Design by Loyalcoders
+            ©2023 All Rights Reserved. With Design by Loyalcoders
           </motion.p>
         </Reveal>
       </div>
